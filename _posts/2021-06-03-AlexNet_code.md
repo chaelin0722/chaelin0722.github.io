@@ -1,5 +1,5 @@
 ---
-title:  "[cod] AlexNet"
+title:  "[code] AlexNet"
 excerpt: "code"
 
 categories:
