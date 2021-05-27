@@ -6,7 +6,7 @@ categories:
   - Deeplearning
 tags:
   - Deeplearning
-class: wide
+classes: wide
 
 last_modified_at: 2021-05-28T08:06:00-05:00
 
