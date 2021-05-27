@@ -12,7 +12,7 @@
 
 theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "contrast" #, "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "aqua" #, "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "ko-KR"
@@ -24,7 +24,7 @@ description              : "기술/공부 블로그"
 url                      : "https://chaelin0722.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "chaelin0722/chaelin0722.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : "assets/images/500x300.png"
+teaser                   : # "assets/images/500x300.png"
 logo                     : # e.g. "/assets/images/88x88.png"
 masthead_title           : "zzennin's DeepLearning" # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
@@ -275,7 +275,7 @@ defaults:
       type: posts
     values:
       layout: single
-      class: wide
+      classes: wide
       author_profile: true
       read_time: true
       comments: # true
@@ -288,7 +288,7 @@ defaults:
       type: pages
     values:
       layout: single
-      class: wide
+      classes: wide
       author_profile: true
       read_time: false
       comments: false
