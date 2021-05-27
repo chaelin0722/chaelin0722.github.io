@@ -7,6 +7,8 @@ categories:
 tags:
   - Blog
 last_modified_at: 2019-04-13T08:06:00-05:00
+
+classes: wide
 ---
 
 ### Sigmoid의 한계와  대안으로써의 ReLU
