@@ -275,6 +275,7 @@ defaults:
       type: posts
     values:
       layout: single
+      class: wide
       author_profile: true
       read_time: true
       comments: # true
@@ -287,6 +288,7 @@ defaults:
       type: pages
     values:
       layout: single
+      class: wide
       author_profile: true
       read_time: false
       comments: false
