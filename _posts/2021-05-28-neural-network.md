@@ -1,14 +1,15 @@
 ---
-title:  "CNN"
-excerpt: "Sigmoid의 한계와 대안으로써의 ReLu"
+title:  "Sigmoid의 한계와 대안으로써의 ReLu"
+excerpt: "by orGate"
 
 categories:
   - Deeplearning
+  - CNN
 tags:
-  - Blog
-last_modified_at: 2019-04-13T08:06:00-05:00
+  - Deeplearning
+  - CNN
+last_modified_at: 2021-05-28T08:06:00-05:00
 
-classes: wide
 ---
 
 ### Sigmoid의 한계와  대안으로써의 ReLU
