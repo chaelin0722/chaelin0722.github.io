@@ -144,9 +144,7 @@ model.add(Dense(1, kernel_initializer='uniform', activation='sigmoid'))
 
 - **아래는 hidden layer이 sigmoid 함수로 10번 한 경우의 accuracy와 loss**
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b067529b-2387-4019-ae5e-1b68af3a9dc7/hiddenlayer_siggmoid_accuracy.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b067529b-2387-4019-ae5e-1b68af3a9dc7/hiddenlayer_siggmoid_accuracy.png)
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e8dff7a2-1eae-4dbe-99e4-94daedf6edf1/hiddenlayer_sigmoid_10.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e8dff7a2-1eae-4dbe-99e4-94daedf6edf1/hiddenlayer_sigmoid_10.png)
+![test_result](https://user-images.githubusercontent.com/53431568/119865541-bafa7180-bf56-11eb-85bd-91fbad4589a1.JPG)
 
 sigmoid 함수는 binary classification에 적절하다. 일정한 기준 값으로 0인지 1인지 구분함으로써 분류하는 방식이다. 
 
@@ -193,12 +191,11 @@ model.add(Dense(1, kernel_initializer='uniform', activation='sigmoid'))
 [0.69174945]
 [0.69174945]]
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/028d5d87-6a59-42a5-9179-ae392a224c24/relu_accuracy.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/028d5d87-6a59-42a5-9179-ae392a224c24/relu_accuracy.png)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0a9fc498-238a-4ecd-a48c-07e62dea1e1a/relu_loss.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0a9fc498-238a-4ecd-a48c-07e62dea1e1a/relu_loss.png)
+![test_result2](https://user-images.githubusercontent.com/53431568/119865536-ba61db00-bf56-11eb-80e2-7638d6960631.JPG)
 
 성능이 좋아진다고는 하는데 그닥 좋아진것 같진 않다. 아주 미세한 차이이다.
 
 아마 ORGate 코드라서 값이 binary한 값이라 차이가 별로 없는듯..?
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/afbb1776-40b2-4bf3-a286-9ee5f449033b/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/afbb1776-40b2-4bf3-a286-9ee5f449033b/Untitled.png)
+![functions](https://user-images.githubusercontent.com/53431568/119865525-b766ea80-bf56-11eb-8d54-a5051c5da036.JPG)
