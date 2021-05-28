@@ -12,7 +12,7 @@
 
 theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "mint" 
+minimal_mistakes_skin    : "neon" 
 
 # Site Settings
 locale                   : "ko-KR"
@@ -39,9 +39,9 @@ comments:
     # https://developers.facebook.com/docs/plugins/comments
     appid                :
     num_posts            : # 5 (default)
-    colorscheme          : "light" # "light" (default), "dark"
+    colorscheme          : # "light" (default), "dark"
   utterances:
-    theme                : "github-light" # "github-light" (default), "github-dark"
+    theme                : # "github-light" (default), "github-dark"
     issue_term           : # "pathname" (default)
   staticman:
     branch               : # "master"
@@ -95,7 +95,7 @@ analytics:
 # Site Author
 author:
   name             : "Chaelin Kim"
-  avatar           : "/assets/images/github.png"
+  avatar           : "/assets/images/kaka_1.jpg"
   bio              : "hello :)"
   location         : "Sookmyung Women's University"
   email            :
