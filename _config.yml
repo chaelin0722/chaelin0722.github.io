@@ -21,7 +21,7 @@ title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Chaelin Kim"
 description              : "기술/공부 블로그"
-url                      : "https://chaelin0722.github.io"
+url                      : "https://zzennin.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "chaelin0722/chaelin0722.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # "assets/images/500x300.png"
