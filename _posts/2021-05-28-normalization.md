@@ -13,9 +13,11 @@ last_modified_at: 2021-05-28T08:06:00-05:00
 ---
 
 
-정규화 하는 이유
+### 정규화가 필요한 이유
 
-데이터가 가진 feature의 스케일이 심하게 차이가 나는 경우 문제가 된다.
+데이터가 가진 feature의 스케일이 심하게 차이가 나는 경우 문제가 된다. 이런 경우 스케일의 조정 필요!
+
+
 
 ## Normalization
 
@@ -27,7 +29,9 @@ last_modified_at: 2021-05-28T08:06:00-05:00
 
 ex) min-max 
 
-### Regularization
+
+
+## Regularization
 
 - weight를 조정하는데 제약을 거는 기법으로 overfitting을 막기 위해 사용한다.
 
@@ -35,7 +39,9 @@ ex) min-max
 
 ex) L1 regularization (lasso, 마름모) , L2 regularization(lidge, 원)
 
-### Standardization
+
+
+## Standardization
 
 - 값의 범위를 평균0, 분산1이 되도록 변환한다.
 
