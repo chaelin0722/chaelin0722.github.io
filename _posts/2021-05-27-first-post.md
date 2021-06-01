@@ -10,4 +10,4 @@ last_modified_at: 2021-05-27T08:06:00-05:00
 classes: wide
 ---
 
-첫 posting 게시물
+블로그 첫 개시!
