@@ -72,9 +72,9 @@ print("Training data size:", train_ds_size)
 print("Test data size:", test_ds_size)
 print("Validation data size:", validation_ds_size)
 
-train_ds = (train_ds.map(process_images).shuffle(buffer_size=train_ds_size).batch(batch_size=32, drop_remainder=True))
-test_ds = (test_ds.map(process_images).shuffle(buffer_size=train_ds_size).batch(batch_size=32, drop_remainder=True))
-validation_ds = (validation_ds.map(process_images).shuffle(buffer_size=train_ds_size).batch(batch_size=32, drop_remainder=True))
+train_ds = (train_ds.map(process_images).shuffle(buffer_size=train_ds_size).batch(batch_size=64, drop_remainder=True))
+test_ds = (test_ds.map(process_images).shuffle(buffer_size=train_ds_size).batch(batch_size=64, drop_remainder=True))
+validation_ds = (validation_ds.map(process_images).shuffle(buffer_size=train_ds_size).batch(batch_size=64, drop_remainder=True))
 
 model = tf.keras.models.Sequential([
     #C1
@@ -110,7 +110,7 @@ model = tf.keras.models.Sequential([
     tf.keras.layers.Dropout(0.5),
 
     # outputlayer, Softmax
-    tf.keras.layers.Dense(10, activation='softmax')
+    tf.keras.layers.Dense(10, activation='softmax') # 분류해야 할 class가 10개 이므로 .. 원래 논문대로면 1000개의 class가 있지만 여기서는 10개만 분류하므로 수정해줌
 ])
 
 #check tensorboard
