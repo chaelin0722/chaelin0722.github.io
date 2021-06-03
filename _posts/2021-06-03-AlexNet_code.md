@@ -143,7 +143,11 @@ compile 부분을 보면 optimizaer을 stochastic gradient descent를 사용하�
 참고
 
 [1] http://datahacker.rs/tf-alexnet/
+
 [2] https://towardsdatascience.com/implementing-alexnet-cnn-architecture-using-tensorflow-2-0-and-keras-2113e090ad98
+
 [3] https://medium.com/swlh/alexnet-with-tensorflow-46f366559ce8
+
+
 
 ## 아직 수정중인 페이지 
