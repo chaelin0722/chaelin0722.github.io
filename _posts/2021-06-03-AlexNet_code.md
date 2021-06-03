@@ -27,7 +27,6 @@ last_modified_at: 2021-06-03T08:06:00-05:00
 [ImageNet Classification with Deep Convolutional Neural Networks](https://chaelin0722.github.io/cnn/paperreview/AlexNet/)
 
 '''python
-
 import tensorflow as tf
 from tensorflow import keras
 import tensorflow.keras
@@ -40,7 +39,7 @@ import time
 import os
 from PIL import Image
 
-## load data
+#load data
 (train_images, train_labels), (test_images, test_labels) = keras.datasets.cifar10.load_data()
 CLASS_NAMES= ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
 validation_images, validation_labels = train_images[:5000], train_labels[:5000]
@@ -79,7 +78,7 @@ validation_ds = (validation_ds.map(process_images).shuffle(buffer_size=train_ds_
 
 
 model = tf.keras.models.Sequential([
-    # C1 (first layer)
+    # C1
     tf.keras.layers.Conv2D(filters=96, kernel_size=(11,11), strides=4, activation='relu', input_shape=(227,227,3)),
     tf.keras.layers.BatchNormalization(), # currently use batch normalization instead local response normalization
     # overlapping
@@ -115,7 +114,7 @@ model = tf.keras.models.Sequential([
     tf.keras.layers.Dense(10, activation='softmax')
 ])
 
-# check tensorboard
+#check tensorboard
 root_logdir = os.path.join(os.curdir, "logs\\fit\\")
 def get_run_logdir():
     run_id = time.strftime("run_%Y_%m_%d-%H_%M_%S")
@@ -123,13 +122,13 @@ def get_run_logdir():
 run_logdir = get_run_logdir()
 tensorboard_cb = keras.callbacks.TensorBoard(run_logdir)
 
-## compile
+##compile
 model.compile(loss='sparse_categorical_crossentropy',
               optimizer=tf.optimizers.SGD(lr=0.001), #lr = learning rate
               metrics=['accuracy'])
 #model.summary()
 
-# start training
+#start training
 model.fit(train_ds,
           epochs=50,
           validation_data=validation_ds,
