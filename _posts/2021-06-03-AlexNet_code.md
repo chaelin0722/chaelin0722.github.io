@@ -135,10 +135,13 @@ model.fit(train_ds,
           callbacks=[tensorboard_cb])
 ```
 
-local response normalization은 요즘 사용하지 않고 대부분 batch normalization을 사용한다고 함. 따라서 batch-normalization으로 바꿔서 함.
-compile 부분을 보면 optimizaer을 stochastic gradient descent를 사용하였다. 
+- local response normalization은 요즘 사용하지 않고 대부분 batch normalization을 사용한다고 함. 
+- compile 부분을 보면 optimizaer을 stochastic gradient descent를 사용하였다. 
 
 [stochastic gradient descent](https://chaelin0722.github.io/cnn/sgd/)에 대한 설명! 
+
+
+
 
 참고
 
