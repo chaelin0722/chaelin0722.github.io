@@ -1,5 +1,5 @@
 ---
-title:  "AlexNet-5"
+title:  "AlexNet"
 excerpt: "code"
 
 categories:
