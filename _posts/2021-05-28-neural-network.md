@@ -6,18 +6,11 @@ categories:
   - Deeplearning
   - CNN
 tags:
-<<<<<<< HEAD
-  - Blog
-
-last_modified_at: 2021-05-27T08:06:00-05:00
-=======
   - Deeplearning
   - CNN
 classes: wide
 
-last_modified_at: 2021-05-28T08:06:00-05:00
-
->>>>>>> fefe6fc9a01c79578c5195f7120c1336ca094e1d
+last_modified_at: 2021-05-31T08:06:00-05:00
 ---
 
 ### Sigmoid의 한계와  대안으로써의 ReLU
