@@ -12,7 +12,7 @@
 
 theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "contrast" #, "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "default" 
 
 # Site Settings
 locale                   : "ko-KR"
@@ -24,24 +24,24 @@ description              : "기술/공부 블로그"
 url                      : "https://chaelin0722.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "chaelin0722/chaelin0722.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : "assets/images/500x300.png"
-logo                     : "assets/images/kaka_1.jpg" # e.g. "/assets/images/88x88.png"
+teaser                   : # "assets/images/500x300.png"
+logo                     : # e.g. "/assets/images/88x88.png"
 masthead_title           : "zzennin's DeepLearning" # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
+  provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   disqus:
-    shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : "zzennin" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
     # https://developers.facebook.com/docs/plugins/comments
     appid                :
     num_posts            : # 5 (default)
-    colorscheme          : "light" # "light" (default), "dark"
+    colorscheme          : # "light" (default), "dark"
   utterances:
-    theme                : "github-light" # "github-light" (default), "github-dark"
+    theme                : # "github-light" (default), "github-dark"
     issue_term           : # "pathname" (default)
   staticman:
     branch               : # "master"
@@ -52,9 +52,9 @@ reCaptcha:
 atom_feed:
   path                   : # blank (default) uses feed.xml
   hide                   : # true, false (default)
-search                   : # true, false (default)
-search_full_content      : # true, false (default)
-search_provider          : # lunr (default), algolia, google
+search                   : true # , false (default)
+search_full_content      : true # , false (default)
+search_provider          : lunr # (default), algolia, google
 algolia:
   application_id         : # YOUR_APPLICATION_ID
   index_name             : # YOUR_INDEX_NAME
@@ -86,9 +86,9 @@ social:
 
 # Analytics
 analytics:
-  provider               : false # false (default), "google", "google-universal", "google-gtag", "custom"
+  provider               : "google" # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
-    tracking_id          :
+    tracking_id          : "G-C234P34T67"
     anonymize_ip         : # true, false (default)
 
 
@@ -275,9 +275,10 @@ defaults:
       type: posts
     values:
       layout: single
+      classes: wide
       author_profile: true
-      read_time: true
-      comments: # true
+      read_time: false
+      comments: true
       share: true
       related: true
 
@@ -287,6 +288,7 @@ defaults:
       type: pages
     values:
       layout: single
+      classes: wide
       author_profile: true
       read_time: false
       comments: false
