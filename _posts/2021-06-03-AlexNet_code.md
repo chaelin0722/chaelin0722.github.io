@@ -59,9 +59,9 @@ for i, (image, label) in enumerate(train_ds.take(5)):
 
 
 def process_images(image, label):
-    # Normalize images to have a mean of 0 and standard deviation of 1
+    #Normalize images to have a mean of 0 and standard deviation of 1
     image = tf.image.per_image_standardization(image)
-    # Resize images from 32x32 to 277x277
+    #Resize images from 32x32 to 277x277
     image = tf.image.resize(image, (227, 227))
     return image, label
 
@@ -78,18 +78,18 @@ validation_ds = (validation_ds.map(process_images).shuffle(buffer_size=train_ds_
 
 
 model = tf.keras.models.Sequential([
-    # C1
+    #C1
     tf.keras.layers.Conv2D(filters=96, kernel_size=(11,11), strides=4, activation='relu', input_shape=(227,227,3)),
-    tf.keras.layers.BatchNormalization(), # currently use batch normalization instead local response normalization
-    # overlapping
+    tf.keras.layers.BatchNormalization(), #currently use batch normalization instead local response normalization
+    #overlapping
     tf.keras.layers.MaxPool2D(pool_size=(3,3), strides=(2,2), padding='valid', data_format=None),
 
-    # C2
+    #C2
     tf.keras.layers.Conv2D(filters=256, kernel_size=(5,5), strides=1, activation='relu', padding="same"),
     tf.keras.layers.BatchNormalization(), # currently use batch normalization instead local response normalization
     tf.keras.layers.MaxPool2D(pool_size=(3,3), strides=(2,2), padding='valid', data_format=None),
 
-    # C3
+    #C3
     tf.keras.layers.Conv2D(filters=384, kernel_size=(3,3), strides=1, activation='relu',padding="same"),
     tf.keras.layers.BatchNormalization(),
     # C4
@@ -134,7 +134,6 @@ model.fit(train_ds,
           validation_data=validation_ds,
           validation_freq=1,
           callbacks=[tensorboard_cb])
-
 '''
 
 local response normalization은 요즘 사용하지 않고 대부분 batch normalization을 사용한다고 함. 따라서 batch-normalization으로 바꿔서 함.
