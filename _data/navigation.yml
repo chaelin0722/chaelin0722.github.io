@@ -1,12 +1,12 @@
 # main links
 main:
   - title: "Archive"
-    url: "/collection-archive/" #https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
+    url: https://chaelin0722.github.io/archive/
+  - title: "About"
+    url: https://chaelin0722.github.io/about/
+  - title: "Categories"
+    url: https://chaelin0722.github.io/categories/
+  #- title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
-  #   url: /sitemap/
+  #  url: /sitemap/
