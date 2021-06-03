@@ -27,8 +27,7 @@ last_modified_at: 2021-06-03T08:06:00-05:00
 [ImageNet Classification with Deep Convolutional Neural Networks](https://chaelin0722.github.io/cnn/paperreview/AlexNet/)
 
 
-
-'''
+```python
 import tensorflow as tf
 from tensorflow import keras
 import tensorflow.keras
@@ -59,7 +58,6 @@ for i, (image, label) in enumerate(train_ds.take(5)):
     plt.title(CLASS_NAMES[label.numpy()[0]])
     plt.axis('off')
 
-
 def process_images(image, label):
     #Normalize images to have a mean of 0 and standard deviation of 1
     image = tf.image.per_image_standardization(image)
@@ -77,7 +75,6 @@ print("Validation data size:", validation_ds_size)
 train_ds = (train_ds.map(process_images).shuffle(buffer_size=train_ds_size).batch(batch_size=32, drop_remainder=True))
 test_ds = (test_ds.map(process_images).shuffle(buffer_size=train_ds_size).batch(batch_size=32, drop_remainder=True))
 validation_ds = (validation_ds.map(process_images).shuffle(buffer_size=train_ds_size).batch(batch_size=32, drop_remainder=True))
-
 
 model = tf.keras.models.Sequential([
     #C1
@@ -136,7 +133,7 @@ model.fit(train_ds,
           validation_data=validation_ds,
           validation_freq=1,
           callbacks=[tensorboard_cb])
-'''
+```
 
 local response normalization은 요즘 사용하지 않고 대부분 batch normalization을 사용한다고 함. 따라서 batch-normalization으로 바꿔서 함.
 compile 부분을 보면 optimizaer을 stochastic gradient descent를 사용하였다. 
