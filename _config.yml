@@ -19,7 +19,7 @@ locale                   : "ko-KR"
 title                    : "zzennin's DeepLearning"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Chaelin zzennin"
+name                     : "Chaelin Kim"
 description              : "기술/공부 블로그"
 url                      : "https://chaelin0722.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -94,7 +94,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Chaelin Kim"
+  name             : "Chaelin zzennin"
   avatar           : "/assets/images/kaka_1.jpg"
   bio              : "hello :)"
   location         : "Sookmyung Women's University"
