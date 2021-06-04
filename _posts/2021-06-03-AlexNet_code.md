@@ -29,66 +29,44 @@ last_modified_at: 2021-06-03T08:06:00-05:00
 
 ```python
 import tensorflow as tf
-from tensorflow import keras
-import tensorflow.keras
-from tensorflow.keras.datasets import mnist
-import matplotlib.pyplot as plt
-from tensorflow.keras import backend as K
 import datetime
-import numpy as np
-import time
-import os
-from PIL import Image
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from keras.optimizers import SGD
 
-#load data
-(train_images, train_labels), (test_images, test_labels) = keras.datasets.cifar10.load_data()
-CLASS_NAMES= ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
-validation_images, validation_labels = train_images[:5000], train_labels[:5000]
-train_images, train_labels = train_images[5000:], train_labels[5000:]
+#데이터셋 설정
+train_datagen = ImageDataGenerator(rescale=1./255,width_shift_range=0.2,height_shift_range =0.2,
+    zoom_range=0.2, horizontal_flip =True, vertical_flip = True)
 
-train_ds = tf.data.Dataset.from_tensor_slices((train_images, train_labels))
-test_ds = tf.data.Dataset.from_tensor_slices((test_images, test_labels))
-validation_ds = tf.data.Dataset.from_tensor_slices((validation_images, validation_labels))
+train_generator = train_datagen.flow_from_directory(
+    './catdog/training_set/training_set/',
+    target_size=(227, 227),
+    batch_size=32,
+    class_mode='categorical')
 
-#preprocessing
-plt.figure(figsize=(20,20))
-for i, (image, label) in enumerate(train_ds.take(5)):
-    ax = plt.subplot(5,5,i+1)
-    plt.imshow(image)
-    plt.title(CLASS_NAMES[label.numpy()[0]])
-    plt.axis('off')
+test_datagen = ImageDataGenerator(rescale=1./255,width_shift_range=0.2,height_shift_range =0.2,
+zoom_range=0.2, horizontal_flip =True, vertical_flip = True)
 
-def process_images(image, label):
-    #Normalize images to have a mean of 0 and standard deviation of 1
-    image = tf.image.per_image_standardization(image)
-    #Resize images from 32x32 to 277x277
-    image = tf.image.resize(image, (227, 227))
-    return image, label
+test_generator = train_datagen.flow_from_directory(
+    './catdog/test_set/test_set/',
+    target_size=(227, 227),
+    batch_size=32,
+    class_mode='categorical')
 
-train_ds_size = tf.data.experimental.cardinality(train_ds).numpy()
-test_ds_size = tf.data.experimental.cardinality(test_ds).numpy()
-validation_ds_size = tf.data.experimental.cardinality(validation_ds).numpy()
-print("Training data size:", train_ds_size)
-print("Test data size:", test_ds_size)
-print("Validation data size:", validation_ds_size)
 
-train_ds = (train_ds.map(process_images).shuffle(buffer_size=train_ds_size).batch(batch_size=64, drop_remainder=True))
-test_ds = (test_ds.map(process_images).shuffle(buffer_size=train_ds_size).batch(batch_size=64, drop_remainder=True))
-validation_ds = (validation_ds.map(process_images).shuffle(buffer_size=train_ds_size).batch(batch_size=64, drop_remainder=True))
 
 model = tf.keras.models.Sequential([
-    #C1
+    # C1 (first layer)
     tf.keras.layers.Conv2D(filters=96, kernel_size=(11,11), strides=4, activation='relu', input_shape=(227,227,3)),
-    tf.keras.layers.BatchNormalization(), #currently use batch normalization instead local response normalization
-    #overlapping
+    tf.keras.layers.BatchNormalization(), # currently use batch normalization instead local response normalization
+    # overlapping
     tf.keras.layers.MaxPool2D(pool_size=(3,3), strides=(2,2), padding='valid', data_format=None),
 
-    #C2
+    # C2
     tf.keras.layers.Conv2D(filters=256, kernel_size=(5,5), strides=1, activation='relu', padding="same"),
     tf.keras.layers.BatchNormalization(), # currently use batch normalization instead local response normalization
     tf.keras.layers.MaxPool2D(pool_size=(3,3), strides=(2,2), padding='valid', data_format=None),
 
-    #C3
+    # C3
     tf.keras.layers.Conv2D(filters=384, kernel_size=(3,3), strides=1, activation='relu',padding="same"),
     tf.keras.layers.BatchNormalization(),
     # C4
@@ -110,29 +88,30 @@ model = tf.keras.models.Sequential([
     tf.keras.layers.Dropout(0.5),
 
     # outputlayer, Softmax
-    tf.keras.layers.Dense(10, activation='softmax') # 분류해야 할 class가 10개 이므로 .. 원래 논문대로면 1000개의 class가 있지만 여기서는 10개만 분류하므로 수정해줌
+    tf.keras.layers.Dense(2, activation='softmax')
 ])
 
-#check tensorboard
-root_logdir = os.path.join(os.curdir, "logs\\fit\\")
-def get_run_logdir():
-    run_id = time.strftime("run_%Y_%m_%d-%H_%M_%S")
-    return os.path.join(root_logdir, run_id)
-run_logdir = get_run_logdir()
-tensorboard_cb = keras.callbacks.TensorBoard(run_logdir)
+sgd = SGD(lr=0.01,decay=5e-4, momentum=0.9)
+model.compile(loss='binary_crossentropy', optimizer='sgd',metrics=['accuracy'])
 
-##compile
-model.compile(loss='sparse_categorical_crossentropy',
-              optimizer=tf.optimizers.SGD(lr=0.001), #lr = learning rate
-              metrics=['accuracy'])
-#model.summary()
+log_dir="logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir)
+callback_list = [tensorboard_callback]
 
-#start training
-model.fit(train_ds,
-          epochs=50,
-          validation_data=validation_ds,
-          validation_freq=1,
-          callbacks=[tensorboard_cb])
+model.summary()
+
+# start training
+model.fit_generator(train_generator, steps_per_epoch=127, epochs=10)
+
+
+#모델 저장하기
+model.save('my_Alexnet.h5')
+
+#모델 평가하기
+print("-------------Evaluate-----------------")
+scores = model.evaluate_generator(test_generator,steps=1)
+print("%s : %.2f%%" %(model.metrics_names[1],scores[1]*100))
+
 ```
 
 - local response normalization은 요즘 사용하지 않고 대부분 batch normalization을 사용한다고 함. 
@@ -140,8 +119,11 @@ model.fit(train_ds,
 
 [stochastic gradient descent](https://chaelin0722.github.io/cnn/sgd/)에 대한 설명! 
 
+- 원래는 cifar-10 데이터 셋으로 10개의 클래스를 분류하고자 하였지만 GPU 메모리 부족으로 2개의 클래스를 분류해보았다.
 
+### [학습결과]
 
+cat, dog 이미지라서 accurate가 박살난것일까..
 
 참고
 
