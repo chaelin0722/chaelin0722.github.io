@@ -1,5 +1,5 @@
 ---
-title:  "블로그 시작하기"
+title:  '블로그 시작하기'
 excerpt: "2021-05-27 시작"
 
 categories:
