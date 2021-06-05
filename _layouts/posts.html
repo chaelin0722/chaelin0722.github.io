@@ -1,5 +1,6 @@
 ---
-layout: archive
+layout: base
+comments: true
 ---
 
 {{ content }}
@@ -28,3 +29,7 @@ layout: archive
     <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
   </section>
 {% endfor %}
+
+{% if page.comments != false %}
+  {% include disqus_comments.html %}
+{% endif %}  
