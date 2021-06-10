@@ -1,5 +1,5 @@
 ---
-title:  "Sigmoid의 한계와 대안으로써의 ReLu"
+title:  "Sigmoid의 한계와 대안으로써의 ReLu✏️"
 excerpt: "by orGate"
 
 categories:
