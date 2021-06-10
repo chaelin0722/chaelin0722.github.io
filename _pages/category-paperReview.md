@@ -1,10 +1,10 @@
 ---
-title: "논문요약정리"
+title: "논문 요약정리"
 layout: archive
 permalink: categories/paperReview
 author_profile: true
 sidebar_main: true
----
+--- 
 
 
 {% assign posts = site.categories.paperReview %}
