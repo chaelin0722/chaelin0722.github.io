@@ -8,7 +8,7 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-           📒 <span>전체 글 수 <span>{{sum}}<span>개</style> 
+           📒 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">{{sum}}</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <span class="nav__sub-title">PaperReview</span>
@@ -18,14 +18,14 @@
                 <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
                 {% for category in site.categories %}
                     {% if category[0] == "paperReview" %}
-                        <li><a href="/categories/CNN" class="">논문요약정리({{category[1].size}})</a></li>
+                        <li><a href="/categories/CNN" class="">논문요약정리 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "code" %}
-                        <li><a href="/categories/code" class="">코드 구현({{category[1].size}})</a></li>
+                        <li><a href="/categories/code" class="">코드 구현 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -41,7 +41,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Blog" %}
-                        <li><a href="/categories/Blog" class="">Jekyll 사용({{category[1].size}})</a></li>
+                        <li><a href="/categories/Blog" class="">Jekyll 사용 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>            
