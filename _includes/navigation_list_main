@@ -7,14 +7,14 @@
   <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label }}</label>
   <ul class="nav__items" id="category_tag_menu">
       <li>
-           📒 <span>전체 글 수<span> {{sum}}<span>개 
+           📒 <span style="font-family:'MaruBuri-Regular';">전체 글 수</style><span style="font-family:'MaruBuri-Regular';"> {{sum}}</style><span style="font-family:'MaruBuri-Regular';">개</style> 
       </li>
       <li>
-        <span class="nav__sub-title"><h3>PaperReview</span>
+        <span class="nav__sub-title" style="font-family:'MaruBuri-Regular';">PaperReview</style></span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "paperReview" %}
-                        <li><a href="/categories/CNN" class=""><h4>논문요약정리 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/CNN" class="">논문요약정리 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -25,7 +25,7 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-        <span class="nav__sub-title">딥러닝 공부</span>
+        <span class="nav__sub-title" style="font-family:'MaruBuri-Regular';">딥러닝 공부</style></span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "CNN" %}
