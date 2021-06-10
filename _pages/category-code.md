@@ -1,5 +1,5 @@
 ---
-title: "코드구현"
+title: "코드 구현"
 layout: archive
 permalink: categories/code
 author_profile: true
