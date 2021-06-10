@@ -125,13 +125,13 @@ print("%s : %.2f%%" %(model.metrics_names[1],scores[1]*100))
 
 cat, dog 이미지라서 accurate가 박살난것일까..
 
-참고
+#### 참고
 
-[1] http://datahacker.rs/tf-alexnet/
+[1] [http://datahacker.rs/tf-alexnet/](http://datahacker.rs/tf-alexnet/)
 
-[2] https://towardsdatascience.com/implementing-alexnet-cnn-architecture-using-tensorflow-2-0-and-keras-2113e090ad98
+[2] [https://towardsdatascience.com/implementing-alexnet-cnn-architecture-using-tensorflow-2-0-and-keras-2113e090ad98](https://towardsdatascience.com/implementing-alexnet-cnn-architecture-using-tensorflow-2-0-and-keras-2113e090ad98)
 
-[3] https://medium.com/swlh/alexnet-with-tensorflow-46f366559ce8
+[3] [https://medium.com/swlh/alexnet-with-tensorflow-46f366559ce8](https://medium.com/swlh/alexnet-with-tensorflow-46f366559ce8)
 
 
 
