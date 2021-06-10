@@ -10,11 +10,11 @@
            📒 <span style="font-family:'MaruBuri-Regular';">전체 글 수</style><span style="font-family:'MaruBuri-Regular';"> {{sum}}</style><span style="font-family:'MaruBuri-Regular';">개</style> 
       </li>
       <li>
-        <span class="nav__sub-title" style="font-family:'MaruBuri-Regular';">PaperReview</style></span>
+        <span class="nav__sub-title" style="font-family:'MaruBuri-Regular';">Paper Review</style></span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "paperReview" %}
-                        <li><a href="/categories/CNN" class="" style="font-family:'MaruBuri-Regular';">>논문요약정리</style> <style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
+                        <li><a href="/categories/CNN" class="" style="font-family:'MaruBuri-Regular';">논문요약정리</style> <style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
