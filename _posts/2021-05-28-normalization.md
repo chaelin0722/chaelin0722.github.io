@@ -1,5 +1,5 @@
 ---
-title:  "Normalization, Regularization and Standardization"
+title:  "Normalization, Regularization and Standardization✏️"
 excerpt: ""
 
 categories:
