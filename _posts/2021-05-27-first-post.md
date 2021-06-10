@@ -4,10 +4,10 @@ excerpt: "2021-05-27 시작"
 
 categories:
   - Blog
-tags:
-  - Blog
+tags: [Blog]
+
 last_modified_at: 2021-05-27T08:06:00-05:00
 classes: wide
 ---
 
-블로그 첫 개시!
+블로그 첫 개시❤

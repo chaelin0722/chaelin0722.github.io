@@ -4,13 +4,11 @@ comments: true
 ---
 
 
-{% if page.tags %}
-  {% for tag in page.tags %}
-    {% if site.data.tags contains tag %}
-      <span class="tag">{{ site.data.format[tag] }}</span>
-    {% endif %}
-  {% endfor %}
-{% endif %}
+{% for tag in site.data.tags %}
+  <span class="tag" data-tag="{{tag}}">
+    {{ site.data.format[tag] }}
+  </span>
+{% endfor %}
 
 <ul class="taxonomy__index">
   {% assign postsInYear = site.posts | where_exp: "item", "item.hidden != true" | group_by_exp: 'post', 'post.date | date: "%Y"' %}

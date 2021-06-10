@@ -5,10 +5,7 @@ excerpt: "by orGate"
 categories:
   - Deeplearning
   - CNN
-tags:
-  - Deeplearning
-  - CNN
-classes: wide
+tags: [Deeplearning, CNN]
 
 last_modified_at: 2021-05-31T08:06:00-05:00
 ---
