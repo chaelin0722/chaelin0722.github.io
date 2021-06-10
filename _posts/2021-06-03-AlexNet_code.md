@@ -6,11 +6,8 @@ categories:
   - Deeplearning
   - CNN
   - code
-tags:
-  - Deeplearning
-  - CNN
-  - code
-  
+tags: [Deeplearning, CNN, code]
+ 
 classes: wide
 
 last_modified_at: 2021-06-03T08:06:00-05:00
