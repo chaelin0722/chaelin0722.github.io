@@ -14,14 +14,14 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "paperReview" %}
-                        <li><a href="/categories/CNN" class="" style="font-family:'MaruBuri-Regular';font-size:1.5em;">논문요약정리</style> <style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
+                        <li><a href="/categories/paperReview" class="" style="font-family:'MaruBuri-Regular';font-size:1.1em;">논문요약정리</style> <style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "code" %}
-                        <li><a href="/categories/code" class="" style="font-family:'MaruBuri-Regular';font-size:1.5em;">코드 구현 </style><style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
+                        <li><a href="/categories/code" class="" style="font-family:'MaruBuri-Regular';font-size:1.1em;">코드 구현 </style><style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -29,7 +29,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "CNN" %}
-                        <li><a href="/categories/CNN" class="" style="font-family:'MaruBuri-Regular';font-size:1.5em;">CNN 공부기록 </style><style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
+                        <li><a href="/categories/CNN" class="" style="font-family:'MaruBuri-Regular';font-size:1.1em;">CNN 공부 </style><style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -37,7 +37,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Blog" %}
-                        <li><a href="/categories/Blog" class="" style="font-family:'MaruBuri-Regular';font-size:1.5em;">Jekyll git블로그 </style> <style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
+                        <li><a href="/categories/Blog" class="" style="font-family:'MaruBuri-Regular';font-size:1.1em;">Jekyll git블로그 </style> <style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>            
