@@ -14,14 +14,14 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "paperReview" %}
-                        <li><a href="/categories/CNN" class="">논문요약정리 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/CNN" class="" style="font-family:'MaruBuri-Regular';">>논문요약정리</style> <style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "code" %}
-                        <li><a href="/categories/code" class=""><h4>코드 구현 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/code" class="" style="font-family:'MaruBuri-Regular';">코드 구현 </style><style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -29,15 +29,15 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "CNN" %}
-                        <li><a href="/categories/CNN" class="">CNN 공부기록 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/CNN" class="" style="font-family:'MaruBuri-Regular';">>CNN 공부기록 </style><style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
-        <span class="nav__sub-title">블로그 DEV</span>
+        <span class="nav__sub-title" style="font-family:'MaruBuri-Regular';">블로그 DEV</style></span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Blog" %}
-                        <li><a href="/categories/Blog" class="">Jekyll 사용 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Blog" class="" style="font-family:'MaruBuri-Regular';">Jekyll 사용 </style> <style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>            
