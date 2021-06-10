@@ -33,15 +33,15 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "CNN" %}
-                        <li><a href="/categories/cnn" class="">CNN 공부기록 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/CNN" class="">CNN 공부기록 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
         <span class="nav__sub-title">블로그 DEV</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "blog" %}
-                        <li><a href="/categories/cnn" class="">Jekyll 사용({{category[1].size}})</a></li>
+                    {% if category[0] == "Blog" %}
+                        <li><a href="/categories/Blog" class="">Jekyll 사용({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>            
