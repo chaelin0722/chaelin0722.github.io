@@ -98,11 +98,11 @@ author:
   avatar           : "/assets/images/kaka_1.jpg"
   bio              : "hello :)"
   location         : "Sookmyung Women's University"
-  email            :
+  email            : "ccaa9697@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "ccaa9697@sookmyung.ac.kr"
+      url: "ccaa9697@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
