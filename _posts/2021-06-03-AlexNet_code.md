@@ -10,7 +10,7 @@ tags: [Deeplearning, CNN, code]
  
 classes: wide
 
-last_modified_at: 2021-06-03T08:06:00-05:00
+last_modified_at: 2021-06-12T08:06:00-05:00
 
 ---
 
@@ -35,6 +35,7 @@ last_modified_at: 2021-06-03T08:06:00-05:00
 - 원래는 cifar-10 데이터 셋으로 10개의 클래스를 분류하고자 하였지만 GPU 메모리 부족으로 2개의 클래스를 분류해보았다.
 
 ### [학습결과]
+accuracy는 56.67%.
 
 cat, dog 이미지라서 accurate가 박살난것일까..
 
@@ -46,6 +47,3 @@ cat, dog 이미지라서 accurate가 박살난것일까..
 
 [3] [https://medium.com/swlh/alexnet-with-tensorflow-46f366559ce8](https://medium.com/swlh/alexnet-with-tensorflow-46f366559ce8)
 
-
-
-## 아직 수정중인 페이지 
