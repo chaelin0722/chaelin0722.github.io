@@ -1,0 +1,23 @@
+---
+title:  '[Linear Algebra] Lec.16'
+excerpt: "Projection Matrices and Least Squares"
+
+categories:
+  - Math
+tags: [Math]
+
+last_modified_at: 2021-06-14T08:06:00-05:00
+classes: wide
+---
+### Gilbert Strang의 MIT 선형대수
+### Lec26. Projection Matrices and Least Squares
+
+![1](https://user-images.githubusercontent.com/53431568/122235356-990e6200-cef8-11eb-9523-e7633ef41e18.jpg)
+![2](https://user-images.githubusercontent.com/53431568/122235360-990e6200-cef8-11eb-83b0-cb9c35acb736.jpg)
+
+### 문제 풀이
+
+![3](https://user-images.githubusercontent.com/53431568/122235348-97449e80-cef8-11eb-84ae-ced6ecb9bb3c.jpg)
+![4](https://user-images.githubusercontent.com/53431568/122235352-9875cb80-cef8-11eb-90a0-7d0ab8f90b06.jpg)
+
+(https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/resource-index/)
