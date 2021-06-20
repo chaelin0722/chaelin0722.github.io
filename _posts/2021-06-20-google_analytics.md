@@ -74,7 +74,7 @@ Google 애널리틱스 4 속성을 사용하는 경우 추적 ID 대신 측정 I
 
 ![속성설정2](https://user-images.githubusercontent.com/53431568/122675769-e7cc3c80-d215-11eb-8d52-efe6ae6d908c.JPG)
 
-쭉쭉 선택해 나가면 된다~ 비즈니스 정보는 큰 상관은 없어용
+다음은 비지니스 정보설정! 쭉쭉 선택해 나가면 된다~ 비즈니스 정보는 큰 상관은 없어용
 
 ![속성설정3](https://user-images.githubusercontent.com/53431568/122675770-e864d300-d215-11eb-9a49-72fcdcbab3cf.JPG)
 
