@@ -88,7 +88,7 @@ UA- 로 시작하는 아이디가 드디어 생겼다!! 👏👏
 
 ![확인](https://user-images.githubusercontent.com/53431568/122676403-e81a0700-d218-11eb-9317-fd60d4bb129e.JPG)
 
-**(4) `_config.yml`에**
+**(4) `_config.yml`에 측정ID 추가하기**
 
 이제 깃헙 디렉토리로 돌아와서 _config.yml 파일의  analytics 부분에 추적ID를 추가해준다.
 각 jekyll 블로그 타입마다 다르니 유의하자! 
