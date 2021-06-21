@@ -1,5 +1,5 @@
 ---
-title:  "[딥러닝공부]Sigmoid의 한계와 대안으로써의 ReLu✏️"
+title:  "[딥러닝공부] Sigmoid의 한계와 대안으로써의 ReLu✏️"
 excerpt: "by orGate"
 
 categories:
