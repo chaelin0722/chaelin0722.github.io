@@ -1,5 +1,5 @@
 ---
-title:  "[딥러닝공부]Normalization, Regularization and Standardization✏️"
+title:  "[딥러닝공부] Normalization, Regularization and Standardization✏️"
 excerpt: "정규화 개념 정리 및 비교"
 
 categories:
