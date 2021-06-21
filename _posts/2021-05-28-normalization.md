@@ -1,5 +1,5 @@
 ---
-title:  "Normalization, Regularization and Standardization✏️"
+title:  "[딥러닝공부]Normalization, Regularization and Standardization✏️"
 excerpt: ""
 
 categories:
