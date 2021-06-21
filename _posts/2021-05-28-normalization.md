@@ -1,11 +1,12 @@
 ---
 title:  "[딥러닝공부]Normalization, Regularization and Standardization✏️"
-excerpt: ""
+excerpt: "정규화 개념 정리 및 비교"
 
 categories:
   - Deeplearning
+  - study
 
-tags: [Deeplearning]
+tags: [Deeplearning, study]
 
 classes: wide
 
