@@ -5,7 +5,8 @@ excerpt: "by orGate"
 categories:
   - Deeplearning
   - CNN
-tags: [Deeplearning, CNN]
+  - study
+tags: [Deeplearning, CNN, study]
 
 last_modified_at: 2021-05-31T08:06:00-05:00
 ---
