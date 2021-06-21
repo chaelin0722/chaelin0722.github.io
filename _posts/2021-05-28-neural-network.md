@@ -1,6 +1,6 @@
 ---
 title:  "[딥러닝공부] Sigmoid의 한계와 대안으로써의 ReLu✏️"
-excerpt: "by orGate"
+excerpt: "활성화 함수 정리"
 
 categories:
   - Deeplearning
