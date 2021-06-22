@@ -1,6 +1,6 @@
 ---
 title:  "[논문정리📃] Going Deeper with Convolutions"
-excerpt: "Week3 논문요약정리"
+excerpt: "Week3 -GoogLeNet-"
 
 categories:
   - CNN
