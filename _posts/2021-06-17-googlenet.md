@@ -49,6 +49,14 @@ GoogLeNet 코드구현 페이지. => [GoogLeNet](https://chaelin0722.github.io/d
   1. 병목현상을 제거하기 위한 차원의 축소
   2. 큰 성능의 저하없이 네트워크의 width와 depth를 증가시키기 위해
 
+1x1 convolution과 병목현상(bottleneck) 에 대한 자세한 내용을 아래 더보기🔎 참고!!
+<details markdown="1">
+<summary>더보기🔎</summary>
+1x1 conv 설명 참고 => https://hwiyong.tistory.com/45
+Channel 값이 많아지는 경우 연산에 걸리는 속도도 그만큼 증가할 수 밖에 없는데, 이때 Channel 의 차원을 축소하는 개념이 Bottleneck layer 이다.
+
+</details>
+
 
 ## 3. Motivation and High Level Consideration!
 
