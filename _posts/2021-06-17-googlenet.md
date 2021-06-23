@@ -127,6 +127,7 @@ Architectural details에서 언급한 것과 같다.
 
 ### (4) architecture part 4
 
+
 ![image](https://user-images.githubusercontent.com/53431568/123109733-70e1ae80-d476-11eb-9799-3fc545806f92.png)
 
 Output이 나오는 구간이다. 구조를 보면 최종 classifier이전에 average pooling layer를 사용하고 있는데 이는 GAP (Global Average Pooling)가 적용된 것이다.
