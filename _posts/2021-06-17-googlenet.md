@@ -24,9 +24,9 @@ classes: wide
 
 ## 1. 개요
 - 최근 딥러닝과 convolutional networks의 발전으로 이미지 인식과 물체인식의 성능이 엄청나게 향상되었으며 이것은 (1)새로운 아이디어나 (2)새로운 알고리즘, (3)개선된 네트워크 구조로부터 얻어진 결과들이다. 
-- 
+
 - inception은 NIN논문과 함께, “we need to go deeper”라는 유명한 인터넷 밈에서 유래한 이름이다. 이 논문에서는 “deep”이라는 단어를 (1) Inception module이라는 새로운 구조의 도입 이라는 의미와 (2) Network의 depth가 늘어난 것 이라는 의미로 2가지의 뜻으로 사용한다.
-- 
+ 
 - 일반적으로 Inception 모델은 NIN의 논리로부터 영감을 얻었으며, Arora의 이론적 연구가 지침이 되었다. Inception 구조의 이점은 ILSVRC 2014 classification 및 detection 분야에서 실험적으로 검증됐으며, 당시의 state-of-the-art보다 훨씬 뛰어난 성능을 보였다.
 
 🔸NIN(Network-in-Network)
