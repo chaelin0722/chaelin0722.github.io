@@ -96,8 +96,10 @@ Inception module 내부를 포함한 모든 Convolution layer에는 ReLU가 적�
  
 이제 googlenet의 구조를 부분적으로 알아보자! 크게 3가지의 구조로 분석해 볼 수 있다.
 
-(1) architecture part 1
 ![image](https://user-images.githubusercontent.com/53431568/123109113-ee58ef00-d475-11eb-98c7-8eb7a120bb3c.png)
+
+
+(1) architecture part 1
 
 낮은 레이어가 위치한 부분으로 Inception module이 사용되지 않음.
 
