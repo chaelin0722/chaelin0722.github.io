@@ -1,5 +1,5 @@
 ---
-title:  "[code] AlexNet"
+title:  "[code] GoogLeNet"
 excerpt: "code"
 
 categories:
@@ -10,7 +10,7 @@ tags: [Deeplearning, CNN, code]
  
 classes: wide
 
-last_modified_at: 2021-06-12T08:06:00-05:00
+last_modified_at: 2021-06-23T08:06:00-05:00
 
 ---
 
@@ -31,5 +31,3 @@ last_modified_at: 2021-06-12T08:06:00-05:00
 ### [학습결과]
 
 (아직 학습 중)
-
-#### 참고
