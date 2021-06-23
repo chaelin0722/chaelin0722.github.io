@@ -135,6 +135,7 @@ GAP는 이전 layer에서 추출된 feature map을 각각 평균 낸 것을 이
  
  
  ### 참고
+ 
   [1] [https://sike6054.github.io/blog/paper/second-post/](https://sike6054.github.io/blog/paper/second-post/)
 
   [2] [https://leedakyeong.tistory.com/entry/%EB%85%BC%EB%AC%B8-GoogleNet-Inception-%EB%A6%AC%EB%B7%B0-Going-deeper-with-convolutions-1](https://leedakyeong.tistory.com/entry/%EB%85%BC%EB%AC%B8-GoogleNet-Inception-%EB%A6%AC%EB%B7%B0-Going-deeper-with-convolutions-1)
