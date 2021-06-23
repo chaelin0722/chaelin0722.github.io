@@ -20,7 +20,7 @@ classes: wide
 
 ## 0. 요약
 - “inception” 이라는 deep convolution neural network를 제안한다. 이 inception의 특징은 네트워크 안에서 컴퓨터 리소스의 활용을 향상시킨다. 이것으로 계산 비용은 유지하면서 네트워크의 깊이와 넓이를 증가시킨다.
-- ILSVRC 2014에 제출 된 모델은 `22-layer로 이루어진 GoogLeNet`으로, classification/detection 분야에서 그 성능을 평가했다.
+- ILSVRC 2014에 제출 된 모델은 `22-layer로 이루어진 GoogLeNet`으로, classification과 detection 분야에서 그 성능을 평가했다.
 
 ## 1. 개요
 - 최근 딥러닝과 convolutional networks의 발전으로 이미지 인식과 물체인식의 성능이 엄청나게 향상되었으며 이것은 (1)새로운 아이디어나 (2)새로운 알고리즘, (3)개선된 네트워크 구조로부터 얻어진 결과들이다. 
@@ -29,7 +29,7 @@ classes: wide
  
 - 일반적으로 Inception 모델은 NIN의 논리로부터 영감을 얻었으며, Arora의 이론적 연구가 지침이 되었다. Inception 구조의 이점은 ILSVRC 2014 classification 및 detection 분야에서 실험적으로 검증됐으며, 당시의 state-of-the-art보다 훨씬 뛰어난 성능을 보였다.
 
-🔸NIN(Network-in-Network)
+🔸 NIN(Network-in-Network)
 
 
 ## 2. Related Work
@@ -37,17 +37,17 @@ classes: wide
 이 페이지에서는 세 가지 주목할 내용은 아래와 같다. 
 
 #### “CNN의 전형적인 구조” 
-> - Convolution layer다음에 contrast normalization이나 max-pooling layer가 선택적으로 뒤따르며, 하나 이상의 FC layer가 나오는 형태이다.
-> - 이 구조를 변형한 모델들은 이미지 분류분야에 널리 사용되며 MNIST, CIFAR, ImageNet 분류 챌린지에서 좋은 성과를 얻었다.
+- Convolution layer다음에 contrast normalization이나 max-pooling layer가 선택적으로 뒤따르며, 하나 이상의 FC layer가 나오는 형태이다.
+- 이 구조를 변형한 모델들은 이미지 분류분야에 널리 사용되며 MNIST, CIFAR, ImageNet 분류 챌린지에서 좋은 성과를 얻었다.
 
 #### “ImageNet과 같은 큰 dataset의 경우”
- > layer 수와 layer-size 늘리면서 dropout을 사용해서 overfitting을 피하는 것이 최근의 추세였다. 또한, Maxpooling layer가 공간정보의 정확성을 손실시킨다는 걱정에도 AlexNet의 CNN구조는 localization, object detection, human pose estimation분야에서 성공적인 성능을 보였다.
+- layer 수와 layer-size 늘리면서 dropout을 사용해서 overfitting을 피하는 것이 최근의 추세였다. 또한, Maxpooling layer가 공간정보의 정확성을 손실시킨다는 걱정에도 AlexNet의 CNN구조는 localization, object detection, human pose estimation분야에서 성공적인 성능을 보였다.
 
 #### “NIN”은 
-> 신경망의 표현력을 높이기 위해 Lin et al. 이 제안한 방식이다.  GoogLeNet의 경우에는 Inception layer가 여러 번 반복되어 22-layer deep model로 구현된다. 이 모델은 1x1 conv layer가 네트워크에 추가되어 depth를 증가시킨다.  1x1 convolution이 가지는 목적은 다음 두 가지가 있다.
+- 신경망의 표현력을 높이기 위해 Lin et al. 이 제안한 방식이다.  GoogLeNet의 경우에는 Inception layer가 여러 번 반복되어 22-layer deep model로 구현된다. 이 모델은 1x1 conv layer가 네트워크에 추가되어 depth를 증가시킨다.  1x1 convolution이 가지는 목적은 다음 두 가지가 있다.
 
-> 1. 병목현상을 제거하기 위한 차원의 축소
-> 2. 큰 성능의 저하없이 네트워크의 width와 depth를 증가시키기 위해
+  1. 병목현상을 제거하기 위한 차원의 축소
+  2. 큰 성능의 저하없이 네트워크의 width와 depth를 증가시키기 위해
 
 
 ## 3. Motivation and High Level Consideration!
