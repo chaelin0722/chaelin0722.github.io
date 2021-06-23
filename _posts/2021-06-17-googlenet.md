@@ -29,7 +29,7 @@ classes: wide
  
 - 일반적으로 Inception 모델은 NIN의 논리로부터 영감을 얻었으며, Arora의 이론적 연구가 지침이 되었다. Inception 구조의 이점은 ILSVRC 2014 classification 및 detection 분야에서 실험적으로 검증됐으며, 당시의 state-of-the-art보다 훨씬 뛰어난 성능을 보였다.
 
-🔸 NIN(Network-in-Network)
+  🔸 NIN(Network-in-Network)
 
 
 ## 2. Related Work
