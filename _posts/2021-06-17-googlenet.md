@@ -53,8 +53,10 @@ GoogLeNet 코드구현 페이지. => [GoogLeNet](https://chaelin0722.github.io/d
 <details markdown="1">
 <summary>더보기🔎</summary>
 1x1 conv 설명 참고 => https://hwiyong.tistory.com/45
+
 Channel 값이 많아지는 경우 연산에 걸리는 속도도 그만큼 증가할 수 밖에 없는데, 이때 Channel 의 차원을 축소하는 개념이 Bottleneck layer 이다.
 
+(아직 수정중인 부분)
 </details>
 
 
