@@ -60,7 +60,7 @@ GoogLeNet이 나오게 된 배경
 
 (2) 컴퓨터 자원의 사용량이 늘어난다. -> 컴퓨터 자원은 유한하기 때문에 네트워크 사이즈를 늘리는 것보다는 컴퓨팅 자원을 효율적으로 분배하는 것이 더 중요하다. 
 
-==> 이 두 가지 문제를 해결하기 위해서는 **`fully connected에서 sparsely connected 구조로 변경`** 하는 것이다.
+👉 이 두 가지 문제를 해결하기 위해서는 **`fully connected에서 sparsely connected 구조로 변경`** 하는 것이다.
 
 하지만, 현재의 하드웨어로는 sparse한 매트릭스 연산에 비효율적이다. 따라서 많은 문헌에서는 sparse 행렬을 클러스터링해 `상대적으로 밀도가 높은 하위 dense 행렬로(submatrix)만드는 것을 제안`(=> 이 부분에 주목하자! 💡) 하며 이것은 좋은 성능을 냈다.
 
@@ -80,7 +80,7 @@ GoogLeNet이 나오게 된 배경
 
   따라서 (b)와 같이 1x1을 통해 차원을 축소하였다. 1x1 convolution은 3x3과 5x5 convolution이전에 사용해 연산 량을 감소시킨다.
 
-  ==> 이 구조의 이점은 연산 량을 크게 늘리지 않으면서 네트워크의 크기를 늘릴 수 있고 convolution 연산 이후의   ReLU를 통해 비선형적 특징을 추가할 수 있다.
+  👉 이 구조의 이점은 연산 량을 크게 늘리지 않으면서 네트워크의 크기를 늘릴 수 있고 convolution 연산 이후의   ReLU를 통해 비선형적 특징을 추가할 수 있다.
 
 ## 5. GoogLeNet
 
@@ -134,14 +134,13 @@ Output이 나오는 구간이다. 구조를 보면 최종 classifier이전에 av
 
 GAP는 이전 layer에서 추출된 feature map을 각각 평균 낸 것을 이어 1차원 벡터로 만들어 준다. (1차원 벡터로 만들어줘야 최종적으로 이미지 분류를 위한 softmax layer와 연결할 수 있기 때문이다.)
  
- 
- ### 참고
- 
+
+### 참고 
  
   [1] [https://sike6054.github.io/blog/paper/second-post/](https://sike6054.github.io/blog/paper/second-post/)
 
   [2] [https://leedakyeong.tistory.com/entry/%EB%85%BC%EB%AC%B8-GoogleNet-Inception-%EB%A6%AC%EB%B7%B0-Going-deeper-with-convolutions-1](https://leedakyeong.tistory.com/entry/%EB%85%BC%EB%AC%B8-GoogleNet-Inception-%EB%A6%AC%EB%B7%B0-Going-deeper-with-convolutions-1)
 
-  [3] https://phil-baek.tistory.com/entry/3-GoogLeNet-Going-deeper-with-convolutions-%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0
+  [3] [https://phil-baek.tistory.com/entry/3-GoogLeNet-Going-deeper-with-convolutions-%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0](https://phil-baek.tistory.com/entry/3-GoogLeNet-Going-deeper-with-convolutions-%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0)
 
 
