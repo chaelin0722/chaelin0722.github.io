@@ -47,7 +47,16 @@
                         <li><a href="/categories/Blog" class="" style="font-family:'MaruBuri-Regular';font-size:1.1em;">Jekyll git블로그 </style> <style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
+            </ul>     
+        <span class="nav__sub-title" style="font-family:'MaruBuri-Regular';font-size:1.2em;">그 외 공부들</style></span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "study" %}
+                        <li><a href="/categories/Blog" class="" style="font-family:'MaruBuri-Regular';font-size:1.1em;">웹 해킹</style> <style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
             </ul>            
+            
       </li>
   </ul>
 </nav>
