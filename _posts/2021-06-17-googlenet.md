@@ -52,11 +52,35 @@ GoogLeNet 코드구현 페이지. => [GoogLeNet](https://chaelin0722.github.io/d
 1x1 convolution과 병목현상(bottleneck) 에 대한 자세한 내용을 아래 더보기🔎 참고!!
 <details markdown="1">
 <summary>더보기🔎</summary>
-1x1 conv 설명 참고 => https://hwiyong.tistory.com/45
+먼저, **병목현상**이란?
 
-Channel 값이 많아지는 경우 연산에 걸리는 속도도 그만큼 증가할 수 밖에 없는데, 이때 Channel 의 차원을 축소하는 개념이 Bottleneck layer 이다.
+![image](https://user-images.githubusercontent.com/53431568/123389559-f8ddca80-d5d4-11eb-9867-708f6d967453.png)
 
-(아직 수정중인 부분)
+여러 현상에서 쓰이는 단어로 컴퓨터쪽 용어로는, 병의 목 부분처럼 넓은 길이 좁아짐으로써 컴퓨터 성능이 저하되는 현상을 말한다. 쉽게 말하자면, 수용가능한 메모리 공간은 작은데 한꺼번에 많은 양의 데이터가 유입 됨으로써 컴퓨터가 느려지는 현상을 말한다.
+
+이 현상은 CPU와 GPU로부터 발생한다. 각 현상에 대해 알아보자!
+
+**1. CPU bottleneck**
+
+cpu bottlenec 현상은 프로세서가 충분히 빠르게 데이터를 처리하지 못하거나 전송하지 못할때 발생한다. 즉, 데이터의 전송속도를 CPU의 처리속도가 따라가지 못하는 경우에 병목현상이 발생한다.
+
+**2. GPU bottleneck**
+
+gpu bottleneck 현상은 entry-level의 그래픽카드를 빠른 프로세서를 접목해 사용하면 일어난다고 하는 주장도 있고, 기본적으로 CPU 처리능력이 부족하여 GPU 로드율이 90%이하로 떨어지고 프레임이 급격히 하락하는 정도의 상황이 발생하는 정도가 되야 병목현상이 발생했다고 할 수 있다고 보는 사람도 있다.
+
+#### 그렇다면 1x1 convolution은 위의 병목현상을 어떻게 제거할 수 있을까?
+
+먼저, 컨볼루션 연산을 계산하는 공식은 다음과 같다. (파라미터 수는 결과값 크기를 의미한다)
+
+> Convolution Parameters = Kernel Size x Kernel Size x Input Channel x Output Channel
+
+이렇게 Channel 값이 많아지는 경우 연산에 걸리는 속도도 그만큼 증가할 수 밖에 없는데, 이때 Channel(차원)을 축소하는 개념이 Bottleneck layer 이다.
+
+![image](https://user-images.githubusercontent.com/53431568/123392257-ced9d780-d5d7-11eb-9738-d0f330ecce63.png)
+
+위 그림과 같이 중간에 1x1 convolution을 추가함으로써 channel의 수가 줄면서 연산량이 확연히 감소하는 모습을 볼 수 있다. channel수 조절은 직접적인 연산량 감소로 이어지면서 네트워크를 구성할 때 더 깊게 구성할 수 있도록 도움을 준다.(1x1 conv 두번째 목적 큰 성능의 저하없이 네트워크의 width와 depth를 증가시키기 위해)
+또, 이렇게 channel수를 줄였다가 다시 늘리는 부분을 bottleneck 구조라고 표현하기도 한다. 
+
 </details>
 
 
