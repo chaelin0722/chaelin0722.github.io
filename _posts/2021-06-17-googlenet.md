@@ -52,6 +52,7 @@ GoogLeNet 코드구현 페이지. => [GoogLeNet](https://chaelin0722.github.io/d
 1x1 convolution과 병목현상(bottleneck) 에 대한 자세한 내용을 아래 더보기🔎 참고!!
 <details markdown="1">
 <summary>더보기🔎</summary>
+<
 먼저, **병목현상**이란?
 
 ![image](https://user-images.githubusercontent.com/53431568/123389559-f8ddca80-d5d4-11eb-9867-708f6d967453.png)
