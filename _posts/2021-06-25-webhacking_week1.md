@@ -177,6 +177,7 @@ phpmyadmin으로 접속하여 databases로 들어간다. 그 다음 create datab
 
 ![image](https://user-images.githubusercontent.com/53431568/123507754-22b2f200-d6a6-11eb-83ee-59144124e0cd.png)
 
+<br>
 2. DVWA 다운
 
 업데이트 된 DVWA를 사용하기 위해  [secuacademy](http://secuacademy.com/files/)에 올라온 DVWA를 다운로드 하였다.
@@ -191,12 +192,13 @@ phpmyadmin으로 접속하여 databases로 들어간다. 그 다음 create datab
 
 이제 웹브라우저에서 dvwa를 접속할 수 있다!
 
-`localhost/dvwa` 로 검색하면 끝! (username/password 를 kali-linux에서 설정해준것과 동일하다)
+`localhost/dvwa` 로 검색하면 끝! (username/password를 입력하라고 뜨는데 이는 kali-linux에서 설정해준것과 동일하다)
 
 ![image](https://user-images.githubusercontent.com/53431568/123507980-ac16f400-d6a7-11eb-9638-607fa7d38506.png)
 
 처음 접속시 설정을 해주어야 하는데 녹색 부분 말고 빨간색 부분을 추가로 설정해 주어야 한다.
 
+<br><br>
 3. 우선 CAPTCHA 관련 설정을 해준다. 
 
 [https://www.google.com/recaptcha/admin](https://www.google.com/recaptcha/admin) 주소로 이동해준다. 구글 계정 로그인 후 아래와 같은 화면이 나온다 
@@ -228,6 +230,8 @@ dvwa가 있는 폴더로 이동 후 config.inc.php를 수정해준다.
 
 ![image](https://user-images.githubusercontent.com/53431568/123508430-64459c00-d6aa-11eb-940c-7c0167b60fa3.png)
 
+<br><br>
+
 4. 쓰기 권한주기
 
 아래의 두 권한(쓰기 권한)을 주기위해 다음 명령어를 실행한다. 
@@ -238,6 +242,10 @@ dvwa가 있는 폴더로 이동 후 config.inc.php를 수정해준다.
 
 
 5. create /Reset Data 버튼을 눌러 DB 생성
+
+![image](https://user-images.githubusercontent.com/53431568/123508682-d1a5fc80-d6ab-11eb-9fd5-578f63908c7d.png)
+
+버튼을 누르면다시 로그인 페이지로 REDIRECT 된다. 그럼 이제 모두 끝!
 
 
 
