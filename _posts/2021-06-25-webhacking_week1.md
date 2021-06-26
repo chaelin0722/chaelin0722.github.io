@@ -143,6 +143,8 @@ virtual box 프로그램으로 들어가서 kali-linux 메뉴 오른쪽 부분�
 
 ```./xampp-linux-5.6.23-0-installer.run```
 
+<br>
+
 4. MySQL 설정
 
 xampp가 성공적으로 install finish 했다면 ```gedit /opt/lampp/etc/php.ini``` 명령어로 아래 파일을 수정해준다. ctrl+f 키로 `allow_url_include`를 찾고 Off -> On 으로 변경해 준다. 이 옵션은 파일인클루즈 관련 공격을 할때 필요한 옵션이다. ((메모메모
@@ -167,8 +169,81 @@ xampp가 성공적으로 install finish 했다면 ```gedit /opt/lampp/etc/php.in
 
 ### ⏹ DVWA 설치 및 설정
 
+DVWA를 다운하기 앞서 XAMPP를 통해 DVWA에서 사용할 데이터베이스를 설정할 것이다.
+
+1. DVWA를 위한 DB 설정
+
+phpmyadmin으로 접속하여 databases로 들어간다. 그 다음 create database 밑에 dvwa라는 이름으로 db를 하나 생성해 준다.
+
+![image](https://user-images.githubusercontent.com/53431568/123507754-22b2f200-d6a6-11eb-83ee-59144124e0cd.png)
+
+2. DVWA 다운
+
+업데이트 된 DVWA를 사용하기 위해  [secuacademy](http://secuacademy.com/files/)에 올라온 DVWA를 다운로드 하였다.
+
+- DVWA를 save한 후 확인
+
+![image](https://user-images.githubusercontent.com/53431568/123507859-e9c74d00-d6a6-11eb-88a9-68aa2942e687.png)
+
+이후 unzip 명령어로 풀어주고 `/opt/lampp/htdocs/dvwa`로 폴더를 옮겨준다.
+
+![image](https://user-images.githubusercontent.com/53431568/123507930-62c6a480-d6a7-11eb-8b55-eacfb18a3c74.png)
+
+이제 웹브라우저에서 dvwa를 접속할 수 있다!
+
+`localhost/dvwa` 로 검색하면 끝! (username/password 를 kali-linux에서 설정해준것과 동일하다)
+
+![image](https://user-images.githubusercontent.com/53431568/123507980-ac16f400-d6a7-11eb-9638-607fa7d38506.png)
+
+처음 접속시 설정을 해주어야 하는데 녹색 부분 말고 빨간색 부분을 추가로 설정해 주어야 한다.
+
+3. 우선 CAPTCHA 관련 설정을 해준다. 
+
+[https://www.google.com/recaptcha/admin](https://www.google.com/recaptcha/admin) 주소로 이동해준다. 구글 계정 로그인 후 아래와 같은 화면이 나온다 
+
+3-1. 그리고 다음과 같이 라벨은 dvwa 를 입력, 
+
+![1](https://user-images.githubusercontent.com/53431568/123508169-b84f8100-d6a8-11eb-8458-085430ce9722.PNG)
+
+3-2. 도메인에 localhost를 입력해준 후 register버튼(제출버튼)을 눌러준다. 
+
+![2](https://user-images.githubusercontent.com/53431568/123508173-b980ae00-d6a8-11eb-8368-4c3e43858778.PNG)
+
+
+이제 사이트 키가 생성이 되었다. 이 키들을 dvwa의 설정파일에 입력해 주어야 한다. 
+
+![image](https://user-images.githubusercontent.com/53431568/123508227-02386700-d6a9-11eb-8768-2fd342b19747.png)
+
+다시 터미널 창으로 gogo~
+
+dvwa가 있는 폴더로 이동 후 config.inc.php를 수정해준다. 
+
+![image](https://user-images.githubusercontent.com/53431568/123508248-32800580-d6a9-11eb-887b-f7d42fb1e498.png)
+
+![image](https://user-images.githubusercontent.com/53431568/123508269-4c214d00-d6a9-11eb-996a-9ea594c2bbb9.png)
+
+각각 publickey-> 사이트키 복사, privatekey-> 비밀키 를 복사해 붙여넣는다. -> save
+
+사이트에 접속후 다시 확인해보면 아래와 같이 바뀌어져 있다.
+
+![image](https://user-images.githubusercontent.com/53431568/123508430-64459c00-d6aa-11eb-940c-7c0167b60fa3.png)
+
+4. 쓰기 권한주기
+
+아래의 두 권한(쓰기 권한)을 주기위해 다음 명령어를 실행한다. 
+
+![image](https://user-images.githubusercontent.com/53431568/123508479-b8508080-d6aa-11eb-92ee-9f8d6a8fe3be.png)
+
+![image](https://user-images.githubusercontent.com/53431568/123508466-a1aa2980-d6aa-11eb-9dcb-8da8e17684fa.png)
+
+
+5. create /Reset Data 버튼을 눌러 DB 생성
+
+
 
 <br><br>
+
+이것으로 실습을 위한 모든 환경설정이 끝이 났습니다~🎉🎉 🙆🏻‍♀♀♀ 🎉🎉♀️ 설치의 기나긴 여정이었다!
 
 이제 본격적으로 공부를 시작해 봅시다 ㅎㅎ👩🏻‍💻
 
