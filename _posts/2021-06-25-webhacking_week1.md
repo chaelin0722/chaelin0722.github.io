@@ -23,6 +23,18 @@ classes: wide
 
 
 ### VirtualBox 설치
+
+![virtual](https://user-images.githubusercontent.com/53431568/123504242-f93c9b00-d692-11eb-876c-5719e480321f.jpg)
+
+먼저, [VirtualBox](https://www.virtualbox.org/wiki/Downloads)사이트에 가면 최신 버전의 파일이 준비되어있다. 
+
+1. platform packages 중에 자신의 운영체제에 맞게 다운을 받는다.
+2. 다운받은 exe 파일을 실행하면 default값 그대로 유지하면서 next버튼을 누르고 최종적으로 install 하면 끝! 간단하다.
+3. 그 다음엔  extension pack을 설치해준다. 설치하겠습니까? 라는 질문에 yes! 누르면 끝
+
+이제 virtual box의 준비가 완료되었다.
+
+
 ### 칼리리눅스 설치
 ### XAMPP 설치
 ### DVWA 설치 및 설정
