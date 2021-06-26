@@ -437,7 +437,8 @@ intercept는 말 그대로 전송된 메세지를 가로채거나 바꿀 수 있
 ![image](https://user-images.githubusercontent.com/53431568/123509376-116ee300-d6b0-11eb-9f6a-3572912124ba.png)
 
 #### - 각각 response와 request
-![image](https://user-images.githubusercontent.com/53431568/123509652-a9210100-d6b1-11eb-9eed-de706aba4339.png)
+
+![KakaoTalk_20210626_190629493](https://user-images.githubusercontent.com/53431568/123509684-dbcaf980-d6b1-11eb-90fe-6c0a995b3cab.jpg)
 
 
 - spider
