@@ -41,6 +41,23 @@ classes: wide
 
 ### ⏹ 칼리리눅스 설치
 
+칼리리눅스를 설치하기 위해서는 [kali 홈페이지](kali.org)에서 최신버전을 다운받으면 된다. 하지만 강사님의 추천으로 원활한 실습을 위해 `[secuacademy](http://secuacademy.com/files/)`에 올라온 kali 2019버전을 다운받았다. 
+
+kali가 다운이 되었다면 ova 파일이 생긴것을 확인할 수 있다. 이것을 클릭해 사용할 수 있지만 앞서 설치한 virtual box에서 가상시스템을 가져오기에서 가져올 수 있다. 
+
+1. 파일-> 가상시스템가져오기 클릭!
+
+![11](https://user-images.githubusercontent.com/53431568/123504837-9816c680-d696-11eb-9f42-00bca83cba7f.jpg)
+
+2. 파일버튼 클릭 -> kali-linux 클릭!
+
+![12](https://user-images.githubusercontent.com/53431568/123504838-98af5d00-d696-11eb-8248-75b68a4e2545.jpg)
+
+
+3. 다음을 누르고 가져오기를 누르면 다음과 같이 kali-linux가 생긴것을 확인할 수 있다.
+
+![생성](https://user-images.githubusercontent.com/53431568/123504839-9a792080-d696-11eb-90c2-9ccd26d24a54.PNG)
+
 ### XAMPP 설치
 
 ### DVWA 설치 및 설정
