@@ -111,6 +111,7 @@ virtual box 프로그램으로 들어가서 kali-linux 메뉴 오른쪽 부분�
 
 ![완료](https://user-images.githubusercontent.com/53431568/123506227-162a9b80-d69e-11eb-9045-6e2b34c5a00b.png)
 
+<br><br>
 
 ### ⏹ XAMPP 설치
 
@@ -147,7 +148,7 @@ virtual box 프로그램으로 들어가서 kali-linux 메뉴 오른쪽 부분�
 
 4. MySQL 설정
 
-xampp가 성공적으로 install finish 했다면 ```gedit /opt/lampp/etc/php.ini``` 명령어로 아래 파일을 수정해준다. ctrl+f 키로 `allow_url_include`를 찾고 Off -> On 으로 변경해 준다. 이 옵션은 파일인클루즈 관련 공격을 할때 필요한 옵션이다. ((메모메모
+xampp가 성공적으로 install finish 했다면 ```gedit /opt/lampp/etc/php.ini``` 명령어로 아래 파일을 수정해준다. ctrl+f 키로 `allow_url_include`를 찾고 Off -> On 으로 변경해 준다. 이 옵션은 파일인클루젼 관련 공격을 할때 필요한 옵션이다. ((메모메모👨‍🏫👨‍🏫))
 
 ![image](https://user-images.githubusercontent.com/53431568/123507236-4e80a880-d6a3-11eb-8dae-887f4a903504.png)
 
@@ -178,6 +179,7 @@ phpmyadmin으로 접속하여 databases로 들어간다. 그 다음 create datab
 ![image](https://user-images.githubusercontent.com/53431568/123507754-22b2f200-d6a6-11eb-83ee-59144124e0cd.png)
 
 <br>
+
 2. DVWA 다운
 
 업데이트 된 DVWA를 사용하기 위해  [secuacademy](http://secuacademy.com/files/)에 올라온 DVWA를 다운로드 하였다.
@@ -199,6 +201,7 @@ phpmyadmin으로 접속하여 databases로 들어간다. 그 다음 create datab
 처음 접속시 설정을 해주어야 하는데 녹색 부분 말고 빨간색 부분을 추가로 설정해 주어야 한다.
 
 <br><br>
+
 3. 우선 CAPTCHA 관련 설정을 해준다. 
 
 [https://www.google.com/recaptcha/admin](https://www.google.com/recaptcha/admin) 주소로 이동해준다. 구글 계정 로그인 후 아래와 같은 화면이 나온다 
@@ -240,13 +243,11 @@ dvwa가 있는 폴더로 이동 후 config.inc.php를 수정해준다.
 
 ![image](https://user-images.githubusercontent.com/53431568/123508466-a1aa2980-d6aa-11eb-9dcb-8da8e17684fa.png)
 
-
 5. create /Reset Data 버튼을 눌러 DB 생성
 
 ![image](https://user-images.githubusercontent.com/53431568/123508682-d1a5fc80-d6ab-11eb-9fd5-578f63908c7d.png)
 
 버튼을 누르면다시 로그인 페이지로 REDIRECT 된다. 그럼 이제 모두 끝!
-
 
 
 <br><br>
