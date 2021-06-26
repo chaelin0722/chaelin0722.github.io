@@ -233,7 +233,7 @@ dvwa가 있는 폴더로 이동 후 config.inc.php를 수정해준다.
 
 ![image](https://user-images.githubusercontent.com/53431568/123508430-64459c00-d6aa-11eb-940c-7c0167b60fa3.png)
 
-<br><br>
+<br>
 
 4. 쓰기 권한주기
 
@@ -242,6 +242,8 @@ dvwa가 있는 폴더로 이동 후 config.inc.php를 수정해준다.
 ![image](https://user-images.githubusercontent.com/53431568/123508479-b8508080-d6aa-11eb-92ee-9f8d6a8fe3be.png)
 
 ![image](https://user-images.githubusercontent.com/53431568/123508466-a1aa2980-d6aa-11eb-9dcb-8da8e17684fa.png)
+
+<br>
 
 5. create /Reset Data 버튼을 눌러 DB 생성
 
@@ -369,3 +371,31 @@ dvwa가 있는 폴더로 이동 후 config.inc.php를 수정해준다.
 HTTP 프록시 프로그램중 대표적인것으로 `"버프스위트"`가 있다.
 
 ### 버프스위트(Burp Suite)
+
+default값으로 두고 시작버튼을 눌러 시작한다. proxy -> options으로 가면 다음과 화면을 볼 수 있다.
+
+![image](https://user-images.githubusercontent.com/53431568/123508856-e1721080-d6ac-11eb-86c1-23064aa5d0d8.png)
+
+ip주소 버튼을 껐다 켬으로써 프록시 설정을 켜고 끄는 것을 할 수 있다. 
+
+![image](https://user-images.githubusercontent.com/53431568/123508860-e8008800-d6ac-11eb-8738-68e42486940a.png)
+
+
+#### - 브라우저에서 프록시를 통해 웹사이트를 접속해보자!
+
+프록시는 웹브라우저의 오른쪽 메뉴에서 preferences에서 설정할 수 있다.
+
+![image](https://user-images.githubusercontent.com/53431568/123508977-c653d080-d6ad-11eb-9068-739966155510.png)
+
+맨 마지막의 Network Proxy의 setting버튼을 클릭!
+
+![image](https://user-images.githubusercontent.com/53431568/123508987-da97cd80-d6ad-11eb-8915-03ebc55bd20e.png)
+
+connection settings 에서 다음과 같이 127.0.0.1 / 포트번호 8080을 입력해준 후
+
+![image](https://user-images.githubusercontent.com/53431568/123509034-36faed00-d6ae-11eb-8126-1c50fe0ba842.png)
+
+No Proxy for 부분을 삭제해줘 다음과 같이 빈칸으로 둔 후 ok 버튼을 누른다.
+
+![image](https://user-images.githubusercontent.com/53431568/123509026-2185c300-d6ae-11eb-853b-5b75dfe69c8c.png)
+
