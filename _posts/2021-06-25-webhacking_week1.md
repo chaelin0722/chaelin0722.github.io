@@ -26,7 +26,7 @@ classes: wide
 
 ## 해킹실습을 위한 환경구성 
 
-### VirtualBox 설치
+### ⏹ VirtualBox 설치
 
 ![virtual](https://user-images.githubusercontent.com/53431568/123504242-f93c9b00-d692-11eb-876c-5719e480321f.jpg)
 
@@ -37,11 +37,18 @@ classes: wide
 3. 그 다음엔  extension pack을 설치해준다. 설치하겠습니까? 라는 질문에 yes! 누르면 끝
 
 이제 virtual box의 준비가 완료되었다.
+<br>
 
+### ⏹ 칼리리눅스 설치
 
-### 칼리리눅스 설치
 ### XAMPP 설치
+
 ### DVWA 설치 및 설정
+
+
+<br><br>
+
+이제 본격적으로 공부를 시작해 봅시다 ㅎㅎ👩🏻‍💻
 
 ## 화이트 해커란?!
 
