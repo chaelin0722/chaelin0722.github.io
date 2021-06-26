@@ -180,7 +180,7 @@ phpmyadmin으로 접속하여 databases로 들어간다. 그 다음 create datab
 
 <br>
 
-2. DVWA 다운
+ 2. DVWA 다운
 
 업데이트 된 DVWA를 사용하기 위해  [secuacademy](http://secuacademy.com/files/)에 올라온 DVWA를 다운로드 하였다.
 
@@ -202,7 +202,7 @@ phpmyadmin으로 접속하여 databases로 들어간다. 그 다음 create datab
 
 <br><br>
 
-3. 우선 CAPTCHA 관련 설정을 해준다. 
+ 3. 우선 CAPTCHA 관련 설정을 해준다. 
 
 [https://www.google.com/recaptcha/admin](https://www.google.com/recaptcha/admin) 주소로 이동해준다. 구글 계정 로그인 후 아래와 같은 화면이 나온다 
 
@@ -235,7 +235,7 @@ dvwa가 있는 폴더로 이동 후 config.inc.php를 수정해준다.
 
 <br>
 
-4. 쓰기 권한주기
+ 4. 쓰기 권한주기
 
 아래의 두 권한(쓰기 권한)을 주기위해 다음 명령어를 실행한다. 
 
