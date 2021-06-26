@@ -125,7 +125,7 @@ virtual box 프로그램으로 들어가서 kali-linux 메뉴 오른쪽 부분�
 
 <br>
 
-2. 다시 터미널로 돌아가서 다운로드 폴더에 잘 들어가있는지 확인!
+ 2. 다시 터미널로 돌아가서 다운로드 폴더에 잘 들어가있는지 확인!
 
 ![image](https://user-images.githubusercontent.com/53431568/123506713-a5d14980-d6a0-11eb-9b0d-cb4b62be232d.png)
 
@@ -138,7 +138,7 @@ virtual box 프로그램으로 들어가서 kali-linux 메뉴 오른쪽 부분�
 
 <br>
 
-3. xampp 실행
+ 3. xampp 실행
 
 다음 명령어로 xampp를 실행한다.
 
@@ -146,9 +146,11 @@ virtual box 프로그램으로 들어가서 kali-linux 메뉴 오른쪽 부분�
 
 <br>
 
-4. MySQL 설정
+ 4. MySQL 설정
 
-xampp가 성공적으로 install finish 했다면 ```gedit /opt/lampp/etc/php.ini``` 명령어로 아래 파일을 수정해준다. ctrl+f 키로 `allow_url_include`를 찾고 Off -> On 으로 변경해 준다. 이 옵션은 파일인클루젼 관련 공격을 할때 필요한 옵션이다. ((메모메모👨‍🏫👨‍🏫))
+xampp가 성공적으로 install finish 했다면 ```gedit /opt/lampp/etc/php.ini``` 명령어로 아래 파일을 수정해준다. ctrl+f 키로 `allow_url_include`를 찾고 Off -> On 으로 변경해 준다. 이 옵션은 파일인클루젼 관련 공격을 할때 필요한 옵션이다. 
+
+((메모메모👨‍🏫👨‍🏫))
 
 ![image](https://user-images.githubusercontent.com/53431568/123507236-4e80a880-d6a3-11eb-8dae-887f4a903504.png)
 
@@ -254,7 +256,7 @@ dvwa가 있는 폴더로 이동 후 config.inc.php를 수정해준다.
 
 <br><br>
 
-이것으로 실습을 위한 모든 환경설정이 끝이 났습니다~🎉🎉 🙆🏻‍♀♀♀ 🎉🎉♀️ 설치의 기나긴 여정이었다!
+이것으로 실습을 위한 모든 환경설정이 끝이 났습니다~🎉🎉 🙆🏻‍♀ 🎉🎉~! 설치의 기나긴 여정이었다!
 
 이제 본격적으로 공부를 시작해 봅시다 ㅎㅎ👩🏻‍💻
 
