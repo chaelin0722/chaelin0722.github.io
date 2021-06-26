@@ -45,15 +45,15 @@ classes: wide
 
 kali가 다운이 되었다면 ova 파일이 생긴것을 확인할 수 있다. 이것을 클릭해 사용할 수 있지만 앞서 설치한 virtual box에서 가상시스템을 가져오기에서 가져올 수 있다. 
 
-1. 파일-> 가상시스템가져오기 클릭!
+(1) 파일-> 가상시스템가져오기 클릭!
 
 ![12](https://user-images.githubusercontent.com/53431568/123504838-98af5d00-d696-11eb-8248-75b68a4e2545.jpg)
 
-2. 파일버튼 클릭 -> kali-linux 클릭!
+(2) 파일버튼 클릭 -> kali-linux 클릭!
 
 ![11](https://user-images.githubusercontent.com/53431568/123504837-9816c680-d696-11eb-9f42-00bca83cba7f.jpg)
 
-3. 다음을 누르고 가져오기를 누르면 다음과 같이 kali-linux가 생긴것을 확인할 수 있다.
+(3) 다음을 누르고 가져오기를 누르면 다음과 같이 kali-linux가 생긴것을 확인할 수 있다.
 
 ![생성](https://user-images.githubusercontent.com/53431568/123504839-9a792080-d696-11eb-90c2-9ccd26d24a54.PNG)
 
@@ -72,7 +72,7 @@ kali가 다운이 되었다면 ova 파일이 생긴것을 확인할 수 있다. 
 
 시작버튼을 누르거나 더블클릭으로 실행하면된다. (username/password는 강의에서 강사님이 설명해주시므로 거기서 확인해보면 될 것 같다 ㅎㅎ)
 
-1. kali 화면에서 터미널을 켜주고 (터미널 메뉴는 검정색 어플을 왼쪽 메뉴에서 찾을 수 있다) `ip addr`로 eth를 확인해준다.
+(1) kali 화면에서 터미널을 켜주고 (터미널 메뉴는 검정색 어플을 왼쪽 메뉴에서 찾을 수 있다) `ip addr`로 eth를 확인해준다.
 
 eth0은 아까 설정에서 본 NAP 어댑터이고 eth1은 호스트 전용 어댑터이다.
 
@@ -80,7 +80,7 @@ eth0은 127.0.0.1 로 ip가 설정되어있지만 eth1은 그렇지 않은 것�
 
 ![image](https://user-images.githubusercontent.com/53431568/123505789-090cad00-d69c-11eb-8b9f-15fd766825bc.png)
 
-2. 네트워크 설정을 위해 편집기를 실행해 파일을 하나 추가해줄 것이다.
+(2) 네트워크 설정을 위해 편집기를 실행해 파일을 하나 추가해줄 것이다.
 
 이미지의 마지막 초록색 어플이 `leafpad`라는 파일편집기 이다. 이 편집기를 열고 상단 메뉴의 File -> Open을 클릭해준다. 
 
@@ -92,8 +92,9 @@ eth0은 127.0.0.1 로 ip가 설정되어있지만 eth1은 그렇지 않은 것�
 
 ![eth](https://user-images.githubusercontent.com/53431568/123505875-6143af00-d69c-11eb-9c91-bcdb39025213.PNG)
 
-3. 위의 파일을 저장 후 ```systemctl restart networking``` 이라는 명령어로 재시작을 해준다. 다시 ```ip addr```로 확인하면 각 eth에 ip주소가 할당된 것을 확인할 수 있다. 웹브라우저를 열면 웹브라우저를 사용할 수 있는 것으로 확인할 수 있다. 
-<br><br>
+(3) 위의 파일을 저장 후 ```systemctl restart networking``` 이라는 명령어로 재시작을 해준다. 다시 ```ip addr```로 확인하면 각 eth에 ip주소가 할당된 것을 확인할 수 있다. 웹브라우저를 열면 웹브라우저를 사용할 수 있는 것으로 확인할 수 있다. 
+ 
+ <br><br>
 
 ### 다음으로는 스냅샷 만들기!
 
@@ -117,7 +118,7 @@ virtual box 프로그램으로 들어가서 kali-linux 메뉴 오른쪽 부분�
 
 이제 xampp를 설치해보자! xampp는 virtual box의 kali-linux 환경의 웹브라우저에서 다운받아 주면 됩니당~
 
-1. 나는 23bit linux를 설치했기 때문에 xampp도 32bit로 다운을 받아야 한다. 따라서 5.6.23 버전으로 설치를 해주었다. => [xampp-linux-5.6.23](https://sourceforge.net/projects/xampp/files/XAMPP%20Linux/5.6.23/xampp-linux-5.6.23-0-installer.run/download)
+(1) 나는 23bit linux를 설치했기 때문에 xampp도 32bit로 다운을 받아야 한다. 따라서 5.6.23 버전으로 설치를 해주었다. => [xampp-linux-5.6.23](https://sourceforge.net/projects/xampp/files/XAMPP%20Linux/5.6.23/xampp-linux-5.6.23-0-installer.run/download)
 
 ![image](https://user-images.githubusercontent.com/53431568/123506683-791d3200-d6a0-11eb-9655-17fec028cfe6.png)
 
@@ -125,7 +126,7 @@ virtual box 프로그램으로 들어가서 kali-linux 메뉴 오른쪽 부분�
 
 <br>
 
- 2. 다시 터미널로 돌아가서 다운로드 폴더에 잘 들어가있는지 확인!
+(2) 다시 터미널로 돌아가서 다운로드 폴더에 잘 들어가있는지 확인!
 
 ![image](https://user-images.githubusercontent.com/53431568/123506713-a5d14980-d6a0-11eb-9b0d-cb4b62be232d.png)
 
@@ -138,7 +139,7 @@ virtual box 프로그램으로 들어가서 kali-linux 메뉴 오른쪽 부분�
 
 <br>
 
- 3. xampp 실행
+(3) xampp 실행
 
 다음 명령어로 xampp를 실행한다.
 
@@ -146,7 +147,7 @@ virtual box 프로그램으로 들어가서 kali-linux 메뉴 오른쪽 부분�
 
 <br>
 
- 4. MySQL 설정
+(4) MySQL 설정
 
 xampp가 성공적으로 install finish 했다면 ```gedit /opt/lampp/etc/php.ini``` 명령어로 아래 파일을 수정해준다. ctrl+f 키로 `allow_url_include`를 찾고 Off -> On 으로 변경해 준다. 이 옵션은 파일인클루젼 관련 공격을 할때 필요한 옵션이다. 
 
@@ -174,7 +175,7 @@ xampp가 성공적으로 install finish 했다면 ```gedit /opt/lampp/etc/php.in
 
 DVWA를 다운하기 앞서 XAMPP를 통해 DVWA에서 사용할 데이터베이스를 설정할 것이다.
 
-1. DVWA를 위한 DB 설정
+(1) DVWA를 위한 DB 설정
 
 phpmyadmin으로 접속하여 databases로 들어간다. 그 다음 create database 밑에 dvwa라는 이름으로 db를 하나 생성해 준다.
 
@@ -182,7 +183,7 @@ phpmyadmin으로 접속하여 databases로 들어간다. 그 다음 create datab
 
 <br>
 
- 2. DVWA 다운
+(2) DVWA 다운
 
 업데이트 된 DVWA를 사용하기 위해  [secuacademy](http://secuacademy.com/files/)에 올라온 DVWA를 다운로드 하였다.
 
@@ -204,7 +205,7 @@ phpmyadmin으로 접속하여 databases로 들어간다. 그 다음 create datab
 
 <br><br>
 
- 3. 우선 CAPTCHA 관련 설정을 해준다. 
+(3) 우선 CAPTCHA 관련 설정을 해준다. 
 
 [https://www.google.com/recaptcha/admin](https://www.google.com/recaptcha/admin) 주소로 이동해준다. 구글 계정 로그인 후 아래와 같은 화면이 나온다 
 
@@ -237,7 +238,7 @@ dvwa가 있는 폴더로 이동 후 config.inc.php를 수정해준다.
 
 <br>
 
- 4. 쓰기 권한주기
+(4) 쓰기 권한주기
 
 아래의 두 권한(쓰기 권한)을 주기위해 다음 명령어를 실행한다. 
 
@@ -247,7 +248,7 @@ dvwa가 있는 폴더로 이동 후 config.inc.php를 수정해준다.
 
 <br>
 
-5. create /Reset Data 버튼을 눌러 DB 생성
+(5) create /Reset Data 버튼을 눌러 DB 생성
 
 ![image](https://user-images.githubusercontent.com/53431568/123508682-d1a5fc80-d6ab-11eb-9fd5-578f63908c7d.png)
 
@@ -442,6 +443,7 @@ intercept는 말 그대로 전송된 메세지를 가로채거나 바꿀 수 있
 
 ![KakaoTalk_20210626_190629493](https://user-images.githubusercontent.com/53431568/123509684-dbcaf980-d6b1-11eb-90fe-6c0a995b3cab.jpg)
 
+<br>
 
 - spider
 웹사이트를 분석할때 사용하는 기능
