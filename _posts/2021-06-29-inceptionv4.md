@@ -58,10 +58,18 @@ Convolutional networks는 규모가 큰 이미지 인식에서 매우 유망해�
 
 ![inceptionv4](https://user-images.githubusercontent.com/53431568/123669887-8dffee00-d877-11eb-86a3-72f9d64064b8.JPG)
 
-  
+Inception-v4는 이전 버전에서의 단점을 개선하고, inception block을 균일하게 획일화 하였다.
+
+
+다음은 Inception-Resnet의 전체적 구조와 부분적 구조들이다.
 
 ![inceptionresnet](https://user-images.githubusercontent.com/53431568/123669882-8ccec100-d877-11eb-942a-16f3c01b6cad.JPG)
 
+Inception-Resnet은 Inception network와 residual block을 결합한 형태이다. Inception-ResNet은 v1버전과 v2버전이 있으며 이 둘의 전체 구조는 같지만, 각 모듈에 차이가 있다!
+
+`stem과 각 inception module에서 사용하는 filter수가 다르다`는 것이 그 차이이다. 
+
+(inception-resnet-v1은 inception-v3와 연산량이 비슷하고, inception-resnet-v2는 inception-v4와 연상량이 비슷하다.)
 
 
 
