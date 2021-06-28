@@ -12,7 +12,7 @@ classes: wide
 ---
 
 ## Inception-v4 Inception-ResNet and the Impact of Residual Connections on Learning
-#### -Inception-v4, Inception-ResNet)-
+#### -Inception-v4, Inception-ResNet-
 
 [논문원본](https://arxiv.org/abs/1602.07261)😙
 
