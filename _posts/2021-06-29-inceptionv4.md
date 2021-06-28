@@ -40,9 +40,9 @@ residual connection와의 학습은 Inception networks의 학습속도를 가속
 
 ## Related Work
 
-Convolutional networks는 규모가 큰 이미지 인식에서 매우 유망해지고 있다. 다음으로 중요한 ghlrrlwjrdls Network-In-Network 구조이다. 
+Convolutional networks는 규모가 큰 이미지 인식에서 매우 유망해지고 있다. 그 다음으로 중요하게 주목된 것이 Network-In-Network 구조였다. 
 
-**residual connection**은..
+residual connection은 He et al. 에 의해 소개되었으며 , **residual connection**은..
 
   (1) 이미지 인식과 특히 객체인식에 효과적이라는 것을 이론적으로, 실질적인 증거로 확신되고있다. 
 
