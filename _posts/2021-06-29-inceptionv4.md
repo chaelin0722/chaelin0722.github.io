@@ -36,3 +36,32 @@ residual connection와의 학습은 Inception networks의 학습속도를 가속
 
   - Inception-ResNet은 Inception-v4에 residual connection을 결합한 구조이며 학습 속도가 빠르다.
 
+<br>
+
+## Related Work
+
+Convolutional networks는 규모가 큰 이미지 인식에서 매우 유망해지고 있다. 다음으로 중요한 ghlrrlwjrdls Network-In-Network 구조이다. 
+
+**residual connection**은..
+
+  (1) 이미지 인식과 특히 객체인식에 효과적이라는 것을 이론적으로, 실질적인 증거로 확신되고있다. 
+
+  (2) residual connections은 매우 깊은 컨볼루션 모델을 학습하는데 필요하다고 주장한다. 
+  
+  (3) 학습속도를 매우 빠르게 향상시킨다.
+  
+  
+ 
+## Architecural Choices
+
+다음은 Inception-v4의 전체적인구조와 부분적 구조들이다.
+
+![inceptionv4](https://user-images.githubusercontent.com/53431568/123669887-8dffee00-d877-11eb-86a3-72f9d64064b8.JPG)
+
+  
+
+![inceptionresnet](https://user-images.githubusercontent.com/53431568/123669882-8ccec100-d877-11eb-942a-16f3c01b6cad.JPG)
+
+
+
+
