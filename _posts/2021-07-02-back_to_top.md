@@ -66,11 +66,11 @@ classes: wide
 
 삽입할 내용 부분
 
-```html
+~~~html
 <aside class="sidebar__top">
 <a href="#site-nav"> <i class="fas fa-angle-double-up fa-2x"></i></a>
 </aside>
-```
+~~~
 
 **삽입 후**의 모습이다. 
 
