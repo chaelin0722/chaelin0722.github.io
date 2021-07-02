@@ -20,7 +20,7 @@ classes: wide
 
 삽입할 내용은 다음과 같다! 위치 조정은 마음대로 조절해주면 된다 ㅎㅎ
 
-```
+```scss
 .sidebar__top {
   position: fixed;
   bottom: 1.5em;
@@ -33,7 +33,7 @@ classes: wide
 
 `_sidebar.scss`를 보면 다음과 같이 ========= 부분 **아래**에 추가해주면 된다.
 
-```
+```scss
 /* ==========================================================================
    SIDEBAR
    ========================================================================== */
@@ -59,14 +59,14 @@ classes: wide
   //   transform: translate3d(0, 0, 0);
   // }
   --생략--
-  ```
+```
 
 
 ### 2. `_layouts/default.html`에 내용 삽입
 
 삽입할 내용 부분
 
-```
+```html
 <aside class="sidebar__top">
 <a href="#site-nav"> <i class="fas fa-angle-double-up fa-2x"></i></a>
 </aside>
@@ -77,7 +77,7 @@ classes: wide
 ```<div id="footer" class="page__footer">``` 의 바로 **위**에 추가하면 된다. 
 
 
-```
+```html
 --생략--
     {% endif %}
     
