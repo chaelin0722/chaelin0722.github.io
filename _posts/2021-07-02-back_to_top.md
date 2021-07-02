@@ -107,3 +107,9 @@ classes: wide
 아래 이미지 처럼 생긴 top 버튼이 생긴 것을 확인 할 수 있다! ㅎㅎ 😁😁 매우 간단한 작업이었다. 
 
 ![image](https://user-images.githubusercontent.com/53431568/124255550-40c89880-db65-11eb-8e18-7afa7515418c.png)
+
+<br>
+
+#### 참고
+
+[1] [https://github.com/mmistakes/minimal-mistakes/issues/1731](https://github.com/mmistakes/minimal-mistakes/issues/1731)
