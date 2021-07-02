@@ -81,13 +81,10 @@ classes: wide
 --생략--
 {% raw %}
     {% endif %}
-    
     <aside class="sidebar__top">
     <a href="#site-nav"> <i class="fas fa-angle-double-up fa-2x"></i></a>
     </aside>
-    
     <div id="footer" class="page__footer">
-
 {% endraw %}
 --생략--
 ```
