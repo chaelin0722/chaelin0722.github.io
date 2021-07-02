@@ -28,8 +28,8 @@
         <span class="nav__sub-title" style="font-family:'MaruBuri-Regular';font-size:1.2em;">머신러닝/딥러닝</style></span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "study" %}
-                        <li><a href="/categories/study" class="" style="font-family:'MaruBuri-Regular';font-size:1.1em;">딥러닝 공부 </style><style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
+                    {% if category[0] == "CNN" %}
+                        <li><a href="/categories/CNN" class="" style="font-family:'MaruBuri-Regular';font-size:1.1em;">딥러닝 공부 </style><style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
