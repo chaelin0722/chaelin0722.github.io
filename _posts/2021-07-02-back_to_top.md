@@ -79,10 +79,6 @@ classes: wide
 
 ```
 --생략--
-    {% if site.search == true %}
-      <div class="search-content">
-        {% include_cached search/search_form.html %}
-      </div>
     {% endif %}
     
     <aside class="sidebar__top">
@@ -90,14 +86,7 @@ classes: wide
     </aside>
     
     <div id="footer" class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include_cached footer.html %}
-      </footer>
-    </div>
-    {% include scripts.html %}
-  </body>
-</html>
+--생략--
 ```
 <br>
 
