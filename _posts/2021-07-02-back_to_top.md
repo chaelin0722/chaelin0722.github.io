@@ -70,9 +70,12 @@ classes: wide
 <a href="#site-nav"> <i class="fas fa-angle-double-up fa-2x"></i></a>
 </aside>```
 
-**삽입 후**의 모습이다. ``` <div id="footer" class="page__footer">``` 의 바로 **위**에 추가하면 된다. 
+**삽입 후**의 모습이다. 
 
-```    {% if site.search == true %}
+```<div id="footer" class="page__footer">``` 의 바로 **위**에 추가하면 된다. 
+
+```
+    {% if site.search == true %}
       <div class="search-content">
         {% include_cached search/search_form.html %}
       </div>
@@ -94,3 +97,10 @@ classes: wide
   </body>
 </html>
 ```
+<br>
+
+### 3. 확인
+
+아래 이미지 처럼 생긴 top 버튼이 생긴 것을 확인 할 수 있다! ㅎㅎ 😁😁 매우 간단한 작업이었다. 
+
+![image](https://user-images.githubusercontent.com/53431568/124255550-40c89880-db65-11eb-8e18-7afa7515418c.png)
