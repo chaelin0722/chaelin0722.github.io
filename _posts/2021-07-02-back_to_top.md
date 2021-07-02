@@ -77,7 +77,7 @@ classes: wide
 ```<div id="footer" class="page__footer">``` 의 바로 **위**에 추가하면 된다. 
 
 
-```html
+~~~html
 --생략--
     {% endif %}
     
@@ -87,7 +87,7 @@ classes: wide
     
     <div id="footer" class="page__footer">
 --생략--
-```
+~~~
 <br>
 
 ### 3. 확인
