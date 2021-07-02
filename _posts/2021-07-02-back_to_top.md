@@ -66,18 +66,20 @@ classes: wide
 
 삽입할 내용 부분
 
-~~~html
+```html
+{% raw %}
 <aside class="sidebar__top">
 <a href="#site-nav"> <i class="fas fa-angle-double-up fa-2x"></i></a>
 </aside>
-~~~
+{% endraw %}
+```
 
 **삽입 후**의 모습이다. 
 
 ```<div id="footer" class="page__footer">``` 의 바로 **위**에 추가하면 된다. 
 
 
-~~~html
+```html
 --생략--
     {% endif %}
     
@@ -87,7 +89,7 @@ classes: wide
     
     <div id="footer" class="page__footer">
 --생략--
-~~~
+```
 <br>
 
 ### 3. 확인
