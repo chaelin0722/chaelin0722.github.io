@@ -40,6 +40,7 @@ classes: wide
 
 ![바꿔야할것](https://user-images.githubusercontent.com/53431568/124909851-e7111400-e025-11eb-97f9-ff6a8ead9425.PNG)
 
+#### ⭐️⭐️ 단, (2) 번 해결방법의 경우 해킹 실습이 되지 않으니 (2)번으로 설정해서 dvwa에 접속한 후 다시 원 상태로 바꿔주는 것이 좋다.
 
 <br><br>
 
