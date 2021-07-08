@@ -254,6 +254,12 @@ dvwa가 있는 폴더로 이동 후 config.inc.php를 수정해준다.
 
 버튼을 누르면다시 로그인 페이지로 REDIRECT 된다. 그럼 이제 모두 끝!
 
+<br>
+
+참고로 완료되면 아래와 같이 된다
+
+![setup완료](https://user-images.githubusercontent.com/53431568/124880300-1c5b3900-e009-11eb-9a95-4d72e43297bc.PNG)
+
 
 <br><br>
 
