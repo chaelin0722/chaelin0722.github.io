@@ -143,5 +143,11 @@ remove 버튼을 이용해 위의 #!comment 부분을 싹 지우고 password의 
 
 ![image](https://user-images.githubusercontent.com/53431568/124907479-2db13f00-e023-11eb-9c95-0989221c23e2.png)
 
+#### 공격 실행 결과이다
+다음과 같이 status와 length를 확인할 수 있는데 맞는 password이면 length가 다르게 나온다. 일단 나는 password가 비번임에도 length가 똑같이 나와서 이 문제를 분석중이다. 
+
+![image](https://user-images.githubusercontent.com/53431568/124910841-03618080-e027-11eb-923d-13d80127e167.png)
+
+
 
 ###  브루트 포스 공격 대응
