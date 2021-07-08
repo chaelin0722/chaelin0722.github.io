@@ -405,11 +405,11 @@ ip주소 버튼을 껐다 켬으로써 프록시 설정을 켜고 끄는 것을 
 
 connection settings 에서 다음과 같이 127.0.0.1 / 포트번호 8080을 입력해준 후
 
-![image](https://user-images.githubusercontent.com/53431568/123509034-36faed00-d6ae-11eb-8126-1c50fe0ba842.png)
+![image](https://user-images.githubusercontent.com/53431568/123509026-2185c300-d6ae-11eb-853b-5b75dfe69c8c.png)
 
 No Proxy for 부분을 삭제해줘 다음과 같이 빈칸으로 둔 후 ok 버튼을 누른다.
 
-![image](https://user-images.githubusercontent.com/53431568/123509026-2185c300-d6ae-11eb-853b-5b75dfe69c8c.png)
+![image](https://user-images.githubusercontent.com/53431568/123509034-36faed00-d6ae-11eb-8126-1c50fe0ba842.png)
 
 <br>
 
