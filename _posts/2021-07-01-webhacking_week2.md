@@ -28,11 +28,15 @@ classes: wide
 
 순서는 아래 따라하면 된다 ㅎㅎ
 
+-1- preference 클릭
+
 ![pre](https://user-images.githubusercontent.com/53431568/124909815-dcef1580-e025-11eb-99dd-47ad5fab3d4b.PNG)
+
+-2- preference클릭 후 나오는 페이지의 맨 아래쪽으로 이동하면 Network Proxy가 보인다! Settings... 버튼을 누르자
 
 ![network](https://user-images.githubusercontent.com/53431568/124909816-dd87ac00-e025-11eb-88ae-edc058101e7a.PNG)
 
-바꾸어 주어야 할 내용이다 아래와 같이 적용해주자!
+-3- 바꾸어 주어야 할 내용이다 아래와 같이 적용해주자!
 
 ![바꿔야할것](https://user-images.githubusercontent.com/53431568/124909851-e7111400-e025-11eb-97f9-ff6a8ead9425.PNG)
 
