@@ -150,7 +150,118 @@ remove 버튼을 이용해 위의 #!comment 부분을 싹 지우고 password의 
 ![image](https://user-images.githubusercontent.com/53431568/124915898-0495ac00-e02d-11eb-9c37-222f2134015c.png)
 
 
-###  브루트 포스 공격 대응
+###  브루트 포스 공격 대응 👨‍🏫
 
 브루트 포스 공격은 어떻게 막을 수 있는지 알아보자!
+
+### (1) medium level의 경우
+
+먼저, DVWA Security의 level을 medium으로 올린다.
+
+다시 Brute Force에 가서 잘못된 password로 로그인을 하면 응답이 느려진 것을 확인할 수 있다.
+
+#### 그렇다면 view source 버튼을 눌러 소스코드를 살펴보자
+
+소스코드를 살펴보면 로그인 실패시 sleep을 해주어 응답을 느리게 한다. 이 방법으로 brute force 공격을 지연시킬 수 있다.
+
+![image](https://user-images.githubusercontent.com/53431568/124919247-f3e73500-e030-11eb-93f1-2ecca77ce244.png)
+
+
+### (2) high level의 경우
+
+소스코드를 보면 login 실패 시 0~3 초를 랜덤하게 sleep 해주어 응답을 느리게 한다. 이런식으로 지연이 되면 해커 입장에서는 비번이 틀렸다고 간주하기 때문에 다음 요청으로 실행해버린다.
+
+![image](https://user-images.githubusercontent.com/53431568/124919449-40327500-e031-11eb-8e37-7a3bc819e4e8.png)
+
+### (3) impossible level 의 경우
+
+수 차례 로그인에 실패하였기 때문에 일정 시간 이후  재 로그인을 할 수 있다고 뜬다. 이를 locking이라고 하는데 이 방법의 경우 `사실상 brutefoce 공격을 거의 완전히 차단`할 수 있다.
+
+![image](https://user-images.githubusercontent.com/53431568/124920154-ff872b80-e031-11eb-9672-cc1a9b1592a2.png)
+
+
+단, 반대로 부작용이 있는데 해커가 오히려 이 점을 느려 특정 사용자의 아이디를 이용해 일부러 password를 틀리게 해 사용자가 특정시간동안 로그인을 못하게 만든다. 🥵🥵
+
+
+> 💡 정리하자면, brute force 공격을 대응하려면 잘못된 로그인 시도가 여러번 발생하면 응답시간을 느리게 하거나 locking을 걸어 반복되는 로그인 시도를 무력화 시켜야 한다.
+
+<br><br>
+
+## 커맨드 인젝션 공격
+
+- 웹을 통해 시스템명령어(커맨드) 를 실행하는 공격
+- 웹 내부에서 시스템 명령어를 실행하는 경우 입력값을 제대로 검사하지 않으면 해커 마음대로 시스템 명령어를 실행한다.
+
+
+다음과 같이 리눅스에서는 ; 과 같은 특수문자로 두개의 명령어를 실행하게 된다. 그러면 cat /etc/passwd 명령어가 실행되게 되고 이 정보가 해커에게 넘어간다.
+
+![image](https://user-images.githubusercontent.com/53431568/124920607-73c1cf00-e032-11eb-8f98-11dddb96cb33.png)
+
+(ping 명령어는 ip주소를 가진 어떤 시스템이 현재 동작하고 있는지 확인할때 사용하는 명령어이다.)
+
+<br><br>
+
+이제 DVWA에서 실습해보자!🙆🏻‍♀️🙆🏻‍♀️
+
+각 security level 단계별로 살펴보겠다. 
+
+### (1) low level의 경우
+
+127.0.0.1을 실행했을 때, 아래와 같은 결과가 나온다.
+
+![image](https://user-images.githubusercontent.com/53431568/124921042-f34f9e00-e032-11eb-9ce9-eb226787bbcf.png)
+
+소스코드 확인
+
+![image](https://user-images.githubusercontent.com/53431568/124921243-26922d00-e033-11eb-8cfb-4d482b260e83.png)
+
+소스코드를 보니 `ping -c 4` 명령어를 terminal에서 사용하면 DVWA에서 한 것과 같은 command Injection 공격을 할 수 있는것을 알 수 있다.
+
+다음은 터미널에서 ping을 날린 결과이다. `-c 4` 는 ping을 4번 보낸다는 뜻이다. DVWA와 같은 결과가 나오는 것을 볼 수있다.
+
+![image](https://user-images.githubusercontent.com/53431568/124921453-63f6ba80-e033-11eb-87e7-14e0784782d2.png)
+
+이번에는 뒤에 다른 명령어를 추가해 보낸 결과이다. 내 디렉토리 결과를 함께 전송하는 것을 볼 수 있다.
+
+![image](https://user-images.githubusercontent.com/53431568/124921723-a8825600-e033-11eb-966e-0aa808d99c5e.png)
+
+그 외 결과
+
+![image](https://user-images.githubusercontent.com/53431568/124922044-0dd64700-e034-11eb-9aa2-da6b529dc222.png)
+
+
+#### 이런 식으로 ;, &, | 등의 특수문자 뒤에 해커가 원하는 명령어를 보낼 수 있다.
+
+<br>
+
+DVWA화면에서는 다음과 같이 실행하면 된다.
+
+![image](https://user-images.githubusercontent.com/53431568/124921930-e97a6a80-e033-11eb-8527-911a5378bef1.png)
+
+
+### (2) medium level의 경우
+
+소스코드를 보면 && 과 ; 문자를 지워주는 코드가 추가되어 있어 `ping -c 4 ; id` 와 같은 명령어는 `ping -c 4 id`이런 식으로 실행되게 된다. 따라서 잘못된 명령어가 실행되는 것이다.
+
+![image](https://user-images.githubusercontent.com/53431568/124922458-7b827300-e034-11eb-9a7a-158499222a05.png)
+
+단, 다른 특수문자의 경우에는 해커에게 공격당할 수 있다.
+
+### (3) high level의 경우
+
+소스코드를 보면 medium level 보다 더 많은 문자들에 대해 대응이 가능해졌다.
+
+![image](https://user-images.githubusercontent.com/53431568/124922750-c8664980-e034-11eb-9b1e-22409f5ea8ab.png)
+
+
+
+###  커맨드인젝션 공격 대응 👨‍🏫
+
+Impossible level을 보면서 커맨드 인젝션 대응은 어떻게 막을 수 있는지 알아보자!
+
+다음은 impossible level에서의 소스코드 부분이다.
+
+![KakaoTalk_20210708_214437622](https://user-images.githubusercontent.com/53431568/124923853-cea8f580-e035-11eb-9750-d90b50c88117.jpg)
+
+입력된 값이 ip 주소가 맞는지 검증하고 있다. **`이와 같이 커맨드 인젝션을 대응하기 위해서는 입력값을 확실히 검증하는 것이 관건이다.`** 
 
