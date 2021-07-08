@@ -75,7 +75,7 @@ intruder -> position 메뉴로 들어가면 어떤 영역이 하이라이트 된
 
 그림에 표시한것과 같이 쿼리스트링 부분과 쿠키 부분이 사용자가 입력한 값이 변수의 값으로 처리되어있는 부분이다.
 
-![image](https://user-images.githubusercontent.com/53431568/124902236-b6c57780-e01d-11eb-80ae-451d4a8b385b.png)
+![ㅁㅁㅁ](https://user-images.githubusercontent.com/53431568/124904827-5edc4000-e020-11eb-952f-a8068fc3b9e1.jpg)
 
 clear$ 버튼으로 하이라이트를 제거하고 지금 당장 테스트 해볼 password 영역만 선택하여 Add$ 버튼을 누른다.
 
