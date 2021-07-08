@@ -258,7 +258,7 @@ dvwa가 있는 폴더로 이동 후 config.inc.php를 수정해준다.
 
 참고로 완료되면 아래와 같이 된다
 
-![setup완료](https://user-images.githubusercontent.com/53431568/124880300-1c5b3900-e009-11eb-9a95-4d72e43297bc.PNG)
+![setup완료](https://user-images.githubusercontent.com/53431568/124880450-43196f80-e009-11eb-9353-dce4cd48a0ed.PNG)
 
 
 <br><br>
