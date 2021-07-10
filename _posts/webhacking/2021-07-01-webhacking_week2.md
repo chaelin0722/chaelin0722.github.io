@@ -36,11 +36,14 @@ classes: wide
 
 ![network](https://user-images.githubusercontent.com/53431568/124909816-dd87ac00-e025-11eb-88ae-edc058101e7a.PNG)
 
--3- 바꾸어 주어야 할 내용이다 아래와 같이 적용해주자!
+-3- 아래와 같이 'Use system proxy settings'로 적용해주자!
 
-![바꿔야할것](https://user-images.githubusercontent.com/53431568/124909851-e7111400-e025-11eb-97f9-ff6a8ead9425.PNG)
+![use_system_proxy_setting](https://user-images.githubusercontent.com/53431568/125153970-67548800-e192-11eb-9eb1-b3cadfbed769.PNG)
 
-#### ⭐️⭐️ 단, (2) 번 해결방법의 경우 해킹 실습이 되지 않으니 (2)번으로 설정해서 dvwa에 접속한 후 다시 원 상태로 바꿔주는 것이 좋다. 아니면 [웹 해킹 1주차 자료](https://chaelin0722.github.io/study/etc/webhacking_week1/)를 참고해 버프스위트 부분을 참고하자. 
+
+#### ⭐️⭐️ 프록시 세팅은 잘 모르지만 지난번 시간에 설정한 프록시 부분과 차이가 있으니 실제 실습시에는 주의해야할 것 같다. Use system proxy settings로 해야 웹브라우저도 열리고, localhost로 DVWA도 사용할 수 있으니 이 선택지가 최선인 것 같다. 
+
+아니면 지난번 자료인 [웹 해킹 1주차 자료](https://chaelin0722.github.io/study/etc/webhacking_week1/)를 참고해 버프스위트 부분을 참고하자. 
 
 <br><br>
 
