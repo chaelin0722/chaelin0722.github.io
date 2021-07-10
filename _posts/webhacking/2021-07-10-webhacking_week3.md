@@ -157,12 +157,23 @@ HTTP_REFERER 헤더 변수를 검사하고 있다. 어떤 요청이 전송 될 �
 
 #### - user_token : csrf 토큰이라고도 하며 csrf 공격에 대응하기 위해 웹페이지가 요청될 때마다 토큰값이 변경된다. 
 
-다음은 user_token을 변경하면 어떻게 될지 확인하기 위해 password 변경 요청을 intercept 해보겠다
 ![image](https://user-images.githubusercontent.com/53431568/125157921-b6a5b300-e1a8-11eb-87fb-af30c6a996da.png)
+
+<br>
+
+다음은 user_token을 변경하면 어떻게 될지 확인하기 위해 password 변경 요청을 intercept 해보겠다. use_token의 마지막 3을 7로 바꿔보겠습니다~7
 
 ![image](https://user-images.githubusercontent.com/53431568/125158042-4e0b0600-e1a9-11eb-93a2-0f08b7c8bb8e.png)
 
+변경 후 Forward 해주었더니 패스워드 변경요청이 거부되었음을 확인할 수 있다.
 
+![image](https://user-images.githubusercontent.com/53431568/125158090-ab06bc00-e1a9-11eb-94e9-e1ddf9f994dc.png)
+
+#### 이런식으로 csrf 토큰을 이용해 대응하는 것은 referer 확인과 더불어 추천되는 대응방식이다.
+
+강사님이 올리신 예제파일로 더 실습하고 싶다면 아래 링크로 실습해보자! ⛛
+
+[https://raw.githubusercontent.com/SecuAcademy/webhacking/master/csrfhigh.js](https://raw.githubusercontent.com/SecuAcademy/webhacking/master/csrfhigh.js)
 
 
 ### CSRF 공격 대응 👨‍🏫
