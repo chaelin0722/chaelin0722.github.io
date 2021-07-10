@@ -24,7 +24,7 @@ classes: wide
 2가지 방법으로 해결했는데..! 본인에게 맞는 해결법을 실행하면 될 것 같다.
 
 #### (1) `/opt/lampp/lampp restart` 를 실행 한 후 다시 접속해보면 된다!
-#### (2) firefox의 preference에서 proxy 설정 고치기!
+#### (2) firefox의 preference에서 proxy 설정 확인하기
 
 순서는 아래 따라하면 된다 ㅎㅎ
 
@@ -36,14 +36,13 @@ classes: wide
 
 ![network](https://user-images.githubusercontent.com/53431568/124909816-dd87ac00-e025-11eb-88ae-edc058101e7a.PNG)
 
--3- 아래와 같이 'Use system proxy settings'로 적용해주자!
+-3- 아래와 같이 'Manual proxy configuration' 에 burpsuite에 설정된 http 주소인 127.0.0.1, port = 8080 으로 설정해주고 나머지 칸은 빈칸으로 되어있는지 확인하자
 
-![use_system_proxy_setting](https://user-images.githubusercontent.com/53431568/125153970-67548800-e192-11eb-9eb1-b3cadfbed769.PNG)
+![image](https://user-images.githubusercontent.com/53431568/125155677-8526ea80-e19c-11eb-9576-d8cf0e1f82f8.png)
 
 
-#### ⭐️⭐️ 프록시 세팅은 잘 모르지만 지난번 시간에 설정한 프록시 부분과 차이가 있으니 실제 실습시에는 주의해야할 것 같다. Use system proxy settings로 해야 웹브라우저도 열리고, localhost로 DVWA도 사용할 수 있으니 이 선택지가 최선인 것 같다. 
 
-아니면 지난번 자료인 [웹 해킹 1주차 자료](https://chaelin0722.github.io/study/etc/webhacking_week1/)를 참고해 버프스위트 부분을 참고하자. 
+#### ⭐️⭐️ [지난번 공부했던 내용 인 웹 해킹 1주차](https://chaelin0722.github.io/study/etc/webhacking_week1/)를 참고해 버프스위트 부분을 참고하자. 
 
 <br><br>
 
