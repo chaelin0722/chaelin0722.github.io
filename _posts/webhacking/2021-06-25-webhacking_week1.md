@@ -1,5 +1,5 @@
 ---
-title:  '1주차 웹 해킹- 실습 환경 구성 웹 보안'
+title:  '[강의] 1주차 웹 해킹- 실습 환경 구성 웹 보안'
 excerpt: "week1"
 
 categories:
