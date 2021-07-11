@@ -1,5 +1,5 @@
 ---
-title:  '3주차 웹 해킹- 웹 해킹 기술 탐색 2'
+title:  '[강의] 3주차 웹 해킹- 웹 해킹 기술 탐색 2'
 excerpt: "week3"
 
 categories:
@@ -15,6 +15,9 @@ classes: wide
 
 이번 시간에는 사이트 간 요청 위조를 통해 공격하는 기술인 CSRF 공격과 
 주로 PHP 어플리케이션에서 발생하는 파일 인클루젼 공격(LFI & RFI)에 대해 학습하는 시간을 가져보도록 하겠습니다!😉
+
+강의를 듣고 싶으면 여기로 gogo~! => [goormedu](https://edu.goorm.io/lecture/4953/화이트해커가-되기-위한-8가지-웹-해킹-기술)
+
 
 ### CSRF 공격
 Cross Site Request Forgery의 약자로 **`사이트 간 요청을 위조`**라고 변역할 수 있다.
