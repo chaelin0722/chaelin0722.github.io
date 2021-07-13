@@ -5,6 +5,7 @@ excerpt: "week3"
 categories:
   - study
   - etc
+  - hacking
 tags: [study, etc, virtualbox, kalilinux, hacking]
 
 last_modified_at: 2021-07-10T08:06:00-05:00
