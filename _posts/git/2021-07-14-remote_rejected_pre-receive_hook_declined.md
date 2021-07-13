@@ -1,5 +1,5 @@
 ---
-title:  ' [GIT 에러] ![remote rejected] main -> main (pre-receive hook declined)'
+title:  '[GIT 에러] ![remote rejected] main -> main (pre-receive hook declined)'
 excerpt: ""
 
 categories:
