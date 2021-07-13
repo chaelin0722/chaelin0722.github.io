@@ -32,7 +32,7 @@ last_modified_at: 2021-07-12T08:06:00-05:00
 > 2. learning rate를 충분히 작게 주기 (ex) 0.1 -> 0.001)
 > 3. 학습할 이미지의 클래스 수 확인하기
 
-여기서 나는 1번과 2번의 반대로 고칠 수 있었다. optimizer을 SGD로 주고, learning rate는 0.1로 주었다. 내 경우에는 lr값이 많이 작았나보다.
+여기서 나는 1번과 2번으로 고칠 수 있었다. optimizer을 ADAM -> SGD로 변경하고, learning rate는 0.0001로 주었다.
 
 고쳐서 나오는 화면이다.
 
