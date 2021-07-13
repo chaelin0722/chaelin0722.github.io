@@ -47,7 +47,7 @@ last_modified_at: 2021-07-12T08:06:00-05:00
 이런식으로 auxiliary classifer 와 main classifier의 가중치를 다르게 준 후 depth를 합치고 아래와 같이 학습을 시켰다.
 
 ```python
-    sgd = SGD(lr=0.1, decay=1e-6, momentum=0.9, nesterov=True)
+    sgd = SGD(lr=0.0001, decay=1e-6, momentum=0.9, nesterov=True)
     model.compile(optimizer=sgd, loss='sparse_categorical_crossentropy', metrics=['acc'])
     model.fit(train_dataset, epochs=50, batch_size=BATCH_SIZE,  steps_per_epoch=steps_per_epoch, callbacks=callbacks)
 ```
