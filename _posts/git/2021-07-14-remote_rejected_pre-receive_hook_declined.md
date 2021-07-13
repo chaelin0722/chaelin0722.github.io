@@ -21,11 +21,11 @@ classes: wide
 
 시도해본 명령어들
 
-'''
+```
 git push -f origin
 git push origin master -f
 git push -u origin master
-'''
+```
 
 이때 마다 아래와 같은 경고창이 뜬다.
 
@@ -35,7 +35,7 @@ git push -u origin master
 
 ### 해결 순서
 
-(1) '''git merge'''
+(1) ```git merge```
 
 (2) '''git checkout master''' 로 브랜치를 master로 위치하게 하기 
 
