@@ -1,5 +1,5 @@
 ---
-title: "딥러닝 공부"
+title: "딥러닝 공부 📕"
 layout: archive
 permalink: categories/CNN
 author_profile: true
