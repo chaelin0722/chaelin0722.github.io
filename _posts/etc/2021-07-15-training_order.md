@@ -31,7 +31,6 @@ imagenet dataset은 총 1000개의 클래스를 갖고있으며 각각의 데이
 
 내 코드는 아래와 같은데 아주 살짝 변경을 해주었다. 이미지의 이름을 숫자로 변경하여 저장해 나중에 test 할때 용이하도록 함.
 
-<br>
 <script src="https://gist.github.com/chaelin0722/569151e16b089225ce8a7e2f84250d53.js"></script>
 <br>
 
