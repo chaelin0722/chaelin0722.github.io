@@ -1,11 +1,12 @@
 ---
-title:  "[Tensorflow] tensorflow로 커스텀 모델 학습시키기 with ImageNet(1000개 클래스)"
+title:  "[Tensorflow] ImageNet(1000개 클래스)으로 커스텀 모델 학습시키기"
 excerpt: "training with imagenet"
 
 categories:
   - Deeplearning
   - CNN
   - study
+  - tensorflow
 tags: [Deeplearning, CNN,study]
 classes: wide
 
@@ -34,9 +35,10 @@ imagenet dataset은 총 1000개의 클래스를 갖고있으며 각각의 데이
 <script src="https://gist.github.com/chaelin0722/569151e16b089225ce8a7e2f84250d53.js"></script>
 <br>
 
-tfrecord로 변환이 되었다면 이제 학습을 시작한다. 학습 코드는 다음과 같다.
+tfrecord로 변환이 되었다면 이제 학습을 시작한다. 먼저 tfrecord 파일을 다시 로드해 읽은 후 이것으로 학습을 진행하는 코드이다.
 
 <br>
 <script src="https://gist.github.com/chaelin0722/6c547bad64068a030c1aaac806443c88.js"></script>
 <br>
 
+만약 학습하는데 있어서 accuracy와 loss값이 이상하다면 [여기참고](https://chaelin0722.github.io/deeplearning/cnn/study/accuracy&loss_error/)
