@@ -10,7 +10,7 @@ categories:
 tags: [Deeplearning, CNN,study]
 classes: wide
 
-last_modified_at: 2021-07-12T08:06:00-05:00
+last_modified_at: 2021-07-16T08:06:00-05:00
 ---
 
 ### imagenet 데이터셋으로 학습시키는 방법
@@ -50,4 +50,4 @@ tfrecord로 변환이 되었다면 이제 학습을 시작한다. 먼저 tfrecor
 <script src="https://gist.github.com/chaelin0722/161e4998c1d330f5ef85a8d5d80515c0.js"></script>
 
 > 💡 주의사항!
-> 학습이 끊긴 당시의 EPOCH 만큼 빼서 EPOCH을 다시 설정해 주어야 한다. 안그러면 만약 100번 중 12번에서 끊기고 다시 시작하면 다시 100번 돌아가기 때문에 epoch=88 이런식으로 다시 지정해주자
+> 학습이 끊긴 당시의 EPOCH 만큼 빼서 EPOCH을 다시 설정해 주어야 한다. 안그러면 만약 100번 중 12번에서 끊기고 다시 시작하면 다시 100번 돌아가기 때문에 initial_epoch = 12, epoch=100 이런식으로 다시 지정해주자
