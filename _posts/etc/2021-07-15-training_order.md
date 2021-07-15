@@ -42,3 +42,12 @@ tfrecord로 변환이 되었다면 이제 학습을 시작한다. 먼저 tfrecor
 <br>
 
 만약 학습하는데 있어서 accuracy와 loss값이 이상하다면 [여기참고](https://chaelin0722.github.io/deeplearning/cnn/study/accuracy&loss_error/)
+
+### 학습 중간에 끊긴다면 저장된 weight를 불러서 다시 학습시키면 된다.
+
+이렇게 model.compile 코드 이전에 넣어주면 됨
+
+<script src="https://gist.github.com/chaelin0722/161e4998c1d330f5ef85a8d5d80515c0.js"></script>
+
+> 주의사항!
+> 학습이 끊긴당시의 EPOCH 만큼 빼서 EPOCH을 다시설정해주어야한다. 안그러면 만약 100번 중 12번에서 끊기고 다시시작하면 다시 100번 돌아가기때문에 epoch=88 이런식으로 다시 지정해주자
