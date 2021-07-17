@@ -18,6 +18,7 @@ classes: wide
 
 강의를 듣고 싶으면 여기로 gogo~! => [goormedu](https://edu.goorm.io/lecture/4953/화이트해커가-되기-위한-8가지-웹-해킹-기술)
 
+<hr>
 
 ### 파일업로드 공격
 
@@ -35,6 +36,7 @@ classes: wide
 
 ![image](https://user-images.githubusercontent.com/53431568/125900890-60788a52-acb8-4644-a007-84d953fb5bac.png)
 
+<br>
 
 이제 재미있는 실습의 시간이다 ㅎㅎ
 
@@ -164,7 +166,7 @@ security가 high 단계 상황이므로 `패스트래버설 공격`을 이용해
 
 
 <br><br>
-
+<hr>
 
 ### CAPTCHA 공격
 
