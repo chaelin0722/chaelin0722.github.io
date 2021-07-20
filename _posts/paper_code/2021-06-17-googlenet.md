@@ -178,13 +178,16 @@ GAP는 이전 layer에서 추출된 feature map을 각각 평균 낸 것을 이
  
 <details markdown="1">
 <summary>Polyak averaging🔎</summary>
+Polyak averaging는  최적화 알고리즘이 횡단하는 파라미터 공간의 여러 포인트들을 평균화시킨것을 포함한다. 따라서 만약 최적화 도중
+알고리즘이 $$/theta(1), /theta(2), ...$$를 만나게 되면 Polyak averagingdml 결과는 다음과 같다.
 
+$$theta_hat^(t) = /fraq{1}_t /sum_i /theta^(i)$$
 
 </detail>
 
 <br>
 
-<details markdown="2">
+<details markdown="1">
 <summary>inference time🔎</summary>
 직역하자면 추론 시간이라는 것인데, **`하나의 frame을 detection하는데 까지 걸리는 시간을 inference time`**이라고 한다.
 
