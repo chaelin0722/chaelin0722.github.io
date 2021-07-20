@@ -7,6 +7,8 @@ categories:
   - paperReview
 tags: [CNN, paperReview]
 
+use_math: true
+
 last_modified_at: 2021-06-23T08:06:00-05:00
 classes: wide
 ---
@@ -171,7 +173,7 @@ GAP는 이전 layer에서 추출된 feature map을 각각 평균 낸 것을 이
  
  <br>
  
- ## 6. Training Methodology
+## 6. Training Methodology
  이 논문저자는 asynchronous stochastic gradient descent(SGD)를 사용하였으며 momentum = 0.9, learning rate는 매 8번의 epoch 마다 4% 씩 감소하는 고정 스케쥴을 가진다.  
  
  또, Polyak averaging이 inference time에 사용되는 final model을 만드는데 사용되었다.
@@ -185,6 +187,7 @@ $$theta_hat^(t) = /fraq{1}_t /sum_i /theta^(i)$$
 
 </detail>
 
+<hr>
 <br>
 
 <details markdown="1">
