@@ -52,7 +52,7 @@ GoogLeNet 코드구현 페이지. => [GoogLeNet](https://chaelin0722.github.io/d
 1x1 convolution과 병목현상(bottleneck) 에 대한 자세한 내용을 아래 더보기🔎 참고!!
 <details markdown="1">
 <summary>더보기🔎</summary>
-<
+
 먼저, **병목현상**이란?
 
 ![image](https://user-images.githubusercontent.com/53431568/123389559-f8ddca80-d5d4-11eb-9867-708f6d967453.png)
@@ -169,9 +169,43 @@ Output이 나오는 구간이다. 구조를 보면 최종 classifier이전에 av
 
 GAP는 이전 layer에서 추출된 feature map을 각각 평균 낸 것을 이어 1차원 벡터로 만들어 준다. (1차원 벡터로 만들어줘야 최종적으로 이미지 분류를 위한 softmax layer와 연결할 수 있기 때문이다.)
  
+ <br>
+ 
+ ## 6. Training Methodology
+ 이 논문저자는 asynchronous stochastic gradient descent(SGD)를 사용하였으며 momentum = 0.9, learning rate는 매 8번의 epoch 마다 4% 씩 감소하는 고정 스케쥴을 가진다.  
+ 
+ 또, Polyak averaging🔎이 inference time🔎에 사용되는 final model을 만드는데 사용되었다.
+ 
+<details markdown="1">
+<summary>Polyak averaging🔎</summary>
+
+
+</detail>
+
+
+<details markdown="1">
+<summary>inference time🔎</summary>
+직역하자면 추론 시간이라는 것인데, **`하나의 frame을 detection하는데 까지 걸리는 시간을 inference time`**이라고 한다.
+
+영상은 image들의 연속적인 집합이다. FPS란 초당 detection하는 비율을 의미한다. 만약, 초당 20개의 frame에 대해 detection을 수행하면 20fps 라고 한다.
+사람들이 자연스럽게 인식하는 영상의 fps는 30fps이다. 따라서 초당 연속적인 frame을 30개 이상 처리할 수 있으면 끊기지 않는 자연스러운 영상이라고 인식하게 되는 것이다.
+
+따라서 Object Detection모델의 성능을 평가할 때 (m)AP개념도 중요하지만 inference time도 중요하게 생각한다. 그래서 여기서 마지막 모델로 inference time을 측정하나보다!
+</detail>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
 <br> 
 GoogLeNet을 코드로 구현한것을 정리한 페이지이다. => [GoogLeNet](https://chaelin0722.github.io/deeplearning/cnn/code/googlenet_code/)
+
+<br>
 
 ### 참고 
  
@@ -181,4 +215,4 @@ GoogLeNet을 코드로 구현한것을 정리한 페이지이다. => [GoogLeNet]
 
   [3] [https://phil-baek.tistory.com/entry/3-GoogLeNet-Going-deeper-with-convolutions-%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0](https://phil-baek.tistory.com/entry/3-GoogLeNet-Going-deeper-with-convolutions-%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0)
 
-
+  [4] [https://89douner.tistory.com/80](https://89douner.tistory.com/80)
