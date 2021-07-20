@@ -178,7 +178,7 @@ GAP는 이전 layer에서 추출된 feature map을 각각 평균 낸 것을 이
  
 <details markdown="1">
 <summary>asynchronous SGD</summary>
-
+<br>
 
 
 
@@ -189,7 +189,7 @@ GAP는 이전 layer에서 추출된 feature map을 각각 평균 낸 것을 이
  
 <details markdown="1">
 <summary>Polyak averaging🔎</summary>
-
+<br>
 최적화 알고리즘이 횡단하는 파라미터 공간의 여러 포인트들을 평균화시킨것을 포함하는 평균식이다. 
 
 따라서 만약 최적화 도중 알고리즘이  $\theta(1), \theta(2), ...$를 만나게 되면 Polyak averaging의 결과는 다음과 같다.
@@ -204,7 +204,7 @@ GAP는 이전 layer에서 추출된 feature map을 각각 평균 낸 것을 이
  
 <details markdown="1">
 <summary>여기는 추가로...</summary>
-
+<br>
 딥러닝에 있어 대부분의 최적화 문제는 바로 **(1) 최적화 알고리즘에 의해 채택된 길이 꽤 복잡해 볼록하지 않은(non-convex)것**과 **먼 과거에 방문한 포인트가 파라미터 공간의 최근 포인트로부터 꽤 멀지도** 모른다는 것이다..  
 
 따라서 먼 과거의 이와 같은 포인트를 포함시키는 것은 실용적이지 않을지도 모른다. 그렇기 때문에 polyak average보다는 exponentially decaying running average를 사용하는데 이는 Polyak-Ruppert Averaging이라고 한다.
@@ -212,11 +212,11 @@ GAP는 이전 layer에서 추출된 feature map을 각각 평균 낸 것을 이
 </details>
 </details>
 
-<br><hr>
+<br>
 
 <details markdown="1">
 <summary>Inference Time🔎</summary>
-
+<br>
 직역하자면 추론 시간이라는 것인데, **`하나의 frame을 detection하는데 까지 걸리는 시간을 inference time`**이라고 한다.
 
 영상은 image들의 연속적인 집합이다. FPS란 초당 detection하는 비율을 의미한다. 만약, 초당 20개의 frame에 대해 detection을 수행하면 20fps 라고 한다.
