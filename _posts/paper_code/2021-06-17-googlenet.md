@@ -205,10 +205,11 @@ GAP는 이전 layer에서 추출된 feature map을 각각 평균 낸 것을 이
 <details markdown="1">
 <summary>여기는 추가로...</summary>
 
-
 딥러닝에 있어 대부분의 최적화 문제는 바로 **(1) 최적화 알고리즘에 의해 채택된 길이 꽤 복잡해 볼록하지 않은(non-convex)것**과 **먼 과거에 방문한 포인트가 파라미터 공간의 최근 포인트로부터 꽤 멀지도** 모른다는 것이다..  
 
 따라서 먼 과거의 이와 같은 포인트를 포함시키는 것은 실용적이지 않을지도 모른다. 그렇기 때문에 polyak average보다는 exponentially decaying running average를 사용하는데 이는 Polyak-Ruppert Averaging이라고 한다.
+
+</details>
 </details>
 
 <br><hr>
