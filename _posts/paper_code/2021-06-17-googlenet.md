@@ -212,7 +212,6 @@ GAP는 이전 layer에서 추출된 feature map을 각각 평균 낸 것을 이
 </details>
 </details>
 
-<br>
 
 <details markdown="1">
 <summary>Inference Time🔎</summary>
