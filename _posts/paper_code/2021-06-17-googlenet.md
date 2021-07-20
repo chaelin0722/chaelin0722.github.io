@@ -187,7 +187,9 @@ $\hat{\theta}^(t) = \fraq{1}_t \sum_i \theta^(i)$
 
 </detail>
 
+<br>
 <hr>
+## 왜이럴까~
 <br>
 
 <details markdown="1">
