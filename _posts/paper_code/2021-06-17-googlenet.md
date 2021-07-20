@@ -174,7 +174,7 @@ GAP는 이전 layer에서 추출된 feature map을 각각 평균 낸 것을 이
  ## 6. Training Methodology
  이 논문저자는 asynchronous stochastic gradient descent(SGD)를 사용하였으며 momentum = 0.9, learning rate는 매 8번의 epoch 마다 4% 씩 감소하는 고정 스케쥴을 가진다.  
  
- 또, Polyak averaging🔎이 inference time🔎에 사용되는 final model을 만드는데 사용되었다.
+ 또, Polyak averaging이 inference time에 사용되는 final model을 만드는데 사용되었다.
  
 <details markdown="1">
 <summary>Polyak averaging🔎</summary>
@@ -182,8 +182,9 @@ GAP는 이전 layer에서 추출된 feature map을 각각 평균 낸 것을 이
 
 </detail>
 
+<br>
 
-<details markdown="1">
+<details markdown="2">
 <summary>inference time🔎</summary>
 직역하자면 추론 시간이라는 것인데, **`하나의 frame을 detection하는데 까지 걸리는 시간을 inference time`**이라고 한다.
 
