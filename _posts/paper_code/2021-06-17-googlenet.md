@@ -181,9 +181,9 @@ GAP는 이전 layer에서 추출된 feature map을 각각 평균 낸 것을 이
 <details markdown="1">
 <summary>Polyak averaging🔎</summary>
 Polyak averaging는  최적화 알고리즘이 횡단하는 파라미터 공간의 여러 포인트들을 평균화시킨것을 포함한다. 따라서 만약 최적화 도중
-알고리즘이 $\theta(1), \theta(2), ...$를 만나게 되면 Polyak averagingdml 결과는 다음과 같다.
+알고리즘이  $\theta(1), \theta(2), ...$를 만나게 되면 Polyak averaging의 결과를 수식으로 보면 다음과 같다.
 
-$\hat{\theta}^(t) = \fraq{1}_t \sum_i \theta^(i)$
+$\hat{\theta}^{(t)} = \frac{1}{t} \sum_i \theta^{(i)}$
 
 </detail>
 
