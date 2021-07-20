@@ -194,8 +194,9 @@ GAP는 이전 layer에서 추출된 feature map을 각각 평균 낸 것을 이
 
 따라서 만약 최적화 도중 알고리즘이  $\theta(1), \theta(2), ...$를 만나게 되면 Polyak averaging의 결과는 다음과 같다.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\hat{\theta}^{(t)} = \frac{1}{t} \sum_i \theta^{(i)}$
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\hat{\theta}^{(t)} = \frac{1}{t} \sum_i \theta^{(i)}$
 
+<br>
 
 ![image](https://user-images.githubusercontent.com/53431568/126286399-0911a3b8-c608-4600-a847-776b1b50ec58.png)
 
