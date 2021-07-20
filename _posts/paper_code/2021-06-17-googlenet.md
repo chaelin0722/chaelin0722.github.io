@@ -176,40 +176,54 @@ GAP는 이전 layer에서 추출된 feature map을 각각 평균 낸 것을 이
 ## 6. Training Methodology
  이 논문저자는 asynchronous stochastic gradient descent(SGD)를 사용하였으며 momentum = 0.9, learning rate는 매 8번의 epoch 마다 4% 씩 감소하는 고정 스케쥴을 가진다.  
  
- 또, Polyak averaging이 inference time에 사용되는 final model을 만드는데 사용되었다.
+<details markdown="1">
+<summary>asynchronous SGD</summary>
+
+
+
+
+</details>
+
+
+또, Polyak averaging이 inference time에 사용되는 final model을 만드는데 사용되었다.
  
 <details markdown="1">
 <summary>Polyak averaging🔎</summary>
-Polyak averaging는  최적화 알고리즘이 횡단하는 파라미터 공간의 여러 포인트들을 평균화시킨것을 포함한다. 따라서 만약 최적화 도중
-알고리즘이  $\theta(1), \theta(2), ...$를 만나게 되면 Polyak averaging의 결과를 수식으로 보면 다음과 같다.
 
-$\hat{\theta}^{(t)} = \frac{1}{t} \sum_i \theta^{(i)}$
+최적화 알고리즘이 횡단하는 파라미터 공간의 여러 포인트들을 평균화시킨것을 포함하는 평균식이다. 
 
-</detail>
+따라서 만약 최적화 도중 알고리즘이  $\theta(1), \theta(2), ...$를 만나게 되면 Polyak averaging의 결과는 다음과 같다.
 
-<br>
-<hr>
-## 왜이럴까~
-<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $\hat{\theta}^{(t)} = \frac{1}{t} \sum_i \theta^{(i)}$
+
+
+![image](https://user-images.githubusercontent.com/53431568/126286399-0911a3b8-c608-4600-a847-776b1b50ec58.png)
+
+> 최적화 알고리즘은 minima에 도달하지 못한 채 valley를 따라 앞뒤로 진동(이리저리 움직임)할 수 있다. 하지만 이 포인트들의 평균값으로 valley의 하단,즉 minima에 가깝게 된다.
+> 위의 $\theta(1), \theta(2), ...$ 포인트들을 평균하는 식에 포함한다
+ 
+<details markdown="1">
+<summary>여기는 추가로...</summary>
+
+
+딥러닝에 있어 대부분의 최적화 문제는 바로 **(1) 최적화 알고리즘에 의해 채택된 길이 꽤 복잡해 볼록하지 않은(non-convex)것**과 **먼 과거에 방문한 포인트가 파라미터 공간의 최근 포인트로부터 꽤 멀지도** 모른다는 것이다..  
+
+따라서 먼 과거의 이와 같은 포인트를 포함시키는 것은 실용적이지 않을지도 모른다. 그렇기 때문에 polyak average보다는 exponentially decaying running average를 사용하는데 이는 Polyak-Ruppert Averaging이라고 한다.
+</details>
+
+<br><hr>
 
 <details markdown="1">
-<summary>inference time🔎</summary>
+<summary>Inference Time🔎</summary>
+
 직역하자면 추론 시간이라는 것인데, **`하나의 frame을 detection하는데 까지 걸리는 시간을 inference time`**이라고 한다.
 
 영상은 image들의 연속적인 집합이다. FPS란 초당 detection하는 비율을 의미한다. 만약, 초당 20개의 frame에 대해 detection을 수행하면 20fps 라고 한다.
 사람들이 자연스럽게 인식하는 영상의 fps는 30fps이다. 따라서 초당 연속적인 frame을 30개 이상 처리할 수 있으면 끊기지 않는 자연스러운 영상이라고 인식하게 되는 것이다.
 
 따라서 Object Detection모델의 성능을 평가할 때 (m)AP개념도 중요하지만 inference time도 중요하게 생각한다. 그래서 여기서 마지막 모델로 inference time을 측정하나보다!
-</detail>
- 
- 
- 
- 
- 
- 
- 
- 
- 
+
+</details>
  
 <br> 
 GoogLeNet을 코드로 구현한것을 정리한 페이지이다. => [GoogLeNet](https://chaelin0722.github.io/deeplearning/cnn/code/googlenet_code/)
@@ -225,3 +239,5 @@ GoogLeNet을 코드로 구현한것을 정리한 페이지이다. => [GoogLeNet]
   [3] [https://phil-baek.tistory.com/entry/3-GoogLeNet-Going-deeper-with-convolutions-%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0](https://phil-baek.tistory.com/entry/3-GoogLeNet-Going-deeper-with-convolutions-%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0)
 
   [4] [https://89douner.tistory.com/80](https://89douner.tistory.com/80)
+  
+  [5] [https://medium.com/inveterate-learner/deep-learning-book-chapter-8-optimization-for-training-deep-models-part-ii-438fb4f6d135](https://medium.com/inveterate-learner/deep-learning-book-chapter-8-optimization-for-training-deep-models-part-ii-438fb4f6d135)
