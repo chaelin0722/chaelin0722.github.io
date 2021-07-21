@@ -95,10 +95,10 @@ analytics:
 # Site Author
 author:
   name             : "zzennin"
-  avatar           : "/assets/images/다운로드.jpeg"
+  avatar           : "/assets/images/han_river.jpg"
   bio              : "hello :)"
-  location         : "Sookmyung Women's University"
   email            : "ccaa9697@gmail.com"
+  location         : "Sookmyung Women's University"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
