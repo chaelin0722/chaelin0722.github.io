@@ -16,6 +16,9 @@ last_modified_at: 2021-07-21T08:06:00-05:00
 
 바로 **enumerate()**함수를 사용하면된다.
 
+
+코드는 다음처럼 간단하다!
+
 ~~~python
 import numpy as np
 
