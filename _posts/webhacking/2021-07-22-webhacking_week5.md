@@ -8,7 +8,7 @@ categories:
   - hacking
 tags: [study, etc, virtualbox, kalilinux, hacking]
 
-last_modified_at: 2021-07-22T08:06:00-05:00
+last_modified_at: 2021-07-23T08:06:00-05:00
 classes: wide
 ---
 
