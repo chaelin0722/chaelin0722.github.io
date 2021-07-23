@@ -29,7 +29,14 @@ classes: wide
 2가지 방법으로 해결했는데..! 본인에게 맞는 해결법을 실행하면 될 것 같다.
 
 #### (1) `/opt/lampp/lampp restart` 를 실행 한 후 다시 접속해보면 된다!
-#### (2) firefox의 preference에서 proxy 설정 확인하기
+#### (2) 버프스위트의 proxy intercept 가 off 인지 확인하기
+
+만약 on 이라면 클릭해서 off 로 다음과 같은 상태로 바꾸어야 한다.
+
+![image](https://user-images.githubusercontent.com/53431568/126735559-08359cb4-bb08-46e0-9b9c-3bc67df20658.png)
+
+
+#### (3) firefox의 preference에서 proxy 설정 확인하기
 
 순서는 아래 따라하면 된다 ㅎㅎ
 
