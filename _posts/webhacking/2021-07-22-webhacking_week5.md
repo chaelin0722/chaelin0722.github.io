@@ -174,11 +174,16 @@ user_id, first name, surname, passwd 를 보여준다.
 
 아래와 같이 사용자명과 password가 surname에 해쉬값의 형태로 출력되었다.
 
-
+![image](https://user-images.githubusercontent.com/53431568/126735858-c0236516-1178-405a-960f-28cb22592854.png)
 
 
 구글탭에 해쉬값을 넣어 password를 알아보면 어떤 문자열인지 알 수 있다. 
 
+![image](https://user-images.githubusercontent.com/53431568/126735889-1337e38b-b9a2-4f33-9408-3ce03156c98b.png)
+
+이 중 아무사이트나 들어가서 확인하면 다음과 같이 해쉬값이 'password' 라는 것을 알려준다.
+
+![image](https://user-images.githubusercontent.com/53431568/126735935-6aa6fc22-2456-4ab6-b08b-053c5e9626d4.png)
 
 
 <br><br>
@@ -216,14 +221,31 @@ user_id, first name, surname, passwd 를 보여준다.
 # 시간기반 블라인드 SQL 인젝션 탐지 구문
 1' AND SLEEP(5)#
 ~~~
-
 </details>
 
 <br><br>
 
-
-
 ### (2) 블라인드 SQL 인젝션
 
+
+
+사용자 정보를 알려준 대신 해당 아이디의 존재여부 정보만 알려준다. 1 을 입력하면 ID가 존재한다고 해준다.
+
+![image](https://user-images.githubusercontent.com/53431568/126736153-a95761ea-2d93-43f7-8557-1f54032714aa.png)
+
+존재하지 않는 ID 라면 다음과 같이 뜬다.
+
+![image](https://user-images.githubusercontent.com/53431568/126736937-c6883f55-8717-4e0c-88ec-d3ddaaba38d7.png)
+
+
+그렇다면 항상 참인 명제인 값을 아래와 같이 AND 뒤에 설정한다면 ID가 존재한다고 알려준다.
+
+이런식으로 어떤 폼 뒤에 AND 와 같은 연산이 실행되고 있다면 SQL 쿼리문이 뒤에 위치한다는 힌트를 해커에게 주게 된다.
+
+![image](https://user-images.githubusercontent.com/53431568/126737044-d5d2ca85-032a-4956-9829-b5e3427dc596.png)
+
+#### 이것으로 무엇을 할 수 있는가❓❓
+
+> 블라인드 SQL 인젝션은 비록 결과를 직접적으로 얻을 순 없지만, 만약 admin이라는 사용자가 존재하는지와 같이 어떤 명제를 제시하고 뒤에 AND를 붙여 다른 조건을 주어 그 명제가 참인지 거짓인지 알 수 있다. 이것은 시간이 오래걸리지만 일일히 대입해 어떤것이 있는지 없는지를 파악해 원하는 정보를 얻을 수 있다.
 
 
