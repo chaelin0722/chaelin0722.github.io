@@ -39,7 +39,7 @@ residual connection으로 인해 Inception networks의 학습속도가 가속화
 
 <br>
 
-## Related Work
+## 2. Related Work
 
 Convolutional networks는 규모가 큰 이미지 인식에서 매우 유망해지고 있다. 그 다음으로 중요하게 주목된 것이 Network-In-Network 구조였다. 
 
@@ -54,7 +54,7 @@ residual connection은 He et al. 에 의해 소개되었으며 , **residual conn
   
 <br> 
 
-## Architecural Choices
+## 3. Architecural Choices
 
 ### 1. Pure Inception blocks
 예전 Inception 모델은 분할 학습되곤 했다. (메모리에 전체 모델이 맞춰지기 위해서 각각의 복제품이 여러개의 하위 네트워크(sub-networks)로 분할되어 학습되었다는 뜻이다.) 하지만, inception 구조는 조율이 가능하다. 이 말은 즉, fully-trained network의 퀄리티에 영향을 미치지 않는 다양한 레이어들에 많은 필터들을 변화시킬 수 있는 여러 가능성이 있다는 것이다.
