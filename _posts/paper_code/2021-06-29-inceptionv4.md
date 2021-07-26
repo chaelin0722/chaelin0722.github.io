@@ -12,15 +12,15 @@ classes: wide
 ---
 
 ## Inception-v4 Inception-ResNet and the Impact of Residual Connections on Learning
-#### -Inception-v4, Inception-ResNet-
+#### -Inception-v4, Inception-ResNet-v2
 
 [논문원본](https://arxiv.org/abs/1602.07261)😙
 
-이번 논문은 여러 네트워크 구조들을 살펴볼 수 있는 내용이었다. 네트워크 구조와 residual connection이라는 개념에 대한 핵심만 짚었기 때문에 많은 시간이 소요되는 논문은 아니었다. 
+이번 논문은 inveption-v2와 resnet-v2의 네트워크 구조들을 살펴볼 수 있는 내용이었다. 네트워크 구조와 residual connection이라는 개념에 대한 핵심만 짚었기 때문에 많은 시간이 소요되는 논문은 아니었다. 
 
 ## 0. 요약
 
-residual connection와의 학습은 Inception networks의 학습속도를 가속화하는데 중요하다. 
+residual connection으로 인해 Inception networks의 학습속도가 가속화 된다.
 
 ## 1. Introduction
 
@@ -73,4 +73,8 @@ Inception-Resnet은 Inception network와 residual block을 결합한 형태이�
 (inception-resnet-v1은 inception-v3와 연산량이 비슷하고, inception-resnet-v2는 inception-v4와 연상량이 비슷하다.)
 
 
+
+
+### 참고
+[1] [https://deep-learning-study.tistory.com/525](https://deep-learning-study.tistory.com/525)
 
