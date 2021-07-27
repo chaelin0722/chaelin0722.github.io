@@ -68,7 +68,6 @@ residual connection은 He et al. 에 의해 소개되었으며 , **residual conn
 이것이 어떻게 가능한지 자세히 말하자면! **기울기 연산과 구조화하는 연산에 어떤 텐서가 사용되는지 고려하여 특정 텐서들을 줄임으로써 backpropagation에 의해 사용되는 메모리의 최적화**가 가능해 진 것이다.
 
 
-
 Inception v4를 위한 새로운 실험은 불필요한 짐(예전에 사용하던 네트워크 구조를 뜻하는 것 같다, 나머지 네트워크는 놔둔 채 네트워크 컴포넌트를 다양하게 분리하는 제한적인 실험방식)을 배제하고 각 그리드 사이즈를 위해 inception block에 대해 획일화된 선택을 하였다.
 
 <br>
@@ -95,7 +94,7 @@ inception 네트워크의 residual 버전에서는 original incetpion 보다 가
 
 각 inception block 다음에는 input값의 깊이에 맞춰지기 위한 addition전에 필터의 차원을 커지게 하는 filter-expansion layer (1 x 1 convolution without activation) 이 뒤따라온다. 이것은 inception block으로 인해 차원이 줄어든 것을 보충하기 위해 필요하다.
 
-우리는 다양한 다양한 Inception의 residual version을 시도하였고 다음 두 가지 사실을 알아내었다.
+우리는 다양한 Inception의 residual version을 시도하였고 다음 두 가지 사실을 알아내었다.
 
 바로, inception-resnet-v1은 inception-v3와 연산량이 비슷하고, inception-resnet-v2는 inception-v4와 연상량이 비슷하다는 것이다.
 
