@@ -106,6 +106,7 @@ batch-normalization을 통해 장점을 기대하는 것은 매우 합리적이�
 
  
 <br> 
+
 #### Inception-v4를 코드로 구현한것을 정리한 페이지이다. =>  [Inception-v4](https://chaelin0722.github.io/deeplearning/cnn/code/inception_v4_code/)
 
 <br>
