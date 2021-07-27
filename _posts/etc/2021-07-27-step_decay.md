@@ -41,14 +41,12 @@ keras에서 제공되는 [learningratescheduler()](https://keras.io/api/callback
 적용 부분!
 
 ~~~python
-  model.compile(optimizer='rmsprop', loss='sparse_categorical_crossentropy', metrics=["accuracy"])
-
   # 콜백안에 스케쥴러를 넣어주고 인자로 앞서 만든 함수를 넣는다.
   callbacks = [
           tf.keras.callbacks.LearningRateScheduler(step_decay)
   ]
   
-  # 
+  # 학습
   model.fit(train_dataset, validation_data=val_dataset, validation_steps=validation_steps,
              epochs=EPOCH, batch_size=BATCH_SIZE,  steps_per_epoch=steps_per_epoch, callbacks=callbacks)
 ~~~
