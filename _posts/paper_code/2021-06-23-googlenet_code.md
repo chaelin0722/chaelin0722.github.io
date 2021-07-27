@@ -37,3 +37,5 @@ last_modified_at: 2021-06-23T08:06:00-05:00
   <img src="https://user-images.githubusercontent.com/53431568/127103677-9230927f-3793-43ab-bece-ec733053d4f7.PNG" width="330" /> 
   <img src="https://user-images.githubusercontent.com/53431568/127103679-e89382fe-7df0-4dd5-8499-0e643d4c496e.PNG" width="330" />
 </p>
+
+(epoch이 10부터 시작하는 이유는 10 이하의 log기록을 날려버렸기 때문이다.. ㅎㅎ 조심하자)
