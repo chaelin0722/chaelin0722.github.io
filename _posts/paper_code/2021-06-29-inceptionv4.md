@@ -18,6 +18,10 @@ classes: wide
 
 이번 논문은 inveption-v2와 resnet-v2의 네트워크 구조들을 살펴볼 수 있는 내용이었다. 네트워크 구조와 residual connection이라는 개념에 대한 핵심만 짚었기 때문에 많은 시간이 소요되는 논문은 아니었다. 
 
+
+Inception-v4 코드구현 페이지. => [Inception-v4](https://chaelin0722.github.io/deeplearning/cnn/code/inception_v4_code/)
+
+
 ## 0. 요약
 
 residual connection으로 인해 Inception networks의 학습속도가 가속화 된다.
@@ -100,7 +104,11 @@ inception 네트워크의 residual 버전에서는 original incetpion 보다 가
 
 batch-normalization을 통해 장점을 기대하는 것은 매우 합리적이게 보이나 우리는 각 모델의 복제품을 하나의 GPU에 학습시키고 싶었다. 큰 활성화 사이즈를 가진 레이어의 메모리 footprint 는 적절치 못한 양의 GPU 메모리를 소모한다는 것을 알 수 있었다. 따라서 batch-normalization을 이 레이어들의 상위에서 제거함으로써 Inception blocks의 전반적 숫자를 늘릴 수 있었다.  
 
+ 
+<br> 
+#### Inception-v4를 코드로 구현한것을 정리한 페이지이다. =>  [Inception-v4](https://chaelin0722.github.io/deeplearning/cnn/code/inception_v4_code/)
 
+<br>
 
 ### 참고
 [1] [https://deep-learning-study.tistory.com/525](https://deep-learning-study.tistory.com/525)
