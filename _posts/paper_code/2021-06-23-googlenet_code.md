@@ -38,7 +38,7 @@ last_modified_at: 2021-06-23T08:06:00-05:00
 
 
 <p float="left">
-  <img src="https://user-images.githubusercontent.com/53431568/127103681-a25d6b8c-55f8-4d2a-aa2e-951144e50317.PNG" width="100" />
-  <img src="https://user-images.githubusercontent.com/53431568/127103677-9230927f-3793-43ab-bece-ec733053d4f7.PNG" width="100" /> 
-  <img src="https://user-images.githubusercontent.com/53431568/127103679-e89382fe-7df0-4dd5-8499-0e643d4c496e.PNG" width="100" />
+  <img src="https://user-images.githubusercontent.com/53431568/127103681-a25d6b8c-55f8-4d2a-aa2e-951144e50317.PNG" width="1000" />
+  <img src="https://user-images.githubusercontent.com/53431568/127103677-9230927f-3793-43ab-bece-ec733053d4f7.PNG" width="1000" /> 
+  <img src="https://user-images.githubusercontent.com/53431568/127103679-e89382fe-7df0-4dd5-8499-0e643d4c496e.PNG" width="1000" />
 </p>
