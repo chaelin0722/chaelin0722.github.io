@@ -16,6 +16,8 @@ last_modified_at: 2021-07-27T08:06:00-05:00
 
 ### Inception-v4 Inception-ResNet and the Impact of Residual Connections on Learning 구현
 
+<br>
+
 ![inceptionv4](https://user-images.githubusercontent.com/53431568/127103271-69c6c420-d9ec-4789-8032-450ee10c6b63.png)
 
 위의 layer 구조를 보고 코드로 구현한 결과이다.
