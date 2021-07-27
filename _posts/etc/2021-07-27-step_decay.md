@@ -54,6 +54,7 @@ keras에서 제공되는 [learningratescheduler()](https://keras.io/api/callback
 ~~~
 <br>
 
+tensorboard를 확인해보면 다음과 같이 매 2epoch 마다 줄어드는 것 확인!
 
 ### 참고
 
