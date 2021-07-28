@@ -52,8 +52,29 @@ keras에서 제공되는 [learningratescheduler()](https://keras.io/api/callback
 ~~~
 <br>
 
+tensorboard로 확인해보고싶다면 함수에 아래와 같이 코드 한줄만 삽입!
+
+~~~python
+  def step_decay(epoch):
+      init_lr = 0.045
+      drop = 0.94
+      epochs_drop = 2.0
+      lrate = init_lr * math.pow(drop, math.floor((1 + epoch) / epochs_drop))
+      # to check on the tensorboard
+      tf.summary.scalar('learning rate', data=lrate, step=epoch)
+
+      return lrate
+
+~~~
+
+<br>
+
+
 tensorboard를 확인해보면 다음과 같이 매 2epoch 마다 줄어드는 것 확인!
+(이미지 추가하기)
 
 ### 참고
 
 [1] [https://towardsdatascience.com/learning-rate-schedules-and-adaptive-learning-rate-methods-for-deep-learning-2c8f433990d1](https://towardsdatascience.com/learning-rate-schedules-and-adaptive-learning-rate-methods-for-deep-learning-2c8f433990d1)
+
+[2] [https://www.tensorflow.org/tensorboard/scalars_and_keras](https://www.tensorflow.org/tensorboard/scalars_and_keras)
