@@ -421,6 +421,12 @@ impossible 단계의 소스코드를 보면서 알아보자
 
 
 
+<br><br>
+
+#### 이미지 출처
+  
+[https://edu.goorm.io/lecture/4953/화이트해커가-되기-위한-8가지-웹-해킹-기술](https://edu.goorm.io/lecture/4953/화이트해커가-되기-위한-8가지-웹-해킹-기술)
+  
 
 
 
