@@ -110,7 +110,7 @@ script코드가 한 번 저장되었다가 나중에 실행되는 공격!
   
 #### 이미지 출처
   
-[goormedu](https://edu.goorm.io/lecture/4953/화이트해커가-되기-위한-8가지-웹-해킹-기술)
+[https://edu.goorm.io/lecture/4953/화이트해커가-되기-위한-8가지-웹-해킹-기술](https://edu.goorm.io/lecture/4953/화이트해커가-되기-위한-8가지-웹-해킹-기술)
   
   
   
