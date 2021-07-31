@@ -16,7 +16,7 @@ classes: wide
 
 6주차 스터디! 
 
-강의링크는 오른쪽 클릭! => [goormedu](https://edu.goorm.io/lecture/4953/화이트해커가-되기-위한-8가지-웹-해킹-기술)
+강의링크는 오른쪽! => [goormedu](https://edu.goorm.io/lecture/4953/화이트해커가-되기-위한-8가지-웹-해킹-기술)
 
 <br>
 
@@ -51,22 +51,66 @@ JS 사용 방법!
 해커는 이 자바스크립트를 이용해 세션 쿠키를 알아내 탈취하게 되는 것이다.
 
 XSS공격 2가지
-  1. reflected XSS
-  2. 
+> 1. reflected XSS
+>
+> 2. stored XSS
   
+<br>
   
-#### Reflected XSS 공격
+#### 1. Reflected XSS 공격
  
 reflected는 script를 반사하기 때문에 붙여진 이름이다. 
+
+먼저 해커가 한 사용자에게 이메일 등으로 피싱을 한다.
   
 ![1](https://user-images.githubusercontent.com/53431568/127724126-1218ea01-9dec-4acc-89d2-931aaaed49aa.PNG)
 
+<br>
+  
+이때, 사용자가 피싱에 속아 클릭을 하게 되면 스크립트 코드가 삽입된 요청이 전송된다.
+  
 ![2](https://user-images.githubusercontent.com/53431568/127724129-3d0a9ede-6cea-426b-8886-a526547ca6ad.PNG)
 
+<br>
   
+웹 어플리케이션은 스크립트 코드를 반사시켜 그대로 되돌려준다. 이렇게 되면 웹 브라우저는 스크립트를 실행하게 되고 얻어낸 쿠키를 해커에게 전달하게 된다.
+
 ![3](https://user-images.githubusercontent.com/53431568/127724134-af31a433-2e05-479d-8d6a-18a293cd9062.PNG)
 
+<br>
+
+해커가 얻어낸 세션 쿠키를 사용되면 해당 사용자의 계정으로 접속할 수 있게 된다.
+  
 ![4](https://user-images.githubusercontent.com/53431568/127724131-8e03fa4f-29b5-49f3-88fc-a93cbb1da238.PNG)
 
+  
+  
+#### 2. Stored XSS 공격
+
+script코드가 한 번 저장되었다가 나중에 실행되는 공격!
+  
+먼저, 해커가 피싱을 하는 것이 아니라 서버의 게시판이나 방명록 같은 곳에 스크립트 코드를 남긴다.
+  
+![image](https://user-images.githubusercontent.com/53431568/127724500-9e13c762-5561-4e5f-9621-20b171b958b1.png)
+
+<br>
+
+이후 사용자가 방명록에 접속해 글을 읽게 되면 글을 읽은 사용자에게 스크립트 코드가 실행된다.
+
+![image](https://user-images.githubusercontent.com/53431568/127724518-56784bb0-41e9-4ef1-8160-fccd2e574f91.png)
+
+<br>
+  
+이 이후는 reflected XSS 공격과 같이 쿠키값이 해커에게 전달되고 해커는 해당 사용자의 계정으로 접속할 수 있게 된다.
+
+![image](https://user-images.githubusercontent.com/53431568/127724536-c2e840d8-a148-470f-8a89-56f7bc683d8c.png)
+
+  
+  
+  
+#### 이미지 출처
+  
+[goormedu](https://edu.goorm.io/lecture/4953/화이트해커가-되기-위한-8가지-웹-해킹-기술)
+  
   
   
