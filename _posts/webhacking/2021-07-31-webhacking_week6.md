@@ -59,7 +59,7 @@ JS 사용 방법!
   
 #### 1. Reflected XSS 공격
  
-reflected는 script를 반사하기 때문에 붙여진 이름이다. 
+reflected는 script를 반사하기 때문에 붙여진 이름이다. 공격 순서를 알아보도록 한다.
 
 먼저 해커가 한 사용자에게 이메일 등으로 피싱을 한다.
   
