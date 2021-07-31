@@ -464,3 +464,11 @@ intercept는 말 그대로 전송된 메세지를 가로채거나 바꿀 수 있
 - repeater
 intruder과 비슷하지만 수동으로 테스트할 때 더 유용한 기능이다.
 
+
+<br><br>
+
+#### 이미지 출처
+  
+[https://edu.goorm.io/lecture/4953/화이트해커가-되기-위한-8가지-웹-해킹-기술](https://edu.goorm.io/lecture/4953/화이트해커가-되기-위한-8가지-웹-해킹-기술)
+  
+  
