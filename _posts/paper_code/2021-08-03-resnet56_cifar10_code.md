@@ -55,3 +55,7 @@ Error를 비교했을 때 내 모델의 정확도가 **0.92** 정도로, 논문�
 
 ![image](https://user-images.githubusercontent.com/53431568/127956843-b0302900-4497-4ede-b052-fb7cd86bc367.png)
 
+
+### 참고
+
+[1] [https://keras.io/zh/examples/cifar10_resnet/](https://keras.io/zh/examples/cifar10_resnet/)
