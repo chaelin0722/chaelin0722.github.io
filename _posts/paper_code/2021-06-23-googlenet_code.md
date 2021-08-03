@@ -39,3 +39,10 @@ last_modified_at: 2021-06-23T08:06:00-05:00
 </p>
 
 (epoch이 10부터 시작하는 이유는 10 이하의 log기록을 날려버렸기 때문이다.. ㅎㅎ 조심하자)
+
+<br><br>
+
+test 이미지로 테스트 해본 결과 알맞는 정답을 찾는 것을 확인 ✌️✌️
+
+![image](https://user-images.githubusercontent.com/53431568/127957349-a43473b7-75fe-40a6-9309-261ea96c7869.png)
+
