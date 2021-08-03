@@ -83,8 +83,8 @@ tensorboard로 확인해보고싶다면 [TensorFlow Summary API](https://www.ten
 ~~~python
 
   log_dir = "./logs/scalars/"+datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-  file_writer = tf.summary.create_file_writer(log_dir + "/metrics")   #추가부분!
-  file_writer.set_as_default()                                        #추가부분!
+  file_writer = tf.summary.create_file_writer(log_dir + "/metrics")              #추가부분!
+  file_writer.set_as_default()                                                   #추가부분!
 
   def step_decay(epoch):
     lrate = 0.045 
