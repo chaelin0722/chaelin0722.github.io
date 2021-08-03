@@ -23,10 +23,11 @@ inception-v4을 구현하다가
 
 ## LearningRateScheduler()
 
-keras에서 제공되는 [learningratescheduler()](https://keras.io/api/callbacks/learning_rate_scheduler/)로 사용하였고, 매 2번째 epoch 마다 0.94씩 비율을 줄어들게끔 하는 함수를 만들었다.
+keras에서 제공되는 [learningratescheduler()](https://keras.io/api/callbacks/learning_rate_scheduler/)로 사용하였고, 매 2번째 epoch 마다 0.94씩 비율을 줄어들게끔 하는 함수를 2가지 만들었다.
 
 ~~~python
 
+# decay every two epochs using exponential rate of 0.94
 def step_decay(epoch):
     lrate = 0.045  # 초기 lrate
     drop = 0.94
@@ -34,6 +35,18 @@ def step_decay(epoch):
     if epoch % 2 == 0:
         lrate *= drop
     return lrate
+    
+    
+--------
+
+def step_decay(epoch):
+    init_lr = 0.045      # 초기 학습률
+    drop = 0.94          # 감소시킬비율
+    epochs_drop = 2.0    # 적용할 주기
+    lrate = init_lr * math.pow(drop, math.floor((1 + epoch) / epochs_drop))  # lr update!
+
+    return lrate
+
 ~~~
 <br>
 
@@ -80,10 +93,10 @@ tensorboard로 확인해보고싶다면 [TensorFlow Summary API](https://www.ten
     if epoch % 2 == 0:
         lrate *= drop
 
-      # to check on the tensorboard!! 추가부분!
-      tf.summary.scalar('learning rate', data=lrate, step=epoch)
+    # to check on the tensorboard!! 추가부분!
+    tf.summary.scalar('learning rate', data=lrate, step=epoch)
 
-      return lrate
+    return lrate
 
 
   callbacks = [ tf.keras.callbacks.LearningRateScheduler(step_decay) ]
