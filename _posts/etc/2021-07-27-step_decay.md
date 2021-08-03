@@ -52,6 +52,8 @@ keras에서 제공되는 [learningratescheduler()](https://keras.io/api/callback
 ~~~
 <br>
 
+### Tensorboard로 확인하기
+
 tensorboard로 확인해보고싶다면 TensorFlow Summary API를 사용해야한다.
 
 이렇게 동적학습률과 같은 사용자 지정 스칼라 값을 기록하기 위해서 만들어진 API 인데 방법은 다음과 같다.
@@ -60,13 +62,15 @@ tensorboard로 확인해보고싶다면 TensorFlow Summary API를 사용해야�
 2. 학습률 함수 내에 `tf.summary.scalar()`을 사용해 사용자 지정 학습률을 기록한다.
 3. LearningRateScheduler 콜백을 Model.fit()에 전달한다.
 
-대략적 코드는 다음과 같다.
+<br>
+
+전체적인 구조 코드는 다음과 같다.
 
 ~~~python
 
   log_dir = "./logs/scalars/"+datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-  file_writer = tf.summary.create_file_writer(log_dir + "/metrics")
-  file_writer.set_as_default()
+  file_writer = tf.summary.create_file_writer(log_dir + "/metrics")   #추가부분!
+  file_writer.set_as_default()                                        #추가부분!
 
   def step_decay(epoch):
       init_lr = 0.045
@@ -80,10 +84,7 @@ tensorboard로 확인해보고싶다면 TensorFlow Summary API를 사용해야�
       return lrate
 
 
-  callbacks = [
-          tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1),
-          tf.keras.callbacks.LearningRateScheduler(lrdecay) 
-          ]
+  callbacks = [ tf.keras.callbacks.LearningRateScheduler(step_decay) ]
 
   model.fit(train_dataset, validation_data=val_dataset, validation_steps=validation_steps,
              epochs=EPOCH, batch_size=BATCH_SIZE,  steps_per_epoch=steps_per_epoch, callbacks=callbacks)
