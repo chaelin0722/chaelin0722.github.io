@@ -23,16 +23,17 @@ inception-v4을 구현하다가
 
 ## LearningRateScheduler()
 
-keras에서 제공되는 [learningratescheduler()](https://keras.io/api/callbacks/learning_rate_scheduler/)로 사용방법은 아래와 같다.
+keras에서 제공되는 [learningratescheduler()](https://keras.io/api/callbacks/learning_rate_scheduler/)로 사용하였고, 매 2번째 epoch 마다 0.94씩 비율을 줄어들게끔 하는 함수를 만들었다.
 
 ~~~python
-  def step_decay(epoch):
-      init_lr = 0.045  # 처음 learning rate 지정
-      drop = 0.94      # 줄일 비율
-      epochs_drop = 2.0  # decay 적용할 step 주기
-      lrate = init_lr * math.pow(drop, math.floor((1 + epoch) / epochs_drop)) 
 
-      return lrate
+def step_decay(epoch):
+    lrate = 0.045  # 초기 lrate
+    drop = 0.94
+
+    if epoch % 2 == 0:
+        lrate *= drop
+    return lrate
 ~~~
 <br>
 
@@ -54,7 +55,7 @@ keras에서 제공되는 [learningratescheduler()](https://keras.io/api/callback
 
 ### Tensorboard로 확인하기
 
-tensorboard로 확인해보고싶다면 TensorFlow Summary API를 사용해야한다.
+tensorboard로 확인해보고싶다면 [TensorFlow Summary API](https://www.tensorflow.org/tensorboard/scalars_and_keras)를 사용해야한다.
 
 이렇게 동적학습률과 같은 사용자 지정 스칼라 값을 기록하기 위해서 만들어진 API 인데 방법은 다음과 같다.
 
@@ -73,11 +74,12 @@ tensorboard로 확인해보고싶다면 TensorFlow Summary API를 사용해야�
   file_writer.set_as_default()                                        #추가부분!
 
   def step_decay(epoch):
-      init_lr = 0.045
-      drop = 0.94
-      epochs_drop = 2.0
-      lrate = init_lr * math.pow(drop, math.floor((1 + epoch) / epochs_drop))
-      
+    lrate = 0.045 
+    drop = 0.94
+
+    if epoch % 2 == 0:
+        lrate *= drop
+
       # to check on the tensorboard!! 추가부분!
       tf.summary.scalar('learning rate', data=lrate, step=epoch)
 
@@ -85,6 +87,8 @@ tensorboard로 확인해보고싶다면 TensorFlow Summary API를 사용해야�
 
 
   callbacks = [ tf.keras.callbacks.LearningRateScheduler(step_decay) ]
+  
+  model.compile(loss='sparse_categorical_crossentropy', optimizer=Adam(learning_rate=step_decay(0)), metrics=['acc'])
 
   model.fit(train_dataset, validation_data=val_dataset, validation_steps=validation_steps,
              epochs=EPOCH, batch_size=BATCH_SIZE,  steps_per_epoch=steps_per_epoch, callbacks=callbacks)
@@ -94,8 +98,13 @@ tensorboard로 확인해보고싶다면 TensorFlow Summary API를 사용해야�
 <br>
 
 
-tensorboard를 확인해보면 다음과 같이 매 2epoch 마다 줄어드는 것 확인!
-(이미지 추가하기)
+tensorboard를 확인해보면 다음과 같이 매 2epoch 마다 줄어드는 것 확인! (smoothing을 0으로 해야 정확히 보인다.)
+
+![캡처](https://user-images.githubusercontent.com/53431568/127974627-749d64fe-1404-4da2-be03-ee37e3b24dc0.PNG)
+
+
+
+<br><br>
 
 ### 참고
 
