@@ -22,9 +22,11 @@ last_modified_at: 2021-08-03T07:06:00-05:00
 
 cifar-10 데이터셋 학습 조건은 다음과 같으며 동일하게 수행하였다.
 
-Epoch : 200
-BATCH SIZE: 128
-Learning rate decay
+> Epoch : 200
+> 
+> BATCH SIZE: 128
+> 
+> Learning rate decay (코드 잠고)
 
 
 앞서 해석한 논문을 보면 디테일한 설명을 볼 수 있다 => gogo!
@@ -44,7 +46,10 @@ original paper work와 비교했을 때 비슷한 그래프 양상을 보임
 
 ![image](https://user-images.githubusercontent.com/53431568/127953960-7359225b-bee1-4a81-a717-58b9e19c8151.png)
 
-Error를 비교했을 때 내 모델의 정확도가 0.92 정도로, 논문에서 제시하는 0.93과 비슷하게 나온 것을 볼 수 있다.
+<br>
+<br>
+
+Error를 비교했을 때 내 모델의 정확도가 **0.92** 정도로, 논문에서 제시하는 **0.93**과 비슷하게 나온 것을 볼 수 있다.
 
 ![image](https://user-images.githubusercontent.com/53431568/127953980-d7d857dc-a677-4e01-9ffd-f60b0ba1a04a.png)
 
