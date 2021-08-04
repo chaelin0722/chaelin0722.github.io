@@ -4,9 +4,8 @@ excerpt: "week4"
 
 categories:
   - study
-  - etc
   - hacking
-tags: [study, etc, virtualbox, kalilinux, hacking]
+tags: [study,virtualbox, kalilinux, hacking]
 
 last_modified_at: 2021-07-17T08:06:00-05:00
 classes: wide
