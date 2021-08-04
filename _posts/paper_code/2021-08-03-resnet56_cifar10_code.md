@@ -29,8 +29,7 @@ cifar-10 데이터셋 학습 조건은 다음과 같으며 동일하게 수행�
 > Learning rate decay (코드 참고)
 
 
-앞서 해석한 논문을 보면 디테일한 설명을 볼 수 있다 => gogo!
-[Deep Residual Learning for Image Recognition](!!)
+앞서 해석한 논문을 참고하면 코드를 이해하기 편할 것이다! => 참고! [Deep Residual Learning for Image Recognition](https://chaelin0722.github.io/cnn/paperreview/resnet/)
 
 
 <br>
