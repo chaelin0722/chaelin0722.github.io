@@ -6,7 +6,8 @@ categories:
   - Deeplearning
   - CNN
   - study
-tags: [Deeplearning, CNN,study]
+  - etc
+tags: [Deeplearning, CNN,study,etc]
 use_math: true
 classes: wide
 
