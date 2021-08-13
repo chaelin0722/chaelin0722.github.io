@@ -26,7 +26,7 @@ arr = np.array(['one', 'two', 'three', 'four'])
 
 arrayToDict = dict(enumerate(arr))
 
-print(todict)
+print(arrayToDict)
 ~~~
 
 
@@ -45,7 +45,7 @@ arr = np.array([ '''your custom array values'''])
 
 arrayToDict = dict(enumerate(arr, 1))
 
-print(todict)
+print(arrayToDict)
 ~~~
 
 #### 출력결과
