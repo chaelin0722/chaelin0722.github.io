@@ -1,5 +1,5 @@
 ---
-title:  '[강의] 7주차 웹 해킹- 웹 해킹 기술 탐색 6'
+title:  '[강의] 7주차 웹 해킹- 실전 웹 모의 해킹'
 excerpt: "week7"
 
 categories:
@@ -7,7 +7,7 @@ categories:
   - hacking
 tags: [study, virtualbox, kalilinux, hacking]
 
-last_modified_at: 2021-08-10T08:06:00-05:00
+last_modified_at: 2021-08-1T708:06:00-05:00
 classes: wide
 --- 
 
@@ -18,6 +18,5 @@ classes: wide
 
 <br>
 
-이번 시간은 
-
+이번 시간은 파일 로드를 통한 공격 기법을 실전 웹 모의해킹을 진행하도록 하겠습니다.
 <hr>
