@@ -13,7 +13,7 @@ classes: wide
 last_modified_at: 2021-08-19T10:40:00-05:00
 ---
 
-### 
+### 환경 조건
 준비물 : 우분투 부팅 usb 우분투 버전 : ubuntu-18.04
 
 1. 컴퓨터를 끄고 우분투 usb를 꽂은 채 컴퓨터를 켠다
@@ -56,4 +56,4 @@ ubuntu를 다 설치한 후 재부팅이 안되면서 `grub` 어쩌구 에러가
 install 선택시 partition 생성하고 거기 / 씌워서 install함  -> 실패
 
 8월 19일 오후 10:55분 시도한것
-https://devdoo.tistory.com/81   -> 실패
+[https://devdoo.tistory.com/81](https://devdoo.tistory.com/81)   -> 실패
