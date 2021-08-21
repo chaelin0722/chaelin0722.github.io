@@ -7,5 +7,5 @@ sidebar_main: true
 --- 
 
 
-{% assign posts = site.categories.macbook %}
+{% assign posts = site.categories.mac %}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
