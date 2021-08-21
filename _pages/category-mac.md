@@ -1,7 +1,7 @@
 ---
 title: "맥북 적응기"
 layout: archive
-permalink: categories/macbook
+permalink: categories/mac
 author_profile: true
 sidebar_main: true
 --- 
