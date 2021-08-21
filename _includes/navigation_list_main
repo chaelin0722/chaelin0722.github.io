@@ -72,7 +72,7 @@
             </ul>    
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "macbook" %}
+                    {% if category[0] == "mac" %}
                         <li><a href="/categories/macbook" class="" style="font-family:'MaruBuri-Regular';font-size:1.1em;">맥북 </style> <style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
