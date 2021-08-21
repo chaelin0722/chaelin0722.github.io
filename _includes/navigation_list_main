@@ -69,7 +69,14 @@
                         <li><a href="/categories/etc" class="" style="font-family:'MaruBuri-Regular';font-size:1.1em;">ETC </style> <style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
-            </ul>          
+            </ul>    
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "macbook" %}
+                        <li><a href="/categories/macbook" class="" style="font-family:'MaruBuri-Regular';font-size:1.1em;">맥북 </style> <style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>    
       </li>
   </ul>
 </nav>
