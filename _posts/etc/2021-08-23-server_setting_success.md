@@ -21,7 +21,7 @@ last_modified_at: 2021-08-23T10:40:00-05:00
 
 ### 설치순서
 
-> 1. [우분투(Ubuntu) 설치](#1-우분투-설치-(1804lt)) 
+> 1. [우분투(Ubuntu) 설치](#1-우분투-설치-(18.04lt)) 
 > 
 > 2. [하드디스크 마운트](#2-하드디스크-마운트-하기)
 > 
@@ -66,6 +66,15 @@ last_modified_at: 2021-08-23T10:40:00-05:00
 
 - 재부팅 후 네트워크 연결을 마친 후 우분투의 환경을 설치하도록 한다
 
+
+우분투가 다 설치되엇다면 일단 기본적인 패키지를 설치하는 방법은 다음과 같다
+
+~~~bash
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install vim
+~~~
+
 ## 2. 하드디스크 마운트 하기
 
 만약, 새로운 하드디스크를 추가했다면 사용하기 위해서 마운트를 해주어야 한다. 이 작업을 통해서 HDD를 하나의 디렉토리로 사용할 수 있다.
@@ -88,9 +97,11 @@ sudo parted /dev/sdb
 4. `unit GB` 입력하여 단위를 변환힌다.
 
 5. `print` 입력하여 용량 확인
-6. 
+
+6.
+
 ~~~bash
-mkpart primary 0GB 본인용량GB` 입력
+mkpart primary 0GB /*본인용량*/GB 
 
 # 내 경우엔, 
 
@@ -144,11 +155,50 @@ df -h
 
 ## 3. SSH 설정
 
-원격접속을 하기위해 SSH를 설정해준다.
+원격접속을 하기위해 SSH를 설치, 설정해준다.
 
+~~~bash
+sudo apt-get install openssh-server -y 
+sudo vim /etc/ssh/sshd_config # SSH 설정 파일 열기
+
+---
+# Port 22 
+---
+# 이렇게 되어있는 부분의 주석을 지우고 원하는 포트 번호를 써준다. 만약 그대로 22를 쓴다면 수정하지 않는다.
+
+sudo service ssh restart # SSH 재시작
+~~~
+
+이제 다른 서버 터미널에서 ssh로 원격접속 할 경우 된다면 끝!
 
 ## 4. NVIDIA driver 설치
 
+nvidia driver는 추천하는 권장 드라이버로 자동설치한다.
+
+~~~bash
+sudo ubuntu-drivers devices # 설치가능한 드라이버 버전 확인
+sudo ubuntu-drivers autoinstall 
+~~~
+
+만약 원하는 버전으로 설치하고 싶다면
+
+~~~ bash
+sudo apt install nvidia-driver-4** 
+~~~
+이런식으로 설치한다!
+
+<br>
+
+마지막으로 재부팅 후 설치확인!
+
+~~~bash
+sudo reboot
+
+nvidia-smi 
+~~~
+
+
+<br>
 
 ## 5. CUDA toolkit 과 cuDNN 설치
 
@@ -209,13 +259,16 @@ nvcc --version
 nvcc -V
 ~~~
 
+확인!
+
 ![image](https://user-images.githubusercontent.com/53431568/130415153-c20cbf8a-5b60-46d4-a584-569bc11f88cc.png)
+
+#### gpu가 2개 인 것을 확인!
 
 ~~~bash
 nvidia-smi
 ~~~
 
-#### gpu가 2개 인 것을 확인!
 
 ![image](https://user-images.githubusercontent.com/53431568/130414166-ca4701c7-f11f-4318-b8c9-8a58bafe9be6.png)
 
@@ -225,6 +278,7 @@ nvidia-smi
 > ~~~
 
 #### libcudnn 확인
+
 ~~~bash
 /sbin/ldconfig -N -v $(sed ‘s/:/ /’ <<< $LD_LIBRARY_PATH) 2>/dev/null | grep libcudnn
 ~~~
@@ -233,11 +287,60 @@ nvidia-smi
 
 ## 6. Anaconda 설치와 가상환경 만들기
 
+먼저, 아나콘다 공식홈페이지 [Anaconda]에 들어가서 가장 최신버전 혹은 자신이 원하는 버전을 다운받아준다.
+
+나는 wget을 이용해 리눅스 환경에서 해주었다.
 
 
+
+~~~bash
+wget sha256sum Anaconda3-2021.05-Linux-x86_64.sh
+~~~
+
+다운받은 경로로 돌아가서 anaconda를 실행해준다! (대부분 `~/Downloads₩` 에 있다.)
+
+~~~bash
+bash Anaconda3-2021.05-Linux-x86_64.sh
+~~~
+
+경로 추가하고 실행하기
+
+~~~bash
+sudo vim ~/.bashrc
+# 마지막 줄에 export PATH=~/anaconda3/bin:~/anaconda3/condabin:$PATH 추가 후 저장
+
+source ~/.bashrc
+~~~
+
+아나콘다 설치 확인!
+
+~~~bash
+conda --version
+~~~
+
+> 💡 만약 conda가 실행되지 않는다면...
+> 
+> 1. 경로설정의 문제
+> 
+> 2. `source ~/.bashrc` 를 실행 안함..
+> 
+> 의 문제인 경우가 대부분이므로..! 일단 확인하자! 그래도 안된다면 아래를 실행하자
+
+
+`~cd` 로 홈디렉토리로 돌아가서 `source ~/anaconda3/etc/profile.d/conda.sh ` 실행한 후 다시 `conda activate ~`
+
+
+#### 아나콘다 가상환경 만들기
+
+~~~bash
+conda create -n 가상환경이름      # 생성
+conda activate 가상환경이름       # 연결
+conda deactivate               # 연결끊기
+~~~
+
+기나긴 여정의 끝😆😆 이제 개발할 일만 남았습니당~
 
 #### 참고
 
 [1] [mount참고](https://seongkyun.github.io/others/2019/03/05/hdd_mnt/)
 
-[2] [
