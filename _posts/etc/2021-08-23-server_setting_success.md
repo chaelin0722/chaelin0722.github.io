@@ -63,13 +63,15 @@ last_modified_at: 2021-08-23T10:40:00-05:00
 - 재부팅 후 네트워크 연결을 마친 후 우분투의 환경을 설치하도록 한다
 
 
-우분투가 다 설치되엇다면 일단 기본적인 패키지를 설치하는 방법은 다음과 같다
+우분투가 다 설치되었다면 일단 기본적인 패키지를 설치하는 방법은 다음과 같다
 
 ~~~bash
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install vim
 ~~~
+
+<br>
 
 ## 2. 하드디스크 마운트 하기
 
@@ -78,7 +80,8 @@ sudo apt-get install vim
 마운트 순서! (2TB 이상일때! 2TB 이하라면 아래 [mount 하는 방법!](https://seongkyun.github.io/others/2019/03/05/hdd_mnt/) 참고하기)
 
 
-1. 
+1. 파티션 생성
+
 ~~~bash
 sudo parted /dev/sdb    
 ~~~
@@ -94,7 +97,7 @@ sudo parted /dev/sdb
 
 5. `print` 입력하여 용량 확인
 
-6.
+6. 파티션 나누기
 
 ~~~bash
 mkpart primary 0GB /*본인용량*/GB 
@@ -119,7 +122,8 @@ sudo mkdir /chaelin_4TB
 ~~~bash
 sudo blkid
 ~~~
-입력해 UUID확인 및 복사하기!
+
+다음을 입력하여 UUID확인 및 복사하기!
 
 11. 마운트 정보 추가 및 부팅 시 자동 마운트 설정
 
@@ -149,6 +153,8 @@ sudo mount -a
 df -h
 ~~~
 
+<br>
+
 ## 3. SSH 설정
 
 원격접속을 하기위해 SSH를 설치, 설정해준다.
@@ -165,7 +171,9 @@ sudo vim /etc/ssh/sshd_config # SSH 설정 파일 열기
 sudo service ssh restart # SSH 재시작
 ~~~
 
-이제 다른 서버 터미널에서 ssh로 원격접속 할 경우 된다면 끝!
+이제 다른 서버 터미널에서 ssh로 원격접속할 경우 된다면 끝!
+
+<br>
 
 ## 4. NVIDIA driver 설치
 
@@ -242,7 +250,7 @@ if [ -d "/usr/local/cuda-10.1/bin/" ]; then
 fi
 ~~~
 
-설치가 완료되었다.💗
+설치가 완료되었다.
 
 <br>
 
@@ -334,7 +342,14 @@ conda activate 가상환경이름       # 연결
 conda deactivate               # 연결끊기
 ~~~
 
-기나긴 여정의 끝😆😆 이제 개발할 일만 남았습니당~
+<br><br>
+
+기나긴 여정의 끝😆😆 여기까지 수고 많으셨습니다!
+
+이제 개발할 일만 남았습니당~💗💗
+
+
+<br><br>
 
 #### 참고
 
