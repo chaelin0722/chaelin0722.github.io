@@ -74,7 +74,7 @@ last_modified_at: 2021-08-23T10:40:00-05:00
 
 
 1. 
-~~~linux
+~~~bash
 sudo parted /dev/sdb    
 ~~~
 
@@ -89,10 +89,10 @@ sudo parted /dev/sdb
 
 5. `print` 입력하여 용량 확인
 6. 
-~~~linux
+~~~bash
 mkpart primary 0GB 본인용량GB` 입력
 
-내 경우엔, 
+# 내 경우엔, 
 
 mkpart primary 0GB 4001GB
 ~~~
@@ -103,36 +103,36 @@ mkpart primary 0GB 4001GB
 
 9. 마운트 시킬 경로를 생성해준다. 나는 내 이름과 디스크의 용량으로 이름을 지어주었다.
 
-~~~linux
+~~~bash
 sudo mkdir /chaelin_4TB
 ~~~
 
 10. UUID 확인
 
-~~~
+~~~bash
 sudo blkid
 ~~~
 입력해 UUID확인 및 복사하기!
 
 11. 마운트 정보 추가 및 부팅 시 자동 마운트 설정
 
-~~~linux
+~~~bash
 sudo vim /etc/fstab
 ~~~
 
  - 맨 아랫줄에 다음 내용을 추가하고 :wq 저장
  
- ~~~linux
+ ~~~bash
  UUID=복사한UUID /마운트 경로 ext4 defaults 0 0
  
- 내 경우에는,
+# 내 경우에는,
  
  UUID=583eb4bb-6f91-4634-b6f3-088157ae2010 /chaelin_4TB ext4 defaults 0 0
  ~~~
 
 12. 마운트!
 
-~~~linuxx
+~~~bash
 sudo mount -a
 ~~~
 
@@ -154,7 +154,7 @@ df -h
 
 1. 먼저 혹시 모를 NVIDIA가 설치되어있을 가능성을 배제하기 위해 기존 CUDA를 지워준다.
 
-~~~linux
+~~~bash
 sudo rm /etc/apt/sources.list.d/cuda*
 sudo apt remove --autoremove nvidia-cuda-toolkit
 sudo apt remove --autoremove nvidia-*
@@ -163,7 +163,7 @@ sudo apt remove --autoremove nvidia-*
 
 2. CUDA PPA를 내 시스템에 세팅하기
 
-~~~linux
+~~~bash
 sudo apt update
 sudo add-apt-repository ppa:graphics-drivers
 sudo apt-key adv --fetch-keys  http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
@@ -173,7 +173,7 @@ sudo bash -c 'echo "deb http://developer.download.nvidia.com/compute/machine-lea
 
 3. CUDA10.1 버전으로 설치하기
 
-~~~linux
+~~~bash
 sudo apt update
 sudo apt install cuda-10-1
 sudo apt install libcudnn7
@@ -183,13 +183,13 @@ sudo apt install libcudnn7
 
 `.profile` 파일에 특정 경로를 설정해주는데, 아래 명령어로 열고..
 
-~~~linux
+~~~bash
 sudo vi ~/.profile
 ~~~
 
 아래 내용을 복붙해서 맨 마지막에 추가해준다.
 
-~~~linux
+~~~bash
 if [ -d "/usr/local/cuda-10.1/bin/" ]; then
     export PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}
     export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
@@ -202,16 +202,16 @@ fi
 
 ### CUDA가 잘 설치되었는지 확인!
 
-~~~linux
+~~~bash
 nvcc --version
 
-혹은
+# 혹은
 nvcc -V
 ~~~
 
 ![image](https://user-images.githubusercontent.com/53431568/130415153-c20cbf8a-5b60-46d4-a584-569bc11f88cc.png)
 
-~~~linux
+~~~bash
 nvidia-smi
 ~~~
 
@@ -220,12 +220,12 @@ nvidia-smi
 ![image](https://user-images.githubusercontent.com/53431568/130414166-ca4701c7-f11f-4318-b8c9-8a58bafe9be6.png)
 
 > 💡 vcc --version 또는 nvcc -V 이 안먹힐 때!
-> ~~~linux 
+> ~~~bash
 > sudo apt install nvidia-cuda-toolkit
 > ~~~
 
 #### libcudnn 확인
-~~~linux
+~~~bash
 /sbin/ldconfig -N -v $(sed ‘s/:/ /’ <<< $LD_LIBRARY_PATH) 2>/dev/null | grep libcudnn
 ~~~
 
