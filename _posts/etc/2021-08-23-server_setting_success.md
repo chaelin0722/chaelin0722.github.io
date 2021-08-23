@@ -27,9 +27,9 @@ last_modified_at: 2021-08-23T10:40:00-05:00
 > 
 > [4. NVIDIA driver 설치](#4.-NVIDIA-driver-설치)
 > 
-> [5. CUDA toolkit 과 cuDNN 설치](5.-cuda-toolkit-과-cudnn-설치)
+> [5. CUDA toolkit 과 cuDNN 설치](#5.-cuda-toolkit-과-cudnn-설치)
 >  
-> [6. Anaconda 설치와 가상환경 만들기](6.-anaconda-설치와-가상환경-만들기)
+> [6. Anaconda 설치와 가상환경 만들기](#6.-anaconda-설치와-가상환경-만들기)
 
 ### 준비물 
 
