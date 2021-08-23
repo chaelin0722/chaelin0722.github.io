@@ -23,13 +23,13 @@ last_modified_at: 2021-08-23T10:40:00-05:00
 > 
 > [2. 하드디스크 마운트](#2.-하드디스크-마운트-하기)
 > 
-> 3. SSH 설정
+> [3. SSH 설정](#3.-SSH-설정)
 > 
-> 4. NVIDIA driver 설치
+> [4. NVIDIA driver 설치](#4.-NVIDIA-driver-설치)
 > 
-> 5. CUDA toolkit 과 cuDNN 설치
-> 
-> 6. Anaconda 설치와 가상환경 만들기
+> [5. CUDA toolkit 과 cuDNN 설치](5.-cuda-toolkit-과-cudnn-설치)
+>  
+> [6. Anaconda 설치와 가상환경 만들기](6.-anaconda-설치와-가상환경-만들기)
 
 ### 준비물 
 
@@ -82,7 +82,11 @@ sudo vim /etc/fstab
 
 원격접속을 하기위해 SSH를 설정해준다.
 
-## 6.  CUDA 설치
+
+## 4. NVIDIA driver 설치
+
+
+## 5. CUDA toolkit 과 cuDNN 설치
 
 1. 먼저 혹시 모를 NVIDIA가 설치되어있을 가능성을 배제하기 위해 기존 CUDA를 지워준다.
 
@@ -161,4 +165,7 @@ nvidia-smi
 /sbin/ldconfig -N -v $(sed ‘s/:/ /’ <<< $LD_LIBRARY_PATH) 2>/dev/null | grep libcudnn
 ~~~
 
-## 
+<br>
+
+## 6. Anaconda 설치와 가상환경 만들기
+
