@@ -21,7 +21,7 @@ last_modified_at: 2021-08-23T10:40:00-05:00
 
 ### 설치순서
 
-> 1. [우분투(Ubuntu) 설치](#1-우분투-설치-(18-04lt)) 
+> 1. [우분투(Ubuntu) 설치](#1-우분투-설치-(1804lt)) 
 > 
 > 2. [하드디스크 마운트](#2-하드디스크-마운트-하기)
 > 
@@ -70,16 +70,76 @@ last_modified_at: 2021-08-23T10:40:00-05:00
 
 만약, 새로운 하드디스크를 추가했다면 사용하기 위해서 마운트를 해주어야 한다. 이 작업을 통해서 HDD를 하나의 디렉토리로 사용할 수 있다.
 
-1. 마운트 시킬 경로를 생성해준다. 나는 내 이름과 디스크의 용량으로 이름을 지어주었다.
+마운트 순서! (2TB 이상일때! 2TB 이하라면 아래 [mount 하는 방법!](https://seongkyun.github.io/others/2019/03/05/hdd_mnt/) 참고하기)
+
+
+1. 
+~~~linux
+sudo parted /dev/sdb    
+~~~
+
+> 💡 단, 여기서 본인이 가진 파티션이름이 sda, sdb, sdc, sdx 인지 확인하고 설정해주기!
+
+2. `mklabel` 입력 후 `gpt`
+   => 내부 데이터가 모두 사라진다는 메세지가 출력 된다.
+
+3. `yes` 입력
+
+4. `unit GB` 입력하여 단위를 변환힌다.
+
+5. `print` 입력하여 용량 확인
+6. 
+~~~linux
+mkpart primary 0GB 본인용량GB` 입력
+
+내 경우엔, 
+
+mkpart primary 0GB 4001GB
+~~~
+
+7. `q 입력`하여 커맨드로 돌아옴
+
+8. 파티션 포맷 `mkfs.ext4 /dev/sdb`
+
+9. 마운트 시킬 경로를 생성해준다. 나는 내 이름과 디스크의 용량으로 이름을 지어주었다.
 
 ~~~linux
 sudo mkdir /chaelin_4TB
 ~~~
 
-2. 부팅시 자동마운트
+10. UUID 확인
+
+~~~
+sudo blkid
+~~~
+입력해 UUID확인 및 복사하기!
+
+11. 마운트 정보 추가 및 부팅 시 자동 마운트 설정
 
 ~~~linux
 sudo vim /etc/fstab
+~~~
+
+ - 맨 아랫줄에 다음 내용을 추가하고 :wq 저장
+ 
+ ~~~linux
+ UUID=복사한UUID /마운트 경로 ext4 defaults 0 0
+ 
+ 내 경우에는,
+ 
+ UUID=583eb4bb-6f91-4634-b6f3-088157ae2010 /chaelin_4TB ext4 defaults 0 0
+ ~~~
+
+12. 마운트!
+
+~~~linuxx
+sudo mount -a
+~~~
+
+확인!
+
+~~~
+df -h
 ~~~
 
 ## 3. SSH 설정
@@ -173,3 +233,11 @@ nvidia-smi
 
 ## 6. Anaconda 설치와 가상환경 만들기
 
+
+
+
+#### 참고
+
+[1] [mount참고](https://seongkyun.github.io/others/2019/03/05/hdd_mnt/)
+
+[2] [
