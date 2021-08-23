@@ -35,6 +35,21 @@ last_modified_at: 2021-08-23T10:40:00-05:00
 
 <br>
 
+### 설치환경
+
+> Ubuntu18.04
+> 
+> Anaconda3
+> 
+> Cuda 10.1
+> 
+> libcudnn 7.6.?
+> 
+> python3.7
+
+
+
+
 <br>
 
 ## 1. 우분투 설치 (18.04LT)
@@ -300,7 +315,7 @@ nvcc -V
 wget sha256sum Anaconda3-2021.05-Linux-x86_64.sh
 ~~~
 
-다운받은 경로로 돌아가서 anaconda를 실행해준다! (대부분 `~/Downloads₩` 에 있다.)
+다운받은 경로로 돌아가서 anaconda를 실행해준다! (대부분 `~/Downloads` 에 있다.)
 
 ~~~bash
 bash Anaconda3-2021.05-Linux-x86_64.sh
@@ -332,6 +347,7 @@ conda --version
 
 `~cd` 로 홈디렉토리로 돌아가서 `source ~/anaconda3/etc/profile.d/conda.sh ` 실행한 후 다시 `conda activate ~`
 
+<br>
 
 #### 아나콘다 가상환경 만들기
 
