@@ -201,6 +201,14 @@ sudo reboot
 nvidia-smi 
 ~~~
 
+#### gpu가 2개 인 것을 확인!
+
+~~~bash
+nvidia-smi
+~~~
+
+![image](https://user-images.githubusercontent.com/53431568/130414166-ca4701c7-f11f-4318-b8c9-8a58bafe9be6.png)
+
 
 <br>
 
@@ -267,16 +275,7 @@ nvcc -V
 
 ![image](https://user-images.githubusercontent.com/53431568/130415153-c20cbf8a-5b60-46d4-a584-569bc11f88cc.png)
 
-#### gpu가 2개 인 것을 확인!
-
-~~~bash
-nvidia-smi
-~~~
-
-
-![image](https://user-images.githubusercontent.com/53431568/130414166-ca4701c7-f11f-4318-b8c9-8a58bafe9be6.png)
-
-> 💡 vcc --version 또는 nvcc -V 이 안먹힐 때!
+> 💡 nvcc --version 또는 nvcc -V 이 안먹힐 때!
 > ~~~bash
 > sudo apt install nvidia-cuda-toolkit
 > ~~~
