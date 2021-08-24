@@ -39,11 +39,13 @@ last_modified_at: 2021-08-23T10:40:00-05:00
 
 > Ubuntu18.04
 > 
+> NVIDIA Driver Version 470.57.02
+> 
 > Anaconda3
 > 
 > Cuda 10.1
 > 
-> libcudnn 7.6.?
+> libcudnn 7.6.5
 > 
 > python3.7
 
