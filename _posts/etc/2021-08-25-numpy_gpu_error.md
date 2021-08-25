@@ -14,7 +14,7 @@ classes: wide
 last_modified_at: 2021-08-25T08:06:00-05:00
 ---
 
-## TypeError: can’t convert CUDA tensor to numpy. Use Tensor.cpu() to copy the tensor to host memory first
+## numpy의 GPU 지원하지 않음 문제
 
 pytorch로 개발환경을 변경하면서 여러 에러에 직면하였다. 😂😂
  
