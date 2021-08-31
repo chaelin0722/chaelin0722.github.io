@@ -3,9 +3,8 @@ title:  "[에러분석] tensorflow에서 accuracy가 0.0000e+00으로 발생한 
 excerpt: "error while training"
 
 categories:
-  - Deeplearning
-  - CNN
-  - study
+  - etc
+
 tags: [Deeplearning, CNN,study]
 classes: wide
 
