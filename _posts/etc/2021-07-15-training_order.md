@@ -3,11 +3,9 @@ title:  "[Tensorflow] ImageNet(1000개 클래스)으로 커스텀 모델 학습�
 excerpt: "training with imagenet"
 
 categories:
-  - Deeplearning
-  - CNN
-  - study
-  - tensorflow
-tags: [Deeplearning, CNN,study]
+  - etc
+
+tags: [Deeplearning, CNN,study, tensorflow]
 classes: wide
 
 last_modified_at: 2021-07-16T08:06:00-05:00
