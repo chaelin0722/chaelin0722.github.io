@@ -3,8 +3,6 @@ title:  "[code] ResNet56 with Cifar-10"
 excerpt: "code"
 
 categories:
-  - Deeplearning
-  - CNN
   - code
 tags: [Deeplearning, CNN, code]
  
