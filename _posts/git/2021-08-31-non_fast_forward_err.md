@@ -4,7 +4,6 @@ excerpt: ""
 
 categories:
   - git
-  - etc
 tags: [git, etc]
 
 last_modified_at: 2021-08-30T08:06:00-05:00
