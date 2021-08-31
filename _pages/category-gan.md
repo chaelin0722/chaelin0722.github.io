@@ -1,5 +1,5 @@
 ---
-title: "GAN😊"
+title: "GAN 🍅 -> 🍑 "
 layout: archive
 permalink: categories/gan
 author_profile: true
