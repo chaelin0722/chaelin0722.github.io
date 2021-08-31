@@ -3,11 +3,7 @@ title:  "[에러분석] TypeError: can’t convert CUDA tensor to numpy. Use Ten
 excerpt: "numpy gpu pytorch"
 
 categories:
-  - Deeplearning
-  - CNN
-  - pytorch
-  - error
-  - study
+  - etc
 tags: [Deeplearning, CNN,study, pytorch, error]
 classes: wide
 
