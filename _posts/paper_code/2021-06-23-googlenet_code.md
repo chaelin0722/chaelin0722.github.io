@@ -3,8 +3,6 @@ title:  "[code] GoogLeNet"
 excerpt: "code"
 
 categories:
-  - Deeplearning
-  - CNN
   - code
 tags: [Deeplearning, CNN, code]
  
