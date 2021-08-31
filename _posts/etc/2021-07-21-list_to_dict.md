@@ -3,8 +3,6 @@ title:  "[Python] 배열 리스트를 순서대로 dictionary로 변환"
 excerpt: "list to dict, python"
 
 categories:
-  - python
-  - study
   - etc
 tags: [etc,python,study]
 classes: wide
