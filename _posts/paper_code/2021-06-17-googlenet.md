@@ -3,7 +3,6 @@ title:  "[논문정리📃] Going Deeper with Convolutions"
 excerpt: "Week3 -GoogLeNet-"
 
 categories:
-  - CNN
   - paperReview
 tags: [CNN, paperReview]
 
