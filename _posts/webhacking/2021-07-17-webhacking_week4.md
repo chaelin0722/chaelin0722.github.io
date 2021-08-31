@@ -3,7 +3,6 @@ title:  '[강의] 4주차 웹 해킹- 웹 해킹 기술 탐색 3'
 excerpt: "week4"
 
 categories:
-  - study
   - hacking
 tags: [study,virtualbox, kalilinux, hacking]
 
