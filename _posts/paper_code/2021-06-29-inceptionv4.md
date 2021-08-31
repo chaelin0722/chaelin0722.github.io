@@ -3,7 +3,6 @@ title:  "[논문정리📃] Inception-v4 Inception-ResNet and the Impact of Resi
 excerpt: "Week4 -Inception-v4, Inception-ResNet-"
 
 categories:
-  - CNN
   - paperReview
 tags: [CNN, paperReview]
 
