@@ -8,7 +8,7 @@ categories:
   - study
 tags: [CNN, gan, study]
 
-last_modified_at: 2021-08-318T08:06:00-05:00
+last_modified_at: 2021-08-31T08:06:00-05:00
 classes: wide
 ---
 
