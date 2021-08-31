@@ -31,7 +31,7 @@ git은 기본적으로 관련 없는 두 저장소를 병합하는 것은 불가
 
 만약 git pull을 시도하더라도 되지 않는다면..! `git pull` 먼저 꼭 해보자! 되는 경우도 있습니다.
 
-git pull 시에 –allow-unrelated-histories 옵션을 추가하여 관련 없었던 두 저장소를 병합하도록 허용해주자
+git pull 시에 `–allow-unrelated-histories` 옵션을 추가하여 관련 없었던 두 저장소를 병합하도록 허용해주자
 
 ~~~ssh
 git pull origin master --allow-unrelated-histories
