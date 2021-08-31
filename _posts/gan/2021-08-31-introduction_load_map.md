@@ -17,7 +17,10 @@ classes: wide
 
 나의 원활한 연구와 논문을 위해 열심히 GAN에 대해 공부하고자 한다. 
 
-GAN에 대한 감을 잡기 위해서 논문도 읽겠지만 GAN에 대한 포스팅을 많이 올린 Jonathan Hui의 [GAN — GAN Series (from the beginning to the end)](https://jonathan-hui.medium.com/gan-gan-series-2d279f906e7b) 블로그에 있는 있는 포스팅을 해석 하면서 공부할 예정이다. 
+GAN에 대한 감을 잡기 위해서 논문도 읽겠지만,
+(GAN 논문에 대해서는 [논문 로드맵](https://ysbsb.github.io/gan/2020/06/17/GAN-newbie-guide.html)을 참고하여 리뷰할 예정이다.)
+
+GAN에 대한 포스팅을 많이 올린 Jonathan Hui의 [GAN — GAN Series (from the beginning to the end)](https://jonathan-hui.medium.com/gan-gan-series-2d279f906e7b) 블로그에 있는 있는 포스팅을 해석 하면서 공부할 예정이다. 
 
 **총 25**개의 포스팅이 올라와 있으며 나의 [GAN study] 포스팅은 이 시리즈에 맞추어 진행할 예정이다. 
 
