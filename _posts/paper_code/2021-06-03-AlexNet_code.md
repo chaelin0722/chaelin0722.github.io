@@ -3,8 +3,6 @@ title:  "[code] AlexNet"
 excerpt: "code"
 
 categories:
-  - Deeplearning
-  - CNN
   - code
 tags: [Deeplearning, CNN, code]
  
