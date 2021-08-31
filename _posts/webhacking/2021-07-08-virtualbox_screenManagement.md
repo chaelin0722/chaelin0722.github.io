@@ -2,8 +2,6 @@
 title:  'VirtualBox 화면 크기 조정하기'
 excerpt: ""
 categories:
-  - study
-  - etc
   - hacking
 tags: [study, etc, virtualbox, kalilinux, hacking]
 
