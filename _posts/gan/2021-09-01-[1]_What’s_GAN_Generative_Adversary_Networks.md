@@ -61,18 +61,22 @@ gan은 두가지 깊은 network로 구성되어있다. 하나는 generator(생�
 
 먼저, 어떤 noise **z** 가 있다고 가정하자. x를 input으로 한 generator G인 image x 를 만들것이며 수식은 아래와 같다.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **$(x=G(z)$**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **$x=G(z)$**
 
 개념적으로 z는 색과 모양등을 생성하는 **"latent features of images generated"**를 뜻한다. 직역하자면 생성된 이미지들의 잠재 특징(공간/영역)인데, 그렇다면 이것의 뜻은 뭘까?
 
 <details markdown="1">
 <summary>latent space🔎</summary>
 
+<hr>
+
 이미지를 생성하는 공간, 나타내려고 하는 대상의 정보를 충분히 담을 수 있는 공간, 'z'벡터가 존재하는 공간, 이미지의 특성을 찾아낼 수 있는 공간.
 
 요약하자면 **"latent space에서는 어떤 특성(예를 들면 웃는 표정)을 찾아낼 수 있고 'z'벡터에서 이에 해당하는 값을 바꿈으로써 원하는 이미지/패턴(슬픈 표정으로 바꾸는 등)을 생성해 정답을 도출(딥러닝 개념으로는 패턴을 찾는)할 수 있다"**
 
 #### 따라서 latent space는 딥러닝의 핵심이라고 볼 수 있다.
+
+<hr>
 
 </details>
 
