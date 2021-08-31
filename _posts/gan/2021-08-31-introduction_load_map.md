@@ -37,7 +37,7 @@ GAN에 대한 감을 잡기 위해서 논문도 읽겠지만 GAN에 대한 포�
 
 ## 학습 로드맵
 
-<Basics>
+<<Basics>>
   
 #### [1]  What’s GAN Generative Adversary Networks?
 
