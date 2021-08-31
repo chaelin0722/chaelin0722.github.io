@@ -32,7 +32,7 @@ git은 기본적으로 관련 없는 두 저장소를 병합하는 것은 불가
 
 git pull 시에 –allow-unrelated-histories 옵션을 추가하여 관련 없었던 두 저장소를 병합하도록 허용해주자
 
-~~~linux
+~~~ssh
 git pull origin master --allow-unrelated-histories
 ~~~
 
