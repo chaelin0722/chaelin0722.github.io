@@ -1,5 +1,5 @@
 ---
-title:  "[GAN study] What’s GAN Generative Adversary Networks?"
+title:  "[GAN study] What’s GAN Generative Adversary Networks? - GAN 이란?"
 excerpt: ""
 
 categories:
@@ -14,6 +14,8 @@ use_math : true
 last_modified_at: 2021-09-01T08:06:00-05:00
 
 ---
+
+<br><br>
 
 GAN의 개념과 알고리즘을 공부할 수 있는 포스팅이다. [블로그 원문](https://jonathan-hui.medium.com/gan-whats-generative-adversarial-networks-and-its-application-f39ed278ef09)내용도 쉬운 영어로 쓰여있어 내용을 이해하기도 쉬웠다. 영어로 쓰여있는게 더 편하다면 이곳에 가서 읽어보는 것을 추천한다!🖐
 
