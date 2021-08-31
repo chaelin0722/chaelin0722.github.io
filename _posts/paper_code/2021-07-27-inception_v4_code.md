@@ -3,8 +3,6 @@ title:  "[code] Inception-v4"
 excerpt: "code"
 
 categories:
-  - Deeplearning
-  - CNN
   - code
 tags: [Deeplearning, CNN, code]
  
