@@ -4,8 +4,6 @@ excerpt: ""
 
 categories:
   - mac
-  - syntax
-  - etc
 tags: [mac, syntax, etc]
 
 last_modified_at: 2021-08-24T11:00:00-05:00
