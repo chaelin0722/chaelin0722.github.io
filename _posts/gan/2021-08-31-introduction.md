@@ -37,26 +37,26 @@ GAN에 대한 감을 잡기 위해서 논문도 읽겠지만 GAN에 대한 포�
 
 ## 학습 로드맵
 
-Basics
+<Basics>
 #### [1]  What’s GAN Generative Adversary Networks?
 
 #### [2] Some cool applications of GANs.
 
 #### [3] How to measure GAN performance?
 
-showcase
+<showcase>
 #### [4] CycleGAN
 
 #### [5] Super Resolution GAN (SRGAN)
 
- GAN Issues
+<GAN Issues>
 #### [6] Why it is so hard to train Generative Advisory Networks!
 
- General GAN Improvements
+<General GAN Improvements>
 #### [7] Ways to improve GAN performance - General GAN Improvements
 
 
- Improving the Network design
+<Improving the Network design>
 #### [8] DCGAN (deep convolutional generative adversarial networks)
 
 #### [9] CGAN & InfoGAN (using labels to improve GAN)
@@ -72,7 +72,7 @@ showcase
 #### [14] StyleGAN & StyleGAN2
 
 
- Improving the cost function
+<Improving the cost function>
 #### [15] LSGAN (How to be a good helper?)
 
 #### [16] Wasserstein GAN & WGAN-GP
@@ -90,10 +90,10 @@ showcase
 #### [22] DRAGAN
 
 
-Optimization
+<Optimization>
 #### [23] Unrolled GAN (how to reduce mode collapse)
 
-Paper Review
+<Paper Review>
 #### [24] A comprehensive review into the gangsters of GANs (Part 1)
 
 #### [25] A comprehensive review into the gangsters of GANs (Part 2)
