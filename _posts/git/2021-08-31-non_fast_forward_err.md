@@ -26,6 +26,8 @@ classes: wide
 
 git은 기본적으로 관련 없는 두 저장소를 병합하는 것은 불가능하고 한다. ㅎㅎ 그래서 계속 에러가..!
 
+<br>
+
 ### 해결
 
 git pull 시에 –allow-unrelated-histories 옵션을 추가하여 관련 없었던 두 저장소를 병합하도록 허용해주자
@@ -35,6 +37,11 @@ git pull origin master --allow-unrelated-histories
 ~~~
 
 이 이후에 나는 main branch 하나만 쓸거기 때문에 master 브랜치를 원격, 로컬 둘 모두에서 삭제해 주었다. 
+
+<br>
+<br>
+<hr>
+
 
 #### 참고
 
