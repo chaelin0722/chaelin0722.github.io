@@ -1,4 +1,4 @@
- ---
+---
 title:  '[GIT 에러] ! [rejected]  master -> master (non-fast-forward))'
 excerpt: ""
 
