@@ -3,9 +3,6 @@ title:  "[Ubuntu] 우분투 세팅과 아나콘다 환경설정"
 excerpt: "성공"
 
 categories:
-  - study
-  - linux
-  - ubuntu
   - etc
 tags: [linux, study, etc, ubuntu]
 classes: wide
