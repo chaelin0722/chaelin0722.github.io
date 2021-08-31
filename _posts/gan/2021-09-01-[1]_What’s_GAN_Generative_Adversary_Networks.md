@@ -49,7 +49,7 @@ GAN의 중점은 scratch로부터 데이터를 생성하는 것이다( 대부분
 
 <br>
 
-## Generator와 discriminator
+## Generator와 Discriminator
 
 **`GAN의 핵심 개념이므로 집중!`**
 
