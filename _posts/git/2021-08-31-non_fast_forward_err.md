@@ -38,6 +38,10 @@ git pull origin master --allow-unrelated-histories
 
 이 이후에 나는 main branch 하나만 쓸거기 때문에 master 브랜치를 원격, 로컬 둘 모두에서 삭제해 주었다. 
 
+만약, 이 이후 브랜치를 master로 한 상태에서 git add -> commit -> push 를 계속 진행하고 싶다면 merge 해주고 checkout 해주면 된다.
+
+자세한 브랜치 변경 방법은 =>[참고](https://chaelin0722.github.io/git/etc/remote_rejected_pre-receive_hook_declined/)
+
 <br>
 <br>
 <hr>
