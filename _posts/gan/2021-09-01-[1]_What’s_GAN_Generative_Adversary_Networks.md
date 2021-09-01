@@ -21,7 +21,7 @@ GAN의 개념과 알고리즘을 공부할 수 있는 포스팅이다. [블로�
 
 그리고 이 포스팅 내용은 [Generative Adversarial Nets](https://arxiv.org/pdf/1406.2661.pdf)와 [Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks](https://arxiv.org/pdf/1511.06434.pdf)의 논문 내용을 참고한것 같다. 논문에 대한 자세한 내용은 추후 포스팅을 하겠다.
 
-<img width="900" alt="무제" src="https://user-images.githubusercontent.com/53431568/131616172-acd97a85-820f-4d87-9db8-13b258eddf3c.png">
+<img width="100%" alt="무제" src="https://user-images.githubusercontent.com/53431568/131616172-acd97a85-820f-4d87-9db8-13b258eddf3c.png">
 
 <br>
 
