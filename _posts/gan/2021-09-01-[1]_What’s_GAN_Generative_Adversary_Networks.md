@@ -48,7 +48,7 @@ GAN의 중점은 scratch로부터 데이터를 생성하는 것이다( 대부분
 
 이미지에 국한되어있지만 GAN의 적용범위는 꽤 크다. 아래 예시와 같이 GAN은 얼룩말로부터 말을 생성해 낸다. 강화학습에서는 로봇이 더 빨리 배우는 것을 돕는다.
 
-<img width="440" alt="horse" src="https://user-images.githubusercontent.com/53431568/131535315-f5245d45-1eda-4ebe-ad39-bb3bc192b693.png">
+<img width="440" alt="horse" src="https://user-images.githubusercontent.com/53431568/131535315-f5245d45-1eda-4ebe-ad39-bb3bc192b693.png" class="center">
 
 <br>
 
@@ -93,14 +93,14 @@ GAN은 다른 CNN 구조들 처럼 사람이 직접 준 데이터로 학습을 �
 
 아래 이미지들은 random noise z를 이용해 GAN에 의해 생성된 이미지들이다.
 
-<img width="379" alt="무제 2" src="https://user-images.githubusercontent.com/53431568/131542098-55a654ef-bb18-4cb7-979f-3a8cb15873b7.png">
+<img width="379" alt="무제 2" src="https://user-images.githubusercontent.com/53431568/131542098-55a654ef-bb18-4cb7-979f-3a8cb15873b7.png" class="center">
 
 <br>
 
 z 의 한 특정 차원을 단계적으로 바꿀 수 있으며 그것의 의미론적 의미를 시각화할 수 있다. 
 
 
-<img width="462" alt="무제" src="https://user-images.githubusercontent.com/53431568/131542435-f814ca1f-b2c2-44be-9d96-cd414d4c8d21.png">
+<img width="462" alt="무제" src="https://user-images.githubusercontent.com/53431568/131542435-f814ca1f-b2c2-44be-9d96-cd414d4c8d21.png" class="center">
 
 
 <br>
