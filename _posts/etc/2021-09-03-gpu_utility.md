@@ -142,13 +142,15 @@ DistributedSampler은 데이터셋을 쪼개어 각기 다른 GPU로 처리하�
 
 사용 방법은 다음과 같다. 
 
-DataLoader가 입력을 각 프로세스에 전달하기 위해서 다음처럼 DistributedSampler를 사용한다! DistributedSampler는 DistributedDataParallel과 함께 사용해야 하며 DDP사용 방법은 [아래](#)에 참고!
+DataLoader가 입력을 각 프로세스에 전달하기 위해서 다음처럼 DistributedSampler를 사용한다! DistributedSampler는 DistributedDataParallel과 함께 사용해야 하며 DDP사용 방법은 [아래](#1.-dataparallel)에 참고!
+
 
 사용 방법은 각자 정의한 dataset를 DistributedSampler로 감싸주고 DataLoader에서 sampler에 인자로 넣어주면 된다. 또, sampler 자체에서 shuffle기능이 있어서 그런지 `shuffle=False`로 바꿔 주어야 에러가 발생하지 않는다..! 주의!⭐️ 그 다음엔 평소에 DataLoader를 사용하듯이 똑같이 사용하면 끝! 간단하네!✌️✌️
 
 이 둘 모두를 적용한 코드는 아래와 같다. 만약 본인이 test_dataset, validation_dataset도 있다면 마찬가지로 해주면 되겠죠?! ㅎㅎ
 
 <script src="https://gist.github.com/chaelin0722/b237a65ef0f61b89dc5048dc9dba6b01.js"></script>
+
 
 <br>
 
