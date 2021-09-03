@@ -1,19 +1,20 @@
 ---
-title:  "[GPU] GPU 사용량 최대화 하기(GPU Utility) - 분산학습을 중심으로"
+title:  "[GPU] GPU 사용량 최대화 하기(GPU Utility) - Pytorch 분산학습을 중심으로"
 excerpt: "CPU와 GPU 사용량 체크하고 문제점 파악해 보기"
 
 categories:
   - etc
 
-tags: [Deeplearning, etc, training, GPU, NVIDIA, CUDA]
+tags: [Deeplearning, etc, training, GPU, NVIDIA, CUDA, pytorch]
 use_math: true
 classes: wide
 
 last_modified_at: 2021-09-03T08:06:00-05:00
 ---
 
+<br>
 
-드디어 내 서버에도 GPU가 2개가 생겼다~!! 그동안 한개로 학습시키느라 힘들고 서러웠는데.. 드디어 2개!!
+드디어 내 서버에도 GPU가 2개가 생겼다~!! 그동안 한개로 학습시키느라 힘든 지난날을 생각하니 눙물;;
 
 하지만, 이제 GPU가 2개나 있으니까 학습도 2배로 빨라지겠지? 라고 생각한건 내 오산이었다 ㅎㅎ
 
@@ -44,11 +45,13 @@ watch -n -1 nvidia-smi
 ![캡처](https://user-images.githubusercontent.com/53431568/131976132-92577760-6ec8-4c34-8b2e-d7bcd956955d.PNG)
 
 
-위와 같은 문제는 GPU Bottleneck 이라고 하는데,
+위와 같은 문제는 `GPU Bottleneck` 이라고 하는데,
 
-컴퓨터 내부에서 돌아가는 학습 프로세스를 아주 간단히 설명해보자면 **CPU**에서 데이터를 전처리해 batch로 만들면, **GPU**가 학습을 하는 프로세스이다.
+컴퓨터 내부에서 돌아가는 학습 프로세스를 아주 간단히 설명해보자면 
 
-그렇기 때문에 GPU 학습량이 저조한 이유는 GPU에서 한 배치(batch)의 처리를 다 끝냈는데 CPU에서 다음 batch가 아직 안만들어진 거라고 생각하면 된다. 따라서 데이터 로드나, CPU에서 하는 연산량이 매우 큰 것으로 예상한다.
+👉 `**CPU**에서 데이터를 전처리해 batch로 만들면, **GPU**가 학습을 하는 프로세스`이다.
+
+그렇기 때문에 GPU 학습량이 저조한 이유는 `GPU에서 한 배치(batch)의 처리를 다 끝냈는데 CPU에서 다음 batch가 아직 준비가 되지 않았다`고 생각하면 된다. 따라서 `데이터 로드나, CPU에서 하는 연산량이 매우 큰` 것으로 예상한다.
 
 
 #### 따라서 내가 해야할 일은
@@ -58,13 +61,9 @@ watch -n -1 nvidia-smi
 > 2. GPU 2개 모두 사용하기
 
 
-먼저, cpu의 경우 `htop` 명령어를 이용하여 알아보았다.
+먼저, CPU의 경우 `htop` 명령어를 이용하여 알아보았다.
 
-#### htop 이란?
-
-실시간 모니터링 툴로 코어 갯수를 확인해 각 프로세스 정보를 디테일하게 모니터링이 가능하다. 
-
-따로 설치가 필요하며 설치 명령어는
+**htop**은 실시간 모니터링 툴로 코어 갯수를 확인해 각 프로세스 정보를 디테일하게 모니터링이 가능하다. htop은 따로 설치가 필요하며 설치 명령어는,
 
 ~~~ssh
 sudo yum install htop
@@ -75,19 +74,90 @@ sudo yum install htop
 ![htop](https://user-images.githubusercontent.com/53431568/131972458-3cdcfd65-a0db-4676-8b63-3a7a25534a2e.PNG)
 
 
-![parallel](https://user-images.githubusercontent.com/53431568/131972454-0856579d-5143-4b67-b1bd-1714dc9d6dd2.PNG)
+위 그림을 보면 맨 위에는 16개의 CPU 코어를 프로세스가 점유하고 있는 비율이 나타나있고, 각 bar는 해당 코어의 사용된 %를 표현한다. (Mem: memory, Swap: 스왑사용량)
+
+
+**코어**마다 색이 들어간 | 작대기(?)의 색이 의미하는 바는 다음과 같다.
+
+> 파랑: low-priority
+> 
+> 초록: normal
+> 
+> 빨강: kernel
+> 
+> 하늘: virtualiz
+
+한편, **memory**의 | 색깔은 의미하는 바가 다르다
+
+> 초록: 사용된
+> 
+> 파랑: 버퍼
+> 
+> 노랑: 캐쉬
+
+#### swap
+
+> 빨강: 사용됨
+
+
+### 이제 내 CPU 상태를 해석 해보자..!
+
+지금 프로세스 상태가 리스트 형식으로 쭉 나열되어있는데 현재 내가 돌리고 있는 파이썬 파일 프로세스는 가장 위쪽에 있고 CPU%가 82로 매우 높다는 것을 알고 있다.
+
+(바로 왼쪽에 초록색으로 **R**로 표시되어있는데 이는 "running"상태, **S**는 "sleeping", **T**는 "traced/stopped", **D**sms disk sleep, **Z**는 zombie를 의미한다.)
+
+82%가 심지어 99%까지 올라가는 것을 확인 후((😭😭😭)) dataloader 쪽을 살펴보기로 하였다.
 
 
 
-![processor_list](https://user-images.githubusercontent.com/53431568/131972460-6d8bd291-3848-4aa1-a8a6-307e5a87de0f.PNG)
+## 2. CPU 솔루션
+
+num_workers, 와 DistributedSampler 라는 것을 설정해주었다.
+
+### 1. num_workers 란?
+
+num_workers는 처리할 프로세스에 cpu코어를 할당해주는 것으로 자신의 CPU가 가진 최대 코어까지 파라미터 값으로 넣을 수 있다. 하지만 데이터 프로세싱에 무조건 많은 CPU코어를 할당해준다고 꼭 좋은 것만은 아니다.
+
+코어 개수는 물리적으로 한정되어 있고 모든 코어를 전부 데이터 로드에 사용하게 된다면 다른 부가적인 처리에 딜레이가 생길 수 있다. 따라서, 모델에 가장 적합한 num_workers 수치를 찾아서 주는 것이 가장 좋은 방법이다!
+
+위에 htop으로 코어 갯수를 파악할 수 있었지만 다른 명령어로도 코어를 파악할 수 있다. 
+
+~~~ssh
+grep -i processor /proc/cpuinfo
+
+grep -i processor /proc/cpuinfo | wc -l
+~~~
+
+<img width="562" alt="무제" src="https://user-images.githubusercontent.com/53431568/131984223-05e9f106-8b6a-42c0-846e-1a4a6e0c7384.png">
+
+나는 총 16개의 코어가 있지만 2개~10개까지 시행해본 결과 4가 적당한것 같아서 num_workers=4 로 지정해 주었다.
 
 
-![processor_15](https://user-images.githubusercontent.com/53431568/131972463-c7a8d385-2c67-4e0a-8161-7b337051926a.PNG)
+### 2. DistributedSampler 
+
+DistributedSampler은 데이터셋을 쪼개어 각기 다른 GPU로 처리하게 하는 함수이다. 
+
+각각의 Sampler는 전체 데이터를 GPU의 개수로 나눈 부분 데이터에서만 데이터를 샘플링한다. 부분 데이터를 만들기 위해 전체 데이터셋 인덱스 리스트를 무작위로 섞은 다음, 그 인덱스 리스트를 쪼개서(데이터셋을 num_replicas값으로 나뉘어 지는지 확인을 한 후, 나눌 수 없다면 샘플들이 추가해 쪼갠 후 처리) 각 GPU Sampler에 할당한다. 또, epoch 마다 각 GPU sampler에 할당되는 인덱스 리스트는 다시 무작위로 달라진다.
+
+사용 방법은 다음과 같다. 
+
+DataLoader가 입력을 각 프로세스에 전달하기 위해서 다음처럼 DistributedSampler를 사용한다! DistributedSampler는 DistributedDataParallel과 함께 사용해야 하며 DDP사용 방법은 [아래](#)에 참고!
+
+사용 방법은 각자 정의한 dataset를 DistributedSampler로 감싸주고 DataLoader에서 sampler에 인자로 넣어주면 된다. 또, sampler 자체에서 shuffle기능이 있어서 그런지 `shuffle=False`로 바꿔 주어야 에러가 발생하지 않는다..! 주의!⭐️ 그 다음엔 평소에 DataLoader를 사용하듯이 똑같이 사용하면 끝! 간단하네!✌️✌️
+
+이 둘 모두를 적용한 코드는 아래와 같다. 만약 본인이 test_dataset, validation_dataset도 있다면 마찬가지로 해주면 되겠죠?! ㅎㅎ
+
+<script src="https://gist.github.com/chaelin0722/b237a65ef0f61b89dc5048dc9dba6b01.js"></script>
+
+<br>
 
 
-최종 결과
+## 3. GPU 솔루션
 
-여전히 왔다갔다하지만 80~100을 자주 찍는 것에 의의를 두기로 했다.
+
+## 최종 결과
+
+여전히 왔다갔다하지만 80%~100%을 자주 찍는 것에 의의를 두기로 했다.
 
 학습 레이어도 다르고 사용하는 데이터셋도 다르기 때문에 완전한 99% 이상을 차지하기 위해선 다른 솔루션이 필요하다고 생각된다. 
 
