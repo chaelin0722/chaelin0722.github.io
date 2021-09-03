@@ -49,7 +49,7 @@ watch -n -1 nvidia-smi
 
 컴퓨터 내부에서 돌아가는 학습 프로세스를 아주 간단히 설명해보자면 
 
-👉 `**CPU**에서 데이터를 전처리해 batch로 만들면, **GPU**가 학습을 하는 프로세스`이다.
+👉 **CPU**에서 데이터를 전처리해 batch로 만들면, **GPU**가 학습을 하는 프로세스이다.
 
 그렇기 때문에 GPU 학습량이 저조한 이유는 `GPU에서 한 배치(batch)의 처리를 다 끝냈는데 CPU에서 다음 batch가 아직 준비가 되지 않았다`고 생각하면 된다. 따라서 `데이터 로드나, CPU에서 하는 연산량이 매우 큰` 것으로 예상한다.
 
@@ -109,10 +109,11 @@ sudo yum install htop
 82%가 심지어 99%까지 올라가는 것을 확인 후((😭😭😭)) dataloader 쪽을 살펴보기로 하였다.
 
 
+<br>
 
 ## 2. CPU 솔루션
 
-num_workers, 와 DistributedSampler 라는 것을 설정해주었다.
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 내가 사용한 방법 : `num_workers`, 와 `DistributedSampler` 
 
 ### 1. num_workers 란?
 
@@ -154,6 +155,43 @@ DataLoader가 입력을 각 프로세스에 전달하기 위해서 다음처럼 
 
 ## 3. GPU 솔루션
 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 내가 사용한 방법 : pytorch의 `DataParallel`와 `Apex의 DistributedDataParalle`
+ 
+ ### 1. DataParallel
+ 
+pytorch에서 제공하는 함수로 GPU를 내가 지정한대로 여러개에 사용해 분산학습을 가능케 한다.
+
+내 모델을 DataParallel로 감싸주기만 하면 된다.
+
+<br>
+
+### 2. Apex DistributedDataParallel
+
+pytorch에서 제공하는 DistributedDataParallel도 있지만 이것의 큰 단점이 메모리를 불균형하게 할당한다는 것이다. 그렇게 되면 분산학습의 의미가 없어진다고 생각해 아직까지 그런 에러는 없는 Apex로 사용하기로 했다.
+
+apex는 apex에서 DistributedDataParallel을 import해서 사용한다. 
+
+설치방법은 아래와 같다. 보면 두가지 버전의 설치가 있는데 나는 파이썬으로 코드를 돌리기 때문에 2번으로 설치해 주었다. 
+
+~~~ssh
+git clone https://github.com/NVIDIA/apex
+cd apex
+
+## 1. for python and c
+pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+
+## 2. only for python
+pip install -v --disable-pip-version-check --no-cache-dir ./
+
+~~~
+
+이렇게 설치 후, dist.init_process_group을 통해 각 GPU 마다 분산 학습을 위한 초기화를 꼭 실행해주어야 한다! 초기화 하지 않으면 실행안됨! PyTorch의 docs를 보면 multi-GPU 학습을 할 경우 backend로 nccl을 사용하라고 나와있기 때문에 nccl을 사용하였고,  init_method에서 FREEPORT에 사용 가능한 port를 지정해주면 된다. 나는 그냥 큰 숫자를 써주었다. 마지막으로 DDP로 model을 감싸줍니다. 
+
+모두 적용된 코드는 아래와 같다.
+
+<script src="https://gist.github.com/chaelin0722/f23cbb174827ca8b75031a8e87052197.js"></script>
+
+<br>
 
 ## 최종 결과
 
