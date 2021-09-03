@@ -9,7 +9,7 @@ tags: [Deeplearning, etc, training, GPU, NVIDIA, CUDA]
 use_math: true
 classes: wide
 
-last_modified_at: 2021-09-031T08:06:00-05:00
+last_modified_at: 2021-09-03T08:06:00-05:00
 ---
 
 ## 
@@ -31,6 +31,13 @@ last_modified_at: 2021-09-031T08:06:00-05:00
 ## 1. 내 문제점 파악하기
 
 GPU bottleneck 현상을 처리하기 전..! 이 형상이 대체 어디에서 나는지 알기위해 내 cpu processor 수와 GPU의 성능을 확인하려고 한다. 
+
+현재 학습을 돌리면 보이는 내 GPU 상태.. 아래 명령어로 실시간 GPU상황을 볼 수 있다.
+
+~~~linux
+watch -n -1 nvidia-smi
+~~~
+
 
 먼저, cpu의 경우 `htop` 명령어를 이용하여 알아보았다.
 
@@ -59,10 +66,6 @@ sudo yum install htop
 
 
 ![processor_15](https://user-images.githubusercontent.com/53431568/131972463-c7a8d385-2c67-4e0a-8161-7b337051926a.PNG)
-
-
-![utility](https://user-images.githubusercontent.com/53431568/131972465-6550cf86-c6a4-4108-b689-e5249fdd51a2.PNG)
-
 
 
 최종 결과
