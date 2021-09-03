@@ -39,6 +39,18 @@ watch -n -1 nvidia-smi
 ~~~
 
 
+
+
+
+
+
+
+
+
+![1](https://user-images.githubusercontent.com/53431568/131976128-1f9a45e0-11ab-461b-850e-8ae692bbb34f.PNG)
+![캡처](https://user-images.githubusercontent.com/53431568/131976132-92577760-6ec8-4c34-8b2e-d7bcd956955d.PNG)
+
+
 먼저, cpu의 경우 `htop` 명령어를 이용하여 알아보았다.
 
 #### htop 이란?
