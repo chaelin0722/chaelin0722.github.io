@@ -3,7 +3,7 @@ title:  "[Pycharm] 파이참으로 원격 서버 연결하기"
 excerpt: "ssh로 서버에서 개발하기"
 
 categories:
-- ㅡmac
+- mac
 
 tags: [ssh, linux, python, pycharm]
 
