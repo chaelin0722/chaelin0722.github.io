@@ -198,7 +198,7 @@ pip install -v --disable-pip-version-check --no-cache-dir ./
 
 ## 최종 결과
 
-![gpu parallel](https://user-images.githubusercontent.com/53431568/132236595-d89ee51b-9d20-4f10-a327-cde816584408.PNG)
+![gpu parallel](https://user-images.githubusercontent.com/53431568/132236704-b29c5abc-591b-4747-baa8-fcc527005dc0.PNG)
 
 두 gpu를 사용하고 있는 모습
 
