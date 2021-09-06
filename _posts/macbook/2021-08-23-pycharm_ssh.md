@@ -44,7 +44,7 @@ last_modified_at: 2021-09-01T08:06:00-05:00
 <img width="963" alt="무제" src="https://user-images.githubusercontent.com/53431568/132128991-dc57e6e2-5964-4141-9c29-9f0ae7c4ad8a.png">
 
 
-SSH configuration 화면이 나온다. 맨 왼쪽의 + 버튼을 눌러서 각각 host, username, password를 입력해준다. 
+SSH configuration 화면이 나온다. 맨 왼쪽의 `+` 버튼을 눌러서 각각 host, username, password를 입력해준다. 
 
 <img width="944" alt="무제 2" src="https://user-images.githubusercontent.com/53431568/132129250-e4591c78-7cec-4e18-9816-e68ce36f476c.png">
 
@@ -56,7 +56,7 @@ SSH configuration 화면이 나온다. 맨 왼쪽의 + 버튼을 눌러서 각�
 
 <img width="963" alt="무제" src="https://user-images.githubusercontent.com/53431568/132129569-0f1bc4db-06c0-40c9-9d9d-ce6adb805f68.png">
 
-다 설정하고 난후 다시 아래 페이지로 돌아오는데! 이제 내가 pycharm에서 개발을 한다면 어디에 저장할지 Remote project location 을 설정해주면 됩니다. 저는 제가 작업하고 있는 폴더 옆에 새 폴더 하나를 생성해서 설정해주었습니다.
+다 설정하고 난후 다시 아래 페이지로 돌아오는데! 이제 내가 pycharm에서 개발을 한다면 어디에 저장할지 `Remote project location` 을 설정해주면 됩니다. 저는 제가 작업하고 있는 폴더 옆에 새 폴더 하나를 생성해서 설정해주었습니다.
 
 <img width="1211" alt="무제" src="https://user-images.githubusercontent.com/53431568/132129672-75880b17-dc36-4ea7-a61c-3bbedee9a6d4.png">
 
