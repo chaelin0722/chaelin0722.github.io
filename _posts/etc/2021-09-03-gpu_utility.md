@@ -160,7 +160,7 @@ DataLoader가 입력을 각 프로세스에 전달하기 위해서 다음처럼 
 
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 내가 사용한 방법 : pytorch의 `DataParallel`와 `Apex의 DistributedDataParalle`
  
- ### 1. DataParallel
+### 1. DataParallel
  
 pytorch에서 제공하는 함수로 GPU를 내가 지정한대로 여러개에 사용해 분산학습을 가능케 한다.
 
