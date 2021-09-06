@@ -198,10 +198,9 @@ pip install -v --disable-pip-version-check --no-cache-dir ./
 
 ## 최종 결과
 
+![gpu parallel](https://user-images.githubusercontent.com/53431568/132236595-d89ee51b-9d20-4f10-a327-cde816584408.PNG)
 
-<<<< gpu 두개로 분산학습되는 이미지 추가하기
-
-
+두 gpu를 사용하고 있는 모습
 
 여전히 왔다갔다하지만 80%~100%을 자주 찍는 것에 의의를 두기로 했다.
 
