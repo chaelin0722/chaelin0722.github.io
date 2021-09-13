@@ -275,18 +275,12 @@ EfficientNet의 $\alpha, \beta, \gamma$ 값은 간단한 grid search로 구해�
 위의 표는 Fig.7 에서 활용된 실험 network depth, width, resolution 조건별 FLOPS와 Top-1 accuracy를 나타내는 표이다. compound scaling을 적용한 경우가 비슷한 FLOPS임에도 더 좋은 성능을 보여줌을 알 수 있다.
 
 
+<br><br>
+
+이번 논문은 리뷰 량이 엄청 많았다.. 간단한 NasNet 에 비해서 배로 걸린것 같다. 하지만 그만큼 배울 점이 많았고 특히 NAS를 효율적으로 적용해 한단계 업그레이드 한 결과물을 도출했다는 점에서 많이 놀라웠다. 그리고 성능면에서도 매우 놀랍다.. 파라미터 값은 훨씬 적은데 훨씬 좋은 성능이라니.. nas frame을 잘 적용하면 어마어마한 성능이 나온다는 것을 알 수 있었다. 🙌🙌🙌
 
 
-### 느낀점..
-
-NAS를 효율적으로 발전시킨 논문인 것에 의의가 있다고 생각한다. 
-
-
-
-
-
-
-
+<br>
 
 
 #### 참고
@@ -295,4 +289,4 @@ NAS를 효율적으로 발전시킨 논문인 것에 의의가 있다고 생각�
 
   [2] [https://norman3.github.io/papers/docs/efficient_net.html](https://norman3.github.io/papers/docs/efficient_net.html)
   
-  [3] []()
+  [3] [https://hoya012.github.io/blog/EfficientNet-review/](https://hoya012.github.io/blog/EfficientNet-review/)
