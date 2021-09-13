@@ -116,9 +116,12 @@ GPipe는 모델을 여러 파티션으로 나눠 각각 서로 다른 장치에 
 
 
 
-하나의 convNet$N$은 $N = F_k\textObullseye ... \textObullseye F_2 \textObullseye F_1(X_1)$
+하나의 convNet$N$은 $N = F_k\textObullseye ... \textObullseye F_2 \textObullseye F_1(X_1)$ 로 표시한다.
 
-$\textObullseye$ 
+
+따라서 우리는 ConvNet 을 다음과 같이 정의할 수 있다.
+
+$ N = \textObullseye_{i=1...s} F_i^{L_i}(X_{H_i, W_i, C_i>})$ 
 
 ### 2.2. Scaling Dimensions
 
