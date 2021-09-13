@@ -129,7 +129,7 @@ $F_i^{L_i}$ 는 $F_i$ 레이어가 $i$ stage에서 $L_i$번 반복, $<H_i, W_i, 
 
 $\max\limits_{d,w,r}\,\,\,\, Accuracy(N(d,w,r))$
 
-$s.t. N(d,w,r) = \bigodot\limits_{i=1...s}\hat{F\,}_i^{d\cdot\hat{L}_i} (X_{r\cdot\hat{H},r\cdot\hat{W},w\cdot\hat{C}_i})$
+$$s.t. N(d,w,r) = \bigodot\limits_{i=1...s}\hat{F\,}_i^{d\cdot\hat{L}_i} (X_{r\cdot\hat{H},r\cdot\hat{W},w\cdot\hat{C}_i})$$
 
 $Memory(N) \leq target \, memory$
 
@@ -225,23 +225,61 @@ Grid search(격자 탐색)은 모델 하이퍼파라미터에 넣을 수 있는 
 <br>
 
 
-
-
 ## 3. EfficientNet 구조
 
+위의 실험들을 통해 3가지 scaling factor를 동시에 고려하는 것이 좋다는 것을 입증하였다. 
 
-![image](https://user-images.githubusercontent.com/53431568/133054304-ef76719d-71bc-4f8b-a7de-6a55572de9fb.png)
+이제, 최적의 비율을 찾아 실제 모델에 적용해 다른 모델들과 성능을 비교하는 과정을 설명하겠다.
 
+이 논문에서는 모델(F)를 고정하고 depth, width, resolution 3가지를 조절하는 방법을 제안하는데 고정하는 모델 (F)를 좋은 모델로 선정하는 것이 아주 중요하다. 아무리 scaling factor을 조절해도 초기 모델 자체의 성능이 낮다면 임계 성능도 낮기 때문이다. 이 논문에서는 MnasNet과 거의 동일한 search space하에서 AutoML을 통해 모델을 탐색하였고, 이 과정을 통해 찾은 작은 모델을 EfficientNet-B0 라고 한다. 
+
+
+<img width="630" alt="무제 5" src="https://user-images.githubusercontent.com/53431568/133077869-28060f5a-c2e0-4444-b3b4-c8ad0da13c69.png">
+
+
+모델 구조는 MnasNet과 거의 유사하며 위의 표와 같은 구조로 구성되어있다.
+
+EfficientNet의 $\alpha, \beta, \gamma$ 값은 간단한 grid search로 구해지며, 본 논문에서는
+
+> $\alpha = 1.2$
+> 
+> $\beta = 1.1$
+> 
+> $\gamma = 1.15$
+
+를 사용하고 있으며 이 세 값들은 고정한 뒤 $\phi$ 값을 키우며 모델 사이즈를 키우고 있다.
+
+
+<br>
 
 
 ## 4. Experiments
 
-## 5. ImageNet 결과
+기존 사람이 디자인한 ConvNet, AutoML을 통해 찾은 ConvNet들과 비교한 결과는 아래 표에 나와있다. 
+
+<img width="820" alt="무제 6" src="https://user-images.githubusercontent.com/53431568/133079384-a9bce793-ca4a-47fb-aff5-7cdbc8e21a71.png">
+
+
+기존 ConvNet들에 비해 비슷한 정확도를 보이며 parameter 수와 FLOPS 수를 많이 절약할 수 있는 것을 알 수 있다. 또, 기존에 ImageNet 데이터셋 에서 가장 높은 정확도를 달성했던 GPipe보다 더 높은 정확도를 달성하는 것을 확인할 수 있다. 
+
+
+#### 그 외 다양한 실험 결과들
+
+<img width="820" alt="무제 6" src="https://user-images.githubusercontent.com/53431568/133079438-d8ea79a6-5640-43ac-8631-90b7cee722b6.png">
+
+위의 이미지는 모델이 이미지를 분류할 때 이미지의 어느 영역에 집중했는지 확인할 수 있는 Class Activation Map (CAM) 을 뽑은 결과인데, 3개의 scaling factor을 각각 고려할 때 보다 동시해 고려하였을 때 더 정교한 CAM을 얻을 수 있다는 것을 보여준다.
+
+
+<img width="544" alt="무제 8" src="https://user-images.githubusercontent.com/53431568/133080185-31f2fc6d-f814-48fe-b22b-e042d316750d.png">
+
+위의 표는 Fig.7 에서 활용된 실험 network depth, width, resolution 조건별 FLOPS와 Top-1 accuracy를 나타내는 표이다. compound scaling을 적용한 경우가 비슷한 FLOPS임에도 더 좋은 성능을 보여줌을 알 수 있다.
 
 
 
 
+### 느낀점..
 
+NAS를 효율적으로 발전시킨 논문인 것에 의의가 있다고 생각한다. 
 
 
 
