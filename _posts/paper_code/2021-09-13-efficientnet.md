@@ -168,7 +168,7 @@ $w,d,r$ 은 network 의 width, depth, resolution을 scaling 하기 위한 상수
 
 ###  2.3 Compound Scaling
 
-직관적으로 생각해보면 각 요소들은 의존적이다. 생각해 보자, input image(resolution)가 커진다면 network가 더 넓은 영역을 수용할 수 있는 receptive field를 확보(depth)해야 하며, 더욱 많은 channel(width)을 통해 정제된 pattern을 추출해야 할 것이다. 
+직관적으로 생각해보면  `각 요소들은 의존적`이다. 생각해 보자, input image(resolution)가 커진다면 network가 더 넓은 영역을 수용할 수 있는 receptive field를 확보(depth)해야 하며, 더욱 많은 channel(width)을 통해 정제된 pattern을 추출해야 할 것이다. 
 
 아래 그래프는 depth 와 resolution 크기를 고정한 채로 width 값을 변화시키면서 테스트한 결과이다.
 
@@ -185,13 +185,13 @@ $w,d,r$ 은 network 의 width, depth, resolution을 scaling 하기 위한 상수
 
 depth: $d\,=\,\alpha^\phi$
 
-width: $w\,=\,\beta^phi$
+width: $w\,=\,\beta^\phi$
 
-resolution: $r\,=\,\gamma^phi$
+resolution: $r\,=\,\gamma^\phi$
 
 $s.t. \alpha\cdot \beta^2 \approx 2$
 
-$\alph \geq 1, \beta \geq 1, \gamma \geq 1$
+$\alpha \geq 1, \beta \geq 1, \gamma \geq 1$
 
 ## 3. EfficientNet 구조
 
