@@ -91,7 +91,6 @@ GPipe는 모델을 여러 파티션으로 나눠 각각 서로 다른 장치에 
 
 결국 마지막 (e)의 compound scaling 을 잘 하는 것이 이 논문의 목표이다. 
 
-직관적으로 생각해보면 compound scale up을 잘 만들기 위한 손쉬운 방법은 depth/width/resolution을 모두 크게 키우는 것이다. input image가 커진다면 network가 더 넓은 영역을 수용할 수 있는 receptive field를 확보해야 하며, 더욱 많은 channel을 통해 정제된 pattern을 추출해야하기 때문이다. 
 
 
 논문에서는 MobileNet과 ResNet을 이용해 이를 확인하고 있으며, Model scaling에 의한 성능 향상은 baseline network에 매우 의존적이기 때문에, baseline network를 설정하는데 있어서 `neural architecture search(NAS)`를 사용한다.
@@ -143,14 +142,33 @@ $w,d,r$ 은 network 의 width, depth, resolution을 scaling 하기 위한 상수
 > 고정값 : $\hat{F}_i,\hat{L}_i,\hat{H}_i,\hat{W}_i,\hat{C}_i$
 
 
-
 <br>
 
-### 2.2. Scaling Dimensions
+### 2.2. Scaling Dimension
+
+중요한 문제는, 최적의 $d,w,r$ coefficient 들은 서로 연관되어있다는 것과 서로 다른 제한적 자원에 놓여있다는 것이다. 따라서 널리 사용된 ConvNet들은 다음의 dimension 중 하나만 선택해 scaling 해왔다. 
+
+1. Depth ($d$)       -> 깊은 레이어
+
+2. Width ($w$)       -> channel의 수
+
+3. Resolution ($r$)  -> input image size
+
+
+아래 그래프는 baseline model은 width, depth, resolution coefficients 에 따라 scaling up 한 결과를 보여준다.
 
 
 <img width="938" alt="무제 3" src="https://user-images.githubusercontent.com/53431568/133053805-96f5e915-1e36-41bf-ae46-2eb82bfb8eb8.png">
 
+각각 성능이 좋아짐을 알 수 있지만 acc가 약 80%가 되는 시점에서 급하게 saturate 되는 것을 볼 수 있다.
+
+`네트워크의 depth, width, resolution 의 차원 중 한가지 만을 scaling up 하는 것은 성능을 향상시키지만 더 큰 모델에 있어서는 정확도가 줄어든다.`
+
+<br>
+
+###  2.3 Compound Scaling
+
+직관적으로 생각해보면 각 요소들은 의존적이다. 생각해 보자, input image(resolution)가 커진다면 network가 더 넓은 영역을 수용할 수 있는 receptive field를 확보(depth)해야 하며, 더욱 많은 channel(width)을 통해 정제된 pattern을 추출해야 할 것이다. 
 
 아래 그래프는 depth 와 resolution 크기를 고정한 채로 width 값을 변화시키면서 테스트한 결과이다.
 
@@ -159,7 +177,14 @@ $w,d,r$ 은 network 의 width, depth, resolution을 scaling 하기 위한 상수
 <img width="393" alt="무제 4" src="https://user-images.githubusercontent.com/53431568/133053882-7cce71be-9dd2-4716-909e-f16340dd1beb.png">
 
 
-이 논문에서 제안하는 새로운 방식의 compound scaling method는 다음과 같다. 
+이 결과를 통해 `ConvNet scaling을 하는 동안 더 나은 성능과 효율성을 추구하기 위해서는 network의 모든 dimensions의 균형을 잡는 것이 중요하다`는 것을 알 수 있다. 
+
+
+이 논문에서 제안하는 새로운 방식의 compound scaling method는 다음과 같다. compound coefficient 인 $\phi$ 로 network의 width, depth, resolution을 scale한다.
+
+
+depth: $d\,=\,\alpha^\phi$
+
 
 ## 3. EfficientNet 구조
 
