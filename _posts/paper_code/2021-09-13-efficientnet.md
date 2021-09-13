@@ -129,7 +129,7 @@ $F_i^{L_i}$ 는 $F_i$ 레이어가 $i$ stage에서 $L_i$번 반복, $<H_i, W_i, 
 
 $\max\limits_{d,w,r}\,\,\,\, Accuracy(N(d,w,r))$
 
-$$s.t. N(d,w,r) = \bigodot\limits_{i=1...s}\hat{F\,}_i^{d\cdot\hat{L}_i} (X_{r\cdot\hat{H},r\cdot\hat{W},w\cdot\hat{C}_i})$$
+![image](https://user-images.githubusercontent.com/53431568/133083087-947a79b3-9086-4313-8858-a5a28f7f60dc.png)
 
 $Memory(N) \leq target \, memory$
 
@@ -192,7 +192,7 @@ width: $w\,=\,\beta^\phi$
 
 resolution: $r\,=\,\gamma^\phi$
 
-$s.t. \alpha\cdot \beta^2 \approx 2$
+$s.t. \,\,\,\, \alpha\cdot \beta^2 \cdot\gamma^2\approx 2$
 
 $\alpha \geq 1, \beta \geq 1, \gamma \geq 1$
 
@@ -203,7 +203,7 @@ $\alpha \geq 1, \beta \geq 1, \gamma \geq 1$
 Convolution operation의 FLOPS는 $d, w^2, r^2$ 각각에 대해 비례해 증감하는 성질을 갖고 있다. 여기서 width와 resolution에 제곱이 들어간 이유는 depth는 2배 키워주면 FLOPS도 비례해서 2배 증가하지만 width 와 resolution은 가로 세로가 각각 곱해져 제곱 배 증가하기 때문이다.
 
 
-위의 식에서 ``$\alpha\cdot \beta^2 \approx 2$`` 에서도 알 수 있듯 값을 2로 제한시켰으므로 총 FLOPS는 대략 $2^\phi$에 비례해 증감한다.
+위의 식에서 $\alpha\cdot \beta^2 \cdot\gamma^2 \approx 2$ 에서도 알 수 있듯 값을 2로 제한시켰으므로 총 FLOPS는 대략 $2^\phi$에 비례해 증감한다.
 
 <br>
 
@@ -265,7 +265,7 @@ EfficientNet의 $\alpha, \beta, \gamma$ 값은 간단한 grid search로 구해�
 
 #### 그 외 다양한 실험 결과들
 
-<img width="820" alt="무제 6" src="https://user-images.githubusercontent.com/53431568/133079438-d8ea79a6-5640-43ac-8631-90b7cee722b6.png">
+![image](https://user-images.githubusercontent.com/53431568/133082643-ff749a93-209d-43e7-a729-072d0572530f.png)
 
 위의 이미지는 모델이 이미지를 분류할 때 이미지의 어느 영역에 집중했는지 확인할 수 있는 Class Activation Map (CAM) 을 뽑은 결과인데, 3개의 scaling factor을 각각 고려할 때 보다 동시해 고려하였을 때 더 정교한 CAM을 얻을 수 있다는 것을 보여준다.
 
