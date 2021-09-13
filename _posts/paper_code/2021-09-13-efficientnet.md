@@ -118,15 +118,49 @@ GPipe는 모델을 여러 파티션으로 나눠 각각 서로 다른 장치에 
 
 하나의 convNet$N$은 $N = F_k\bigodot... \bigodot F_2 \bigodot F_1(X_1)$ 로 표시한다.
 
+하지만 실제로 ConvNet layers 는 여러 stage로 나눠지며 각각의 stage는 같은 구조를 공유한다. (예를 들어 ResNet의 경우 5개의 stage가 있고 down-sampling을 수행하는 맨 처음 레이어를 제외하고는 각 stage의 모든 레이어들은 같은 convolutional 타입을 가진다.)
 
-따라서 우리는 ConvNet 을 다음과 같이 정의할 수 있다.
+따라서 우리는 ConvNet을 다음과 같이 정의할 수 있다.
 
-$ N = \bigodot_{i=1...s} F_i^{L_i}(X_{H_i, W_i, C_i>})$ 
+$N = \bigodot_{i=1...s} F_i^{L_i}(X_{<H_i, W_i, C_i>})$ 
+
+
+$F_i^{L_i}$ 는 $F_i$ 레이어가 $i$ stage에서 $L_i$번 반복, $<H_i, W_i, C_i>$ 는 레이어 $i$의 input tensor X 값을 나타낸다. 
+
+우리의 목표는 제한된 자원에서 모델 정확도를 최대화 하는 것이다.
+이제 논문이 얻고자 하는 최종 목표를 간단한 식으로 정리하면 다음과 같다.
+
+$max_{d,w,r}  Accuracy(N(d,w,r))$
+
+$N(d,w,r) = \bigodot_{i=1,...s} \hat{F}_i^{d \cdot L_i}$
 
 ### 2.2. Scaling Dimensions
 
 
-$\bigodot$
+<img width="938" alt="무제 3" src="https://user-images.githubusercontent.com/53431568/133053805-96f5e915-1e36-41bf-ae46-2eb82bfb8eb8.png">
+
+
+아래 그래프는 depth 와 resolution 크기를 고정한 채로 width 값을 변화시키면서 테스트한 결과이다.
+
+동일한 FLOPS에서 width/depth/resolution 조합을 찾아내야 한다. 
+
+<img width="393" alt="무제 4" src="https://user-images.githubusercontent.com/53431568/133053882-7cce71be-9dd2-4716-909e-f16340dd1beb.png">
+
+
+이 논문에서 제안하는 새로운 방식의 compound scaling method는 다음과 같다. 
+
+## 3. EfficientNet 구조
+
+
+![image](https://user-images.githubusercontent.com/53431568/133054304-ef76719d-71bc-4f8b-a7de-6a55572de9fb.png)
+
+
+
+## 4. Experiments
+
+## 5. ImageNet 결과
+
+
 
 
 
