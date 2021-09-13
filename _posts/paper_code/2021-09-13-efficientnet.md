@@ -127,7 +127,7 @@ $F_i^{L_i}$ 는 $F_i$ 레이어가 $i$ stage에서 $L_i$번 반복, $<H_i, W_i, 
 
 $\max\limits_{d,w,r}\,\,\,\, Accuracy(N(d,w,r))$
 
-$s.t. \,\,\,\,\,\, N(d,w,r) = \bigodot\limits_{i=1...s}\hat{F\,}_i^{d\cdot\hat{L}_i} (X_{r\cdot\hat{H},r\cdot\hat{W},w\cdot\hat{C}_i})$
+$s.t. \,\,\,\, N(d,w,r) = \bigodot\limits_{i=1...s}\hat{F\,}_i^{d\cdot\hat{L}_i} (X_{r\cdot\hat{H},r\cdot\hat{W},w\cdot\hat{C}_i})$
 
 $Memory(N) \leq target \, memory$
 
@@ -182,6 +182,7 @@ $w,d,r$ 은 network 의 width, depth, resolution을 scaling 하기 위한 상수
 
 이 논문에서 제안하는 새로운 방식의 compound scaling method는 다음과 같다. compound coefficient 인 $\phi$ 로 network의 width, depth, resolution을 scale한다.
 
+#### compound scaling 방법에 사용되는 notation
 
 depth: $d\,=\,\alpha^\phi$
 
@@ -192,6 +193,37 @@ resolution: $r\,=\,\gamma^\phi$
 $s.t. \alpha\cdot \beta^2 \approx 2$
 
 $\alpha \geq 1, \beta \geq 1, \gamma \geq 1$
+
+
+
+각 $\alpha, \beta, \gamma$는 small grid search 에 의해 정해질 변수들이며 $\phi$는 얼마나 많은 resource를 사용할지에 대해 사용자가 정할 coefficient 이다. 
+
+Convolution operation의 FLOPS는 $d, w^2, r^2$ 각각에 대해 비례해 증감하는 성질을 갖고 있다. 여기서 width와 resolution에 제곱이 들어간 이유는 depth는 2배 키워주면 FLOPS도 비례해서 2배 증가하지만 width 와 resolution은 가로 세로가 각각 곱해져 제곱 배 증가하기 때문이다.
+
+
+위의 식에서 `$\alpha\cdot \beta^2 \approx 2$` 에서도 알 수 있듯 값을 2로 제한시켰으므로 총 FLOPS는 대략 $2^\phi$에 비례해 증감한다.
+
+<br>
+
+<details markdown="1">
+<summary>grid search🔎</summary>
+
+### grid search 란?
+
+Grid search(격자 탐색)은 모델 하이퍼파라미터에 넣을 수 있는 값들을 순차적으로 입력한뒤에 가장 높은 성능을 보이는 하이퍼파라미터들을 찾는 탐색 방법이다. 
+
+즉, 모델을 학습하기 위한 여러 방법이 있는데 이 중 어떤 특정 방법이 이 모델에 적합한지 판단한다.
+
+* 하이퍼파라미터(hyper parameter, 초매개변수)
+모델 생성시 사용자가 직접 설정하는 변수로, 만약 랜덤 포레스트 모델을 만든다고 하면 트리의 개수를 몇개까지 할 것인지, 트리의 깊이, 딥러닝 모델에서는 layer의 갯수, 학습횟수 등이 이에 해당한다. 반면, 파라미터(parameter)는 학습 과정에서 생성되는 변수이다. 
+
+<br>
+</details>
+
+<br>
+
+
+
 
 ## 3. EfficientNet 구조
 
