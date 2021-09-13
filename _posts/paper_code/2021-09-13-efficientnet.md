@@ -203,7 +203,7 @@ $\alpha \geq 1, \beta \geq 1, \gamma \geq 1$
 Convolution operation의 FLOPS는 $d, w^2, r^2$ 각각에 대해 비례해 증감하는 성질을 갖고 있다. 여기서 width와 resolution에 제곱이 들어간 이유는 depth는 2배 키워주면 FLOPS도 비례해서 2배 증가하지만 width 와 resolution은 가로 세로가 각각 곱해져 제곱 배 증가하기 때문이다.
 
 
-위의 식에서 `$\alpha\cdot \beta^2 \approx 2$` 에서도 알 수 있듯 값을 2로 제한시켰으므로 총 FLOPS는 대략 $2^\phi$에 비례해 증감한다.
+위의 식에서 ``$\alpha\cdot \beta^2 \approx 2$`` 에서도 알 수 있듯 값을 2로 제한시켰으므로 총 FLOPS는 대략 $2^\phi$에 비례해 증감한다.
 
 <br>
 
