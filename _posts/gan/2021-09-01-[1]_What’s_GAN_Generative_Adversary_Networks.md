@@ -21,7 +21,7 @@ GAN의 개념과 알고리즘을 공부할 수 있는 포스팅이다. [블로�
 
 그리고 이 포스팅 내용은 [Generative Adversarial Nets](https://arxiv.org/pdf/1406.2661.pdf)와 [Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks](https://arxiv.org/pdf/1511.06434.pdf)의 논문 내용을 참고한것 같다. 논문에 대한 자세한 내용은 추후 포스팅을 하겠다.
 
-<img width="100%" alt="무제" src="https://user-images.githubusercontent.com/53431568/131616172-acd97a85-820f-4d87-9db8-13b258eddf3c.png">
+<width="100%" alt="무제" src="https://user-images.githubusercontent.com/53431568/131616172-acd97a85-820f-4d87-9db8-13b258eddf3c.png">
 
 <br>
 
@@ -93,14 +93,14 @@ GAN은 다른 CNN 구조들 처럼 사람이 직접 준 데이터로 학습을 �
 
 아래 이미지들은 random noise z를 이용해 GAN에 의해 생성된 이미지들이다.
 
-<img width="379" alt="무제 2" src="https://user-images.githubusercontent.com/53431568/131542098-55a654ef-bb18-4cb7-979f-3a8cb15873b7.png" class="center">
+<img width="100%" alt="무제 2" src="https://user-images.githubusercontent.com/53431568/131542098-55a654ef-bb18-4cb7-979f-3a8cb15873b7.png" class="center">
 
 <br>
 
 z 의 한 특정 차원을 단계적으로 바꿀 수 있으며 그것의 의미론적 의미를 시각화할 수 있다. 
 
 
-<img width="462" alt="무제" src="https://user-images.githubusercontent.com/53431568/131542435-f814ca1f-b2c2-44be-9d96-cd414d4c8d21.png" class="center">
+<img width="100%" alt="무제" src="https://user-images.githubusercontent.com/53431568/131542435-f814ca1f-b2c2-44be-9d96-cd414d4c8d21.png" class="center">
 
 
 <br>
