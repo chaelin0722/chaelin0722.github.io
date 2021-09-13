@@ -104,6 +104,23 @@ GPipe는 모델을 여러 파티션으로 나눠 각각 서로 다른 장치에 
 
 ## 2. Compound Model Scaling
 
+이번 장에서는 scaling problem에 대한 다른 접근법들을 살펴보고 새로운 scaling method를 제안한다.
+
+### 2.1. Problem Formulation
+
+하나의 ConvNet Layer $i$는 $Y_i = F_i(X_i)$로 정의 된다. 
+
+- $F_i$는 연산자, $Y_i$는 output tensor, $X_i$는 input tensor을 의미
+
+- $X_i$의 크기는 $<H_i, W_i, C_i>$이며, 각각 $H_i, W_i$ 는 공간적 차원 $C_i$는 channel 차원을 의미한다. 
+
+
+
+하나의 convNet$N$은 $N = F_k\textObullseye ... \textObullseye F_2 \textObullseye F_1(X_1)$
+
+$\textObullseye$ 
+
+### 2.2. Scaling Dimensions
 
 
 
