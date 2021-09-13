@@ -37,11 +37,13 @@ depth, width, resolution의 차원들을 간단하면서도 높은 효율을 보
 
 Scaling up 방법은 ConvNet의 성능향상에 자주 사용되는 방법입니다. ResNet의 경우에도 ResNet-18에서 ResNet-200으로 layer수를 늘림으써 성능이 향상되고, 최근에는 GPipe가 baseline model을 4배 scaling up 하여 ImageNet에 대해 84.3%(top-1 acc)을 얻었다. 하지만 ConvNet의 효율적인 scaling up을 하는 과정에 대해서는 여전히 잘 알려진 바가 없다.
 
+<br>
 
-GPipe에 대해 자세히 알고싶다면 '더보기🔎'를 참고!
 
 <details markdown="1">
-<summary>더보기🔎</summary>
+<summary>GPipe🔎</summary>
+
+### GPipe 란?
 
 GPipe는 Google Brain에서 발표한 학습기법으로 메모리를 많이 차지하는 큰 모델을 효율적으로 학습시키는데 유용하다. Google이 공개한 논문의 벤치마크에 따르면 기준보다 8배 많은 장치(TPU)로 25배 큰 모델을 학습시킬 수 있고, 기준보다 4배 많은 장치에서 3.5배 빨리 학습시킬 수 있다고 한다.
 
@@ -127,7 +129,7 @@ $F_i^{L_i}$ 는 $F_i$ 레이어가 $i$ stage에서 $L_i$번 반복, $<H_i, W_i, 
 
 $\max\limits_{d,w,r}\,\,\,\, Accuracy(N(d,w,r))$
 
-$s.t. \,\,\,\, N(d,w,r) = \bigodot\limits_{i=1...s}\hat{F\,}_i^{d\cdot\hat{L}_i} (X_{r\cdot\hat{H},r\cdot\hat{W},w\cdot\hat{C}_i})$
+$s.t. N(d,w,r) = \bigodot\limits_{i=1...s}\hat{F\,}_i^{d\cdot\hat{L}_i} (X_{r\cdot\hat{H},r\cdot\hat{W},w\cdot\hat{C}_i})$
 
 $Memory(N) \leq target \, memory$
 
