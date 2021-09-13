@@ -127,7 +127,7 @@ $F_i^{L_i}$ 는 $F_i$ 레이어가 $i$ stage에서 $L_i$번 반복, $<H_i, W_i, 
 
 $\max\limits_{d,w,r}\,\,\,\, Accuracy(N(d,w,r))$
 
-$s.t. \,\,\,\,\,\, N(d,w,r) = \bigodot\limits_{i=1,...s} \hat{F\,}_i^{d \cdot \hat{L}_i} (X_{r\cdot\hat{H}_i,r\cdot\hat{W}_i, w\cdot\hat{C}_i)$
+$s.t. \,\,\,\,\,\, N(d,w,r) = \bigodot\limits_{i=1...s}\hat{F\,}_i^{d\cdot\hat{L}_i} (X_{r\cdot\hat{H},r\cdot\hat{W},w\cdot\hat{C}_i})$
 
 $Memory(N) \leq target \, memory$
 
@@ -185,6 +185,13 @@ $w,d,r$ 은 network 의 width, depth, resolution을 scaling 하기 위한 상수
 
 depth: $d\,=\,\alpha^\phi$
 
+width: $w\,=\,\beta^phi$
+
+resolution: $r\,=\,\gamma^phi$
+
+$s.t. \alpha\cdot \beta^2 \approx 2$
+
+$\alph \geq 1, \beta \geq 1, \gamma \geq 1$
 
 ## 3. EfficientNet 구조
 
