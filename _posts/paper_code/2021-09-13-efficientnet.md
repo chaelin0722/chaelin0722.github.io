@@ -16,7 +16,6 @@ classes: wide
 
 [논문원본](https://arxiv.org/pdf/1905.11946.pdf)😙
 
-
 <br>
 
 ## 0. Abstract
@@ -62,9 +61,8 @@ GPipe는 모델을 여러 파티션으로 나눠 각각 서로 다른 장치에 
 
 </details>
 
-
-
 <br>
+
 그 동안의 ConvNet의 scaling 방법에 대해서는 depth, width, resolution 이 셋 중 하나의 dimension만을 조정하는 방식으로 사용되어왔다. 이 중 두 가지 이상을 조정하는 방법도 고려될 수 있지만, 미세하게 조정해줘야 하는 작업들이 많이 필요하며 최적의 결과를 잘 나타내지 못했다.
 
 
@@ -96,8 +94,6 @@ GPipe는 모델을 여러 파티션으로 나눠 각각 서로 다른 장치에 
 직관적으로 생각해보면 compound scale up을 잘 만들기 위한 손쉬운 방법은 depth/width/resolution을 모두 크게 키우는 것이다. input image가 커진다면 network가 더 넓은 영역을 수용할 수 있는 receptive field를 확보해야 하며, 더욱 많은 channel을 통해 정제된 pattern을 추출해야하기 때문이다. 
 
 
-
-
 논문에서는 MobileNet과 ResNet을 이용해 이를 확인하고 있으며, Model scaling에 의한 성능 향상은 baseline network에 매우 의존적이기 때문에, baseline network를 설정하는데 있어서 `neural architecture search(NAS)`를 사용한다.
 
 <br>
@@ -122,17 +118,33 @@ GPipe는 모델을 여러 파티션으로 나눠 각각 서로 다른 장치에 
 
 따라서 우리는 ConvNet을 다음과 같이 정의할 수 있다.
 
-$N = \bigodot_{i=1...s} F_i^{L_i}(X_{<H_i, W_i, C_i>})$ 
+$N = \bigodot\limits_{i=1...s} F_i^{L_i}(X_{<H_i, W_i, C_i>})$ 
 
 
 $F_i^{L_i}$ 는 $F_i$ 레이어가 $i$ stage에서 $L_i$번 반복, $<H_i, W_i, C_i>$ 는 레이어 $i$의 input tensor X 값을 나타낸다. 
 
-우리의 목표는 제한된 자원에서 모델 정확도를 최대화 하는 것이다.
+우리의 목표는 최적화 문제로 귀결되는 어떤 제한된 자원이 주어져도 모델 정확도를 최대화 하는 것이다.
 이제 논문이 얻고자 하는 최종 목표를 간단한 식으로 정리하면 다음과 같다.
 
-$max_{d,w,r}  Accuracy(N(d,w,r))$
+$\max\limits_{d,w,r}\,\,\,\, Accuracy(N(d,w,r))$
 
-$N(d,w,r) = \bigodot_{i=1,...s} \hat{F}_i^{d \cdot L_i}$
+$s.t. \,\,\,\,\,\, N(d,w,r) = \bigodot\limits_{i=1,...s} \hat{F\,}_i^{d \cdot \hat{L}_i} (X_{r\cdot\hat{H}_i,r\cdot\hat{W}_i, w\cdot\hat{C}_i)$
+
+$Memory(N) \leq target \, memory$
+
+$FLOPS(N) \leq target\,flops$
+
+$w,d,r$ 은 network 의 width, depth, resolution을 scaling 하기 위한 상수값이며, $\hat{F}_i,\hat{L}_i,\hat{H}_i,\hat{W}_i,\hat{C}_i$ 는 baseline network에 미리 정해져 있는 파라미터 값이다. 
+
+즉 ,
+
+> 변동되는 상수값 :  $w,d,r$
+> 
+> 고정값 : $\hat{F}_i,\hat{L}_i,\hat{H}_i,\hat{W}_i,\hat{C}_i$
+
+
+
+<br>
 
 ### 2.2. Scaling Dimensions
 
