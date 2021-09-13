@@ -93,14 +93,14 @@ GAN은 다른 CNN 구조들 처럼 사람이 직접 준 데이터로 학습을 �
 
 아래 이미지들은 random noise z를 이용해 GAN에 의해 생성된 이미지들이다.
 
-<img width="100%" alt="무제 2" src="https://user-images.githubusercontent.com/53431568/131542098-55a654ef-bb18-4cb7-979f-3a8cb15873b7.png" class="center">
+<img width="392" align="center" alt="무제 2" src="https://user-images.githubusercontent.com/53431568/131542098-55a654ef-bb18-4cb7-979f-3a8cb15873b7.png" class="center">
 
 <br>
 
 z 의 한 특정 차원을 단계적으로 바꿀 수 있으며 그것의 의미론적 의미를 시각화할 수 있다. 
 
 
-<img width="100%" alt="무제" src="https://user-images.githubusercontent.com/53431568/131542435-f814ca1f-b2c2-44be-9d96-cd414d4c8d21.png" class="center">
+<img width="400" align="center" alt="무제" src="https://user-images.githubusercontent.com/53431568/131542435-f814ca1f-b2c2-44be-9d96-cd414d4c8d21.png" class="center">
 
 
 <br>
