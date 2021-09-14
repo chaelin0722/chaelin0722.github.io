@@ -56,7 +56,7 @@ Gan 학습 로드맵 두번째 시간!
 <img width="718" alt="무제 3" src="https://user-images.githubusercontent.com/53431568/133252482-0f26913e-1a9e-41f6-b727-7ea59ec3956d.png">
 
 
-애니메이션 gan 논문 : [Towards the Automatic Anime Characters Creation with Generative Adversarial Networks](https://arxiv.org/pdf/1708.05509.pdf)
+<center>애니메이션 gan 논문 : [Towards the Automatic Anime Characters Creation with Generative Adversarial Networks](https://arxiv.org/pdf/1708.05509.pdf)</center>
 
 <br>
 
@@ -80,7 +80,7 @@ Gan 학습 로드맵 두번째 시간!
 
 
 
-포즈 이미지 제네레이션 관련 논문 :  [Pose Guided Person Image Generation](https://papers.nips.cc/paper/2017/file/34ed066df378efacc9b924ec161e7639-Paper.pdf)
+<center>포즈 이미지 제네레이션 관련 논문 :  [Pose Guided Person Image Generation](https://papers.nips.cc/paper/2017/file/34ed066df378efacc9b924ec161e7639-Paper.pdf)</center>
 
 <br>
 
