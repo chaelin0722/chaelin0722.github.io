@@ -2,18 +2,16 @@
 # Only the main Sass file needs front matter (the dashes are enough) 
 --- 
 
+
+// https://mmistakes.github.io/minimal-mistakes/docs/stylesheets/#customizing
+$sans-serif: 'MaruBuri-Regular';  //'Noto Sans KR';
+$monospace: 'Ubuntu Mono';
+$type-size-4-5: 1.12em !default; // Ubuntu Mono is a bit small
+
 @charset "utf-8";
 @import "minimal-mistakes/skins/dirt"; // skin
 @import "minimal-mistakes/skins/mint"; // skin
 @import "minimal-mistakes";
-@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
-
-
-// https://mmistakes.github.io/minimal-mistakes/docs/stylesheets/#customizing
-$sans-serif: 'Gowun Dodum' //'BBTreeGB';  //'MaruBuri-Regular';  //'Noto Sans KR';
-$monospace: 'Ubuntu Mono';
-$type-size-4-5: 1.12em !default; // Ubuntu Mono is a bit small
-
 
 // https://github.com/mmistakes/minimal-mistakes/issues/1219
 html {
@@ -43,13 +41,6 @@ html {
   background: #ffdd75;
 }
 
-
-@font-face {
-    font-family: 'BBTreeGB';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGB.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
 
 
 @font-face {
