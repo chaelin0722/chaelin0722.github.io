@@ -12,6 +12,7 @@ $type-size-4-5: 1.12em !default; // Ubuntu Mono is a bit small
 @import "minimal-mistakes/skins/dirt"; // skin
 @import "minimal-mistakes/skins/mint"; // skin
 @import "minimal-mistakes";
+@import url('https://cdn.jsdelivr.net/font-iropke-batang/1.2/font-iropke-batang.css');
 
 // https://github.com/mmistakes/minimal-mistakes/issues/1219
 html {
@@ -41,7 +42,12 @@ html {
   background: #ffdd75;
 }
 
-
+@font-face {
+    font-family: 'Cafe24Oneprettynight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @font-face {
     font-family: 'MaruBuri-Regular';
