@@ -29,7 +29,7 @@ Gan 학습 로드맵 두번째 시간!
 
 ![0_3bbZGnvcwgN8BNkD](https://user-images.githubusercontent.com/53431568/133250975-478d156e-45fb-497a-be3b-f0cd942593e0.jpeg)
 
-[Photo by SwapnIl Dwivedi]
+<center>[Photo by SwapnIl Dwivedi] </center>  
 
 
 
