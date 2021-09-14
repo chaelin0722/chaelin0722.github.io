@@ -68,7 +68,7 @@ GPipe는 모델을 여러 파티션으로 나눠 각각 서로 다른 장치에 
 그 동안의 ConvNet의 scaling 방법에 대해서는 depth, width, resolution 이 셋 중 하나의 dimension만을 조정하는 방식으로 사용되어왔다. 이 중 두 가지 이상을 조정하는 방법도 고려될 수 있지만, 미세하게 조정해줘야 하는 작업들이 많이 필요하며 최적의 결과를 잘 나타내지 못했다.
 
 
-따라서 이 논문에서는 간단하면서 효율적인 `'compound scaling method'`를 제안하며 이 방법의 핵심은 `network의 width, depth, resolution 사이의 균형을 맞추는 것은 성능향상에 매우 중요`하며 이들간의 군형은 간단한 상수의 비(constant ratio)로 구해질 수 있다는 것이다.
+따라서 이 논문에서는 간단하면서 효율적인 `'compound scaling method'`를 제안하며 이 방법의 핵심은 `network의 width, depth, resolution 사이의 균형을 맞추는 것은 성능향상에 매우 중요`하며 이들간의 균형은 간단한 상수의 비(constant ratio)로 구해질 수 있다는 것이다.
 
 
 예를 들어 우리가 $2^N$배 큰 모델을 디자인하고 싶다면 baseline network의 depth를 단순히 $\alpha^N$, width를 $\beta^N$, image size를 $\gamma^N$해서 작은 grid search를 통해 위의 조건을 만족하는 $\alpha, \beta, \gamma$값을 찾게 된다.
