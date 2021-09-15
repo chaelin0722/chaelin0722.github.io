@@ -409,13 +409,17 @@ DeblurGAN은 모션 디블러링을 수행합니다. 여기서, 디블러링(deb
 
 새로운 비디오 시퀀스를 만들어내는 기법이다. 배경이 어떤건지 인식하고 forebround action에 새로운 시간 시퀀스를 만들어낸다. 한마디로 배경에서 피사체를 분리해 피사체 부분이 1-2초 후에 하게 될 모션을 예측해 보여준다.
 
-<영상삽입>
+<iframe width="665" height="510" src="https://www.youtube.com/embed/Pt1W_v-yQhw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 <br>
 
 ### Generate 3D objects
 
 3D 물체 생성은 GAN으로 3D 객체를 생성할 때 자주 인용되는 논문 중 하나입니다.
+
+<iframe width="665" height="382" src="https://www.youtube.com/embed/HO1LYJb818Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 <img width="631" alt="무제 8" src="https://user-images.githubusercontent.com/53431568/133373276-06a107e2-5aba-4961-ba5b-351002aa78a2.png">
 
