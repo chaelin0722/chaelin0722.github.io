@@ -224,7 +224,7 @@ GauGAN 은 입력된 세그먼트 레이아웃으로 사실적인 이미지를 �
 
 ### Text to image (StackGAN)
 
-텍스트를 이미지로 만드는 것은 영역-전이 GAN 의 초반 어플리케이션 중 하나입니다. 한 문장을 입력으로 넣으면 해석/묘사에 맞는 다수의 이미지들이 생성됩니다.
+텍스트를 이미지로 만드는 것은 영역-전이 GAN 의 초반 어플리케이션 중 하나입니다. 한 문장을 입력으로 넣으면 에 맞는 다수의 이미지들이 생성됩니다.
 
 <img width="685" alt="무제 3" src="https://user-images.githubusercontent.com/53431568/133368574-86be7990-5e47-4b8d-8261-f4569161199f.png">
 
@@ -283,31 +283,178 @@ CoGAN learns the joing probability $P(x_1, x_2)$ by sampling $x_1 ~ P(x_1)$ and 
 <img width="665" alt="무제 4" src="https://user-images.githubusercontent.com/53431568/133369951-c5c1bbde-4598-445c-aa73-88b6018ce5a0.png">
 
 
-👉 [Coupled Generative Adversarial Networks](https://arxiv.org/pdf/1606.07536.pdf)
+👉 [CoGAN : Coupled Generative Adversarial Networks](https://arxiv.org/pdf/1606.07536.pdf)
+
 
 <br>
 
-
 ### DiscoGAN
 
-DiscoGAN provides matching style: many potential applications. DiscoGAN learns cross domain relationship without labels or pairing. For example, it successfully transfers style (or patterns) from one domain (handbag) to another (shoe).
+DiscoGAN은 매칭 스타일을 제공한다 : 많은 잠재된 어플리켕션. DiscoGAN은 레이블이나 페어링 없이 교차된 영역의 관계를 배웁니다. 예를 들어, 한 영역(핸드백) 으로부터 다른영역(신발)로 스타일을 성공적으로 전이시킬 수 있습니다.
 
 <img width="668" alt="무제 5" src="https://user-images.githubusercontent.com/53431568/133369989-6aad93f4-16eb-48eb-b1c3-1ccecac0715f.png">
 
-DiscoGAN and CycleGAN are very similar in the network design.
-
+DiscoGAN 와 CycleGAN은 네트워크 구조가 매우 비슷합니다. 아래 이미지 참고!
 
 <img width="641" alt="무제 6" src="https://user-images.githubusercontent.com/53431568/133370035-93e735bc-abca-40ee-96c8-8790258c49f6.png">
+
+
+👉 [DiscoGAN](https://github.com/carpedm20/DiscoGAN-pytorch)
 
 <br>
 
 ### Pix2Pix
-Pix2Pix is an image-to-image translation that get quoted in cross-domain GAN’s paper frequently. For example, it converts a satellite image into a map (the bottom left).
+
+Pix2Pix 교차 도메인 GAN의 논문에서 자주 인용되는 이미지 에서 이미지로의 변환입니다. 아래 이미지와 같이 위성 이미지를 지도(왼쪽 하단)로 변환하는 것을 볼 수 있습니다.
+
+<img width="689" alt="무제" src="https://user-images.githubusercontent.com/53431568/133370802-aeb049f4-90d6-4df3-ac3f-2260558c1fc2.png">
+
+👉 [Pix2Pix](https://github.com/phillipi/pix2pix)
+
+<br>
+
+### DTN
+
+DTN은 그림으로부터 이모티콘을 생성합니다.
+
+<img width="684" alt="무제 2" src="https://user-images.githubusercontent.com/53431568/133371092-a9f50e3e-3081-418c-960d-ef722025ae8c.png">
+
+
+<img width="697" alt="무제 3" src="https://user-images.githubusercontent.com/53431568/133371115-589d181a-70f6-42fe-965c-550855f8e75d.png">
+
+
+👉 [Unsupervised Cross-Domain Image Generation](https://arxiv.org/pdf/1611.02200.pdf)
+
+<br>
+
+### Texture Synthesis
+
+<img width="683" alt="무제 4" src="https://user-images.githubusercontent.com/53431568/133371210-557dd7e8-d2a8-4b80-ac0b-16b451b9677c.png">
+
+
+👉 [Precomputed Real-Time Texture Synthesis with
+Markovian Generative Adversarial Networks](https://arxiv.org/pdf/1604.04382.pdf)
+
+
+### Image editing (IcGAN)
+
+특정 속성으로 이미지를 재건축하거나 편집한다.
+
+<img width="683" alt="무제 5" src="https://user-images.githubusercontent.com/53431568/133371387-0defd95c-ab3d-4724-bed0-051fb8fba7ab.png">
+
+<img width="699" alt="무제 6" src="https://user-images.githubusercontent.com/53431568/133371415-f279623c-b97b-472c-a938-5cf783b68fcd.png">
+
+👉 [IcGAN](https://github.com/Guim3/IcGAN)
+
+<br>
+
+### Face aging (Age-cGAN)
+
+약간 사진 어플로도 많이 쓰이는 기법들이 GAN에서 보이는 것 같다.
+
+<img width="687" alt="무제 7" src="https://user-images.githubusercontent.com/53431568/133371536-431f6bd2-3104-468c-afa7-e8524c0adcd6.png">
+
+<img width="676" alt="무제 8" src="https://user-images.githubusercontent.com/53431568/133371564-cecaf8af-a3d8-49d1-9367-57f3caa55408.png">
+
+👉 [FACE AGING WITH CONDITIONAL GENERATIVE ADVERSARIAL NETWORKS](https://arxiv.org/pdf/1702.01983.pdf)
+
+<br>
+
+### DeblurGAN
+
+DeblurGAN은 모션 디블러링을 수행합니다. 여기서, 디블러링(deblurring)은 이미지에서 흐릿한 아티팩트를 제거하는 프로세스를 말합니다. 그런데 논문을 살짝 살펴보니 제거하기 보단 선명하게 만들어 낸다라고 보면 될 것 같습니다. 아마 흐릿한 것을 제거하는게 아닐까요..!
+
+<img width="704" alt="무제 9" src="https://user-images.githubusercontent.com/53431568/133371682-1658c838-95d5-4404-bc8f-b843df84cdbb.png">
+
+👉 [DeblurGAN: Blind Motion Deblurring Using Conditional Adversarial Networks](https://arxiv.org/pdf/1711.07064.pdf)
+
+<br>
+
+### Neural Photo Editor
+
+내용기반 이미지 편집기 : ex) 헤어밴드를 늘리는 것
+
+<img width="323" alt="무제" src="https://user-images.githubusercontent.com/53431568/133372197-131cd6b5-e4ae-4060-92bc-df7213bc1b64.png"><img width="313" alt="무제 3" src="https://user-images.githubusercontent.com/53431568/133372231-57ccdb2a-2ffa-43de-a51c-e3f95a7f659a.png">
+
+ 👉 [Neural Photo Editor](https://github.com/ajbrock/Neural-Photo-Editor)
+
+<br>
+
+### Refine image
+
+<img width="336" alt="무제 4" src="https://user-images.githubusercontent.com/53431568/133372312-ab1782d9-1c5f-42f7-837f-42c8f77bedea.png">
+
+<br>
+
+### Object detection
+
+이것은 GAN으로 기존 솔루션을 향상시키는 하나의 응용 프로그램입니다. GAN으로 OD 라니.. 응용분야가 무궁무진하다.
+
+<img width="680" alt="무제 6" src="https://user-images.githubusercontent.com/53431568/133372745-b3cfc2af-f9db-4e2a-94f7-f377838e3354.png">
+
+
+👉 [Perceptual Generative Adversarial Networks for Small Object Detection](https://arxiv.org/pdf/1706.05274v2.pdf)
+
+<br>
+
+### Image blending
+
+이미지들을 블렌딩한다.
+
+<img width="699" alt="무제 7" src="https://user-images.githubusercontent.com/53431568/133372820-4ca06d84-c80d-4998-8db6-50da36b23f92.png">
+
+👉 [GP_GAN](https://github.com/wuhuikai/GP-GAN)
+
+### Video generation
+
+새로운 비디오 시퀀스를 만들어내는 기법이다. 배경이 어떤건지 인식하고 forebround action에 새로운 시간 시퀀스를 만들어낸다. 한마디로 배경에서 피사체를 분리해 피사체 부분이 1-2초 후에 하게 될 모션을 예측해 보여준다.
+
+<영상삽입>
+
+<br>
+
+### Generate 3D objects
+
+3D 물체 생성은 GAN으로 3D 객체를 생성할 때 자주 인용되는 논문 중 하나입니다.
+
+<img width="631" alt="무제 8" src="https://user-images.githubusercontent.com/53431568/133373276-06a107e2-5aba-4961-ba5b-351002aa78a2.png">
+
+👉 [Learning a Probabilistic Latent Space of Object
+Shapes via 3D Generative-Adversarial Modeling](https://proceedings.neurips.cc/paper/2016/file/44f683a84163b3523afe57c2e008bc8c-Paper.pdf)
+
+<br>
+
+### Music generation
+
+GAN은 이미지가 아닌 분야에서도 활용될 수 있습니다. 이번의 음악 작곡 처럼 말이죠😲👍
+
+<img width="683" alt="무제 9" src="https://user-images.githubusercontent.com/53431568/133373432-c5419946-368c-4139-8eca-d3fba7b4868c.png">
+
+<img width="677" alt="무제 10" src="https://user-images.githubusercontent.com/53431568/133373464-ff6ba769-3dfc-49c8-8db7-622fe08b0760.png">
+
+👉 [MIDINET: A CONVOLUTIONAL GENERATIVE ADVERSARIAL
+NETWORK FOR SYMBOLIC-DOMAIN MUSIC GENERATION](https://arxiv.org/pdf/1703.10847.pdf)
+
+<br>
+
+### Medical (Anomaly Detection)
+
+GAN은 또 다른 산업에서도 가능한데요! 의약쪽에서 종양을 감지하는 것처럼요!
+
+<img width="712" alt="무제 11" src="https://user-images.githubusercontent.com/53431568/133373711-18f82779-242e-4184-a73f-666489b0c9e6.png">
+
+
+👉 [Unsupervised Anomaly Detection with
+Generative Adversarial Networks to Guide
+Marker Discovery](https://arxiv.org/pdf/1703.05921.pdf)
 
 
 <br>
 
-와~ 이렇게 많은 GAN application 들을 훑어보았는데요,,, 참 많네.. 연구주제가 더 산으로 갈거같은 이 느낌... 하나하나 논문을 읽어보고 또 논문에 대해 추후 포스팅을 하도록 하겠습니다..! 😘
+
+와~ 기나긴 여정이 끝났습니다!!
+
+이렇게 많은 GAN application 들을 훑어보았는데요,,, 생각보다 GAN의 응용분야가 많아서 놀랐습니다. ㅎㅎ 연구주제가 더 산으로 갈거같은 이 느낌... 하나하나 논문을 읽어보고 또 논문에 대해 추후 포스팅을 하도록 하겠습니다..! 😘
   
 
 
