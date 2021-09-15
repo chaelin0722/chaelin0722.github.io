@@ -44,7 +44,7 @@ GAN에 대한 포스팅을 많이 올린 Jonathan Hui의 [GAN — GAN Series (fr
   
 #### [1] [What’s GAN Generative Adversary Networks?](https://chaelin0722.github.io/gan/1-_What-s_GAN_Generative_Adversary_Networks/)
 
-#### [2] Some cool applications of GANs.
+#### [2] [Some cool applications of GANs.](https://chaelin0722.github.io/gan/2-GAN-Some-cool-applications-of-GAN/)
 
 #### [3] How to measure GAN performance?
 
