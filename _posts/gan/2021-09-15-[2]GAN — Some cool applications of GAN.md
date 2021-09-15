@@ -127,7 +127,7 @@ StarGAN은 한 영역에서 다른 영억으로의 번역을 위한 image-to-ima
 
 (b)에서 생성자가 input 이미지와 target domain label(화가난 얼굴 이미지라고 가정하자) 을 바탕으로 가짜 이미지를 생성하면, (c)에서 주어진 가짜 이미지와 원본 영역의 이미지(행복한 얼굴이라 가정)를 가지고 생성자를 이용해 이미지를 재구축 한다.
 
-(d)애서는 실제이미지와 가짜 이미지를 식별자에게 제공해 도메인 분류 뿐 아니라 실제인지 아닌지 레이블을 지정한다. 비용함수에는 이미지와 레이블을 식별하는 데 필요한 판별자 비용과 함께 재구성 오류가 포함된다.
+(d)에서는 실제이미지와 가짜 이미지를 식별자에게 제공해 도메인 분류 뿐 아니라 실제인지 아닌지 레이블을 지정한다. 비용함수에는 이미지와 레이블을 식별하는 데 필요한 판별자 비용과 함께 재구성 오류가 포함된다.
 
 
 <img width="709" alt="무제" src="https://user-images.githubusercontent.com/53431568/133354353-c446910f-b008-45e8-a7ce-bd846643eb97.png">
@@ -382,6 +382,8 @@ DeblurGAN은 모션 디블러링을 수행합니다. 여기서, 디블러링(deb
 
 ### Refine image
 
+이미지를 정제하는 기법. 여기엔 설명이 없네요😂 따로 찾아봐야겠습니다.
+
 <img width="336" alt="무제 4" src="https://user-images.githubusercontent.com/53431568/133372312-ab1782d9-1c5f-42f7-837f-42c8f77bedea.png">
 
 <br>
@@ -407,7 +409,7 @@ DeblurGAN은 모션 디블러링을 수행합니다. 여기서, 디블러링(deb
 
 ### Video generation
 
-새로운 비디오 시퀀스를 만들어내는 기법이다. 배경이 어떤건지 인식하고 forebround action에 새로운 시간 시퀀스를 만들어낸다. 한마디로 배경에서 피사체를 분리해 피사체 부분이 1-2초 후에 하게 될 모션을 예측해 보여준다.
+새로운 비디오 시퀀스를 만들어내는 기법입니다. 배경이 어떤건지 인식하고 forebround action에 새로운 시간 시퀀스를 만들어냅니다. 한마디로 배경에서 피사체를 분리해 피사체 부분이 1-2초 후에 하게 될 모션을 예측해 보여주게 됩니다. 미래에는 엄청난 기술이 나올것 같은 기분이 드네요👍🏻
 
 <iframe width="665" height="510" src="https://www.youtube.com/embed/Pt1W_v-yQhw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
