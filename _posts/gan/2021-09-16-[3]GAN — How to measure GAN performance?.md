@@ -27,7 +27,6 @@ Gan 학습 로드맵 세 번째 시간입니다!
 ![0_t2b9BdAmHlPj4PUS (1)](https://user-images.githubusercontent.com/53431568/133721856-1a72a581-9082-47e8-afe2-6d88ebd9239f.jpg)
 
 
-
 GAN에서는, 생성자(Generator)와 구분자(Discriminator)의 객관적 함수는 각 네트워크가 상대편에 비해 얼마나 잘 하고있는지를 측정합니다. 생성자가 구분자를 얼마나 잘 속이는지 측정하는 것을 예로 들 수 있습니다. 하지만, 이것은 이미지의 품질과 다양성을 측정하기에는 좋은 지표는 아닙니다.
 
 GAN 시리즈의 일원으로 각기 다른 GAN 모델들의 결과를 어떻게 비교하는지 **Inception Score(IS)**과 **Frechet Inception Distance(FID)**을 토대로 살펴보고자 합니다. 
