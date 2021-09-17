@@ -48,16 +48,27 @@ IS는 GAN의 수행능력을 두가지 기준으로 측정합니다.
 
 ![1_RdIYRsqXxRAKwcjtxg6_kw](https://user-images.githubusercontent.com/53431568/133730812-56324b4b-8750-4aa5-adf5-4c20d02c6bea.jpeg)
 
-GAN 에서는 조건부 확률 $P(y|x)$ 가 예측이 쉬워야(낮은 엔트로피) 합니다. (예를 들어 이미지가 주어졌을 때, 그 객체의 타입을 쉽게 알아야 한다.)
+GAN 에서는 조건부 확률 $P(y|x)$ 의 예측이 쉬워야(낮은 엔트로피) 합니다. (예를 들어 이미지가 주어졌을 때, 그 객체의 타입을 쉽게 알아야 한다.)
 
-따라서, 생성된 이미지들을 분류하고 $P(y|x)$($y$는 레이블값, $x$는 생성된 데이터)를 예측하기 위해 <u style="color:yellow">Inception network</u>를 사용하는 것입니다. 
-
-
+따라서, 생성된 이미지들을 분류하고 $P(y|x)$($y$는 레이블값, $x$는 생성된 데이터)를 예측하기 위해 <u style="color:yellow">Inception network</u>를 사용하는 것입니다. 이 방법을 사용해 이미지의 `품질`을 알 수 있습니다.
 
 
+다음으로는 이미지의 `다양성`을 측정하는 방법에 대해 알아봅시다.
+
+$P(y)$는 주변확률(marginal probability)입니다. 아래 수식을 참고하면, 
+
+$\sigma_z p(y|x= G(z))dz$
+
+만약 생성된 이미지가 분산된다면, $y$를 위한 데이터 분포는 균일(높은 엔트로피)해야 합니다. 
+
+
+아래 그림은 이러한 개념을 시각화해서 보여주고 있습니다.
+
+![1_ZkN2nkdtsqvhtKB3QAbfCQ](https://user-images.githubusercontent.com/53431568/133731725-f669e3f9-5409-46cd-87ba-387822f22931.png)
 
 
 
+위에서 배운 품질 측정법과 다양성 측정법의 두 기준을 합치면 `KL-divergence`를 계산하하고 아래 수식을 사용해 IS를 계산합니다.
 
 
-
+$IS(G) = exp(E_{x~p_a}D_{KL}(p(y|X) || p(y)))$
