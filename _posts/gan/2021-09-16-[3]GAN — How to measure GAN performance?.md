@@ -80,7 +80,7 @@ $IS(G) = exp(E_{x\sim p_a}D_{KL}(p(y\mid X) \parallel p(y)))$
 ## Fréchet Inception Distance (FID)
 FID는 Inception network를 이용해 하나의 중간 레이어에서 특징들을 추출합니다. 그 다음엔 추출된 특징에서 평균 $\mu$와 $\sum$을 갖는 다변수 가우시안 분포를 이용해 데이터 분포를 모델링합니다. 실제 이미지 $x$와 생성된 이미지 $g$ 사이의 FID는 다음과 같이 계산됩니다.
 
-$FID(x,g) = \|\mu_x-\mu_g\|_2^2 + Tr(\sum_x+\sum_g-2(\sum_x\sum_g)^{\frac{1}{2}})$
+$FID(x,g) = \| \mu_x- \mu_g \|_2^2 + Tr(\sum_x+\sum_g-2(\sum_x\sum_g)^{\frac{1}{2}})$
 
 여기서 $Tr$은 모든 대각선 요소를 합산한다는 뜻입니다.
 
