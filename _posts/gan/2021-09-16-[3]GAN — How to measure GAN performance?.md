@@ -23,6 +23,7 @@ Gan 학습 로드맵 세 번째 시간입니다!
 이 글은 [Jonathan Hui의 포스팅](https://jonathan-hui.medium.com/gan-how-to-measure-gan-performance-64b988c47732)을 참고해 정리한 내용입니다!
 
 
+![0_t2b9BdAmHlPj4PUS (1)](https://user-images.githubusercontent.com/53431568/133721856-1a72a581-9082-47e8-afe2-6d88ebd9239f.jpg)
 
 In GANs, the objective function for the generator and the discriminator usually measures how well they are doing relative to the opponent. For example, we measure how well the generator is fooling the discriminator. It is not a good metric in measuring the image quality or its diversity. As part of the GAN series, we look into the Inception Score and Fréchet Inception Distance on how to compare results from different GAN models.
 
