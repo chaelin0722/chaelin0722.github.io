@@ -30,7 +30,7 @@ Gan 학습 로드맵 세 번째 시간입니다!
 
 GAN에서는, 생성자(Generator)와 구분자(Discriminator)의 객관적 함수는 각 네트워크가 상대편에 비해 얼마나 잘 하고있는지를 측정합니다. 생성자가 구분자를 얼마나 잘 속이는지 측정하는 것을 예로 들 수 있습니다. 하지만, 이것은 이미지의 품질과 다양성을 측정하기에는 좋은 지표는 아닙니다.
 
-GAN 시리즈의 일원으로 각기 다른 GAN 모델들의 결과를 어떻게 비교하는지 <u style="color:yellow">Inception Score(IS)</u>과 <u style="color:yellow">Frechet Inception Distance(FID)</u>을 토대로 살펴보고자 합니다. 
+GAN 시리즈의 일원으로 각기 다른 GAN 모델들의 결과를 어떻게 비교하는지 <u>Inception Score(IS)</u>과 <u>Frechet Inception Distance(FID)</u>을 토대로 살펴보고자 합니다. 
 
 <br>
 
@@ -55,9 +55,9 @@ GAN 에서는 조건부 확률 $P(y|x)$ 의 예측이 쉬워야(낮은 엔트로
 
 다음으로는 이미지의 `다양성`을 측정하는 방법에 대해 알아봅시다.
 
-$P(y)$는 주변확률(marginal probability)입니다. 아래 수식을 참고하면, 
+$P(y)$는 주변확률(marginal probability)로 아래 수식과 같이 계산됩니다.
 
-$\int_z p(y|x= G(z))dz$
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $\int_z p(y|x= G(z))dz$
 
 만약 생성된 이미지가 분산된다면, $y$를 위한 데이터 분포는 균일(높은 엔트로피)해야 합니다. 
 
@@ -68,7 +68,37 @@ $\int_z p(y|x= G(z))dz$
 
 
 
-위에서 배운 품질 측정법과 다양성 측정법의 두 기준을 합치면 `KL-divergence`를 계산하하고 아래 수식을 사용해 IS를 계산합니다.
+위에서 배운 품질 측정법과 다양성 측정법의 두 기준을 합쳐 `KL-divergence`를 계산하고 아래 수식을 사용해 IS를 계산합니다.
+
+$IS(G) = exp(E_{x~p_a}D_{KL}(p(y|X) \| p(y)))$
+
+단, IS는 클래스 하나당 딱 하나의 이미지만 생성하는 경우 성능을 잘못 대표한다는 단점이 있다. $p(y)$ 는 다양성이 낮더라도 여전히 균일할 것이다. 
+
+<br>
+
+## Fréchet Inception Distance (FID)
+FID는 Inception network를 이용해 하나의 중간 레이어에서 특징들을 추출합니다. 그 다음엔 추출된 특징에서 평균 $\mu$와 $\sum$을 갖는 다변수 가우시안 분포를 이용해 데이터 분포를 모델링합니다. 실제 이미지 $x$와 생성된 이미지 $g$ 사이의 FID는 다음과 같이 계산됩니다.
+
+$FID(x,g) = \|\mu_x-\mu_g\|_2^2 + Tr(\sum_x+\sum_g-2(\sum_x\sum_g)^{\frac{1}{2}})$
+
+여기서 $Tr$은 모든 대각선 요소를 합산한다는 뜻입니다.
+
+> 낮은 FID 값은 더 나은 이미지 품질과 다양성을 의미합니다.
+
+FID는 모드 축소에 민감한데, 아래 그림과 같이 시뮬레이션된 누락 모드에 따라 거리가 증가하는 것을 볼 수 있습니다.
 
 
-$IS(G) = exp(E_{x~p_a}D_{KL}(p(y|X) || p(y)))$
+![1_8PzOnrzIeuM0E1unrFKLfg](https://user-images.githubusercontent.com/53431568/133784864-fab4e3f7-09fd-46d4-813c-69b8fb60f6e1.png)
+
+FID 는 IS 보다 노이즈에 강합니다. 만약 모델이 한 클래스당 하나의 이미지만 생성한다면 그 거리는 매우 클 것입니다. 따라서 FID는 이미지 다양성에 있어서 좀 더 나은 측정방법입니다. FID 는 높은 편향(high bias)를 갖지만 분산(low diverse)은 낮습니다. 훈련데이터셋과 테스트 데이터셋 간의 FID를 계산하면 둘 다 실제 이미지이므로 FID가 0이 될 것을 예상하게 됩니다. 하지만 훈련 샘플의 다른 배치로 테스트를 실행하면 예상한 것과 달리 0 FID 가 나오지 않습니다.
+
+![1_D-XiZT9FdCWaA9jnyomsVw](https://user-images.githubusercontent.com/53431568/133785691-72fe89d7-5059-4736-ad59-11126ae355b2.png)
+
+또한, FID 와 IS 는 모두 특징추출(특징의 유무)를 기반으로 합니다. 공간적 관계가 유지되지 않는다면, 과연 생성자(Generator)는 같은 점수를 내게 될까요? (아니요~ ㅎㅎ)
+
+![1_o0lGo8Jnfw_gmXQd9sUCmg](https://user-images.githubusercontent.com/53431568/133785779-291f0659-e5bc-4391-9a6e-971da967302b.jpeg)
+
+<br>
+
+## Precision, Recall and F1 Score
+
