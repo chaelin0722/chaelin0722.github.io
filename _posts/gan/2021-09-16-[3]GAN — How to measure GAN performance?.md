@@ -70,7 +70,9 @@ $P(y)$는 주변확률(marginal probability)로 아래 수식과 같이 계산�
 
 위에서 배운 품질 측정법과 다양성 측정법의 두 기준을 합쳐 `KL-divergence`를 계산하고 아래 수식을 사용해 IS를 계산합니다.
 
-$IS(G) = exp(\mathbb{E}_{x\sim p_a}D_{KL}(p(y\mid X) \parallel p(y)))$
+$$
+IS(G) = exp(\mathbb{E}_{x\sim p_a}D_{KL}(p(y\mid X) \parallel p(y)))
+$$
 
 단, IS는 클래스 하나당 딱 하나의 이미지만 생성하는 경우 성능을 잘못 대표한다는 단점이 있다. $p(y)$ 는 다양성이 낮더라도 여전히 균일할 것이다. 
 
