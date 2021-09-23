@@ -14,7 +14,7 @@ last_modified_at: 2021-09-24T10:40:00-05:00
 
 갑자기 nvidia-smi 명령어가 안듣는 에러가 발생했다 ..?!!😱😱  아래와 같이 경고 문구가 뜬다. 
 
-~~~linux
+~~~
 Failed to initialize NVML: Driver/library version mismatch
 ~~~
 
@@ -24,12 +24,12 @@ Failed to initialize NVML: Driver/library version mismatch
 
 #### 1.nvidia 관련 사용중인 드라이브 확인
 
-~~~linux
+~~~
 lsmod | grep nvidia
 ~~~
 위 명령어로 드라이브를 확인하면 다음과 같은 식으로 뜨는 것을 확인할 수 있다.
 
-~~~linux
+~~~
 nvidia_uvm 9233456 0
 nvidia_drm 43213 6
 nvidia_modeset 1114112 1 nvidia_drm
@@ -38,7 +38,7 @@ nvidia 12680704 38 nvidia_uvm,nvidia_modeset
 
 원래는 이게 뜨면 안되는 것이다.. 아래 명령어들을 하나씩 실행하여 없애주자
 
-~~~linux
+~~~
 sudo rmmod nvidia_drm
 sudo rmmod nvidia_modeset
 sudo rmmod nvidia_uvm
@@ -53,18 +53,18 @@ sudo rmmod nvidia
 
 만약, `sudo rmmod nvidia_uvm`과 같은 명령어 실행 후 아래와 같은 에러가 뜬다면, nvidia를 사용중인 프로세스를 확인 후 kill! 해주면 된다.
 
-~~~linux
+~~~
 rmmod: ERROR: Module nvidia_drm is in use
 ~~~
 
 아래 명령어로 사용중인 프로세스를 확인 후, `PID`를 확인하고, 
 
-~~~linux
+~~~
 sudo lsof /dev/nvidia*
 ~~~
 
 해당 PID 프로세스를 kill! 해주자
-~~~linux
+~~~
 sudo kill -9 PID
 ~~~
 
