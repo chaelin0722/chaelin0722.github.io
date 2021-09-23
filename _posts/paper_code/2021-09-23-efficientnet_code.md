@@ -10,6 +10,7 @@ classes: wide
 
 last_modified_at: 2021-09-23T07:06:00-05:00
 
+use_math: true
 ---
 
 ### Rethinking Model Scaling for Convolutional Neural Networks 구현
@@ -45,4 +46,4 @@ last_modified_at: 2021-09-23T07:06:00-05:00
 <br>
 
 
-### [학습결과]
+### 학습중
