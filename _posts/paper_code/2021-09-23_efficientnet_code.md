@@ -22,18 +22,19 @@ last_modified_at: 2021-09-23T07:06:00-05:00
 
 > Epoch : 100
 > 
-> BATCH SIZE: 64
+> BATCH SIZE: 128
 > 
-> alpha = 1.2
+> alpha(depth) = 1.2
 > 
-> beta = 1.1
+> beta(width) = 1.1
 > 
-> gamma = 1.15
+> gamma(resolution) = 1.15
 
 
 앞서 해석한 논문을 참고하면 코드를 이해하기 편할 것이다! => 참고! [Rethinking Model Scaling for Convolutional Neural Networks](https://chaelin0722.github.io/paperreview/efficientnet/)
 
 아래 EfficientNet-B0를 구현하였고, 각 $\alpha$ $\beta$ $\gamma$ 값들은 각 1.2, 1.1, 1.15 로 고정하였다.
+
 ![image](https://user-images.githubusercontent.com/53431568/134497574-b406ca1e-38f6-4f16-90d1-621f75e3ee03.png)
 
 
@@ -41,7 +42,7 @@ last_modified_at: 2021-09-23T07:06:00-05:00
 
 
 <br>
-<script src= ></script>
+<script src="https://gist.github.com/chaelin0722/f144e09d5bfef239d818282967383373.js"></script>
 <br>
 
 
