@@ -36,7 +36,11 @@ nvidia_modeset 1114112 1 nvidia_drm
 nvidia 12680704 38 nvidia_uvm,nvidia_modeset
 ~~~
 
-원래는 이게 뜨면 안되는 것이다.. 아래 명령어들을 하나씩 실행하여 없애주자
+원래는 이게 뜨면 안된다고 한다.
+
+#### 2. 사용중인 드라이브 없애기
+
+이제, 아래 명령어들을 하나씩 실행하여 없애주자
 
 ~~~
 sudo rmmod nvidia_drm
@@ -44,6 +48,8 @@ sudo rmmod nvidia_modeset
 sudo rmmod nvidia_uvm
 sudo rmmod nvidia 
 ~~~
+
+#### 3. reboot
 
 이제 reboot를 실행해준 후, 다시 `lsmod | grep nvidia`를 실행하였을 때 아무것도 뜨지 않으면 정상이다!
 
