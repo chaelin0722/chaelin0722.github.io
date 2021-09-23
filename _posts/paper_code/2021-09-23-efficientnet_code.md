@@ -47,3 +47,10 @@ use_math: true
 
 
 ### 학습중
+
+
+#### 참고
+
+[1] [https://deep-learning-study.tistory.com/563](https://deep-learning-study.tistory.com/563)
+
+[2] [https://ichi.pro/ko/pytorcheseo-efficientnet-guhyeonhagi-part-4-the-finale-40529429372185](https://ichi.pro/ko/pytorcheseo-efficientnet-guhyeonhagi-part-4-the-finale-40529429372185)
