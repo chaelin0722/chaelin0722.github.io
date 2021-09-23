@@ -52,7 +52,7 @@ GAN에 대한 포스팅을 많이 올린 Jonathan Hui의 [GAN — GAN Series (fr
 
 - showcase
   
-#### [4] CycleGAN
+#### [4] [CycleGAN](https://chaelin0722.github.io/gan/4-CycleGAN/)
 
 #### [5] Super Resolution GAN (SRGAN)
 
