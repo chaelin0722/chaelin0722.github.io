@@ -48,11 +48,17 @@ install 선택시 partition 생성하고 거기 / 씌워서 install함  -> 실�
 8월 19일 오후 10:55분 시도한것
 [https://devdoo.tistory.com/81](https://devdoo.tistory.com/81)   -> 실패🥵
 
+
+
+<iframe src="https://giphy.com/embed/60yTQLK9O7XlS" width="480" height="260" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/df-gif-story-district-feed-60yTQLK9O7XlS">via GIPHY</a></p>
+
+
 ### 결과
 
 새롭게 우분투를 설치한 후 재시작을 하면, 
 
 계속 부팅이 안되고 bios 모드로 진입해버린다. 게다가 bios 모드에서 boot priority가 텅 비어있다.
+
 
 ### 해결방법 😺😺
 
