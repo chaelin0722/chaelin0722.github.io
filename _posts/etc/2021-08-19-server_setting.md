@@ -50,7 +50,7 @@ install 선택시 partition 생성하고 거기 / 씌워서 install함  -> 실�
 
 
 
-<iframe src="https://giphy.com/embed/60yTQLK9O7XlS" width="480" height="260" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/df-gif-story-district-feed-60yTQLK9O7XlS">via GIPHY</a></p>
+<iframe src="https://giphy.com/embed/60yTQLK9O7XlS" width="480" height="260" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 
 ### 결과
