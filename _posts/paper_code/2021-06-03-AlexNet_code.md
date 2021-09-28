@@ -26,11 +26,12 @@ last_modified_at: 2021-06-12T08:06:00-05:00
 <br>
 
 - local response normalization은 요즘 사용하지 않고 대부분 batch normalization을 사용한다고 함. 
+
 - compile 부분을 보면 optimizer을 SGD(stochastic gradient descent)를 사용하였다. 
 
-[stochastic gradient descent](https://chaelin0722.github.io/cnn/sgd/)에 대한 설명! 
-
 - 원래는 cifar-10 데이터 셋으로 10개의 클래스를 분류하고자 하였지만 GPU 메모리 부족으로 2개의 클래스를 분류해보았다.
+
+<br>
 
 ### [학습결과]
 
