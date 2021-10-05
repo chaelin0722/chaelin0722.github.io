@@ -31,15 +31,15 @@ classes: wide
 
 M.S. candidate in IT Engineering (2021.09 - present)
 
-VICL – Visual Information Computing Lab, Sookmyung Women's University, Seoul, South Korea
+nbsp;nbsp;nbsp;nbsp; VICL – Visual Information Computing Lab, Sookmyung Women's University, Seoul, South Korea
 
-[IVPL Lab homepage](https://ivpl.sookmyung.ac.kr/)
+nbsp;nbsp;nbsp;nbsp; [IVPL Lab homepage](https://ivpl.sookmyung.ac.kr/)
 
 
 
 B.S. in IT Engineering (2016.03 - 2021.08)
 
-Sookmyung Women's University, Seoul, South Korea
+nbsp;nbsp;nbsp;nbsp;  Sookmyung Women's University, Seoul, South Korea
 
 
 ### Skills
