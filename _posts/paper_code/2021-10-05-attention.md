@@ -93,7 +93,7 @@ key, value, query 의 세 벡터를 어떻게 처리하는지 그림과 함께 �
 
 <img width="1004" alt="무제" src="https://user-images.githubusercontent.com/53431568/135964598-8f99affb-84ea-4f57-afb9-f6a49699ad95.png">
 
-`나는 지금 소파에 누워있다`라는 입력 시퀀스가 입력으로 들어온다면 이것을 x 행렬벡터로 임베딩을 시켜준 후, 각 query, key, value 의 weight 행렬벡터 (각, $W_Q$, $W_K$, $W_V$) 와 곱해주어 query, key, value 벡터를 얻어낸다. 이제 이 세가지 벡터 값들로 attention 연산을 수행하는 것이다! 😲👍
+`나는 지금 소파에 누워있다`라는 입력 시퀀스가 입력으로 들어온다면 이것을 x 행렬벡터로 임베딩을 시켜준 후, 각 query, key, value 의 weight 행렬벡터 (각, $W^Q$, $W^K$, $W^V$) 와 곱해주어 query, key, value 벡터를 얻어낸다. 이제 이 세가지 벡터 값들로 attention 연산을 수행하는 것이다! 😲👍
 
 
 <br>
@@ -122,7 +122,7 @@ attention 연산을 차례로 전개해 본 결과이다. 만드느라 팔 빠�
 
 <img width="1005" alt="무제" src="https://user-images.githubusercontent.com/53431568/135965569-56c7f210-bc9f-43ab-81bf-db1d87dc29a7.png">
 
-다시 벡터의 그림 으로 한번 살펴 보면, K, Q, V 세 벡터를 만드는 연산을 8번 반복, 이것으로 attention 연산을 8번 반복해 나온 출력값 $z_0$ ~ $z_7$ 을 모두 concat 을 진행시켜주면 4x32 의 매트릭스가 생성이 된다. 최종 출력값의 차원을 맞춰주기 위해 32 by 4 의 weighted matrix $W_O$를 연산해주어 최종 $z$ 값을 출력해준다.
+다시 벡터의 그림 으로 한번 살펴 보면, K, Q, V 세 벡터를 만드는 연산을 8번 반복, 이것으로 attention 연산을 8번 반복해 나온 출력값 $z_0$ ~ $z_7$ 을 모두 concat 을 진행시켜주면 4x32 의 매트릭스가 생성이 된다. 최종 출력값의 차원을 맞춰주기 위해 32 by 4 의 weighted matrix $W^O$를 연산해주어 최종 $z$ 값을 출력해준다.
 
 <img width="1052" alt="무제 2" src="https://user-images.githubusercontent.com/53431568/135965913-cf0b772d-1878-4e3c-b666-ac0b6082eae9.png">
 
@@ -132,15 +132,14 @@ attention 연산을 차례로 전개해 본 결과이다. 만드느라 팔 빠�
 ### 🌍 Positional Embedding
 
 
-
-Self-attention은 입력 시퀀스 데이터를 순차적으로 처리하지 않기 때문에 Positional encoding 방법을 사용하고 있다. Positional encoding은 입력 시퀀스에서 단어의 순서를 표현하기 위한 임베딩 방법 (-1 ~ 1)
+Self-attention은 입력 시퀀스 데이터를 순차적으로 처리하지 않기 때문에 Positional encoding 방법을 사용하고 있다. Positional encoding은 입력 시퀀스에서 단어의 순서를 표현하기 위한 임베딩 방법으로 (-1 ~ 1) 범위의 값을 반환한다.
 
 <img width="1497" alt="무제" src="https://user-images.githubusercontent.com/53431568/135966557-af1f3d81-0332-454b-b52b-ac9e32f01c63.png">
 
 
-Sine, cosine 함수를 사용하였고 이런 수식을 사용한 이유는 가설! 관련 포지션에 대해서 모델이 쉽게 배울 수 있을거라 생각했기 때문이란다! 가설이래용
+Sin, cos 함수를 사용하였고 이런 수식을 사용한 이유는 관련 포지션에 대해서 모델이 쉽게 배울 수 있을거라 가설을 세웠다고 한다. 
 
-단어의 임베딩 벡터와 더해져서 결국 상대적 위치의 값으로 구성된 최종 행렬이 encoder과 decoder의 입력값으로 들어간다. 
+#### PE 연산으로 나온 매트릭스 벡터는 단어의 임베딩 벡터와 더해져서 결국 상대적 위치의 값으로 구성된 최종 행렬이 encoder과 decoder의 입력값으로 들어간다. 
 
 <br>
 <br>
