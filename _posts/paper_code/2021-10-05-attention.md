@@ -46,7 +46,7 @@ RNN 구조는 스스로 반복하면서 이전단계에서 얻은 정보가 지�
 
 이렇게 `맥락을 다음 step에 넘겨줌`으로써 자연어처리, 주가 예측 등 다양한 시계열 분석이 가능해졌다. 하지만 step 이 길어지면서(문장이 길어지면서) 예전에 했던 말 즉, 문장의 앞부분에 대한 정보가 손실되어 앞의 문맥이 뒤까지 이어지지 못하는 `Long-Term Dependency` 문제가 발생하게 되는 것이다.
 
-<hr>
+<br>
 
 Long-Term Dependency 문제를 해결하기 위해 제안된 LSTM(long-short term memory) 이다.
 
@@ -68,6 +68,7 @@ LSTM을 사용한 간단한 encoder-decoder 구조이다. 자연어 처리는 �
 **이 논문에서는 recurrence를 피하는 대신 input과 output 사이의 global dependecy를 찾는 attention mechanism만 사용하는 Transformer 구조를 제안**한다. Transformer는 더 많은 병렬처리가 가능하며 state-of-the-art 수준을 보인다.
 
 
+<br>
 
 ## 🌎 Transformer
 
@@ -91,6 +92,13 @@ softmax를 거친 값을 value에 곱해준다면, query와 유사한 value일 �
 key, value, query 의 세 벡터를 어떻게 처리하는지 그림과 함께 프로세스를 살펴 보겠습니다
 
 
+<img width="1004" alt="무제" src="https://user-images.githubusercontent.com/53431568/135964598-8f99affb-84ea-4f57-afb9-f6a49699ad95.png">
+
+`나는 지금 소파에 누워있다`라는 입력 시퀀스가 입력으로 들어온다면 이것을 x 행렬벡터로 임베딩을 시켜준 후, 각 query, key, value 의 weight 행렬벡터와 곱해주어 query, key, value 벡터를 얻어낸다. 이제 이 세가지 벡터 값들을 attention 연산에서 사용할 것입니다.
+
+<img width="1025" alt="무제" src="https://user-images.githubusercontent.com/53431568/135965005-82ab7c9c-9b12-4c0e-9d7d-f3e804890d7b.png">
+<img width="1029" alt="무제 2" src="https://user-images.githubusercontent.com/53431568/135965039-410e41a6-cd5e-47dc-8362-54d2267930ee.png">
+<img width="1028" alt="무제 3" src="https://user-images.githubusercontent.com/53431568/135965067-42b11961-4035-46c6-87e6-6e765b89e4f9.png"><img width="1030" alt="무제 4" src="https://user-images.githubusercontent.com/53431568/135965120-554c0eaf-ac94-4ea5-be6f-dae09661ea4d.png">
 
 
 
