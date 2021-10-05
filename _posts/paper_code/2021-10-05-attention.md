@@ -21,11 +21,9 @@ classes: wide
 
 실제로 먼저 ViT 읽는데 무슨소린지 몰라 당황했는데 ㅎㅎ 이 논문을 읽으니 확실히 이해가 되었다. 
 
-이번 리뷰는 그림도 많고 이해해야할 것도 많기 때문에 아주 길 것으로 예상이 된다😬😬 ㅎㅎ 그럼 이제 열심히 달려봅시다 👍 
+이번 리뷰는 그림도 많고 이해해야할 것도 많기 때문에 아주 머나면 여정이 될 것으로 예상이 된다😬😬 ㅎㅎ 그럼 이제 열심히 달려봅시다 👍 
 
 
-
-👑🦄🐳🐬🌱☘️🍀🌼🌙🌎🌍🪐💫⭐️🌟
 <br>
 
 ## 🌟 Background
@@ -79,7 +77,7 @@ LSTM을 사용한 간단한 encoder-decoder 구조이다. 자연어 처리는 �
 
 이제 transformer에서 사용되는 `Attention`에 대해 찬찬히 뜯어봅시다! 위의 구조를 보면 attention 레이어를 볼 수 있는데, attention이란 간단히 말하자면 관련 있는 정보, 중요한 정보에 더 관심을 둔다는 것입니다. 그래서 말그대로 attention(주목~) 이라는 단어를 쓴 것 같아요.
 
-### Attention
+### 🌍 Attention
 
 <img width="1383" alt="무제" src="https://user-images.githubusercontent.com/53431568/135963346-54f4d734-2a54-4fe8-9c1a-2d6b2a21c325.png">
 
@@ -95,7 +93,7 @@ key, value, query 의 세 벡터를 어떻게 처리하는지 그림과 함께 �
 
 <img width="1004" alt="무제" src="https://user-images.githubusercontent.com/53431568/135964598-8f99affb-84ea-4f57-afb9-f6a49699ad95.png">
 
-`나는 지금 소파에 누워있다`라는 입력 시퀀스가 입력으로 들어온다면 이것을 x 행렬벡터로 임베딩을 시켜준 후, 각 query, key, value 의 weight 행렬벡터와 곱해주어 query, key, value 벡터를 얻어낸다. 이제 이 세가지 벡터 값들을 attention 연산에서 사용할 것입니다.
+`나는 지금 소파에 누워있다`라는 입력 시퀀스가 입력으로 들어온다면 이것을 x 행렬벡터로 임베딩을 시켜준 후, 각 query, key, value 의 weight 행렬벡터 (각, $W_Q$, $W_K$, $W_V$) 와 곱해주어 query, key, value 벡터를 얻어낸다. 이제 이 세가지 벡터 값들로 attention 연산을 수행하는 것이다! 😲👍
 
 
 <br>
@@ -117,22 +115,32 @@ attention 연산을 차례로 전개해 본 결과이다. 만드느라 팔 빠�
 <img width="1028" alt="무제 3" src="https://user-images.githubusercontent.com/53431568/135965067-42b11961-4035-46c6-87e6-6e765b89e4f9.png"><img width="1030" alt="무제 4" src="https://user-images.githubusercontent.com/53431568/135965120-554c0eaf-ac94-4ea5-be6f-dae09661ea4d.png">
 
 
-### Multi-Head Attention
+### 🌍 Multi-Head Attention
 
 
-이렇게 차근차근 계산하면 output값이 출력이 되는데, transformer 구조를 다시 자세히 보면 `Multi-Head Attention` 레이어를 쓴다는 것을  볼 수 있습니다. 이것은 위에서 공부한 self-attention을 병렬로 h번 (논문에서는 8번이라고 제시함) 수행하는 방식으로 진행된다고 한다.아래 그림처럼 각 v, k, q 에 대해서 self-attention을 8번 수행하여 나온 결과(8개)를 concat 해준 후 linear 하게 projection 한 값을 output 으로 해준다.
+이렇게 차근차근 계산하면 output값이 출력이 되는데, transformer 구조를 다시 자세히 보면 `Multi-Head Attention` 레이어를 쓴다는 것을 볼 수 있습니다. 이것은 위에서 공부한 self-attention을 병렬로 h번 (논문에서는 8번이라고 제시함) 수행하는 방식으로 진행된다고 한다.아래 그림처럼 각 v, k, q 에 대해서 self-attention을 8번 수행하여 나온 결과(8개)를 concat 해준 후 linear 하게 projection 한 값을 output 으로 해준다.
 
 <img width="1005" alt="무제" src="https://user-images.githubusercontent.com/53431568/135965569-56c7f210-bc9f-43ab-81bf-db1d87dc29a7.png">
 
-다시 벡터의 그림 으로 한번 살펴 보면, K, Q, V 세 벡터를 만드는 연산을 8번 반복, 이것으로 attention 연산을 8번 반복해 나온 출력값 $z_0$ ~ $z_7$ 을 모두 concat 을 진행시켜주면 4x32 의 매트릭스가 생성이 된다. 최종 출력값의 차원을 맞춰주기 위해 32 by 4 의 weighted matrix 를 연산해주어 최종 $z$ 값을 출력해준다.
+다시 벡터의 그림 으로 한번 살펴 보면, K, Q, V 세 벡터를 만드는 연산을 8번 반복, 이것으로 attention 연산을 8번 반복해 나온 출력값 $z_0$ ~ $z_7$ 을 모두 concat 을 진행시켜주면 4x32 의 매트릭스가 생성이 된다. 최종 출력값의 차원을 맞춰주기 위해 32 by 4 의 weighted matrix $W_O$를 연산해주어 최종 $z$ 값을 출력해준다.
 
 <img width="1052" alt="무제 2" src="https://user-images.githubusercontent.com/53431568/135965913-cf0b772d-1878-4e3c-b666-ac0b6082eae9.png">
 
 
 <br>
 
-### Positional Embedding
+### 🌍 Positional Embedding
 
+
+
+Self-attention은 입력 시퀀스 데이터를 순차적으로 처리하지 않기 때문에 Positional encoding 방법을 사용하고 있다. Positional encoding은 입력 시퀀스에서 단어의 순서를 표현하기 위한 임베딩 방법 (-1 ~ 1)
+
+<img width="1497" alt="무제" src="https://user-images.githubusercontent.com/53431568/135966557-af1f3d81-0332-454b-b52b-ac9e32f01c63.png">
+
+
+Sine, cosine 함수를 사용하였고 이런 수식을 사용한 이유는 가설! 관련 포지션에 대해서 모델이 쉽게 배울 수 있을거라 생각했기 때문이란다! 가설이래용
+
+단어의 임베딩 벡터와 더해져서 결국 상대적 위치의 값으로 구성된 최종 행렬이 encoder과 decoder의 입력값으로 들어간다. 
 
 <br>
 <br>
