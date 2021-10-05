@@ -79,7 +79,9 @@ LSTM을 사용한 간단한 encoder-decoder 구조이다. 자연어 처리는 �
 
 ### 🌍 Attention
 
-<img width="1383" alt="무제" src="https://user-images.githubusercontent.com/53431568/135963346-54f4d734-2a54-4fe8-9c1a-2d6b2a21c325.png">
+![Uploading image.png…]()
+
+
 
 Attention은 query를 key-value 짝과 매핑시켜 output으로 내는 것이다. 여기서 key, value, query는 벡터값이며 output은 value의 weighted sum으로 계산된다. 
 
@@ -96,7 +98,9 @@ key, value, query 의 세 벡터를 어떻게 처리하는지 그림과 함께 �
 `나는 지금 소파에 누워있다`라는 입력 시퀀스가 입력으로 들어온다면 이것을 x 행렬벡터로 임베딩을 시켜준 후, 각 query, key, value 의 weight 행렬벡터 (각, $W^Q$, $W^K$, $W^V$) 와 곱해주어 query, key, value 벡터를 얻어낸다. 이제 이 세가지 벡터 값들로 attention 연산을 수행하는 것이다! 😲👍
 
 > Key: 영향을 주는 단어
+> 
 > value : 영향 가중치
+> 
 > Query : 영향을 받는 단어
 
 <br>
@@ -104,7 +108,7 @@ key, value, query 의 세 벡터를 어떻게 처리하는지 그림과 함께 �
 
 attention 연산을 차례로 전개해 본 결과이다. 만드느라 팔 빠지는 줄...  
 
-> ⭐️ 연산 순서
+#### ⭐️ 연산 순서
 
 1) Query와 key 의 dot product를 계산해서 이 둘 사이의 유사도를 구한다
 2) 기울기 vanishing 문제를 예방하기 위해서 key의 차원값($\sqrt{d_k}$)으로 한차례 나눈다.
