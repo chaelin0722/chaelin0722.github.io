@@ -7,7 +7,7 @@ categories:
 tags: [CNN, paperReview]
 use_math: true
 
-last_modified_at: 2021-09-29T08:06:00-05:00
+last_modified_at: 2021-10-05T08:06:00-05:00
 classes: wide
 ---
 
@@ -18,4 +18,15 @@ classes: wide
 
 <br>
 
-## 0. Abstract
+
+RNN
+Model architecture of Encoder-Decoder development form of RNN
+Long input sequence => information loss(Long-term dependency) 
+
+
+
+Transformer
+Attention mechanism that draw global dependencies between input and output
+Allows more parallelization and can reach SOTA 
+
+
