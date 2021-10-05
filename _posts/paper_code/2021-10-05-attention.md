@@ -68,7 +68,22 @@ LSTM을 사용한 간단한 encoder-decoder 구조이다. 자연어 처리는 �
 
 
 
-## Transformer
+## 🌎 Transformer
+
+이 논문에서 사용하였다고 하는 transformer에 대해서 알아봅시다~ transformer의 전체적인 구조는 아래와 같고 구체적으로는 마지막에 한 번 더 설명하게 될 테니 일단 구조만 익혀두고 넘어가기~
+
+<img width="382" alt="무제" src="https://user-images.githubusercontent.com/53431568/135963495-b45cb7d2-9c5b-4352-a3eb-a4c4c2f5dfde.png">
+
+
+이제 transformer에서 사용되는 `Attention`에 대해 찬찬히 뜯어봅시다! 위의 구조를 보면 attention 레이어를 볼 수 있는데, attention이란 간단히 말하자면 관련있는 정보, 중요한 정보에 더 관심을 둔다는 것입니다. 그래서 말그대로 
+
+<img width="1383" alt="무제" src="https://user-images.githubusercontent.com/53431568/135963346-54f4d734-2a54-4fe8-9c1a-2d6b2a21c325.png">
+
+Attention은 query를 key-value 짝과 매핑시켜 output으로 내는 것이다. 여기서 key, value, query는 벡터값이며 output은 value의 weighted sum으로 계산된다. 
+
+Query와 key 의 dot-product를 계산해서 이 둘 사이의 유사도를 구한 후 기울기 vanishing 문제를 예방하기 위해서 key의 차원값으로 한차례 나눠 준 다음에 softmax 를 계산해준다. 이 후 value 값으로 곱한다.
+
+softmax를 거친 값을 value에 곱해준다면, query와 유사한 value일 수 록, 즉 `중요한 value일 수록 더 높은 값`을 가지게 됩니다. `중요한 정보에 더 관심을 둔다는 attention의 원리`를 여기서 확인할 수 있다.
 
 
 
