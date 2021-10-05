@@ -40,7 +40,7 @@ classes: wide
 
 #### RNN 구조에 기반하여 이해해보자
 
-<img width="1712" alt="무제" src="https://user-images.githubusercontent.com/53431568/135961023-a50f1d53-365e-43c2-904e-a3d8c236f32f.png">
+<img width="1576" alt="무제" src="https://user-images.githubusercontent.com/53431568/135964393-ba8309ca-6828-4d46-bcc6-58aff02c03ec.png">
 
 RNN 구조는 스스로 반복하면서 이전단계에서 얻은 정보가 지속되도록 하는 구조이다. A를 RNN의 한 덩어리로 보자! A는 input $x_t$를 받아서 $h_t$를 내보냄과 동시에 관련 정보(information)를 다음 step의 network(cell)에 넘겨준다. 그럼 다음 step에서는 받은 정보와 해당 step에서 받은 $x_t$(input)값을 연산해 다음 $h_t$ 값을 찾는 방식으로 작동한다. 
 
@@ -88,6 +88,7 @@ Query와 key 의 dot-product를 계산해서 이 둘 사이의 유사도를 구�
 softmax를 거친 값을 value에 곱해준다면, query와 유사한 value일 수 록, 즉 `중요한 value일 수록 더 높은 값`을 가지게 됩니다. `중요한 정보에 더 관심을 둔다는 attention의 원리`를 여기서 확인할 수 있다.
 
 
+key, value, query 의 세 벡터를 어떻게 처리하는지 그림과 함께 프로세스를 살펴 보겠습니다
 
 
 
