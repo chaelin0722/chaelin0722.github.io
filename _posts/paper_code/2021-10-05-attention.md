@@ -159,15 +159,22 @@ Sin, cos 함수를 사용하였고 이런 수식을 사용한 이유는 관련 �
 <img width="1368" alt="무제 2" src="https://user-images.githubusercontent.com/53431568/135968952-9cb5fee0-d7e6-4fea-9e10-f546b2e3fd6f.png">
 
 
-이런식으로 각 값을 달리 사용하는 이유는, 첫 부분에서 배운 인코더-디코더의 기본 프로세스를 보면 알 수 있다.
+이런식으로 각 값을 달리 사용하는 이유는, 첫 부분에서 배운 인코더-디코더의 기본 프로세스를 보면 알 수 있다. 현재 state의 input 값과 그 전 lstm 에서 나온 이전 정보 값을 갖고 함께 output 값을 내는 원리로 작동을 한다! 따라서 transformer를 사용하는 여기 decoder, encoder 에도 비슷한 프로세스로 진행을 하는 것이다.
+
+영향을 주는 값인 key와 영향 가중치인 value 값을 encoder의 최종 ouput 값에서 가져오고, decoder의 ouput 에서 영향을 받는 값인 query 를 가져와 세 가지의 벡터로 self-attention 연산을 수행하는 것이다.  
+이렇게 self-attention 연산을 수행하면, `decoder가 입력 시퀀스 데이터의 적절한 위치에 집중`할 수 있도록 도와주는 역할을 한다고 한다.
 
 <img width="988" alt="무제" src="https://user-images.githubusercontent.com/53431568/135964075-b467af78-7b7b-4d50-8746-e65bd7dbcadd.png">
 
-이렇게 self-attention 연산을 수행하면, decoder가 입력 시퀀스 데이터의 적절한 위치에 집중할 수 있도록 도와주는 역할을 한다고 한다.
+단, self-attention을 사용함으로써, 각 단어(토큰)들의 중요도를 수치화한 정보를 병렬로 연산처리하여 손실이 일어나지 않아 long term dependecy 문제점은 해결하면서, 더 깊은 네트워크 sequence에서도 SOTA 성능을 내었다는 것에 다시 한 번 의의를 가진다! 
 
 <br>
 <br>
 
+
+
+
+마지막으로 내의 🔥열쩡!🔥을 보여주는 레퍼런스 리스트들.. ㅎㅎ
 
 #### 참고
 
