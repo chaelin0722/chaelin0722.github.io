@@ -5,7 +5,7 @@ layout: single
 classes: wide
 ---
 
-## about
+## Self introduction
 
 영상처리연구실에서 공부하고 있는 대학원생입니다.
 
@@ -33,7 +33,6 @@ M.S. candidate in IT Engineering (2021.09 - present)
 
 VICL – Visual Information Computing Lab, Sookmyung Women's University, Seoul, South Korea
 
-<br>
 
 B.S. in IT Engineering (2016.03 - 2021.08)
 
