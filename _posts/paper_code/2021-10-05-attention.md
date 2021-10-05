@@ -95,6 +95,9 @@ key, value, query 의 세 벡터를 어떻게 처리하는지 그림과 함께 �
 
 `나는 지금 소파에 누워있다`라는 입력 시퀀스가 입력으로 들어온다면 이것을 x 행렬벡터로 임베딩을 시켜준 후, 각 query, key, value 의 weight 행렬벡터 (각, $W^Q$, $W^K$, $W^V$) 와 곱해주어 query, key, value 벡터를 얻어낸다. 이제 이 세가지 벡터 값들로 attention 연산을 수행하는 것이다! 😲👍
 
+> Key: 영향을 주는 단어
+> value : 영향 가중치
+> Query : 영향을 받는 단어
 
 <br>
 
@@ -140,6 +143,27 @@ Self-attention은 입력 시퀀스 데이터를 순차적으로 처리하지 않
 Sin, cos 함수를 사용하였고 이런 수식을 사용한 이유는 관련 포지션에 대해서 모델이 쉽게 배울 수 있을거라 가설을 세웠다고 한다. 
 
 #### PE 연산으로 나온 매트릭스 벡터는 단어의 임베딩 벡터와 더해져서 결국 상대적 위치의 값으로 구성된 최종 행렬이 encoder과 decoder의 입력값으로 들어간다. 
+
+<br>
+
+## 🪐 Transformer Details
+
+이제 공부한 것을 바탕으로 전체적인 transformer의 구조를 파악해보자. 먼저, encoder 부분이다 residual 연결을 잘 파악하면서 보자!
+
+<img width="790" alt="무제" src="https://user-images.githubusercontent.com/53431568/135968686-28b3a9bf-46ef-4955-b0f6-ce331469742d.png">
+
+입력 토큰이 2개라고 가정하고 input 값을 1차원의 벡터값으로 임베딩한 값과 PE 값을 더해 self-attention 을 취해준 후 나온 ouput 값 $z$ 를 layernorm 의 input 으로 두고, attention 에 들어가기 전의 값($x$)도 함께 layernorm 처리를 해주는데, 이 두 input 값을 더해준 후, 정규화를 시켜준다. 정규화로 나온 벡터 값을 각각 feed forward 시켜준 후 아까와 같은 프로세스로 Add & Normalization 을 처리해준다. 이게 하나의 인코더이며 이것이 N 번 수행된다. (논문에서는 6번으로 함)
+
+다음은 encoder와 decoder를 두 개만 있다고 가정 한 전체적인 encoder-decoder 프로세스인데, decoder는 encoder와 다르게 `Encoder-Decoder Attention`이라는 레이어를 사용한다. 나머지 프로세스는 같지만, 이 부분을 보면 Q, V, K 값 중, Q는 decoder 의 output 값으로 나온 벡터를 사용하고, K, V 벡터는 마지막 encoder 에서 나온 output 값으로 사용해 처리하게 된다
+
+<img width="1368" alt="무제 2" src="https://user-images.githubusercontent.com/53431568/135968952-9cb5fee0-d7e6-4fea-9e10-f546b2e3fd6f.png">
+
+
+이런식으로 각 값을 달리 사용하는 이유는, 첫 부분에서 배운 인코더-디코더의 기본 프로세스를 보면 알 수 있다.
+
+<img width="988" alt="무제" src="https://user-images.githubusercontent.com/53431568/135964075-b467af78-7b7b-4d50-8746-e65bd7dbcadd.png">
+
+이렇게 self-attention 연산을 수행하면, decoder가 입력 시퀀스 데이터의 적절한 위치에 집중할 수 있도록 도와주는 역할을 한다고 한다.
 
 <br>
 <br>
