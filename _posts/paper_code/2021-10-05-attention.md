@@ -38,9 +38,9 @@ classes: wide
 
 #### RNN 구조에 기반하여 이해해보자
 
-<img width="1576" alt="무제" src="https://user-images.githubusercontent.com/53431568/135964393-ba8309ca-6828-4d46-bcc6-58aff02c03ec.png">
+![캡처](https://user-images.githubusercontent.com/53431568/136023289-093512e9-e1c0-4801-aebc-b406e4253f9c.PNG)
 
-RNN 구조는 스스로 반복하면서 이전단계에서 얻은 정보가 지속되도록 하는 구조이다. A를 RNN의 한 덩어리로 보자! A는 input $x_t$를 받아서 $h_t$를 내보냄과 동시에 관련 정보(information)를 다음 step의 network(cell)에 넘겨준다. 그럼 다음 step에서는 받은 정보와 해당 step에서 받은 $x_t$(input)값을 연산해 다음 $h_t$ 값을 찾는 방식으로 작동한다. 
+RNN(Recurrent Neural Network) 구조는 스스로 반복하면서 이전단계에서 얻은 정보가 지속되도록 하는 구조이다. A를 RNN의 한 덩어리로 보자! A는 input $x_t$를 받아서 $h_t$를 내보냄과 동시에 관련 정보(information)를 다음 step의 network(cell)에 넘겨준다. 그럼 다음 step에서는 받은 정보와 해당 step에서 받은 $x_t$(input)값을 연산해 다음 $h_t$ 값을 찾는 방식으로 작동한다. 
 
 이렇게 `맥락을 다음 step에 넘겨줌`으로써 자연어처리, 주가 예측 등 다양한 시계열 분석이 가능해졌다. 하지만 step 이 길어지면서(문장이 길어지면서) 예전에 했던 말 즉, 문장의 앞부분에 대한 정보가 손실되어 앞의 문맥이 뒤까지 이어지지 못하는 `Long-Term Dependency` 문제가 발생하게 되는 것이다.
 
