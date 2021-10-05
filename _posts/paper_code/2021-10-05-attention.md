@@ -79,8 +79,7 @@ LSTM을 사용한 간단한 encoder-decoder 구조이다. 자연어 처리는 �
 
 ### 🌍 Attention
 
-![Uploading image.png…]()
-
+![self_attention](https://user-images.githubusercontent.com/53431568/136023187-7ec98f7e-fffb-4a85-af1d-53cd0fd4d216.PNG)
 
 
 Attention은 query를 key-value 짝과 매핑시켜 output으로 내는 것이다. 여기서 key, value, query는 벡터값이며 output은 value의 weighted sum으로 계산된다. 
