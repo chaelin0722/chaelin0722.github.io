@@ -30,3 +30,13 @@ Attention mechanism that draw global dependencies between input and output
 Allows more parallelization and can reach SOTA 
 
 
+https://dgkim5360.tistory.com/entry/understanding-long-short-term-memory-lstm-kr
+
+https://omicro03.medium.com/attention-is-all-you-need-transformer-paper-%EC%A0%95%EB%A6%AC-83066192d9ab
+
+https://www.youtube.com/watch?v=KT58deB6oPQ
+
+https://www.youtube.com/watch?v=mxGCEWOxfe8
+
+https://www.youtube.com/watch?v=bgsYOGhpxDc
+
