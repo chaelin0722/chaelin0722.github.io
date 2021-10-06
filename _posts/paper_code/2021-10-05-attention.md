@@ -51,7 +51,7 @@ Long-Term Dependency 문제를 해결하기 위해 제안된 LSTM(long-short ter
 <img width="1495" alt="무제 2" src="https://user-images.githubusercontent.com/53431568/135964180-54ba574f-6259-40df-a2f8-a38730d7ab51.png">
 
 
-`해당 정보를 얼마나 까먹고(forget gate), 얼마나 다음 Step으로 바로 이어줄지 정하는 **Gate**를` 넣는 것이 핵심이다. 그 과정이 가운데 시그마, tanh 등으로 계산되어서 정리되어 출력된다.
+`해당 정보를 얼마나 까먹고(forget gate), 얼마나 다음 Step으로 바로 이어줄지 정하는 Gate를` 넣는 것이 핵심이다. 그 과정이 가운데 시그마, tanh 등으로 계산되어서 정리되어 출력된다.
 
 
 <br>
