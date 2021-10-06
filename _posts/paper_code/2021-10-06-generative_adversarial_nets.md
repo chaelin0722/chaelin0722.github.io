@@ -88,6 +88,17 @@ deep generative 모델은 최대가능도함수(maximum likelihood) 예측과 �
 
 ## 3. Adversarial nets
 
+adversarial modeling framework는 모델들이 모두 다층퍼셉트론 구조이면 적용하기가 아주 간단하다. 생성자의 분포인 $p_g$에 있는 데이터 $x$를 학습하기 위해,
+generator의 input으로 들어갈 noise variables $p_z(z)$에 대한 prior를 정의하고, $G$는 $\theta_g$를 파라미터로 가지고 있는 다층퍼셉트론에 의해 미분 가능한 함수라고 했을 때, 데이터 공간을 $G(z;\theta_g)$로 매핑해 표현할 수 있다. 
+
+한편, 두번째 다층 퍼셉트론인 Discriminator은 $D(x;\theta_d)$로 나타내며 output은 single scalar(스칼라) 값이 나온다(확률값). $D(x)$는 $x$가 $p_g$(생성데이터분포-가짜)가 아닌 데이터 분포로부터 나올 확률을 나타낸다.
+
+
+따라서, 이를 수식으로 정리하면 다음과 같은 value function $V(G,D)$에 대한 minimax problem을 푸는 것과 같아진다.
+
+$\displaystyle \min_{G} \max_{D}V(D,G)=E_{x\sim P_{data}(x)}[logD(x)]+ E_{x\sim p_{z}(z)}[log(1-D(G(z)))]]$
+
+
 
 
 
