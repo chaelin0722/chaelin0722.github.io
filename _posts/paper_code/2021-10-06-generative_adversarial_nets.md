@@ -34,7 +34,9 @@ classes: wide
 
 <img width="689" alt="무제" src="https://user-images.githubusercontent.com/53431568/136160746-9dfb22c3-c1c5-48c9-937a-937923f64bde.png">
 
-위의 그림처럼 학습할 수록 점점 generator은 원래 데이터 분포 양상처럼 변하고, discriminator 모델은 모든 $x$구간에 대해 $1 \over 2$ 값을 갖는 직선의 형태로 존재한다. 이 그래프가 무엇을 뜻하는지 [3. Adversary nets](#3-adversarial-nets)에 나와있다. 이 말 중요하니까 잘 알아두자!⭐️⭐️
+위의 그림처럼 학습할 수록 점점 generator은 원래 데이터 분포 양상처럼 변하고, discriminator 모델은 모든 $x$구간에 대해 $1 \over 2$ 값을 갖는 직선의 형태로 존재한다. 이 그래프가 무엇을 뜻하는지 [3. Adversary nets](#3-adversarial-nets)에 나와있다. 
+
+이 말 중요하니까 잘 알아두자!⭐️⭐️
 
 G와 D는 다층 퍼셉트론으로 정의되어있어서 역전파로 전체 시스템을 학습할 수 있다. 더 이상 학습을 하거나 샘플을 생성할 때 마르코프 체인이나 unrolled approximate inference(근사 추론) 네트워크는 필요없다. 실험은 생성된 샘플들의 질적이고 양적인 평가를 통한 프레임워크의 잠재성을 나타낸다.
 
