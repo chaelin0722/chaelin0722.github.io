@@ -29,7 +29,7 @@ classes: wide
 구분 모델 D(Discriminator)는 샘플이 G(생성된 모델) 보다 학습 데이터에서 생성된건지의 확률값을 예측하는 것을 말합니다. G의 목표는 D의 실수할 확률을 최대화 시키는 것이다.
 (한마디로 구분자 D가 G가 만들어낸 모델인지 실제 모델인지 잘 못 맞추게 해야한다는 것이다.)
 
-임의의 함수 G와 D의 공간에서는 한 개의 솔루션이 나오는데, `G는 학습데이터 분포모양으로 회복되며, D는 어디든 $$1 \over 2$$ 값을 갖는 것`이다.
+임의의 함수 G와 D의 공간에서는 한 개의 솔루션이 나오는데, `G는 학습데이터 분포모양으로 회복되며, D는 어디든 1/2 값을 갖는 것`이다.
 
 
 <img width="689" alt="무제" src="https://user-images.githubusercontent.com/53431568/136160746-9dfb22c3-c1c5-48c9-937a-937923f64bde.png">
@@ -106,32 +106,59 @@ $\displaystyle \min_{G} \max_{D}V(D,G)=E_{x\sim P_{data}(x)}[logD(x)]+ E_{x\sim 
 
 $E_{x\sim P_{data}(x)}[logD(x)]$ : 원본(real)data $x$를 discriminator 에 넣었을 때 나오는 결과를 log로 취했을 때 얻는 기댓값
 
-$E_{x\sim p_{z}(z)}[log(1-D(G(z)))]]$ : 생성된(fake)data $z$를 generator에 넣었을 때 나오는 결과를 discriminator에 넣었을 때 그 결과를 $log(1-결과)$했을 때 얻는 기댓값
+$E_{x\sim p_{z}(z)}[log(1-D(G(z)))]]$ : 생성된(fake)data $z$를 generator에 넣었을 때 나오는 결과를 discriminator에 넣었을 때 그 결과를 $log(1-$결과$)$했을 때 얻는 기댓값
 
 <br>
 
-📚 D 와 G 에 대해서 각각 살펴보자!
+#### 📚 D 와 G 에 대해서 각각 살펴보자!
 
 먼저 D가 아주 뛰어난 성능을 가져 가짜를 잘 판별한다고 가정해보자. 그렇다면 이 value function인 $V(D,G)$으로 살펴보면, 먼저 D가 판별하려는 데이터가 원본(real)data 에서 온 샘플일 경우 $D(x)$가 1이 되어 $logD(x)$은 0이 되어 사라지고 $G(z)$가 생성한 가짜 이미지를 구분할 수 있으므로 $D(G(z)) = 0$ 이 되어 $log(1-D(G(z)))$는 $log(1-0)=log1=0$이 되어 전체 식 $V(D,G) = 0$이 된다. 따라서 D가 유도할 수 있는 최댓값은 0 임을 확인할 수 있습니다. 
 
-이번에는 반대로 G가 D를 속일만큼 실제같은 가짜 이미지를 생성한다고 생각해보자. 그렇다면 $E_{x\sim P_{data}(x)}[logD(x)]$ 는 D의 식이므로 G성능과는 상관이 없으므로 보지 않아도 된다. 대신 $E_{x\sim p_{z}(z)}[log(1-D(G(z)))]]$ 에서 G가 생성한 이미지는 D가 진짜라고 판단해야 하므로 1을 반환한다. 그러므로 $D(G(z)) =1$ 가 되고, $log(1-1)=log0= \infin$ 으로 마이너스 무한대가 나온다. 
+이번에는 반대로 G가 D를 속일만큼 실제같은 가짜 이미지를 생성한다고 생각해보자. 그렇다면 $E_{x\sim P_{data}(x)}[logD(x)]$ 는 D의 식이므로 G성능과는 상관이 없으므로 보지 않아도 된다. 대신 $E_{x\sim p_{z}(z)}[log(1-D(G(z)))]]$ 에서 G가 생성한 이미지는 D가 진짜라고 판단해야 하므로 1을 반환한다. 그러므로 $D(G(z)) =1$ 가 되고, $log(1-1)=log0= \infty$ 으로 마이너스 무한대가 나온다. 
 
 정리하자면, D는 $V(D,G)$ 확률을 최대화시키기 위해 학습하고, G는 $V(D,G)$를 최소화시키는 방향으로 학습된다.
 
 
-하지만 실제론, 위의 minmax 방정식이 G가 학습하기 좋은 충분한 기울기를 제공해주진 않는다. 학습 초반엔 G의 성능이 저조해 G가 만든 샘플이 실제와 너무 달라 D가 샘플을 너무 잘 구분해버린다. 이런 경우에는 $log(1-D(G(z)))$이 일정 이상 증가하지 못하고 빨리 수렴해버리는 saturate 현상이 발생한다. $log(1-D(G(z)))$를 최소화하는 식으로 G를 학습하기 보다는 $log(1-D(G(z)))$를 최대화하는 식으로 G를 학습한다. 이렇게 하면 초기 학습에 훨씬 더 강력한 기울기를 제공한다. 이게 무슨 뜻이냐면.. log함수 특성상 $log(1-\alpha)$의 미분값이 유의미한 값이 될 수 없다. 따라서 $log(1-\alpha)$의 반대인 $log(\alpha)$의 max 값을 찾는 식을 유도한 것이다. 아래 그림으로 참고해보자!
+하지만 실제론, 위의 minmax 방정식이 G가 학습하기 좋은 충분히 큰 기울기를 제공해주진 않는다. 학습 초반엔 G의 성능이 저조해 G가 만든 샘플이 실제와 너무 달라 D가 샘플을 너무 잘 구분해버린다. 이런 경우에는 $log(1-D(G(z)))$이 일정 이상 증가하지 못하고 빨리 수렴해버리는 saturate 현상이 발생한다. $log(1-D(G(z)))$를 최소화하는 식으로 G를 학습하기 보다는 $log(1-D(G(z)))$를 최대화하는 식으로 G를 학습한다. 이렇게 하면 초기 학습에 훨씬 더 강력한 기울기를 제공한다. 이게 무슨 뜻이냐면.. log함수 특성상 $log(1-\alpha)$의 미분값이 유의미한 값이 될 수 없다. 따라서 $log(1-\alpha)$의 반대인 $log(\alpha)$의 max 값을 찾는 식을 유도한 것이다. 아래 그림으로 참고해보자!
 
-
-![image](https://user-images.githubusercontent.com/53431568/136425096-d9c6cb08-6c0a-46d2-bbaa-8d8fb6664af5.jpeg)
+#이미지 사이즈 조절해서 올리는 경우
+<img src="https://user-images.githubusercontent.com/53431568/136425096-d9c6cb08-6c0a-46d2-bbaa-8d8fb6664af5.jpeg" width="450" height="400"/>
+<br>
 
 
 
 아래 Fig.1을 보면 
 
+> 파란색 점선 : discriminative 분포
+>  
+> 검은색 점선 : real 데이터 분포     (진짜)
+> 
+> 초록색 실선 : generative 분포    (가짜)
+
 <img width="689" alt="무제" src="https://user-images.githubusercontent.com/53431568/136160746-9dfb22c3-c1c5-48c9-937a-937923f64bde.png">
 
 
-## 4.
+
+GAN의 학습과정을 이 그림을 통해 확인해보면, 
+
+> (a): 학습초기에는 real과 fake의 분포가 전혀 다르며 D의 성능도 저조하다.
+> 
+> (b): D가 (a)보다는 안정적으로 real과 fake를 판별해내고 있음을 확인할 수 있다. 즉, D의 성능이 올라간 것을 알수있다.
+>  
+> (c): D의 학습이 어느정도 이루어지면, G는 실제 데이터의 분포를 모사하며 D가 구별하기 힘든 방향으로 학습을 한다.
+> 
+> (d): 이 과정을 반복하면 real과 fake의 분포가 거의 비슷해져 구분할 수 없을 만큼 G가 학습되고, 마침내 D가 이 둘을 구분할 수 없게 되어 1/2의 확률로 계산하게 된다
+
+
+#### 이 과정을 통해 진짜와 가짜 이미지를 구별할 수 없을 만한 데이터를 G가 생성해내고 이것이 `GAN의 최종 결과`라고 볼 수 있다.
+
+
+
+
+
+
+
+## 4. Theoretical Results
 
 
 
@@ -144,4 +171,7 @@ $E_{x\sim p_{z}(z)}[log(1-D(G(z)))]]$ : 생성된(fake)data $z$를 generator에 
 [1] [마르코프체인](https://www.puzzledata.com/blog190423/)
 
 [2] [approximate inference](https://kim-hjun.medium.com/approximate-inference%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-35653b963546)
+
+[3] [https://tobigs.gitbook.io/tobigs/deep-learning/computer-vision/gan-generative-adversarial-network](https://tobigs.gitbook.io/tobigs/deep-learning/computer-vision/gan-generative-adversarial-network)
+
 
