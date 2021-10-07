@@ -163,13 +163,13 @@ $E_{x\sim p_{z}(z)}[log(1-D(G(z)))]]$ : 생성된(fake)data $z$를 generator에 
 
 GAN의 학습과정을 이 그림을 통해 확인해보면, 
 
-> (a): 학습초기에는 real과 fake의 분포가 전혀 다르며 D의 성능도 저조하다.
+> (a): 학습초기에는 real과 fake의 분포가 전혀 다르며 D의 성능도 또한 저조 
 > 
-> (b): D가 (a)보다는 안정적으로 real과 fake를 판별해내고 있음을 확인할 수 있다. 즉, D의 성능이 올라간 것을 알수있다.
+> (b): D가 (a)보다는 안정적으로 real과 fake를 판별해내고 있음을 확인. 즉, D의 성능이 올라감
 >  
-> (c): D의 학습이 어느정도 이루어지면, G는 실제 데이터의 분포를 모사하며 D가 구별하기 힘든 방향으로 학습을 한다.
+> (c): D의 학습이 어느정도 이루어지면, G는 실제 데이터의 분포를 모사하며 D가 구별하기 힘든 방향으로 학습
 > 
-> (d): 이 과정을 반복하면 real과 fake의 분포가 거의 비슷해져 구분할 수 없을 만큼 G가 학습되고, 마침내 D가 이 둘을 구분할 수 없게 되어 1/2의 확률로 계산하게 된다
+> (d): 이 과정을 반복하면 real과 fake의 분포가 거의 비슷해져 구분할 수 없을 만큼 G가 학습되고, 마침내 D가 이 둘을 구분할 수 없게 되어 1/2의 확률로 계산
 
 
 #### 이 과정을 통해 진짜와 가짜 이미지를 구별할 수 없을 만한 데이터를 G가 생성해내고 이것이 `GAN의 최종 결과`라고 볼 수 있다.
@@ -179,9 +179,48 @@ GAN의 학습과정을 이 그림을 통해 확인해보면,
 
 ## 4. Theoretical Results
 
-G는 $z \sim p_z$일때 얻어지는 샘플들의 확률분포 $G(z)$로써 $p_g$ 를 암묵적으로 정의한다. 그러므로 아래에서 살펴보는 알고리즘 1이 $p_data$에 대한 좋은 estimator로 수렴되길 원한다.
+G는 $z \sim p_z$일때 얻어지는 샘플들의 확률분포 $G(z)$로써 $p_g$ 를 암묵적으로 정의한다. 그러므로 아래에서 살펴보는 알고리즘 1이 $p_data$에 대한 좋은 estimator로 수렴되도록 하는 것이 논문의 목표이다.
 
 ![image](https://user-images.githubusercontent.com/53431568/136427992-59e665fc-3a24-4751-bf06-156deae29622.png)
+
+1 epoch마다 아래의 과정을 반복한다.
+
+아래를 k번 반복 (논문에서 k = 1로 실험)
+
+1. m개의 노이즈 샘플을 $p_g(z)$로부터 샘플링
+2. m개의 실제 데이터샘플을 $p_{data}(x)$로부터 샘플링
+3. 경사상승법을 이용해 $V(G,D)$식 전체를 <u>최대화하도록</u> discriminator 파라미터 업데이트
+
+
+그 다음엔
+
+1. m개의 노이즈 샘플을 $p_g(z)$로부터 샘플링
+2. $V(G, D)$에서 $log(1-D(G(z)))$를 최소화 하도록 generator 파라미터 업데이트
+
+
+### 4.1 Global Optimality of $p_g = p_{data}$
+
+모든 가능한 G에 대해 최적의 discriminator D를 구해보자.
+
+![image](https://user-images.githubusercontent.com/53431568/136430566-5baf32fe-5ef7-4c67-8a49-a0f1ada73d9a.png)
+
+(G가 진짜 같은 가짜를 잘 생성했다면 $p_g(x) = p_{data}(x)$가 될 것이므로 %1 \over 2%일 때 G가 좋은 모델이다. => 유도하는 식은 정리해서 다시 올리자!)
+
+
+증명은 다음과 같다. 모든 가능한 G에 대해 D를 위한 학습기준은 $V(G, D)$를 최대화 시키는 것이다. 따라서 아래의 식을 $D(x)$에 대해 편미분하고 결과값을 0이라고 두면 optimal한 D는 위의 **Proposition 1.** 와 같이 dbehehlsek. 
+
+![image](https://user-images.githubusercontent.com/53431568/136431038-0bcefc94-7163-45e0-938d-55df1006c335.png)
+
+<br>
+
+이렇게 얻은 optimal D를 원래의 목적함수 식에 대입하여 G에 대한 Virtual Training Criterion C(G)를 다음과 같이 유도할 수 있다.
+
+![image](https://user-images.githubusercontent.com/53431568/136431397-2e0c00db-d879-45c3-876b-71f377d3f408.png)
+
+위의 C(G)는 generator가 최소화하고자 하는 기준이 되며, 이것의 global minimum은 오직 $p_g(x) = p_{data}(x)$일때 달성된다. 그 점에서의 C(G)값은 $log{1 \over 2} + og{1 \over 2} = -log4$가된다.
+
+$D_G^*(X) = 1 \ over 2$ 일때의 $C(G)$를 계산하면 알 수 있다. 
+
 
 
 
@@ -202,5 +241,7 @@ G는 $z \sim p_z$일때 얻어지는 샘플들의 확률분포 $G(z)$로써 $p_g
 [2] [approximate inference](https://kim-hjun.medium.com/approximate-inference%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-35653b963546)
 
 [3] [https://tobigs.gitbook.io/tobigs/deep-learning/computer-vision/gan-generative-adversarial-network](https://tobigs.gitbook.io/tobigs/deep-learning/computer-vision/gan-generative-adversarial-network)
+
+[4] [https://velog.io/@changdaeoh/Generative-Adversarial-Nets-GAN](https://velog.io/@changdaeoh/Generative-Adversarial-Nets-GAN)
 
 
