@@ -204,7 +204,7 @@ G는 $z \sim p_z$일때 얻어지는 샘플들의 확률분포 $G(z)$로써 $p_g
 
 ![image](https://user-images.githubusercontent.com/53431568/136430566-5baf32fe-5ef7-4c67-8a49-a0f1ada73d9a.png)
 
-(G가 진짜 같은 가짜를 잘 생성했다면 $p_g(x) = p_{data}(x)$가 될 것이므로 %1 \over 2%일 때 G가 좋은 모델이다. => 유도하는 식은 정리해서 다시 올리자!)
+(G가 진짜 같은 가짜를 잘 생성했다면 $p_g(x) = p_{data}(x)$가 될 것이므로 $1 \over 2$일 때 G가 좋은 모델이다. => 유도하는 식은 정리해서 다시 올리자!)
 
 
 증명은 다음과 같다. 모든 가능한 G에 대해 D를 위한 학습기준은 $V(G, D)$를 최대화 시키는 것이다. 따라서 아래의 식을 $D(x)$에 대해 편미분하고 결과값을 0이라고 두면 optimal한 D는 위의 **Proposition 1.** 와 같이 유도된다.
@@ -217,10 +217,12 @@ G는 $z \sim p_z$일때 얻어지는 샘플들의 확률분포 $G(z)$로써 $p_g
 
 ![image](https://user-images.githubusercontent.com/53431568/136431397-2e0c00db-d879-45c3-876b-71f377d3f408.png)
 
-위의 C(G)는 generator가 최소화하고자 하는 기준이 되며, 이것의 global minimum은 오직 $p_g(x) = p_{data}(x)$일때 달성된다. 그 점에서의 C(G)값은 $log{1 \over 2} + og{1 \over 2} = -log4$가된다.
+위의 C(G)는 generator가 최소화하고자 하는 기준이 되며, 이것의 global minimum은 오직 $p_g(x) = p_{data}(x)$일때 달성된다. 그 점에서의 C(G)값은 $log{1 \over 2} + log{1 \over 2} = -log4$가된다.
 
-$D_G^*(X) = 1 \ over 2$ 일때의 $C(G)$를 계산하면 알 수 있다. 
+$D_G^*(X) = 1 \over 2$ 일때의 $C(G)$를 계산하면 알 수 있다. 
 
+
+### 더 공부중!😲
 
 
 
