@@ -47,6 +47,13 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "LinearAlgebra" %}
+                        <li><a href="/categories/LinearAlgebra" class="" style="font-family:'MaruBuri-Regular';font-size:1.1em;">선형대수학 </style><style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
         <span class="nav__sub-title" style="font-family:'MaruBuri-Regular';font-size:1.2em;">블로그 DEV</style></span>
             <ul>
                 {% for category in site.categories %}
