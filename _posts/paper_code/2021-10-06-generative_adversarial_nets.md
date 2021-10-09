@@ -67,15 +67,6 @@ G와 D는 다층 퍼셉트론으로 정의되어있어서 역전파로 전체 �
 deep generative 모델은 최대가능도함수(maximum likelihood) 예측과 관련 전략으로 인해 일어나는 많은 interactive한 확률적 계산들을 추론하는 데에 어려움이 있어 그 영향이 작았다. 또, 생성적 문맥(generative context)에서 piecewise linear unit의 이익을 높이는 것의 어려움 때문이라는 이유도 있다. 따라서 이 논문에서는 앞의 어려움들을 회피하는 새로운 생성모델 예측 프로시저를 제안하고 있다.
 
 
-<details markdown="1">
-<summary>piecewise linear unit📚</summary>
-
-#### piecewise linear unit (조각별 선형 유닛)이란?
-
-<br>
-
-</details>
-
 제안하는 adversarial net(경쟁 네트워크) framework에서는 생성 모델이 적대 관계의 적과 경쟁한다 : 식별자/구분자(D)는 샘플이 모델 분포(생성된 가짜)에서 나왔는지 아니면 데이터 분포(원본)에서 나왔는지를 결정하는 것을 학습한다. 비유를 해보자면, 생성 모델은 지폐 위조자에 비유되며 탐지없이 위조지폐를 생성한다(오로지 생성만 하는 네트워크 구조를 가짐). 경찰에 비유되는 식별모델은 생성자가 위조지폐를 생성하는 동안 위조지폐를 탐지한다. 이 게임에서의 경쟁은 위조지폐와 실제 지폐가 구분이 되지 않을 때 까지 진행되어 두 팀으로 하여금 각각의 방법을 향상시키게 한다. (경쟁하면서 두 네트워크의 성능이 향상됨)
 
 
@@ -198,7 +189,7 @@ G는 $z \sim p_z$일때 얻어지는 샘플들의 확률분포 $G(z)$로써 $p_g
 그 다음엔,
 
 1. m개의 노이즈 샘플을 $p_g(z)$로부터 샘플링
-2. $V(G, D)$에서 $log(1-D(G(z)))$를 최소화 하도록 경사하강법을 이용해 generator 파라미터 업데이트!
+2. $V(G, D)$에서 $log(1-D(G(z)))$를 <u>최소화하도록</u> 경사하강법을 이용해 generator 파라미터 업데이트!
 
 <br>
 
@@ -278,14 +269,14 @@ Gaussian Parzen window를 G에 의해 생성된 샘플들에 fitting하고 이�
 
 ## Advantages and disadvantages
 
-  #### disadvantages 
+#### disadvantages 
 
   - $p_g(x)$에 대한 명시적인 표현이 없다.
   - 훈련동안 D와 G의 균형을 잘 맞춰서 학습해야 한다. 
   - 최적해 수렴에 있어 이론적 보장이 부족하다.
 
 
-  #### advantages
+#### advantages
   - Markov chain 과 inference 의 불필요
   - 모델에 다양한 함수들이 통합될 수 있음
   - generator network가 데이터로부터 직접적으로 업데이트 되지 않고 오직 discriminator 로 부터 흘러들어오는 gradient만을 이용해 학습될 수 있다.
@@ -299,6 +290,8 @@ Gaussian Parzen window를 G에 의해 생성된 샘플들에 fitting하고 이�
 
 
 #### 참고
+
+<br>
 
 [1] [마르코프체인](https://www.puzzledata.com/blog190423/)
 
