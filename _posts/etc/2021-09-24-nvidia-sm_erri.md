@@ -10,7 +10,6 @@ classes: wide
 last_modified_at: 2021-09-24T10:40:00-05:00
 ---
 
-### Screen
 
 갑자기 nvidia-smi 명령어가 안듣는 에러가 발생했다 ..?!!😱😱  아래와 같이 경고 문구가 뜬다. 
 
