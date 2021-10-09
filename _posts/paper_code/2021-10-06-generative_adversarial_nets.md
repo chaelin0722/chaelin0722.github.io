@@ -90,9 +90,9 @@ deep generative 모델은 최대가능도함수(maximum likelihood) 예측과 �
 
 ## 2. Relative works
 
+-- 생략 --
 
-
-
+<br>
 
 ## 3. Adversarial nets
 
@@ -175,11 +175,14 @@ GAN의 학습과정을 이 그림을 통해 확인해보면,
 #### 이 과정을 통해 진짜와 가짜 이미지를 구별할 수 없을 만한 데이터를 G가 생성해내고 이것이 `GAN의 최종 결과`라고 볼 수 있다.
 
 
-<br>f
+<br>
 
 ## 4. Theoretical Results
 
-G는 $z \sim p_z$일때 얻어지는 샘플들의 확률분포 $G(z)$로써 $p_g$ 를 암묵적으로 정의한다. 그러므로 아래에서 살펴보는 알고리즘 1이 $p_data$에 대한 좋은 estimator로 수렴되도록 하는 것이 논문의 목표이다.
+G는 $z \sim p_z$일때 얻어지는 샘플들의 확률분포 $G(z)$로써 $p_g$ 를 암묵적으로 정의한다. 그러므로 아래에서 살펴보는 알고리즘이 $p_{data}$에 대한 좋은 estimator(추정량)로 수렴되도록 하는 것이 논문의 목표이다.
+
+
+해당 value function을 최적화해주는 방식은, 아래와 같이 Discriminator에 대한 weight를 먼저 업데이트 해주고, Generator에 대해서도 weight update를 번갈아가며 해준다. G의 경우 $logD(x^{(i)})$엔 관여하지 않으므로 식에서 제외되었다. 
 
 ![image](https://user-images.githubusercontent.com/53431568/136427992-59e665fc-3a24-4751-bf06-156deae29622.png)
 
@@ -189,14 +192,19 @@ G는 $z \sim p_z$일때 얻어지는 샘플들의 확률분포 $G(z)$로써 $p_g
 
 1. m개의 노이즈 샘플을 $p_g(z)$로부터 샘플링
 2. m개의 실제 데이터샘플을 $p_{data}(x)$로부터 샘플링
-3. 경사상승법을 이용해 $V(G,D)$식 전체를 <u>최대화하도록</u> discriminator 파라미터 업데이트
+3. 경사상승법을 이용해 $V(G,D)$식 전체를 <u>최대화하도록</u> discriminator 파라미터 업데이트!
 
 
-그 다음엔
+그 다음엔,
 
 1. m개의 노이즈 샘플을 $p_g(z)$로부터 샘플링
-2. $V(G, D)$에서 $log(1-D(G(z)))$를 최소화 하도록 generator 파라미터 업데이트
+2. $V(G, D)$에서 $log(1-D(G(z)))$를 최소화 하도록 경사하강법을 이용해 generator 파라미터 업데이트!
 
+<br>
+
+논문에서 목표하는 것은, Generator를 통해 나오는 $G(z)$ 값이 $P_{data}$ 의 좋은 estimator가 되기를 기대하며, 해당 조건이 충족하면서 수렴하는지 확인해야 한다. 이에 대한 optimality를 이어서 확인해 봅시다!
+ 
+<br>
 
 ### 4.1 Global Optimality of $p_g = p_{data}$
 
@@ -204,12 +212,18 @@ G는 $z \sim p_z$일때 얻어지는 샘플들의 확률분포 $G(z)$로써 $p_g
 
 ![image](https://user-images.githubusercontent.com/53431568/136430566-5baf32fe-5ef7-4c67-8a49-a0f1ada73d9a.png)
 
-(G가 진짜 같은 가짜를 잘 생성했다면 $p_g(x) = p_{data}(x)$가 될 것이므로 $1 \over 2$일 때 G가 좋은 모델이다. => 유도하는 식은 정리해서 다시 올리자!)
+(G가 진짜 같은 가짜를 잘 생성했다면 $p_g(x) = p_{data}(x)$가 될 것이므로 $1 \over 2$일 때 G가 좋은 모델이다. 
 
 
 증명은 다음과 같다. 모든 가능한 G에 대해 D를 위한 학습기준은 $V(G, D)$를 최대화 시키는 것이다. 따라서 아래의 식을 $D(x)$에 대해 편미분하고 결과값을 0이라고 두면 optimal한 D는 위의 **Proposition 1.** 와 같이 유도된다.
 
 ![image](https://user-images.githubusercontent.com/53431568/136431038-0bcefc94-7163-45e0-938d-55df1006c335.png)
+
+
+증명 유도식은 아래와 같다.
+
+![KakaoTalk_Photo_2021-10-09-13-40-58](https://user-images.githubusercontent.com/53431568/136644302-99ca43cc-61a6-4a67-8008-36676f8145b7.jpeg)
+
 
 <br>
 
@@ -217,16 +231,64 @@ G는 $z \sim p_z$일때 얻어지는 샘플들의 확률분포 $G(z)$로써 $p_g
 
 ![image](https://user-images.githubusercontent.com/53431568/136431397-2e0c00db-d879-45c3-876b-71f377d3f408.png)
 
-위의 C(G)는 generator가 최소화하고자 하는 기준이 되며, 이것의 global minimum은 오직 $p_g(x) = p_{data}(x)$일때 달성된다. 그 점에서의 C(G)값은 $log{1 \over 2} + log{1 \over 2} = -log4$가된다.
+위의 C(G)는 generator가 최소화하고자 하는 기준이 되며, 이것의 global minimum은 오직 $p_g(x) = p_{data}(x)$일때 달성된다. 그 점에서의 C(G)값은 $log{1 \over 2} + log{1 \over 2} = -log4$가 된다
 
-$D_G^*(X) = 1 \over 2$ 일때의 $C(G)$를 계산하면 알 수 있다. 
-
-
-### 더 공부중!😲
+위의 수식을 천천히 풀어서 증명해본 식은 아래를 참고하면 된다. 역시 직접 풀어보는게 이해에 빠른 것 같다.
 
 
+![IMG_8E3C2FDB30B1-1](https://user-images.githubusercontent.com/53431568/136645248-8a9f0743-d9c5-4250-adda-8f0f5807bec8.jpeg)
 
 
+
+
+### 4.2 Convergence of Algorithm 1
+
+G와 D가 충분한 capacity를 가지며, algorithm 1의 각 스텝에서 discriminator가 주어진 G에 대해 최적점에 도달하는게 가능함과 동시에 
+$p_g$ 가 위에서 제시한 criterion을 향상시키도록 업데이트 되는 한, $p_g$는 $p_{data}$ 에 수렴한다.
+
+
+하지만, adversarial nets는 함수 $G(z;\theta)$를 통해 분포 $p_g$의 제한된 family만을 나타내게 되며, 논문에서 수행하는 최적화는 사실 $p_g$를 직접 최적화 하는게 아닌 $\theta_g$를 최적화하는 것이다. 그래서 앞서 한 증명이 적용되지 않으며 최적의 모델로의 수렴이 보장되지 않는다.
+
+그러나 실무에서 MLP가 보여주는 훌륭한 퍼포먼스는 위와 같은 이론적 gurantee 에도 불구하고 사용할 수 있는 합리적인 모델이라는 사실을 말해준다. 
+
+<br>
+
+## 5. Experiments
+
+> MNIST, TFD(Toronto Face Database), CIFAR-10에 대해 훈련.
+> 
+> generator에서는 ReLU, sigmoid activation을 섞어 사용.
+>  
+> discriminator에서는 maxout activation만을 사용. 
+>  
+>  discriminator 훈련시 드랍아웃 사용.
+
+(저자들이 제안하는 프레임워크는 generator의 중간 레이어들에 dropout과 noise 추가를 이론적으로 허용하지만, 오직 generator의 최하단 레이어에만 노이즈를 추가했다고 함)
+
+Gaussian Parzen window를 G에 의해 생성된 샘플들에 fitting하고 이렇게 추정된 분포 하에 얻어진 log-likelihood를 확인함으로써 $p_g$ 하에서 test set 데이터의 확률을 추정하였다. 이때 정규분포의 분산 파라미터는 교차검증을 통해 얻었다고 한다. 사실 이러한 방식으로 likelihood를 추정하는 것은 다소 분산이 크며 고차원 데이터 공간상에서 품질이 좋지 못하지만 최선의 method여서 이용했다고 한다. 
+
+아래는 위의 방법으로 평가를 진행했을 때, GAN의 우수함을 보여주는 표이다.
+
+<img width="794" alt="무제 2" src="https://user-images.githubusercontent.com/53431568/136645800-c09a1cf4-1d1f-43b9-9730-d427b6bb7e55.png">
+
+학습 후 generator에 의해 생성된 이미지들은 아래와 같다.
+
+<img width="698" alt="무제" src="https://user-images.githubusercontent.com/53431568/136645608-a659afa6-bb8a-4236-ac03-e6283eae045d.png">
+
+
+## Advantages and disadvantages
+
+  #### disadvantages 
+
+  - $p_g(x)$에 대한 명시적인 표현이 없다.
+  - 훈련동안 D와 G의 균형을 잘 맞춰서 학습해야 한다. 
+  - 최적해 수렴에 있어 이론적 보장이 부족하다.
+
+
+  #### advantages
+  - Markov chain 과 inference 의 불필요
+  - 모델에 다양한 함수들이 통합될 수 있음
+  - generator network가 데이터로부터 직접적으로 업데이트 되지 않고 오직 discriminator 로 부터 흘러들어오는 gradient만을 이용해 학습될 수 있다.
 
 
 
@@ -245,5 +307,9 @@ $D_G^*(X) = 1 \over 2$ 일때의 $C(G)$를 계산하면 알 수 있다.
 [3] [https://tobigs.gitbook.io/tobigs/deep-learning/computer-vision/gan-generative-adversarial-network](https://tobigs.gitbook.io/tobigs/deep-learning/computer-vision/gan-generative-adversarial-network)
 
 [4] [https://velog.io/@changdaeoh/Generative-Adversarial-Nets-GAN](https://velog.io/@changdaeoh/Generative-Adversarial-Nets-GAN)
+
+[5] [https://techy8855.tistory.com/m/13](https://techy8855.tistory.com/m/13)
+
+[6] [최적해 유도식](https://di-bigdata-study.tistory.com/6)
 
 
