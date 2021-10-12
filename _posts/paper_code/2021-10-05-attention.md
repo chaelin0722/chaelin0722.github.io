@@ -115,11 +115,14 @@ attention 연산을 차례로 전개해 본 결과이다. 만드느라 팔 빠�
 4) value 값으로 곱한다
 5) summation
 
+<img width="1203" alt="무제" src="https://user-images.githubusercontent.com/53431568/136990228-a9bd2e5a-8e1a-47d7-a030-ef3dfe50c698.png">
+<img width="1203" alt="무제 2" src="https://user-images.githubusercontent.com/53431568/136990277-f8465afa-9e9d-4384-9863-e8479e2f3642.png">
+<img width="1196" alt="무제 3" src="https://user-images.githubusercontent.com/53431568/136990329-a055b444-96c2-4ce4-b6e8-13f6b3698113.png"><img width="1196" alt="무제 3" src="https://user-images.githubusercontent.com/53431568/136990368-df5df9c5-c62f-4a78-9ec5-6c30f8fc6af2.png">
 
-<img width="1025" alt="무제" src="https://user-images.githubusercontent.com/53431568/135965005-82ab7c9c-9b12-4c0e-9d7d-f3e804890d7b.png">
-<img width="1029" alt="무제 2" src="https://user-images.githubusercontent.com/53431568/135965039-410e41a6-cd5e-47dc-8362-54d2267930ee.png">
-<img width="1028" alt="무제 3" src="https://user-images.githubusercontent.com/53431568/135965067-42b11961-4035-46c6-87e6-6e765b89e4f9.png"><img width="1030" alt="무제 4" src="https://user-images.githubusercontent.com/53431568/135965120-554c0eaf-ac94-4ea5-be6f-dae09661ea4d.png">
 
+
+
+<br>
 
 ### 🌍 Multi-Head Attention
 
