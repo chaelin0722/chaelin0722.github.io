@@ -21,4 +21,7 @@ classes: wide
 
 [[논문정리📃] Going Deeper with Convolutions](https://chaelin0722.github.io/paperreview/googlenet/)
 
+
+[[Ubuntu] 우분투 세팅과 아나콘다 환경설정](https://chaelin0722.github.io/etc/server_setting_success/)
+
 `모두 즐거운 코딩하세요~!!`
