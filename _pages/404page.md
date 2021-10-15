@@ -19,4 +19,6 @@ classes: wide
 [[에러분석] TypeError: can’t convert CUDA tensor to numpy. Use Tensor.cpu() to copy the tensor to host memory first](https://chaelin0722.github.io/etc/numpy_gpu_error/)
 
 
+[[논문정리📃] Going Deeper with Convolutions](https://chaelin0722.github.io/paperreview/googlenet/)
+
 `모두 즐거운 코딩하세요~!!`
