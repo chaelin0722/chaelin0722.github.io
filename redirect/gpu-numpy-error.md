@@ -1,6 +1,6 @@
 ---
 layout: redirected
 sitemap: false
-permalink: /deeplearning/cnn/study/step_decay/
+permalink: /deeplearning/cnn/pytorch/error/study/numpy_gpu_error/
 redirect_to:  /etc/numpy_gpu_error/
 ---
