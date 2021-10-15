@@ -8,8 +8,6 @@ tags: [Deeplearning, CNN,study,etc]
 use_math: true
 classes: wide
 
-permalink: /etc/step_decay/
-
 last_modified_at: 2021-07-27T09:06:00-05:00
 ---
 
