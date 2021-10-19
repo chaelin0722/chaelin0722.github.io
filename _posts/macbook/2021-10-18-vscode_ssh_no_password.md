@@ -10,9 +10,13 @@ last_modified_at: 2021-10-18T11:00:00-05:00
 classes: wide
 ---
 
+<br>
+
 vscode에 적응이 될 즈음 이제 슬슬 password 없이 원격 ssh 연결을 시도해 보고자 했다! 맥에서 보안키를 발급해 서버에 키 파일을 넣어두면 비밀번호를 입력하지 않아도 되는 원리이다 ㅎㅎ
 
-순서는 다음과 같다.🍒
+먼저 vscode ssh 원격 설정방법에 대해 알고싶다면 [[mac] vscode에서 ssh 원격접속하기](https://chaelin0722.github.io/mac/vscode_ssh/) 👈 여기 포스팅 참고!
+
+순서는 다음과 같습니다.🍒
 
 ### 1. 맥 보안키 생성
 
