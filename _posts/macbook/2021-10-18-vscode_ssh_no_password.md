@@ -63,7 +63,8 @@ scp id_rsa.pub username@ip_주소:~
 5. 내용 붙여넣고 저장
 ~~~
 
-<img width="843" alt="3" src="https://user-images.githubusercontent.com/53431568/137743713-1baefb2e-52c2-40ae-8dce-121d37f8eddb.png">
+<img width="843" alt="3" src="https://user-images.githubusercontent.com/53431568/137841404-87aab6bf-4d72-4b47-9e09-63b3cf88d92e.png">
+
 
 
 ### 4. vscode configuration 추가
