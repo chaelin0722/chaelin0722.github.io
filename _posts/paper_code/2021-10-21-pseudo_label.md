@@ -53,7 +53,7 @@ pseudo label은 아직 제대로 레이블 되었는지 어땠는지는 모릅�
 <br>
   
   
-### Pseudo label의 손실함수(loss function)
+## Pseudo label의 손실함수(loss function)
   
   
 CNN 파라미터 $\theta$는 categorical cross-entropy 공식으로 optimize 됩니다. 그 수식은 아래와 같다. 
@@ -88,7 +88,7 @@ $h_\theta(x)$\는 softmax 함수를 거쳐 나온 확률 값을 의미하며 여
   
 그럼 두 정규화를 살펴보도록 하겠습니다.
   
-### 첫 번째 정규화 
+## 첫 번째 정규화 
   
 pseudo label을 생성하기 시작하는 학습 초기에는 거의 부정확한 결과를 낸다고 합니다. 그 이유는 CNN은 loss를 줄이기 위해 같은 클래스로 예측해버리는 경향이 있기 때문입니다. 예를 들어 모든 데이터에 대해서 제각각인 클래스로 분류하기 보다는 같은 클래스로 주는 것이 loss가 더 적게 나오기 때문입니다. 시험을 볼 때 랜덤하게 찍는 것 보단, 같은 답으로 줄을 세워 찍으면 더 잘맞는 것과 같은 원리겠지요?
   
@@ -106,7 +106,7 @@ pseudo label을 생성하기 시작하는 학습 초기에는 거의 부정확�
   
  <br>
   
-### 두 번째 정규화 
+## 두 번째 정규화 
  
 다음 정규화는 약한 가이던스(부정확한 값들) 때문에 local minima에 빠질 것을 염려해 개별 class에 대한 soft-pseudo-label의 각 확률 분포에  `집중`하도록 하는 방법을 추가하게 됩니다.
 
@@ -132,3 +132,44 @@ $l^*(\theta) = -\sum_{i=1}^N \tilde{y}^T_ilog(h_\theta(x_i))$
   다시 풀어서 쓰면, 다음과 같은 아주 긴 함수가 되는 것입니다.
 
  $l=-\sum_{i=1}^N \tilde{y}^T_ilog(h_\theta(x_i))+\lambda_A \sum_{c=1}^Cp_clog({p_c \over \bar{h_c}})+ -\lambda_H{1\over N}\sum_{i=1}^N\sum_{c=1}^Ch_\theta^c(x_i)log(h_\theta^c(x_i))$  
+  
+  
+  
+  그런데 여기서 끝이 아닙니다..ㅎㅎ  `confirmation bias`의 문제를 해결하기 위해 mixup 이라는 개념을 또 추가하게 되었는데요, 
+  
+  ## Confirmation bias (확증 편향)
+  ### mixup
+  
+  틀린 pseudo-label로 오버피팅되는 것을 확증편향 이라고 합니다. 또, pseudo-label을 하면서 잘못된 레이블로 학습을 계속 하게 되는 딜레마를 극복하기 위해 mixup이라는 개념을 도입하게 됩니다. 
+  
+이 개념은, `안정적인 모델이라면 특정 벡터의 선형결합에 대한 예측값이 레이블의 선형결합방식이 되어야 한다`는 개념에서 나오게 됩니다. 수식으로 설명드리자면, 
+  
+  random한 $(x_p, y_p), (x_q, y_q)$에 대해서 
+  
+  $x = \delta x_p + (1-\delta)x_q $
+  
+  $y = \delta y_p + (1-\delta)y_q $      
+  
+  가 성립된다는 것입니다. 
+  
+  특정 입력 벡터들을 선형결합한 벡터 $x$는 그 레이블 $y$ 또한 똑같은 방식으로 선형결합했을 때, 그 결과 또한 같이 매칭되어야 한다는 것입니다!
+  
+  이런식으로 레이블이 없는 데이터들에 대한 mixup 모델을 이용해 레이블을 예측한 후 이를 이용해 mixup을 진행하는 방식으로 이루어 집니다...
+  
+  위의 수식은 
+  
+  $l^*=\delta l^*_p + (1-\delta)l^*_q$ 로 될 수 있고 따라서 loss $l^*$에 대해 재정의 하면
+  
+  $l^* = -\sum_{i=1}^N\delta [\tilde{y}^T_{i,p}log(h_\theta(x_i))]+(1-\delta)[\tilde{y}^T_{i,q}log(h_\theta(x_i))]$ 가 됩니다.
+  
+  따라서 최종 수식  $l=l^*+\lambda_AR_A+\lambda_HR_H$  에서 $l^*$만 바뀌게 되겠죠!
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
