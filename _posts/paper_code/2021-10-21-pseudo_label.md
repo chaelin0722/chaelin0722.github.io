@@ -137,8 +137,8 @@ $l^*(\theta) = -\sum_{i=1}^N \tilde{y}^T_ilog(h_\theta(x_i))$
   
   그런데 여기서 끝이 아닙니다..ㅎㅎ  `confirmation bias`의 문제를 해결하기 위해 mixup 이라는 개념을 또 추가하게 되었는데요, 
   
-  ## Confirmation bias (확증 편향)
-  ### mixup
+## 📚 Confirmation bias (확증 편향)
+### mixup
   
   틀린 pseudo-label로 오버피팅되는 것을 확증편향 이라고 합니다. 또, pseudo-label을 하면서 잘못된 레이블로 학습을 계속 하게 되는 딜레마를 극복하기 위해 mixup이라는 개념을 도입하게 됩니다. 
   
@@ -164,6 +164,16 @@ $l^*(\theta) = -\sum_{i=1}^N \tilde{y}^T_ilog(h_\theta(x_i))$
   
   따라서 최종 수식  $l=l^*+\lambda_AR_A+\lambda_HR_H$  에서 $l^*$만 바뀌게 되겠죠!
   
+  
+  <br>
+  
+  여기까지 달려와 보았는데요, self-training 을 통한 noisy student 가 pseudo label 을 통해 학습을 하는데 대체 이 pseudo labeling은 어떻게 진행되는 것인지.. 제대로 레이블이 된 데이터가 추가되는게 맞는지 의문투성이었는데 이 논문을 보니 이해가 되었네요👍 
+  
+  이상하게 pseudo label 논문을 리뷰한 블로그가 거의 없어서 논문을 파고들어 공부하느라 힘이 들었지만.. 
+  
+  여기까지 파본 나에게 박수😭😭
+  
+  다음 포스팅에서 만나요🌱🌱
   
   
   
