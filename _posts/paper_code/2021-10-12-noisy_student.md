@@ -49,7 +49,9 @@ JFT-300M 데이터셋에 대한 설명은 [JFT-300M 데이터셋이란?](https:/
 
 
 단, 여기서 의문인 것은 pseudo label이 초기에는 불명확할 텐데 어떻게 해서 반복하면서 학습하면 성능이 좋아지는지 그 부분에 대한 설명이 좀 부족하다. soft labeled 를 사용하였다고 짧게 한줄 설명이 있는데, 이 부분에 대해서는 이 논문의 첫번째 레퍼런스인 [Pseudo-Labeling and Confirmation Bias in Deep
-Semi-Supervised Learning](https://arxiv.org/pdf/1908.02983.pdf)를 다시 공부해서 리뷰할 예정이다.📚🌎
+Semi-Supervised Learning](https://arxiv.org/pdf/1908.02983.pdf)을 참고하면 도움이 된다. 
+
+### 📚 이 pseudo label 논문에 대해서 정리한 글은 [[논문 정리]Pseudo-Labeling and Confirmation Bias in Deep Semi-Supervised Learning](https://chaelin0722.github.io/paperreview/pseudo_label/)에 정리해 두었으니 필요하다면 참고!☘️
 
 
 이렇게 레이블 되지않은 JFT-300M 데이터셋을 추가해 imageNet 에 대한 `SOTA 성능을 향상시켰으며 동시에 견고한 모델`이 생성되었습니다. 여기서 견고하다는 것은 논문에서 'robustness'라고 표현하였는데,
