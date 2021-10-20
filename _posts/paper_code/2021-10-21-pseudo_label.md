@@ -16,7 +16,7 @@ classes: wide
 
 [논문원본](https://arxiv.org/pdf/1908.02983.pdf)😙
 
-이 논문은 semi supervised learning의 측면에서 pseudo label을 하는 이유와 pseudo label를 어떻게 구성하여 성능을 올릴 수 있었는지에 대해 설명하고 있습니다.
+이 논문은 semi supervised learning(SSL)의 측면에서 pseudo label을 하는 이유와 pseudo label를 어떻게 구성하여 성능을 올릴 수 있었는지에 대해 설명하고 있습니다.
 
 저는 이 논문에 대해서는 자세히보다는 pseudo label이 어떻게 이루어 지는지를 loss function과 구조적 측면에서 확인해 보며 어떤식으로 성능향상에 도움이 되는지에 대해서만 정리하고자 합니다!⭐️
 
@@ -72,5 +72,63 @@ $h_\theta(x)$\는 softmax 함수를 거쳐 나온 확률 값을 의미하며 여
   
 그리고, one-hot encoding을 위해 $y_i$는 $C$ 클래스들을 모든 데이터 ($N = N_l + N_u$)에 원핫 인코딩 해주며, 그 수식은 $y_i=\{0,1\}^C$, 이렇게 표현할 수 있습니다. 
   
-여기서 핵심은 어떻게 레이블 되지 않은 샘플들 ($N_u$) 로부터 pseudo-labels ($\tilde{y}$)를 만들어 내는 것인데요..!
+또, pseudo label 된 데이터를 다음과 같이 표현하며, $\tilde{D}=\{(x_i,\tilde{y}_i)\}_{i=1}^N$ 이 것을 가지고 레이블된 샘플들인 $N_l$에 있어서 $\tilde{y}=y$ 가 될 수 있는 것입니다.
   
+  
+여기서 핵심은 어떻게 레이블 되지 않은 샘플들 ($N_u$) 로부터 pseudo-labels ($\tilde{y}$)를 만들어 내는 것인데요..!
+
+이전 연구는  one-hot encoding을 사용하는 hard 방식을 사용했습니다. 하지만 softmax를 사용하는 soft 방식이 더 좋은 성능을 내는 것을 발견하였고, 이전 방식에 soft-pseudo labeling 하는 방식을 적용하여 사용하였다고 합니다. 또한, `두 가지 정규화`를 추가적으로 사용하여 pseudo label이 더 잘 되도록 만들었다고 합니다.
+  
+두 가지 정규화를 적용하여 나온 최종 loss 수식은 일단 다음과 같습니다. 하나하나 따져보기 전에 전체적인 그림을 보고자 함입니다.
+  
+ $l=l^*+\lambda_AR_A+\lambda_HR_H$
+
+  
+<br>
+  
+그럼 두 정규화를 살펴보도록 하겠습니다.
+  
+### 첫 번째 정규화 
+  
+pseudo label을 생성하기 시작하는 학습 초기에는 거의 부정확한 결과를 낸다고 합니다. 그 이유는 CNN은 loss를 줄이기 위해 같은 클래스로 예측해버리는 경향이 있기 때문입니다. 예를 들어 모든 데이터에 대해서 제각각인 클래스로 분류하기 보다는 같은 클래스로 주는 것이 loss가 더 적게 나오기 때문입니다. 시험을 볼 때 랜덤하게 찍는 것 보단, 같은 답으로 줄을 세워 찍으면 더 잘맞는 것과 같은 원리겠지요?
+  
+따라서 이 논문에서는 아래 공식을 추가하여 각 클래스들의 모든 샘플들의 영향력을 작게 합니다. 
+  
+  $R_A=\sum_{c=1}^Cp_clog({p_c \over \bar{h_c}})$
+  
+  
+  $p_c$는 이전 class $c$에 대한 이전 확률 분포, $\bar{h}_c$는 class $c$를 dataset의 모든 샘플들에 대한 softmax 확률값들의 평균입니다.
+  
+  따라서 $p_c = {1 \over C}$ 입니다. 
+  
+ 따라서 이전에 예측한 값에 전체 클래스 분의 예측한 값에 로그를 취한 값을 곱해서 값을 작게 업데이트를 시켜주게 되는 것 같습니다. 아마 저 로그가 취해진 괄호 값은 분수로, log를 통해서 마이너스 값이 나오게 될 것 같습니다.
+  
+  
+ <br>
+  
+### 두 번째 정규화 
+ 
+다음 정규화는 약한 가이던스(부정확한 값들) 때문에 local minima에 빠질 것을 염려해 개별 class에 대한 soft-pseudo-label의 각 확률 분포에  `집중`하도록 하는 방법을 추가하게 됩니다.
+
+정규화 식은 다음과 같습니다.
+  
+$R_H=-{1\over N}\sum_{i=1}^N\sum_{c=1}^Ch_\theta^c(x_i)log(h_\theta^c(x_i))$  
+  
+살펴보면, $h_\theta^c(x_i)$는 softmax의 output인 $h_\theta(x)$의 c class value를 의미하며, 이것으로 entropy를 구하는 공식을 취해주어서 각 샘플들에 대한 엔트로피값의 평균을 구하게 됩니다. 그리고 이렇게 나온 엔트로피들은 마이너스 값을 가지므로 맨 앞에 마이너스를 한번 더 취해주어 양수로 만들게 됩니다. 
+  
+따라서 이 것으로 나오는 값은 뻔히 예상되는 값(예측이 쉬운 값)일 수록 작은값, 결과 예측이 힘들수록 큰 값을 도출하게 됩니다. 그러면 결과 예측이 힘들수록 전체의 loss가 올라가게 되는 거겠죠!
+  
+  <br>
+  
+따라서 이 두 정규화를 합친 전체적인 loss 수식이 아래와 같이 되는 것입니다.
+  
+ 
+ $l=l^*+\lambda_AR_A+\lambda_HR_H$  
+  
+  여기서 $l^*$은, 제일 hard-pseudo-label방식에 softmax를 추가한 초기 공식으로, 
+  
+$l^*(\theta) = -\sum_{i=1}^N \tilde{y}^T_ilog(h_\theta(x_i))$  
+  
+  다시 풀어서 쓰면, 다음과 같은 아주 긴 함수가 되는 것입니다.
+
+ $l=-\sum_{i=1}^N \tilde{y}^T_ilog(h_\theta(x_i))+\lambda_A \sum_{c=1}^Cp_clog({p_c \over \bar{h_c}})+ -\lambda_H{1\over N}\sum_{i=1}^N\sum_{c=1}^Ch_\theta^c(x_i)log(h_\theta^c(x_i))$  
