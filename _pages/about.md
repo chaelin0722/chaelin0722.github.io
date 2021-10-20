@@ -15,7 +15,7 @@ classes: wide
 
 글에 오류가 있거나 궁금하신 점은 언제든지 메일 보내주세요! 👍😁
 
-💌 Email: cl.kim@ivpl.sookmyung.ac.kr> 
+💌 Email: cl.kim@ivpl.sookmyung.ac.kr 
 
 <br>
 
