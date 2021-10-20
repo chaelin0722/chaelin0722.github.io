@@ -72,7 +72,7 @@ $h_\theta(x)$는 softmax 함수를 거쳐 나온 확률 값을 의미하며 여�
   
 그리고, one-hot encoding을 위해 $y_i$는 $C$ 클래스들을 모든 데이터 ($N = N_l + N_u$)에 원핫 인코딩 해주며, 그 수식은 $y_i={\lbrace 0,1 \rbrace}^C$, 이렇게 표현할 수 있습니다. 
   
-또, pseudo label 된 데이터를 다음과 같이 표현하며, $\tilde{D}={\lbrace(x_i,\tilde{y}_i)\rbrace}_{i=1}^N$ 
+또, pseudo label 된 데이터를 다음과 같이 표현하며, $\tilde{D}=\lbrace(x_i,\tilde{y}_i)\rbrace_{i=1}^N$ 
 
 이것을 가지고 레이블된 샘플들인 $N_l$에 있어서 $\tilde{y}=y$ 가 될 수 있는 것입니다.
   
