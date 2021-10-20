@@ -35,5 +35,42 @@ pseudo label은 아직 제대로 레이블 되었는지 어땠는지는 모릅�
 
 이제 어떻게 labeling 을 잘 하도록 학습시켰는지 알아보도록 하겠습니다.
 
+<br>
 
+### Pseudo label 종류
 
+#### <li> hard-pseudo-label
+  네트워크의 예측값을 라벨로 사용하는 방식으로 one-hot vector을 생각하면 됩니다. 예를 들어 어떤 이미지에 대한 레이블 값이 고양이! 이렇게 나오면 그 이미지는 그대로 고양이로 레이블 됩니다.
+  
+
+#### <li> soft-pseudo-label
+  반면 soft-label 방식은 softmax prediction값을 사용합니다. 즉, continuous distribution 한 label 을 뜻하며 각 클래스로 예측될 확률 값이 들어가 있습니다.
+  예를 들어 어떤 이미지에 대해서 고양이일 확률 70% 호랑이일 확률 20% 강아지일 확률 10% 이런식으로 나오게 되는 것입니다.
+  
+
+이 논문에서는 soft 방식을 사용하며 이 전에 리뷰했던 noisy student 모델에서도 soft한 방식을 사용합니다.
+
+<br>
+  
+  
+### Pseudo label의 손실함수(loss function)
+  
+  
+CNN 파라미터 $\theta$는 categorical cross-entropy 공식으로 optimize 됩니다. 그 수식은 아래와 같다. 
+  
+$l^*(\theta) = -\sum_{i=1}^N \tilde{y}^T_ilog(h_\theta(x_i))$  
+  
+$h_\theta(x)$\는 softmax 함수를 거쳐 나온 확률 값을 의미하며 여기에 $log$를 취하는 것은 element-wise 하기 위함입니다. 
+  
+다시 자세히 뜯어 보자면 
+  
+- unlabel된 sample : $N_u$
+  
+- unlabel set : $D_u = \{x_i\}^{N_u}_{i=1}$
+ 
+- labeled set : $D_l = \{x_i,y_i\}^{N_l}_{i=1}$
+  
+그리고, one-hot encoding을 위해 $y_i$는 $C$ 클래스들을 모든 데이터 ($N = N_l + N_u$)에 원핫 인코딩 해주며, 그 수식은 $y_i=\{0,1\}^C$, 이렇게 표현할 수 있습니다. 
+  
+여기서 핵심은 어떻게 레이블 되지 않은 샘플들 ($N_u$) 로부터 pseudo-labels ($\tilde{y}$)를 만들어 내는 것인데요..!
+  
