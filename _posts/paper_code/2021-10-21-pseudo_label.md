@@ -165,7 +165,8 @@ $l^*(\theta) = -\sum_{i=1}^N \tilde{y}^T_ilog(h_\theta(x_i))$
   
   $l^* = -\sum_{i=1}^N\delta \lbrack\tilde{y}^T_{i,p}log(h_\theta(x_i))\rbrack+(1-\delta)\lbrack\tilde{y}^T_{i,q}log(h_\theta(x_i))\rbrack$ 가 됩니다.
   
-  따라서 최종 수식  $l=l^*+\lambda_AR_A+\lambda_HR_H$  에서 $l^*$만 바뀌게 되겠죠!
+  따라서 최종 수식  $l=l^*+\lambda_AR_A+\lambda_HR_H$ 
+  에서 $l^*$ 만 바뀌게 되겠죠!
   
   
   <br>
