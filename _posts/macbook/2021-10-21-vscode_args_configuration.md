@@ -43,6 +43,11 @@ others 클릭!
 ![image](https://user-images.githubusercontent.com/53431568/138293145-471f4141-d9a0-467a-8a25-bd30005063d4.png)
 
 
+
+
+### 2. task.json 수정하기
+
+
 task.json을 눌러 파일 내용을 확인해 봅시다. 다음과 같이 아주 기본적인 파일이 내용이 생성되어있습니다.
 
 <img width="700" alt="ㄴㄴ" src="https://user-images.githubusercontent.com/53431568/138292099-b55cdc85-2cb4-49c2-8f51-010aa8e7513d.png">
@@ -173,6 +178,11 @@ task.json 에서는 다음과 같이 입력해주시면 됩니다.
 
 `만약 본인이 c/c++ 과 같은 환경에서도 구성하고 싶다면 이에 맞는 코드를 추가해 주어야 합니다.`
 
+
+### 3. 실행
+
 이제 실행할때 `command + shift + b` 로 하는 것 잊지마세요~😘
 
 
+
+<iframe src="https://giphy.com/embed/lYv10cDlosFnA0toPb" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
