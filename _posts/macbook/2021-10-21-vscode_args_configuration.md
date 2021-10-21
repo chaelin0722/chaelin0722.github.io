@@ -40,8 +40,7 @@ others 클릭!
 
 디렉토리에서 확인해보면, .vscode 아래에 task.json 이 생성된것을 확인할 수 있습니다.
 
-![image](https://user-images.githubusercontent.com/53431568/138293145-471f4141-d9a0-467a-8a25-bd30005063d4.png)
-
+<img width="366" alt="무제" src="https://user-images.githubusercontent.com/53431568/138294673-f08417d6-52fe-446e-bc2d-3d45ebe77731.png">
 
 
 
