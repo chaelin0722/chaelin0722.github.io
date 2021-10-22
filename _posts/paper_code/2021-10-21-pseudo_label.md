@@ -163,6 +163,7 @@ $l^*(\theta) = -\sum_{i=1}^N \tilde{y}^T_ilog(h_\theta(x_i))$
   위의 수식은 
   
 $l^* = \deltal^*_p + (1 - \delta)l^*_q$
+
 $l^* = \deltal$  
   
 로 될 수 있고 따라서 loss $l^*$에 대해 재정의 하면
