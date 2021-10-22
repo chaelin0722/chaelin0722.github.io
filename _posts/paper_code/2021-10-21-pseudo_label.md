@@ -68,7 +68,7 @@ $h_\theta(x)$는 softmax 함수를 거쳐 나온 확률 값을 의미하며 여�
   
 - unlabel set : $D_u = \lbrace x_i \rbrace^{N_u}_{i=1}$
  
-- labeled set : $D_l = \lbrace x_i,y_i \rbrace^{N_l}_{i=1}$
+- labeled set : $D_l = \lbrace ( x_i,y_i ) \rbrace^{N_l}_{i=1}$
   
 그리고, one-hot encoding을 위해 $y_i$는 $C$ 클래스들을 모든 데이터 ($N = N_l + N_u$)에 원핫 인코딩 해주며, 그 수식은 $y_i={\lbrace 0,1 \rbrace}^C$, 이렇게 표현할 수 있습니다. 
   
