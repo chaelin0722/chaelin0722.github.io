@@ -54,50 +54,8 @@ task.json을 눌러 파일 내용을 확인해 봅시다. 다음과 같이 아�
 
 저는 이거 싹 지우고 python 을 위한 실행환경을 만들어주었는데요, 아래 코드를 그대로 복붙하면 일단 기본은 됩니다. 
 
-~~~
-{
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "python execute",
-            "type": "shell",
-            "command": "python3",
-            "options": {
-                "cwd": "${fileDirname}"
-            },  
-            "args": [
-              "${file}"
-             ],
+<script src="https://gist.github.com/chaelin0722/9d6ecae7b053be26efb32a08c2421977.js"></script>
 
-            "group":{
-                "kind": "build",
-                "isDefault": true
-            },
-
-        },
-
-        {
-            "label": "c execute",
-            "type": "shell",
-            "command": "./${fileBasenameNoExtension}",
-            "group":{
-                "kind": "test",
-                "isDefault": true
-            },
-
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared",
-                "showReuseMessage": true,
-                "clear": true
-            }
-        }
-    ]
-}
-
-~~~
 
 하지만 제가 하고 싶은 것은 args 들을 넣어주는 건데요, 예를 들어 보면, cli 버전의 명령어는 다음과 같이 들어간다고 했을 때, 
 
@@ -121,58 +79,8 @@ task.json 에서는 다음과 같이 입력해주시면 됩니다.
 
 전체적인 코드는 아래와 같습니다. 
 
+<script src="https://gist.github.com/chaelin0722/43bd4bbf4036225e0d05aa117b953512.js"></script>
 
-~~~
-
-{
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "python execute",
-            "type": "shell",
-            "command": "python3",
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-
-            "args": [
-                    "${file}",
-                    "train",
-                    "--dataset=./",
-                    "--weights=coco",
-                    "--logs=./logs/"
-            ],
-
-            "group":{
-                "kind": "build",
-                "isDefault": true
-            },
-
-        },
-
-        {
-            "label": "c execute",
-            "type": "shell",
-            "command": "./${fileBasenameNoExtension}",
-            "group":{
-                "kind": "test",
-                "isDefault": true
-            },
-
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared",
-                "showReuseMessage": true,
-                "clear": true
-            }
-        }
-    ]
-}
-
-
-~~~
 
 
 `만약 본인이 c/c++ 과 같은 환경에서도 구성하고 싶다면 이에 맞는 코드를 추가해 주어야 합니다.`
