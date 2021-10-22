@@ -74,7 +74,7 @@ $h_\theta(x)$는 softmax 함수를 거쳐 나온 확률 값을 의미하며 여�
   
 또, pseudo label 된 데이터를 다음과 같이 표현하며, 
 
-$\tilde{D}=$ $\lbrace (x_i,\tilde{y}_i) \rbrace_{i=1}^N$ 
+$\tilde{D}=$ $\lbrace (x_i,\tilde{y}_i) \rbrace^N_{i=1}$ 
 
 이것을 가지고 레이블된 샘플들인 $N_l$에 있어서 $\tilde{y}=y$ 가 될 수 있는 것입니다.
   
@@ -162,7 +162,7 @@ $l^*(\theta) = -\sum_{i=1}^N \tilde{y}^T_ilog(h_\theta(x_i))$
   
   위의 수식은 
   
-  $l^*=\delta l^*_p + (1-\delta)l^*_q$ 
+  $l^{*} =\ delta l^{*}_p + (1- \delta ) l^{*}_q$ 
   
   로 될 수 있고 따라서 loss $l^*$에 대해 재정의 하면
   
