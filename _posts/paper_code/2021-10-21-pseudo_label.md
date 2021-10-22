@@ -162,11 +162,11 @@ $l^*(\theta) = -\sum_{i=1}^N \tilde{y}^T_ilog(h_\theta(x_i))$
   
   위의 수식은 
   
-  $l^* = \delta l^*_p + (1 - \delta ) l^*_q$ 
+$l^{*}$ $= \delta l^*_p + (1 - \delta ) l^*_q$ 
   
-  로 될 수 있고 따라서 loss $l^*$에 대해 재정의 하면
+로 될 수 있고 따라서 loss $l^*$에 대해 재정의 하면
   
-  $l^* = -\sum_{i=1}^N\delta \lbrack\tilde{y}^T_{i,p}log(h_\theta(x_i))\rbrack+(1-\delta)\lbrack\tilde{y}^T_{i,q}log(h_\theta(x_i))\rbrack$ 가 됩니다.
+$l^* = -\sum_{i=1}^N\delta \lbrack\tilde{y}^T_{i,p}log(h_\theta(x_i))\rbrack+(1-\delta)\lbrack\tilde{y}^T_{i,q}log(h_\theta(x_i))\rbrack$ 가 됩니다.
   
   따라서 다음의 최종 수식 
   
