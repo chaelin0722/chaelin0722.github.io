@@ -162,7 +162,7 @@ $l^*(\theta) = -\sum_{i=1}^N \tilde{y}^T_ilog(h_\theta(x_i))$
   
   위의 수식은 
   
-$l^* = \delta$ $l^∗_p$ $+ (1-δ)$ $l^∗$$_p$
+$l^* = \delta$$l^∗_p$ $+ (1-δ)$ $l^∗_p$
 
 
   
