@@ -1,0 +1,32 @@
+---
+title:  '[Probability and Statistics] Lecture 3-1. 확률변수의 평균과 분산'
+excerpt: "mean and variance of probability variable"
+
+categories:
+  - probability
+tags: [Math, probability]
+
+last_modified_at: 2021-10-28T08:06:00-05:00
+classes: wide
+---
+
+## [KOCW](http://kocw.net/home/search/search.do?open_top_select=znAll&as=pop&query=%EC%A0%84%EC%9E%90%EA%B8%B0%ED%95%99&popKey=y)의 `확률 및 통계` 
+
+
+선형대수학을 끝내고 확률통계 스터디✏️를 시작하였다. [확률통계](http://www.kocw.net/home/search/kemView.do?kemId=1056974)강의를 들으면서 정리하고, 문제를 푸는 정도를 정리하고자 한다.
+
+다섯 번째 강의는 `독립사건과 확률` 이다. 
+
+![IMG_0739](https://user-images.githubusercontent.com/53431568/139103566-3dde7cb7-41f9-46ab-aff5-d51f1c7e6ab9.jpg)
+
+<br>
+
+
+![IMG_0736](https://user-images.githubusercontent.com/53431568/139103550-b0532057-3c84-46a3-ad54-f4fd1f84231f.jpg)
+![IMG_0737](https://user-images.githubusercontent.com/53431568/139103557-4fe6c99a-941e-4488-bb24-c5fa92ee12f4.jpg)
+![IMG_0738](https://user-images.githubusercontent.com/53431568/139103564-3d5687aa-4118-478b-9a7e-8616e8eb7ee7.jpg)
+
+![IMG_0735](https://user-images.githubusercontent.com/53431568/139103532-e65eb277-1288-4495-9493-ba8b099e11e3.jpg)
+
+
+
