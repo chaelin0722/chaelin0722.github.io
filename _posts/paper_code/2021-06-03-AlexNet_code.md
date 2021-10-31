@@ -19,7 +19,7 @@ last_modified_at: 2021-06-12T08:06:00-05:00
 위의 layer 구조를 보고 코드로 구현하였다.
 
 앞서 해석한 논문을 보면 디테일한 설명을 볼 수 있다. 
-[ImageNet Classification with Deep Convolutional Neural Networks](https://chaelin0722.github.io/paperreview/AlexNet/)
+[ImageNet Classification with Deep Convolutional Neural Networks](https://chaelin0722.github.io/paperreview/googlenet/)
 
 <br>
 <script src="https://gist.github.com/chaelin0722/366489f2ac4c3fd828392f5fd975aa3d.js"></script>
