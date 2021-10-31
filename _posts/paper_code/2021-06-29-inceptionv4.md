@@ -18,7 +18,7 @@ classes: wide
 이번 논문은 inveption-v2와 resnet-v2의 네트워크 구조들을 살펴볼 수 있는 내용이었다. 네트워크 구조와 residual connection이라는 개념에 대한 핵심만 짚었기 때문에 많은 시간이 소요되는 논문은 아니었다. 
 
 
-Inception-v4 코드구현 페이지. => [Inception-v4](https://chaelin0722.github.io/deeplearning/cnn/code/inception_v4_code/)
+Inception-v4 코드구현 페이지. => [Inception-v4](https://chaelin0722.github.io/code/inception_v4_code/)
 
 
 ## 0. 요약
@@ -105,7 +105,7 @@ batch-normalization을 통해 장점을 기대하는 것은 매우 합리적이�
  
 <br> 
 
-#### Inception-v4를 코드로 구현한것을 정리한 페이지이다. =>  [Inception-v4](https://chaelin0722.github.io/deeplearning/cnn/code/inception_v4_code/)
+#### Inception-v4를 코드로 구현한것을 정리한 페이지이다. =>  [Inception-v4](https://chaelin0722.github.io/code/inception_v4_code/)
 
 <br>
 
