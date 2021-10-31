@@ -27,6 +27,8 @@ classes: wide
 
 - Computer Vision
 
+- FER
+
 ### Education
 
 M.S. candidate in IT Engineering (2021.09 - present)
