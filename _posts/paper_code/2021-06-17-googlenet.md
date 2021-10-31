@@ -17,7 +17,7 @@ classes: wide
 
 [논문원본](https://arxiv.org/abs/1409.4842)😙
 
-GoogLeNet 코드구현 페이지. => [GoogLeNet](https://chaelin0722.github.io/deeplearning/cnn/code/googlenet_code/)
+GoogLeNet 코드구현 페이지. => [GoogLeNet](https://chaelin0722.github.io/code/googlenet_code/)
 
 ## 0. 요약
 - “inception” 이라는 deep convolution neural network를 제안한다. 이 inception의 특징은 네트워크 안에서 컴퓨터 리소스의 활용을 향상시킨다. 이것으로 계산 비용은 유지하면서 네트워크의 깊이와 넓이를 증가시킨다.
@@ -226,7 +226,7 @@ GAP는 이전 layer에서 추출된 feature map을 각각 평균 낸 것을 이
 </details>
  
 <br> 
-#### GoogLeNet을 코드로 구현한것을 정리한 페이지이다. => [GoogLeNet](https://chaelin0722.github.io/deeplearning/cnn/code/googlenet_code/)
+#### GoogLeNet을 코드로 구현한것을 정리한 페이지이다. => [GoogLeNet](https://chaelin0722.github.io/code/googlenet_code/)
 
 <br>
 
