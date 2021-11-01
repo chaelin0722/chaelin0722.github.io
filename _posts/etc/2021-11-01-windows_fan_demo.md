@@ -50,14 +50,14 @@ last_modified_at: 2021-11-01T08:06:00-05:00
 <br>
 
 
-### 2. library 설치를 위해 [chocolately software](https://chocolatey.org/) 설치하기 
+### 2. library 설치를 위해 [chocolatey software](https://chocolatey.org/) 설치하기 
 
 우분투 환경이면 저대로 그냥 따라만 치면 끝인데.. 윈도우 환경이라 우회하는게 너무 귀찮다.. 허허
 
 일단, 여기서 부터는 anaconda prompt 를 실행하든, cmd에서 실행하던, powershell 에서 실행하던 무조건 관리자 권한으로 실행한 후, 설치를 진행해 주어야 한다.
 
 
-먼저 이 사이트에서 => [chocolately software](https://chocolatey.org/install) 
+먼저 이 사이트에서 => [chocolatey software](https://chocolatey.org/install) 
 
 
 ![image](https://user-images.githubusercontent.com/53431568/139629656-69d669a7-272e-4072-87ec-158f6b803d14.png)
