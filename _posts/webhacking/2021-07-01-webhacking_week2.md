@@ -52,7 +52,7 @@ classes: wide
 
 
 
-#### ⭐️⭐️ [지난번 공부했던 내용 인 웹 해킹 1주차](https://chaelin0722.github.io/study/etc/hacking/webhacking_week1/)를 참고해 버프스위트 부분을 참고하자. 
+#### ⭐️⭐️ [지난번 공부했던 내용 인 웹 해킹 1주차](https://chaelin0722.github.io/hacking/webhacking_week1/)를 참고해 버프스위트 부분을 참고하자. 
 
 <br><br>
 
