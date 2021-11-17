@@ -18,4 +18,13 @@ classes: wide
 
 
 이 논문은 비디오(영상)을 프레임을 여러개 받아 각 프레임마다의 mean, std, min, max 값을 계산하여 얼굴표정을 인식하는 방법을 제시하고 있습니다.
-<br>
+
+
+Studied for face identification and classification of facial attributes(age, gender, ethnicity) trained on cropped faces without margins
+Necessity to fine-tune these networks to predict facial expressions is highlighted
+
+MobileNet, EfficientNet, RexNet architecture
+
+
+![image](https://user-images.githubusercontent.com/53431568/142206134-276f1826-64a5-4e2a-93b9-8d0173e95673.png)
+
