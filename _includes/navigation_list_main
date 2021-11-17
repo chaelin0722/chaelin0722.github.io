@@ -35,6 +35,13 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "fer" %}
+                        <li><a href="/categories/fer" class="" style="font-family:'MaruBuri-Regular';font-size:1.1em;">FER 연구</style> <style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "gan" %}
                         <li><a href="/categories/gan" class="" style="font-family:'MaruBuri-Regular';font-size:1.1em;">GAN 연구</style><style="font-family:'MaruBuri-Regular';">({{category[1].size}})</style></a></li>
                     {% endif %}
