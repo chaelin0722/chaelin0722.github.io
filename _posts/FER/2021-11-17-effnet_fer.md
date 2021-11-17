@@ -4,7 +4,7 @@ excerpt: "-Multi-task EfficientNet-B2-"
 
 categories:
   - paperReview
-tags: [FER,CNN, paperReview]
+tags: [fer,CNN, paperReview]
 use_math: true
 
 last_modified_at: 2021-11-17T08:06:00-05:00
