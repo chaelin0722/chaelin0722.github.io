@@ -3,7 +3,7 @@ title:  "[딥러닝공부] 학습시 learning rate 특정 step에 맞춰 조율�
 excerpt: "LearningRateScheduler()"
 
 categories:
-  - etc
+  - CNN
 tags: [Deeplearning, CNN,study,etc]
 use_math: true
 classes: wide
