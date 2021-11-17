@@ -3,7 +3,7 @@ title:  "[딥러닝공부] Sigmoid의 한계와 대안으로써의 ReLu✏️"
 excerpt: "활성화 함수 정리"
 
 categories:
-  - etc
+  - CNN
 tags: [Deeplearning, CNN, study]
 
 last_modified_at: 2021-05-31T08:06:00-05:00
