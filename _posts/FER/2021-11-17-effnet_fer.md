@@ -3,7 +3,7 @@ title:  "[논문정리📃] Facial expression and attributes recognition based o
 excerpt: "-Multi-task EfficientNet-B2-"
 
 categories:
-  - paperReview
+  - fer
 tags: [fer,CNN, paperReview]
 use_math: true
 
