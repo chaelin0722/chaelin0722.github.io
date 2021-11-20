@@ -361,6 +361,20 @@ conda activate 가상환경이름       # 연결
 conda deactivate               # 연결끊기
 ~~~
 
+
+#### 그 외.. 파이참 프로페셔널 (pycharm-professional) 깔기
+
+서버에서 gui 로 개발하기 위해서 깔아준다..!
+
+
+나는 학교 계정이 있으니까 `pycharm-professional`로 깔아 주었다. 그냥 무료버전은 pycharm-community
+
+~~~
+sudo snap install pycharm-professional --classic
+~~~
+
+실행 명령어는 `pycharm-professional`..!
+
 <br><br>
 
 기나긴 여정의 끝😆😆 여기까지 수고 많으셨습니다!
@@ -369,7 +383,7 @@ conda deactivate               # 연결끊기
 
 
 --- 2021년 11월 20일 수정됨
-ㅛㄷ
+
 <br><br>
 
 #### 참고
