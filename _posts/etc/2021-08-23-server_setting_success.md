@@ -306,19 +306,24 @@ nvcc -V
 
 먼저, 아나콘다 공식홈페이지 [Anaconda]에 들어가서 가장 최신버전 혹은 자신이 원하는 버전을 다운받아준다.
 
-나는 wget을 이용해 리눅스 환경에서 해주었다.
-
+나는 wget을 이용해 리눅스 환경에서 해주었다. 
 
 
 ~~~bash
-wget sha256sum Anaconda3-2021.05-Linux-x86_64.sh
+wget https://repo.continuum.io/archive/Anaconda3-2021.11-Linux-x86_64.sh
 ~~~
+
+위의 명령어 대로 설치해주되, anaconda 버전은 [아나콘다 archive 페이지](https://repo.anaconda.com/archive/)에 가서 맘에 드는 이름으로 변경하면 된다. 
+
 
 다운받은 경로로 돌아가서 anaconda를 실행해준다! (대부분 `~/Downloads` 에 있다.)
 
 ~~~bash
-bash Anaconda3-2021.05-Linux-x86_64.sh
+bash Anaconda3-2021.11-Linux-x86_64.sh
 ~~~
+
+엔터 많이 치고 'yes' 쓰고 엔터!
+
 
 경로 추가하고 실행하기
 
@@ -363,6 +368,8 @@ conda deactivate               # 연결끊기
 이제 개발할 일만 남았습니당~💗💗
 
 
+--- 2021년 11월 20일 수정됨
+ㅛㄷ
 <br><br>
 
 #### 참고
