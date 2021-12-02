@@ -60,7 +60,7 @@ GAN에 대한 포스팅을 많이 올린 Jonathan Hui의 [GAN — GAN Series (fr
 
 - GAN Issues
 
-#### [6] Why it is so hard to train Generative Advisory Networks!
+#### [6] [Why it is so hard to train Generative Advisory Networks!](https://chaelin0722.github.io/gan/6-Why-it-is-so-hard-to-train-Generative-Adversarial-Networks!/)
 
 <br>
 
