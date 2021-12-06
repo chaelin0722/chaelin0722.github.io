@@ -53,7 +53,7 @@ BCE의 경우 손실이 점점 감소하나 MSE와 비교하면 느리게 떨어
 
 이를 대체 하기 위해 나온 아주 간단한 방법은 ReLU 형식이다. 고정된 기울기의 직선을 통해 절대 기울기가 사라지지 않는 것이다. 하지만 이 또한 문제가 있는데 0보다 작은 값들에 대해 경사가 0이기 때문에 이에 대해서도 기울기 소실의 문제가 생긴다. 
 
-따라서, 0보다 작은 경우 미세한 기울기를 허용함으로써 문제점을 해결한 것이 LeckReLU이다. 
+따라서, 0보다 작은 경우 미세한 기울기를 허용함으로써 문제점을 해결한 것이 LeckReLU이다. (이미지 줄어드는거 뭐지..ㅎㅎ)
 
 ![image](https://user-images.githubusercontent.com/53431568/144838587-db52d8b2-2db4-4a94-8274-6f366f48442e.png)
 ![image](https://user-images.githubusercontent.com/53431568/144839878-a3ed00c7-d57c-4615-bf3a-a45ed7ebd844.png)
@@ -84,8 +84,9 @@ Adam 이 제시하는 SGD의 두 문제점에 대한 해결책은 다음과 같�
 
 똑같은 환경에서 optimizer만 adam으로 두고 학습한 결과는 다음과 같다.
 
-
 손실은 0으로 빠르게 떨어지며 평균 또한 낮다. Adam 옵티마이저가 꽤 효율적인 것을 확인..!✌️
+
+![image](https://user-images.githubusercontent.com/53431568/144842263-b4e6dbbd-1d19-48d0-8558-3712d6a3a49e.png)
 
 
 
