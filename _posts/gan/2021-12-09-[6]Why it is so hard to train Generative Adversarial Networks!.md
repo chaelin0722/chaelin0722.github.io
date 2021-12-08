@@ -129,7 +129,7 @@ $\hat{\theta}=arg \max_{\theta}\prod^{N}_{i=1}p(x_i|\theta)$
 
 이 방법은 KL-divergence를 최소화 시키는 것과 같다. KL-divergence는 확률분포 $q$ (측정된 분포)가 예상되는 확률분포 $p$ (실제 분포)로부터 어떻게 발산하는지 측정하는 방법이다. 
 
-$D_{KL}(p||q)=\int_xp(x)log{{p(x)}\over{q(x)}}dx$
+$D_{KL}(p||q)=\int_xp(x)log{{p(x)}\over{q(x)}}}dx$
 
 KL-divergence는 비대칭적이다.
 
