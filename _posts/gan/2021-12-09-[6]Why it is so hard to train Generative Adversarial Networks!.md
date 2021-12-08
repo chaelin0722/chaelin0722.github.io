@@ -105,7 +105,7 @@ $\displaystyle \min_{B} \max_{A}V(D,G)=xy$
 
 ![image](https://user-images.githubusercontent.com/53431568/145150792-5d0295ff-6e67-4dfe-971e-484589d6152a.png)
 
-$\alpha$는 학습률이며, 학습 iterations이 진행되는 동안 $x,y and xy$를 그려본 결과는 아래와 같으며, 제시한 한 솔루션이 수렴하지 않았다는 것을 알 수 있습니다.
+$\alpha$는 학습률이며, 학습 iterations이 진행되는 동안 $x,y$ 와 $xy$를 그려본 결과는 아래와 같으며, 제시한 한 솔루션이 수렴하지 않았다는 것을 알 수 있습니다.
 
 ![image](https://user-images.githubusercontent.com/53431568/145150942-d3569496-9522-45d2-8395-bccf1e97de6d.png)
 
@@ -115,7 +115,7 @@ $\alpha$는 학습률이며, 학습 iterations이 진행되는 동안 $x,y and x
 ![image](https://user-images.githubusercontent.com/53431568/145150957-02e651ad-1c5b-4af4-b99d-e0e530d95cea.png)
 
 우리의 예시는 몇몇의 비용함수(cost function)는 경사하강기법으로 수렵하지 않는다는 것을 보여주는 훌륭한 케이스이다. (특히 볼록하지 않은 상황에서 더욱 수렴하지 않음)
-우리는 이 문제에 대해 직관적 방식으로 살펴볼 수 있다.: 상대방이 언제는 나의 행동에 대해 반대로 계산하는 것이며, 이는 모델이 수렴하기 어렵게 만든다.
+우리는 이 문제에 대해 직관적 방식으로 살펴볼 수 있다 : `상대방이 언제는 나의 행동에 대해 반대로 계산하는 것이며, 이는 모델이 수렴하기 어렵게 만든다.`
 
 > minmax 게임에서 경사하강법을 사용하는 것은 비용함수를 수렴하는데 도움이 되지 않을 수 있다.
 
@@ -129,11 +129,11 @@ $\hat{\theta}=arg \max_{\theta}\prod^{N}_{i=1}p(x_i|\theta)$
 
 이 방법은 KL-divergence를 최소화 시키는 것과 같다. KL-divergence는 확률분포 $q$ (측정된 분포)가 예상되는 확률분포 $p$ (실제 분포)로부터 어떻게 발산하는지 측정하는 방법이다. 
 
-$D_{KL}(p||q)=\int_xp(x)log p(x)\over{q(x)}dx$
+$D_{KL}(p\||q)=\int_xp(x)log p(x)\over{q(x)}dx$
 
 KL-divergence는 비대칭적이다.
 
-$D_{KL}(p||q) \neq D_{KL}(q||p)$
+$D_{KL}(p\||q) \neq D_{KL}(q\||p)$
 
 $KL(x)$은 0까지 떨어진다. 
 
