@@ -230,7 +230,9 @@ G는 $z \sim p_z$일때 얻어지는 샘플들의 확률분포 $G(z)$로써 $p_g
 ![IMG_8E3C2FDB30B1-1](https://user-images.githubusercontent.com/53431568/136645248-8a9f0743-d9c5-4250-adda-8f0f5807bec8.jpeg)
 
 
+=> 이 과정에서 나온 kl-divergence 나 js-divergence에 대한 자세한 내용은 [KL-divergence & JS-divergence & Maximum Likelihood Estimation와 개념정리](https://chaelin0722.github.io/gan/KL_divergence&JS_divergence) 이곳에서 다루었으니 참고!✌️✌️
 
+<br>
 
 ### 4.2 Convergence of Algorithm 1
 
