@@ -59,7 +59,7 @@ $H(p,q) = -E_{x \sim p}[log q(x)]$
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $= -\sum_i p_i(x)log p_i(x)$ 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $=- \sum_i P(x|y)log P(x \mid y,\theta)$
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $= - \sum_i P(x \mid y)log P(x \mid y,\theta)$
 
 현재 파라미터 $\theta$에서 음의 우도의 기댓값이라고 할 수 있다. 우리가 근사하고 싶은 분포 $p$와 현재 파라미터 $\theta$하에서 추론한 $q$가 얼마나 비슷한지 그 차이를 계산한 것이다.
 
@@ -106,8 +106,8 @@ $D_{KL}(p\|q) \neq D_{KL}(q\|p)$
 
 수식은 다음과 같다.
 
-$JSD(p,q) = {1 \over 2}$ $D_{KL}({p\|p+q} \over 2})$ $+ {1 \over 2}$ 
-$+ {1 \over 2}$ $D_{KL}({p\|p+q} \over 2})$ $+ {1 \over 2}$
+$JSD(p,q) = {1 \over 2}$ $D_{KL}$ $({{p\|p+q} \over 2}})$ $+ {1 \over 2}$ 
+$+ {1 \over 2}$ $D_{KL}({{p\|p+q} \over 2}})$ $+ {1 \over 2}$
 
 
 
@@ -151,7 +151,7 @@ $p(x \mid \theta) = \prod^n_{k=1} P(x_k \mid \theta)$
 
 
 
-$L(\tehta \mid x)=logP(x \mid \theta)=\sum^m_{i=1} log P(x_i \mid \theta)$
+$L(\theta \mid x)=logP(x \mid \theta)=\sum^m_{i=1} log P(x_i \mid \theta)$
 
 
 이제 다시 최대우도기법을 설명해보자..!
@@ -162,7 +162,7 @@ $L(\tehta \mid x)=logP(x \mid \theta)=\sum^m_{i=1} log P(x_i \mid \theta)$
 
 우리가 찾고자 하는 것은 파라미터 $\theta$의 값이므로 $\theta$에 대해 편미분을 하여 그 값이 0이 되는 $\theta$를 찾는 과정을 통해 로그 함수를 최대화 시켜줄 수 있는 $\theta$를 찾을 수 있다. 
 
-${\partial \over \partial\theta}L(\theta|x) = {\partial \over \partial\theta}logP(x|\theta) = \sum^n_{i=1}{\partial \over \partial\theta}logP(x_i|\theta) =0$  
+${\partial \over \partial\theta}$ $L(\theta \mid x)$ $= {\partial \over \partial\theta}$ $logP(x \mid \theta)$  $= \sum^n_{i=1}$ ${\partial \over \partial\theta}$ $logP(x_i|\theta) =0$  
 
 <br>
 <br>
