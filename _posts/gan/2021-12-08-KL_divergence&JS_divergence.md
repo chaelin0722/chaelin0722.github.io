@@ -53,7 +53,7 @@ $H(p) = -E_{x\sim p}[logp]=-\sum p(x)log p(x)$
 
 > CE는 우리가 알고 있는 분포 p와 추정한 분포 q 사이의 차이를 정보량을 통해 나타낸다.
 
-$H(p) = -E_{x \sim p}[log q(x)]$ 
+$H(p,q) = -E_{x \sim p}[log q(x)]$ 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $= -\sum_i p_i(x)log p_i(x)$ 
 
@@ -65,7 +65,6 @@ $H(p) = -E_{x \sim p}[log q(x)]$
 ## KL Divergence
 
 ![image](https://user-images.githubusercontent.com/53431568/145174101-fda2b40f-609c-407f-8517-e05194477aeb.png)
-
 
 크로스 엔트로피처럼 두 분포간의 차이를 나타내는데, `모델의 분포간 얼마나 가까운지에 대한 정보 손실량의 기댓값`을 나타낸다. 
 
@@ -80,6 +79,15 @@ $D_{KL}(p\|q) = E_{x\sim p}[logp(x)-logq(x)]$
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $= \sum_i p_i(logp_i-logq_i)$
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $= \sum_i p_i  log{p_i \over {q_i}}$
+
+
+추정한 $p$에 대한 두 분포의 차이의 기댓값을 표현하고 있다. 여기서 KL Divergence 식을 풀어보면 엔트로피와 $H(p)$ 크로스 엔트로피 $H(p,q)$를 더한 식으로 풀어쓸 수 있다.
+
+$D_{KL}(p\|q)=\sum_i p_i(logp_i - log q_i)$
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $= \sum H(p)+H(p,q)$
+
+사실상 KL Divergence와 CE가 같은 식이 되는 것을 볼 수 있다.
 
 
 이 척도로 닮음의 정도를 측정하지만.. 문제는 비대칭 하다는 것이다. 실제 분포인 p를 기준으로 계산하기 때문에 나오는 결과이다. 따라서 유사도를 이야기할 때 '거리'라고 표현하지 않는다고 . 
@@ -97,7 +105,9 @@ KL-divergence를 보완하여 distance metric 으로 사용할 수 있는 방법
 
 수식은 다음과 같다.
 
-$JSD(p,q)= {1 \over 2} D_{KL}({{p\|p+q} \over 2}) + {1 \over 2} + {1 \over 2} D_{KL}({{p\|p+q} \over 2}) + {1 \over 2}$
+$JSD(p,q)= \frac 1 2 D_{KL}({{p\|p+q} \over 2}) +  \frac 1 2$ 
+
+$+  \frac 1 2 D_{KL}({{p\|p+q} \over 2}) +  \frac 1 2$
 
 
 
