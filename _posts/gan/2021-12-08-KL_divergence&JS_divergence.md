@@ -106,15 +106,15 @@ $D_{KL}(p\|q) \neq D_{KL}(q\|p)$
 
 수식은 다음과 같다.
 
-$JSD(p,q) = {1 \over 2}D(P\|M) + {1 \over 2} D(Q\|M)$
+$JSD(p,q) = {1 \over 2}D(P \parallel M) + {1 \over 2} D(Q \parallel M)$
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $WHERE M = {1 \over 2}(P+Q)$
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $where \; M = {1 \over 2}(P+Q)$
 
 
 
 정리하면, 
 
-$JSD(p,q) = {1 \over 2}$ $D_{KL}$ $(p \| {p+q \over 2})$ $+ {1 \over 2} D_{KL}(q \| {p+q \over 2})$
+$JSD(p,q) = {1 \over 2}$ $D_{KL}$ $(p \parallel {p+q \over 2})$ $+ {1 \over 2} D_{KL}(q  \parallel {p+q \over 2})$
 
 
 
@@ -168,7 +168,7 @@ $L(\theta \mid x)=logP(x \mid \theta)=\sum^m_{i=1} log P(x_i \mid \theta)$
 
 우리가 찾고자 하는 것은 파라미터 $\theta$의 값이므로 $\theta$에 대해 편미분을 하여 그 값이 0이 되는 $\theta$를 찾는 과정을 통해 로그 함수를 최대화 시켜줄 수 있는 $\theta$를 찾을 수 있다. 
 
-${\partial \over \partial\theta}$ $L(\theta \mid x)$ $= {\partial \over \partial\theta}$ $logP(x \mid \theta)$  $= \sum^n_{i=1}$ ${\partial \over \partial\theta}$ $logP(x_i|\theta) =0$  
+${\partial \over \partial\theta}$ $L(\theta \mid x)$ $= {\partial \over \partial\theta}$ $logP(x \mid \theta)$  $= \sum^n_{i=1}$ ${\partial \over \partial\theta}$ $logP(x_i  \mid \theta) =0$  
 
 <br>
 <br>
