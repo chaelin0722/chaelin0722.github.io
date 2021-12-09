@@ -64,9 +64,8 @@ $H(p) = -E_{x\sim p}[logp]=-\sum p(x)log p(x)$
 
 $H(p) = -E_{x \sim p}[log q(x)]$ 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $= -\sum_i p_i(x)log p_i(x)$ 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp $=- \sum_i P(x|y)log P(x|y,\theta)$
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $= -\sum_i p_i(x)log p_i(x)$ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $=- \sum_i P(x|y)log P(x|y,\theta)$
 
 현재 파라미터 $\theta$에서 음의 우도의 기댓값이라고 할 수 있다. 우리가 근사하고 싶은 분포 $p$와 현재 파라미터 $\theta$하에서 추론한 $q$가 얼마나 비슷한지 그 차이를 계산한 것이다.
 
@@ -84,7 +83,9 @@ $logp(x) - logq(x)$
 
 전체에 걸쳐서 표현한 수식은 다음과 같다.
 
-$D_{KL}(p||q) = E_{x\sim p}[logp(x)-logq(x)] = \sum_ip_i(logp_i-logq_i)=\sum_i p_i  log p_i\over{q_i}$
+$D_{KL}(p||q) = E_{x\sim p}[logp(x)-logq(x)]$ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $= \sum_i p_i(logp_i-logq_i)$
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $= \sum_i p_i  log p_i \over {q_i}$
 
 
 이 척도로 닮음의 정도를 측정하지만.. 문제는 비대칭 하다는 것이다. 실제 분포인 p를 기준으로 계산하기 때문에 나오는 결과이다. 따라서 유사도를 이야기할 때 '거리'라고 표현하지 않는다. 
