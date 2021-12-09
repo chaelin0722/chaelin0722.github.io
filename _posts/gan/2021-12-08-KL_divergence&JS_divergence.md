@@ -98,7 +98,7 @@ KL-divergence를 보완하여 distance metric 으로 사용할 수 있는 방법
 
 수식은 다음과 같다.
 
-$JSD(p,q)= 1/2 D_{KL}({p||p+q} \over{2}) + 1/2 + 1/2 D_{KL}({p||p+q} \over{2}) + 1/2$
+$JSD(p,q)= 1 \over 2 D_{KL}({p\|p+q} \over{2}) + 1 \over 2 + 1 \over 2 D_{KL}({p\|p+q} \over {2}) + 1/2$
 
 
 
