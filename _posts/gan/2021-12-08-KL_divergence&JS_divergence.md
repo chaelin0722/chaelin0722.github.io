@@ -106,7 +106,7 @@ $D_{KL}(p\|q) \neq D_{KL}(q\|p)$
 
 수식은 다음과 같다.
 
-$JSD(p,q)= \frac 1 2 D_{KL}( \frac {p\|p+q} 2}) +  \frac 1 2$ 
+$JSD(p,q) = \frac 1 2 D_{KL}( \frac {p\|p+q} 2}) +  \frac 1 2$ 
 
 $+  \frac 1 2 D_{KL}(\frac {p\|p+q} 2}) +  \frac 1 2$
 
@@ -124,7 +124,7 @@ $JSD(P,Q) = JSD(Q,P)$
 
 ## Maximum Likelihodd Estimation (MLE)
 
-최대우도기법은 $\theta = (\theta_1,\theta_2, ... \theta_n$ 으로 구성된 확률 밀도함수 $P(x|\theta)$에서 관측된 표본 데이터집합 $x = (x_1, x_2, ... x_n)$ 이라 할 때 이 표본들에서 파라미터($\theta = (\theta_1,\theta_2, ... \theta_n$)를 추정하는 방법이다.
+최대우도기법은 $\theta = (\theta_1,\theta_2, ... \theta_n)$ 으로 구성된 확률 밀도함수 $P(x|\theta)$에서 관측된 표본 데이터집합 $x = (x_1, x_2, ... x_n)$ 이라 할 때 이 표본들에서 파라미터($\theta = (\theta_1,\theta_2, ... \theta_n)$)를 추정하는 방법이다.
 
 아래 그림을 예로 보면 다음과 같이 빨간색 점의 데이터를 얻었다고 가정했을 때, 초록색과 노란색 후보 분포 중 초록색 분포에서 데이터를 얻을 가능성이 더 커 보인다. 획득한 데이터들의 문포가 초록색 곡선의 중신에 더 일치해 보이기 때문이다. 
 
@@ -141,7 +141,7 @@ $JSD(P,Q) = JSD(Q,P)$
 
 수치적으로 가능도 계산은 각 데이터 샘플들에서 후보 분포에 대한 높이(likelihood)를 곱한 것으로 볼 수 있으며, 수식으로는 다음과 같이 표현한다.
 
-p(x|\theta)=\prod^n_{k=1}P(x_k|\theta)
+$p(x|\theta)=\prod^n_{k=1}P(x_k|\theta)$
 
 위의 수식과 같이 $\theta$라는 표본에서 생각할 수 있는 모든 후보군에 대해 곱하는데 이를 전체 표본 집합의 결합확률밀도 함수, likelihood function이라고 하는 것이다!
 
