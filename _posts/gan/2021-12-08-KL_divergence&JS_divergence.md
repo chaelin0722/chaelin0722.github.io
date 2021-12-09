@@ -150,7 +150,6 @@ $p(x \mid \theta) = \prod^n_{k=1} P(x_k \mid \theta)$
 자연로그를 이용해 나타내면 다음과 같다.
 
 
-
 $L(\theta \mid x)=logP(x \mid \theta)=\sum^m_{i=1} log P(x_i \mid \theta)$
 
 
