@@ -55,7 +55,7 @@ $H(p) = -E_{x\sim p}[logp]=-\sum p(x)log p(x)$
 단순히 생각했을때, 동전 던지기는 각 확률이 1/2 이며 나름 공평한 결과가 나올것이라고 예상한다. 하지만 실제로는 결과가 공평하지 않을 수 있으며 불확실성이 존재한다. 여기서 착안한 것이 교차 엔트로피입니다. 만약 실제로도 동전 던지기가 공평하다면 교차 엔트로피도 낮은 상태일 것이다.
 
 
-교차 엔트로피를 두 확률분포의 차이라고 했습니다. 그리고 두 분포의 차이가 없는 만큼 교차 엔트로피도 낮아지며, 정확히 일치할 경우 0이 될 것이다.
+교차 엔트로피를 두 확률분포의 차이라고 했습니다. 그리고 두 분포의 차이가 없는 만큼 교차 엔트로피도 낮아지며, 정확히 일치할 경우 0이 됩니다. (일치한다는 것은 차이가 없는 것이니까요)
 
 실제 신경망으로 부터 나온 결과도 확률분포라고 생각을 한다면, 두 분포가 다르다면 교차 엔트로피는 높고, 둘이 비슷하다면 낮을 것이다. 이는 우리가 손실함수에서 기대하는 바로 그대로 이다.!
 
@@ -64,9 +64,9 @@ $H(p) = -E_{x\sim p}[logp]=-\sum p(x)log p(x)$
 
 $H(p) = -E_{x \sim p}[log q(x)]$ 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $= -\sum_i p_i(x)log p_i(x)$ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $= -\sum_i p_i(x)log p_i(x)$ 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $=- \sum_i P(x|y)log P(x|y,\theta)$
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $=- \sum_i P(x|y)log P(x|y,\theta)$
 
 현재 파라미터 $\theta$에서 음의 우도의 기댓값이라고 할 수 있다. 우리가 근사하고 싶은 분포 $p$와 현재 파라미터 $\theta$하에서 추론한 $q$가 얼마나 비슷한지 그 차이를 계산한 것이다.
 
@@ -106,7 +106,7 @@ KL-divergence를 보완하여 distance metric 으로 사용할 수 있는 방법
 
 수식은 다음과 같다.
 
-$JSD(p,q)= 1 \over 2 D_{KL}({p\|p+q} \over{2}) + 1 \over 2 + 1 \over 2 D_{KL}({p\|p+q} \over {2}) + 1/2$
+$JSD(p,q)= {1 \over 2} D_{KL}({{p\|p+q} \over 2}) + {1 \over 2} + {1 \over 2} D_{KL}({{p\|p+q} \over 2}) + {1 \over 2}$
 
 
 
