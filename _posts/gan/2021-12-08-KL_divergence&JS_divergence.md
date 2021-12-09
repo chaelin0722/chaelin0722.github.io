@@ -39,7 +39,9 @@ $H(p) = -E_{x\sim p}[logp]=-\sum p(x)log p(x)$
 
 ## Cross Entropy
 
-교차 엔트로피는 실제 결과가 도출될 우도와 우리가 생각하는 우도 사이의 차이에 따른 결과의 불확실성에 대한 지표이다. 
+분류(classification)문제를 풀 때 크로스 엔트로피를 이용해 loss function, cost function 과 같이 손실함수를 정의한다. 
+
+크로스 엔트로피는 실제 결과 우도($p$)와 우리가 생각하는 우도($q$) 사이의 차이에 따른 결과의 불확실성에 대한 지표이다. 
 
 다시 동전예제를 생각해보자!
 
@@ -81,20 +83,20 @@ $D_{KL}(p\|q) = E_{x\sim p}[logp(x)-logq(x)]$
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $= \sum_i p_i  log{p_i \over {q_i}}$
 
 
-추정한 $p$에 대한 두 분포의 차이의 기댓값을 표현하고 있다. 여기서 KL Divergence 식을 풀어보면 엔트로피와 $H(p)$ 크로스 엔트로피 $H(p,q)$를 더한 식으로 풀어쓸 수 있다.
+추정한 $p$에 대한 두 분포의 차이의 기댓값을 표현하고 있다. 여기서 KL Divergence 식을 풀어보면 엔트로피와 $-H(p)$ 크로스 엔트로피 $H(p,q)$를 더한 식으로 풀어쓸 수 있다.
 
 $D_{KL}(p\|q)=\sum_i p_i(logp_i - log q_i)$
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $= \sum H(p)+H(p,q)$
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $= \sum -H(p)+H(p,q)$
 
 사실상 KL Divergence와 CE가 같은 식이 되는 것을 볼 수 있다.
 
 
-이 척도로 닮음의 정도를 측정하지만.. 문제는 비대칭 하다는 것이다. 실제 분포인 p를 기준으로 계산하기 때문에 나오는 결과이다. 따라서 유사도를 이야기할 때 '거리'라고 표현하지 않는다고 . 
+이 척도로 두 분포간의 차이를 나타내지만 '거리(metric)'가 되진 못한다. 비대칭 하기 때문에 거리의 조건을 만족하지 않기 때문이다. (실제 분포인 p를 기준으로 계산하기 때문)
 
 $D_{KL}(p\|q) \neq D_{KL}(q\|p)$
 
-KL-divergence를 보완하여 distance metric 으로 사용할 수 있는 방법으로 나온 개념이 JSD 이다.
+따라서 KL-divergence를 보완하여 distance metric 으로 사용할 수 있는 방법으로 나온 개념이 JSD 이다.
 
 <br>
 
@@ -123,9 +125,46 @@ $JSD(P,Q) = JSD(Q,P)$
 
 ## Maximum Likelihodd Estimation (MLE)
 
+최대우도기법은 $\theta = (\theta_1,\theta_2, ... \theta_n$ 으로 구성된 확률 밀도함수 $P(x|\theta)$에서 관측된 표본 데이터집합 $x = (x_1, x_2, ... x_n)$ 이라 할 때 이 표본들에서 파라미터($\theta = (\theta_1,\theta_2, ... \theta_n$)를 추정하는 방법이다.
+
+아래 그림을 예로 보면 다음과 같이 빨간색 점의 데이터를 얻었다고 가정했을 때, 초록색과 노란색 후보 분포 중 초록색 분포에서 데이터를 얻을 가능성이 더 커 보인다. 획득한 데이터들의 문포가 초록색 곡선의 중신에 더 일치해 보이기 때문이다. 
+
+![image](https://user-images.githubusercontent.com/53431568/145350174-989653e6-9e82-424d-8e6d-855e3c3521ae.png)
+
+
+### Likelihood function
+
+> likelihood : 지금 얻은 데이터가 이 분포에서 나왔을 가능도
+> 
+아래 그림과 같이 후보 분포에 대해 각 데이터들의 likelihood를 점선의 높이로 나타낼 수 있다.
+
+![image](https://user-images.githubusercontent.com/53431568/145350907-77076e97-10dd-4e75-b0a0-3a5fe7d118d6.png)
+
+수치적으로 가능도 계산은 각 데이터 샘플들에서 후보 분포에 대한 높이(likelihood)를 곱한 것으로 볼 수 있으며, 수식으로는 다음과 같이 표현한다.
+
+p(x|\theta)=\prod^n_{k=1}P(x_k|\theta)
+
+위의 수식과 같이 $\theta$라는 표본에서 생각할 수 있는 모든 후보군에 대해 곱하는데 이를 전체 표본 집합의 결합확률밀도 함수, likelihood function이라고 하는 것이다!
+
+**곱하는 이유는 데이터의 추출이 독립적으로 연달아 나오기 때문이다. 
+
+
+자연로그를 이용해 나타내면 다음과 같다.
 
 
 
+$L(\tehta|x)=logP(x|\theta)=\sum^m_{i=1} log P(x_i|\theta)$
+
+
+이제 다시 최대우도기법을 설명해보자..!
+
+`Maximum` likelihood estimation은 함수의 최댓값을 찾는 것이다. log 함수는 단조증가 함수이기 때문에 likelihood function의 최대값을 찾는 것이나 로그 likelihood function의 최댓값을 찾는 것 두 경우 모두의 최댓값을 갖게 해주는 정의역의 함수 입력값은 동일하다.
+
+따라서 계산의 편의를 위해 로그 likelihood 의 최댓값을 찾는다. 
+
+우리가 찾고자 하는 것은 파라미터 $\theta$의 값이므로 $\theta$에 대해 편미분을 하여 그 값이 0이 되는 $\theta$를 찾는 과정을 통해 로그 함수를 최대화 시켜줄 수 있는 $\theta$를 찾을 수 있다. 
+
+${\partial \over \partial\theta}L(\theta|x) = {\partial \over \partial\theta}logP(x|\theta) = \sum^n_{i=1}{\partial \over \partial\theta}logP(x_i|\theta) =0$  
 
 <br>
 <br>
@@ -138,3 +177,5 @@ $JSD(P,Q) = JSD(Q,P)$
 [2] [https://velog.io/@stapers/KL-Divergence-JS-Divergence](https://velog.io/@stapers/KL-Divergence-JS-Divergence)
 
 [3] [https://aigong.tistory.com/66](https://aigong.tistory.com/66)
+
+[4] [https://theeluwin.postype.com/post/6080524](https://theeluwin.postype.com/post/6080524)
