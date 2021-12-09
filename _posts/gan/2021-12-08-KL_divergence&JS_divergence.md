@@ -84,7 +84,7 @@ $logp(x) - logq(x)$
 
 전체에 걸쳐서 표현한 수식은 다음과 같다.
 
-$D_{KL}(p||q) = E_{x\sim p}[logp(x)-logq(x)]$ 
+$D_{KL}(p\|q) = E_{x\sim p}[logp(x)-logq(x)]$ 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $= \sum_i p_i(logp_i-logq_i)$
 
