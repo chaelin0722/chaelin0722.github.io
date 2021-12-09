@@ -22,16 +22,7 @@ GAN 논문과 MINMAX 함수에 대한 유도는 => [[논문정리📃] Generativ
 
 
 KL-Divergence 는 모델 분포간 얼마나 가까운지에 대한 정보 손실량의 기댓값이다. 따라서, 
-KL-Divergence, JS-Divergence 를 다루기 전에 이를 이루고 있는 기본적 개념인 MSE(Mean square error) 와 CE(cross entropy)를 짚고 넘어가도록 하겠다. 
-
-
-??????????????????????????? --작성중 --
-## MSE 와 BCE
-
-MSE(평균제곱오차) 손실의 정의는 출력노드에서 나온 값과 원하는 목표값 사이의 차이를 계산하는 것이다. 이는 양의값, 음의값 모두 될 수 있으며 이 오차를 제곱한다면 값은 항상 양이 된다. 평균제곱오차는 이 제곱한 오차들의 평균을 말한다. 
-
-BCE(이진교차엔트로피) 손실은 확률과 불확실성에 기반을 둔다. 
-?????????????????????
+KL-Divergence, JS-Divergence 를 다루기 전에 이를 이루고 있는 기본적 개념인 entropy 와 CE(cross entropy)를 짚고 넘어가도록 하겠다. 
 
 ## Entropy
 
