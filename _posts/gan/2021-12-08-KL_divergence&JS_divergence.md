@@ -62,7 +62,7 @@ $H(p) = -E_{x\sim p}[logp]=-\sum p(x)log p(x)$
 
 > CE는 우리가 알고 있는 분포 p와 추정한 분포 q 사이의 차이를 정보량을 통해 나타낸다.
 
-$H(p) = -E_{x\sim p}[log q(x)] = -\sum_i p_i(x)log p_i(x) =-\sum_i P(x|y)log P(x|y,\theta)$
+$H(p) = -E_{x \sim p}[log q(x)] = -\sum_i p_i(x)log p_i(x) =- \sum_i P(x|y)log P(x|y,\theta)$
 
 현재 파라미터 $\theta$에서 음의 우도의 기댓값이라고 할 수 있다. 우리가 근사하고 싶은 분포 $p$와 현재 파라미터 $\theta$하에서 추론한 $q$가 얼마나 비슷한지 그 차이를 계산한 것이다.
 
