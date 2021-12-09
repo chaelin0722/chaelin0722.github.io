@@ -106,8 +106,8 @@ $D_{KL}(p\|q) \neq D_{KL}(q\|p)$
 
 수식은 다음과 같다.
 
-$JSD(p,q) = {1 \over 2}$ $D_{KL}$ $({{p\|p+q} \over 2}})$ $+ {1 \over 2}$ 
-$+ {1 \over 2}$ $D_{KL}({{p\|p+q} \over 2}})$ $+ {1 \over 2}$
+$JSD(p,q) = {1 \over 2}$ $D_{KL}$ $({ {p\|p+q} \over 2})$ $+ {1 \over 2}$ 
+$+ {1 \over 2}$ $D_{KL}({{p\|p+q} \over 2})$ $+ {1 \over 2}$
 
 
 
