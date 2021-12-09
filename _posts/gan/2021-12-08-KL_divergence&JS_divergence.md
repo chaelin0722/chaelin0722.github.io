@@ -91,7 +91,6 @@ $D_{KL}(p\|q)=\sum_i p_i(logp_i - log q_i)$
 
 사실상 KL Divergence와 CE가 같은 식이 되는 것을 볼 수 있다.
 
-
 이 척도로 두 분포간의 차이를 나타내지만 '거리(metric)'가 되진 못한다. 비대칭 하기 때문에 거리의 조건을 만족하지 않기 때문이다. (실제 분포인 p를 기준으로 계산하기 때문)
 
 $D_{KL}(p\|q) \neq D_{KL}(q\|p)$
@@ -107,9 +106,9 @@ $D_{KL}(p\|q) \neq D_{KL}(q\|p)$
 
 수식은 다음과 같다.
 
-$JSD(p,q)= \frac 1 2 D_{KL}({{p\|p+q} \over 2}) +  \frac 1 2$ 
+$JSD(p,q)= \frac 1 2 D_{KL}( \frac {p\|p+q} 2}) +  \frac 1 2$ 
 
-$+  \frac 1 2 D_{KL}({{p\|p+q} \over 2}) +  \frac 1 2$
+$+  \frac 1 2 D_{KL}(\frac {p\|p+q} 2}) +  \frac 1 2$
 
 
 
