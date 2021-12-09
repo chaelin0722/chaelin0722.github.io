@@ -88,9 +88,9 @@ $D_{KL}(p||q) = E_{x\sim p}[logp(x)-logq(x)]$
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $= \sum_i p_i  log p_i \over {q_i}$
 
 
-이 척도로 닮음의 정도를 측정하지만.. 문제는 비대칭 하다는 것이다. 실제 분포인 p를 기준으로 계산하기 때문에 나오는 결과이다. 따라서 유사도를 이야기할 때 '거리'라고 표현하지 않는다. 
+이 척도로 닮음의 정도를 측정하지만.. 문제는 비대칭 하다는 것이다. 실제 분포인 p를 기준으로 계산하기 때문에 나오는 결과이다. 따라서 유사도를 이야기할 때 '거리'라고 표현하지 않는다고 . 
 
-$D_{KL}(p||q) \neq D_{KL}(q||p)$
+$D_{KL}(p\|q) \neq D_{KL}(q\|p)$
 
 KL-divergence를 보완하여 distance metric 으로 사용할 수 있는 방법으로 나온 개념이 JSD 이다.
 
