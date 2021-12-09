@@ -122,6 +122,8 @@ $\alpha$는 학습률이며, 학습 iterations이 진행되는 동안 $x,y$ 와 
 > minmax 게임에서 경사하강법을 사용하는 것은 비용함수를 수렴하는데 도움이 되지 않을 수 있다.
 
 
+--- GAN 첫걸음 참고해서 쓰기 
+
 <br>
 
 ## Generative model with KL-Divergence
