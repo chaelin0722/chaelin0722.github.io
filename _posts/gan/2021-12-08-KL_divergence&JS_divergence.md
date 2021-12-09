@@ -171,7 +171,7 @@ ${\partial \over \partial\theta}L(\theta|x) = {\partial \over \partial\theta}log
 
 #### 참고 
 
-[1] [신경망 첫걸음]
+[1] [GAN 첫걸음](http://www.yes24.com/Product/Goods/97559774)
 
 [2] [https://velog.io/@stapers/KL-Divergence-JS-Divergence](https://velog.io/@stapers/KL-Divergence-JS-Divergence)
 
