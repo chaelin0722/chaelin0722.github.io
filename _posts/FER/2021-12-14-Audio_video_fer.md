@@ -82,7 +82,7 @@ self-attention과 relation-attention 외에 transformer-attention 이라는 개�
 
 trasnformer-attention은 기존 attention과 마찬가지의 개념을 갖고가는데, feature의 차원을 줄이기 위해 다음과 같은 linear function 과정을 거쳐서 차원을 감소시킨 후, 유사도를 구하고 있습니다.
 
-$W_{mxd}$를 피쳐값과 곱해주어 차원을 줄인 값을 $f^{'}_i$ 로 설정하여 그 값으로 내적시킨 값을 제곱으로 취하여 가중치로 사용하고 있습니다.
+$W_{m \times d}$를 피쳐값과 곱해주어 차원을 줄인 값을 $f^{`}_i$ 로 설정하여 그 값으로 내적시킨 값을 제곱으로 취하여 가중치로 사용하고 있습니다.
 
 
 <br>
