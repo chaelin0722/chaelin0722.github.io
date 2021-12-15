@@ -37,4 +37,13 @@ classes: wide
 
 
 
+### Three Attention machanism
+
+attention의 수식, 왜 저렇게 가중치와 다음 에 나올것이라 예상되는 FC 레이어(아래 수식에서는 $W$)를 내적하여 유사도를 구하는 지는 [FAN 논문 리뷰에서도 리뷰했으므로 참고하기!](https://chaelin0722.github.io/fer/FAN/)
+
+![image](https://user-images.githubusercontent.com/53431568/146122320-46987964-2bac-40dc-8457-72d267ca94ea.png)
+
+
+
+
 
