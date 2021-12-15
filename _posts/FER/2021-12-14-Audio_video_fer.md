@@ -20,8 +20,21 @@ classes: wide
 
 이 논문의 메인 CONTRIBUTIONS 를 살펴보면,
 
-1) Experimentally show that better face recognition CNN models and choosing suitable emotion datasets to further pre-train the face CNN models is important
-2) Design three kinds of attention mechanisms for visual and audio feature fusion
-3) Apply a factorized bilinear Pooling(FBP) for cross-modal feature fusion
+1) faceCNN의 전이학습에 알맞은 데이터셋과 알맞은 모델을 사용하는 것이 중요하다 (모든 FER 논문에서도 말하지만,, 얼굴 인식 모델을 잘 pre-train 시키는 것이 성능올리는 것의 핵심이라고 강조하네요)
 
--- 작성중 --
+2) visual feature과 audio feature의 혼합 기법을 위해 세가지 attention 매커니즘을 고안하였다.
+ 
+3) cross-modal feature 혼합을 위해 factorized bilinear Pooling(FBP)기법을 적용하였다. (cross-modal 이라는 것은 audio modal 과 video modal 을 혼합하는 것을 뜻한다고 생각하면 될 것 같다.)
+
+
+### Pipeline of audio-video emotion recognition
+
+논문에서 제시하는 구조는 아래와 같습니다.
+
+![image](https://user-images.githubusercontent.com/53431568/146122054-6baeb1fe-4bd2-4828-8aa6-c1013ef014ac.png)
+
+살펴보면, 각 audio 와 video 이미지에 대해 전처리를 수행한 후 각각의 CNN 모델을 사용해 feature을 뽑은 다음에 attention 매커니즘을 사용해 나온 값을 fusion 을 하여 최종 feature 을 뽑게 됩니다.
+
+
+
+
