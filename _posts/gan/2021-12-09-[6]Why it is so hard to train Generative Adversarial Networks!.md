@@ -174,6 +174,7 @@ $(x,y)$ 궤적이 $(0,0)$을 중심으로 고정된 원을 그리면서 가까�
 
 <br>
 
+
 ## Generative model with KL-Divergence
 GAN의 수렴 문제를 이해하기 위해서는 KL-Divergence와 JS-divergence를 먼저 공부해야 한다. GAN 이전에, 많은 생성 모델들이 최대우도법(MLE)을 최대화시키기 위해 모델$\theta$를 만들었다. (ex.학습 데이터에 가장 잘 맞는 최적의 모델 파라미터를 찾는 것)
 
