@@ -190,5 +190,18 @@ $D_{KL}(p\||q) \neq D_{KL}(q\||p)$
 
 $KL(x)$은 0까지 떨어진다. 
 
+## JS-Divergence
+
+## Vanishing gradients in JS-Divergence
+
+이 주제에 대해서는 자세히 설명한 포스팅이 있으니 [ KL-divergence & JS-divergence & Maximum Likelihood Estimation와 개념정리](https://chaelin0722.github.io/gan/KL_divergence&JS_divergence/) 참고하자!
+
+
+## Unstable gradients
+
+## Why mode collapse in GAN?
+
+## Implicit Maximum Likelihood Estimation (IMLE)
+
 
 --(작성중)--
