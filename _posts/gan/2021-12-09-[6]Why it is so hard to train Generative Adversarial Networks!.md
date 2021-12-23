@@ -149,9 +149,9 @@ $f = x \cdot y$ 의 표면이 마치 말에 얹어진 안장모양이다. 한쪽
 
 목적 함수의 기울기에 따라 파라미터들이 조금씩 바뀌게 된다. 
 
-$x -> x + lr*$ $\delta f \over \delta x$
+$x \rightarrow x + lr*$ $\delta f \over \delta x$
 
-$y -> y - lr*$ $\delta f \over \delta y$
+$y \rightarrow y - lr*$ $\delta f \over \delta y$
 
 
 (두 식의 부호가 반대인 이유는 $x$는 경사를 올라가는 과정에서 $f$를 최대화하려고하고 $y$ 는 경사를 내려오는 과정에서 $f$를 최소화 하려고 하기 때문이다.)
@@ -175,26 +175,15 @@ $(x,y)$ 궤적이 $(0,0)$을 중심으로 고정된 원을 그리면서 가까�
 <br>
 
 
-## Generative model with KL-Divergence
+## Generative model with KL-Divergence & JS-Divergence
 GAN의 수렴 문제를 이해하기 위해서는 KL-Divergence와 JS-divergence를 먼저 공부해야 한다. GAN 이전에, 많은 생성 모델들이 최대우도법(MLE)을 최대화시키기 위해 모델$\theta$를 만들었다. (ex.학습 데이터에 가장 잘 맞는 최적의 모델 파라미터를 찾는 것)
 
-$\hat{\theta}=arg \max_{\theta}\prod^{N}_{i=1}p(x_i|\theta)$
 
-이 방법은 KL-divergence를 최소화 시키는 것과 같다. KL-divergence는 확률분포 $q$ (측정된 분포)가 예상되는 확률분포 $p$ (실제 분포)로부터 어떻게 발산하는지 측정하는 방법이다. 
+위의 두 주제에 대해서는 자세히 설명한 포스팅이 있으니 [ KL-divergence & JS-divergence & Maximum Likelihood Estimation와 개념정리](https://chaelin0722.github.io/gan/KL_divergence&JS_divergence/) 참고하자!
 
-$D_{KL}(p\||q)=\int_xp(x)log p(x)\over{q(x)}dx$
-
-KL-divergence는 비대칭적이다.
-
-$D_{KL}(p\||q) \neq D_{KL}(q\||p)$
-
-$KL(x)$은 0까지 떨어진다. 
-
-## JS-Divergence
+<br>
 
 ## Vanishing gradients in JS-Divergence
-
-이 주제에 대해서는 자세히 설명한 포스팅이 있으니 [ KL-divergence & JS-divergence & Maximum Likelihood Estimation와 개념정리](https://chaelin0722.github.io/gan/KL_divergence&JS_divergence/) 참고하자!
 
 
 ## Unstable gradients
