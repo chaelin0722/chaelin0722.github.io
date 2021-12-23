@@ -1,19 +1,4 @@
----
-title:  "[GAN study] Why it is so hard to train Generative Adversarial Networks!"
-excerpt: ""
 
-categories:
-  - gan
-
-tags: [Deeplearning, study, gan]
-
-classes: wide
-
-use_math : true
-
-last_modified_at: 2021-12-23T08:06:00-05:00
-
----
 
 Gan 학습 로드맵 여섯 번째 시간! 벌써 시간이 이렇게..! 오랜만의 GAN 포스팅!! 😮😮
 
