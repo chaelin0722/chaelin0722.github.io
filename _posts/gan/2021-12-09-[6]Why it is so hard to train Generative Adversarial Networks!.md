@@ -185,11 +185,85 @@ GAN의 수렴 문제를 이해하기 위해서는 KL-Divergence와 JS-divergence
 
 ## Vanishing gradients in JS-Divergence
 
+discriminator(구분자)이 optimal 하면 generator(생성자)의 목적함수는 다음과 같다는 것을 확인했었다.
+
+$\displaystyle \min_{G}  V(D^*,G) = 2D_{JS}(p_r \| p_s) -2log2$
+
+
+생성자의 이미지 데이터 분포 q가 실제 이미지인 ground truth 값인 p 와 전혀 맞지 않는다면 JS-Divergence 기울기에는 어떤 영향을
+미칠지 알아보자. 
+
+분포 $p$와 $q$가 가우시안 분포의 형태이고 p 의 평균이 0 이라고 가정해보자.  $JS(p,q)$의 기울기를 알아보기 위해 $q$의다른 평균을 예로 들어보자.
+
+먼저, JS-divergence $JS(p,q)$ 를 그렸다. $p$와 $q$의 평균이 0~30의 분포에 걸쳐 세팅되어있는 것을 확인할 수 있다. 
+
+![화면 캡처 2021-12-23 204250](https://user-images.githubusercontent.com/53431568/147237141-353d5ba1-cc00-473d-858d-d8262efe51b1.png)
+
+
+아래 그림을 보면 JS-divergence의 기울기는 $q1$ 에서 $q3$ 으로 소실하고 있다. GAN 생성자는 비용이 저 지역에서 수렴할때 아무것도 아닌 값으로 매우 느리게 학습될 것이다. 
+특별히, 이른 학습에서는 $p$ 와 $q$ 는 매우 다르며 생성자는 매우 느리게 학습하는 것을 볼 수 있다.
+
+![image](https://user-images.githubusercontent.com/53431568/147237218-4e138595-3c97-447f-8185-ea72232e0750.png)
+
+
+<br>
 
 ## Unstable gradients
 
+기울기 소실의 문제를 해결하기 위해 alternative cost function(비용함수 대안)이 제안되었다. 이것은 [GAN 논문](https://chaelin0722.github.io/paperreview/generative_adversarial_nets/)에서도 다루었으니 참고!
+
+![image](https://user-images.githubusercontent.com/53431568/147240076-dfd4a68c-e2b9-4309-823c-570a66523b75.png)
+
+Arjovsky의 리서치 페이퍼에서는 아래와 같은 수식을 제안하고 있다.
+
+![image](https://user-images.githubusercontent.com/53431568/147240044-cc6a0f12-b623-473f-96ef-f48d172f3fb0.png)
+
+
+Arjovsky가 왜 GAN 은 높은 퀄리티를 가졌으나 KL-divergence를 기반으로 한 생성적인 모델과 비교했을 때 덜 다양(발산)하는지를설명하기 위해 사용하는 단어인 역-KL-divergence(Reverse-KL-divergence)를 포함하고 있다.
+
+한편, 같은 분석은 기울기가 변동적이고 모델에 불안정성을 야기한다고 주장한다. 이 요점을 파악하기 위해 Arjovsky는 생성자를 freeze 시키고 구분자에 대해서만 학습되도록 하였다. 그렇게 하니, 생성자의 기울는 큰 변동으로 늘어나기 시작했다.(아래 이미지 참고)
+
+
+![image](https://user-images.githubusercontent.com/53431568/147239577-f3ee5af9-e9a8-4539-b620-a24f47b5a23a.png)
+
+
+<br>
+
+
 ## Why mode collapse in GAN?
 
+모드붕괴는 GAN의 문제를 해결하는데 중요한 문제이다. 완벽한 붕괴는 흔하지 않지만 부분 붕괴는 자주 일어난다. 
+
+같은 색으로 밑줄이된 이미지들은 비슷해 보이고 모드의 붕괴가 시작되고 있다.
+
+![image](https://user-images.githubusercontent.com/53431568/147243286-d9249ce5-ec03-4135-9d96-3d019eb83102.png)
+
+
+이게 어떻게 일어나는지 한 번 살펴보자. GAN 생성자는 구분자 D를 속이기 위해 이미지를 생성한다.
+
+그러나 극단적 케이스를 하나 생각해보자. 생성자 $G$가 $D$에 업데이트를 하지 않은 채 극심하게 학습이 되고 있다. 생성된 이미지는 $D$를 최대한 속일 수 있는 optimal 한 이미지 $x^*$를 찾도록 수렴될 것이다. 이 상황에서 $x^*$ 는 $z$에 의존적일 것이다.
+
+$x^*=argmax_x D(x)$
+
+이것은 나쁜소식이다. 모드는 하나의 싱글 포인트로 붕괴되기 때문이다. $z$와 관련된 기울기는 0 으로 수렴될 것이다.
+
+$ \partial J \over \partial z   \approx 0$
+
+
+판별기(구분자)에서 훈련을 다시 시작할 때 생성된 이미지를 감지하는 가장 효과적인 방법은 이 단일 모드를 감지하는 것이다. 생성기는 이미 $z$ 의 영향을 둔감하게 하기 때문에 판별기의 기울기는 다음으로 가장 취약한 모드에 대해 단일 지점을 밀어낼 가능성이 높다. 이것은 찾기 어렵지 않다. 
+
+발전기는 훈련에서 모드의 불균형을 일으켜 다른 것을 감지하는 능력을 저하시킨다. 이제 두 네트워크 모두 단기 상대의 약점을 악용하기 위해 과적합이 되었습니다.
+이것은 고양이와 쥐 게임으로 바뀌고 모델은 수렴되지 않습니다. ==> 무슨말?!
+
+
+
+아래 다이어그램에서 Unroll GAN은 8가지 예상 데이터 모드를 모두 생성하고 있는것을 보여준다.
+
+두 번째 행을 보면 판별자가 따라잡을 때 모드가 축소되고 다른 모드로 회전하는 또 다른 GAN 모델을 보여줍니다.
+
+
+
+<br>
 ## Implicit Maximum Likelihood Estimation (IMLE)
 
 
