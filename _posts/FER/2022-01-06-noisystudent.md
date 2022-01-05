@@ -4,7 +4,7 @@ excerpt: "-Noisy Student FER-"
 
 categories:
   - fer
-  - 
+  
 tags: [fer,CNN, paperReview]
 use_math: true
 
