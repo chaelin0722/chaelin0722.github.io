@@ -24,9 +24,9 @@ github에서 가져온 EfficientDet의 pytorch 버전 코드를 돌리다가 발
 
 구글링한 결과, 두 가지 해결방법을 찾을 수 있었다.
 
-**1. torch.autograd.set_detect_anomaly(True) 추가해주기
+#### 1. torch.autograd.set_detect_anomaly(True) 추가해주기
 
-**2. torchvision version 다르게 설치하기
+#### 2. torchvision version 다르게 설치하기
 
 
 먼저 1번 방법대로 코드를 추가해주었다. =>  [참고한 블로그](https://daeheepark.tistory.com/24)
