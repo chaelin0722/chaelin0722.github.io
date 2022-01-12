@@ -11,7 +11,7 @@ classes: wide
 
 use_math : true
 
-last_modified_at: 2021-12-08T08:06:00-05:00
+last_modified_at: 2022-01-13T08:06:00-05:00
 
 ---
 
@@ -166,6 +166,14 @@ $L(\theta \mid x)=logP(x \mid \theta)=\sum^m_{i=1} log P(x_i \mid \theta)$
 
 따라서 계산의 편의를 위해 로그 likelihood 의 최댓값을 찾는다. 
 
+
+
+(likelihood의 최댓값을 찾으려면 log 함수의 값이 최대가 되어야하는데, 즉 input 값이 최대가 되어야하는 것이다.)
+
+![image](https://user-images.githubusercontent.com/53431568/149172625-ef800029-c4d5-4dc1-9336-5c4f3517cf06.png)
+
+
+
 우리가 찾고자 하는 것은 파라미터 $\theta$의 값이므로 $\theta$에 대해 편미분을 하여 그 값이 0이 되는 $\theta$를 찾는 과정을 통해 로그 함수를 최대화 시켜줄 수 있는 $\theta$를 찾을 수 있다. 
 
 ${\partial \over \partial\theta}$ $L(\theta \mid x)$ $= {\partial \over \partial\theta}$ $logP(x \mid \theta)$  $= \sum^n_{i=1}$ ${\partial \over \partial\theta}$ $logP(x_i  \mid \theta) =0$  
@@ -183,3 +191,5 @@ ${\partial \over \partial\theta}$ $L(\theta \mid x)$ $= {\partial \over \partial
 [3] [https://aigong.tistory.com/66](https://aigong.tistory.com/66)
 
 [4] [https://theeluwin.postype.com/post/6080524](https://theeluwin.postype.com/post/6080524)
+
+[5] [로그함수 이미지 출처](https://namu.wiki/jump/UjMN53Qg3vjz5wmUiqCVf38PjdZFAi4x2lBfEKpf3%2Br9zT6aX8uw6gktLQrwpM%2BqG8P8mNJnjobPFncVJIZkhA%3D%3D)
