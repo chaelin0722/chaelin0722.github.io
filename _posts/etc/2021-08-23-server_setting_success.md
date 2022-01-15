@@ -363,7 +363,7 @@ conda deactivate               # 연결끊기
 
 여기서 잠깐! 만약 본인이 자동으로 콘다가 실행되게 하고 싶다면, (가상환경 이름이 앞에 뜨는 것! 아래 예시) 아래 명령어처럼 true 인자를 던져주자
 
-![image](https://user-images.githubusercontent.com/53431568/149618657-167eab58-0b6e-47be-bf26-e2239cf67754.png)
+![화면 캡처 2022-01-15 193153](https://user-images.githubusercontent.com/53431568/149621009-042922c1-2dda-4b14-b6b3-acf1e87cd6ea.png)
 
 ~~~
 conda config --set auto_activate_base true
@@ -371,6 +371,9 @@ conda init
 ~~~
 
 한 후, 세션을 나왔다가 다시 실행하면 된다.
+
+성공!
+
 
 <br>
 
