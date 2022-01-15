@@ -361,6 +361,17 @@ conda activate 가상환경이름       # 연결
 conda deactivate               # 연결끊기
 ~~~
 
+여기서 잠깐! 만약 본인이 자동으로 콘다가 실행되게 하고 싶다면, (가상환경 이름이 앞에 뜨는 것! 아래 예시)
+
+![image](https://user-images.githubusercontent.com/53431568/149618657-167eab58-0b6e-47be-bf26-e2239cf67754.png)
+
+~~~
+conda config --set auto_activate_base true
+conda init
+~~~
+
+한 후, 세션을 나왔다가 다시 실행하면 된다.
+
 
 #### 그 외.. 파이참 프로페셔널 (pycharm-professional) 깔기
 
