@@ -44,7 +44,7 @@ EfficientNet을 Backbone network로 사용하다보니 이에 맞추기 위해 c
 
 ### EfficientDet architecture
 
-전체적인 구조는 다음과 같습니다. backbone으로부터 각각 $1 /over 2^i$ 만큼씩 scale 한 feature들을 pyramid 처럼 쭉 나열하여서 3번째 레이어부터 7번째 레이어들의 피쳐들로 계산을 해줍니다.
+전체적인 구조는 다음과 같습니다. backbone으로부터 각각 $1 / 2^i$ 만큼씩 scale 한 feature들을 pyramid 처럼 쭉 나열하여서 3번째 레이어부터 7번째 레이어들의 피쳐들로 계산을 해줍니다.
 
 논문에는 나와있지 않지만 3번째 feature 부터 연산에 고려하는 이유는 아마 이 때부터 유의미한 특징점들을 가진 feature가 생성되기 때문에 3번째부터 하지 않았나 싶네요..!
 
