@@ -1,5 +1,5 @@
 ---
-title:  "[kaggle] pytorch tensor shape => .permute() .unsqueeze(), .squeeze() 알아보기"
+title:  "[kaggle] pytorch tensor shape => .permute() .unsqueeze() .squeeze() 알아보기"
 excerpt: "U-Shape_transformer"
 
 categories:
