@@ -32,9 +32,9 @@ EfficientDet은 이름에서부터 알 수 있듯이 EfficientNet을 기반으�
 
 #### 2) Compound scaling method 
 
-    EfficientNet을 Backbone network로 사용하다보니 이에 맞추기 위해 compound scaling method를 사용합니다.
+EfficientNet을 Backbone network로 사용하다보니 이에 맞추기 위해 compound scaling method를 사용합니다.
 
-
+<br>
 
 아래 이미지를 보면, 연산량은 기존 SOTA 모델과 비교했을때 현저히 줄었지만, 성능은 월등한 것을 확인할 수 있습니다. EfficientNet과 비슷한 양상을 보이네요!
 
@@ -44,7 +44,7 @@ EfficientDet은 이름에서부터 알 수 있듯이 EfficientNet을 기반으�
 
 ### EfficientDet architecture
 
-전체적인 구조는 다음과 같습니다. backbone으로부터 각각 $1 over 2^i$ 만큼씩 scale 한 feature들을 pyramid 처럼 쭉 나열하여서 3번째 레이어부터 7번째 레이어들의 피쳐들로 계산을 해줍니다.
+전체적인 구조는 다음과 같습니다. backbone으로부터 각각 $1 /over 2^i$ 만큼씩 scale 한 feature들을 pyramid 처럼 쭉 나열하여서 3번째 레이어부터 7번째 레이어들의 피쳐들로 계산을 해줍니다.
 
 논문에는 나와있지 않지만 3번째 feature 부터 연산에 고려하는 이유는 아마 이 때부터 유의미한 특징점들을 가진 feature가 생성되기 때문에 3번째부터 하지 않았나 싶네요..!
 
