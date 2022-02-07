@@ -65,7 +65,7 @@ cat ~/.ssh/id_rsa.pub
 그러면 복잡한 key가 나올 것입니다! 그걸 그대로 복사!(copy)해주세요
 
 그런 후에 본인의 private repo 에서 settings -> deploy keys 메뉴로 이동하면 아래와 같은 페이지가 나옵니다. `add deploy key` 클릭!
-(저는 특정 repo만 SSH Key를 등록하기 위해 아래와 같이 하는 것입니다. 만약 본인의 계정 전체의 repo 를 SSH Key를 등록하기 위한다면은 다른 방법으로 하셔야 해요!
+(저는 특정 repo만 SSH Key를 등록하기 위해 아래와 같이 하는 것입니다. 만약 본인의 계정 전체의 repo 에 대해 SSH Key를 등록하고자 한다면 다른 방법으로 하셔야 해요!
 
 
 ![image](https://user-images.githubusercontent.com/53431568/152732588-db152674-bcfc-404b-9d8f-6c6c62f4bd4c.png)
@@ -77,9 +77,35 @@ cat ~/.ssh/id_rsa.pub
 ![image](https://user-images.githubusercontent.com/53431568/152732682-7474c14f-ea9c-49dd-bc50-c548a1ca6b6b.png)
 
 
+끝!
+
+인줄 알았으나 git 을 만들 때 Https로 만들었기 때문에 이걸 SSH로 전환시켜주어야 된다고 한다.
+
+아래 명령어를 실행했을 때,
+
+~~~
+git remote -v
+~~~
+
+아래와 같이 나오지 않고 `origin https://github.com/chaelin0722/` 이런식으로 https 가 포함된 url이 나온다면,
 
 
+![image](https://user-images.githubusercontent.com/53431568/152753740-605676c2-c433-4e57-83ed-9a720a95159e.png)
 
+
+아래 명령어를 실행해 주면 된다.
+
+~~~
+git remote set-url origin git@github.com:chaelin0722/깃이름주소.git
+~~~
+
+commit, push도 아주 잘 된다
+
+![image](https://user-images.githubusercontent.com/53431568/152754175-056f6e4f-05c3-4d94-a161-77ea593c1c01.png)
+
+<br>
+
+<br>
 
 #### 참고
 
