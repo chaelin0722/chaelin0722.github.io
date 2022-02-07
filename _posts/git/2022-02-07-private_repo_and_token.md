@@ -101,7 +101,7 @@ git remote set-url origin git@github.com:chaelin0722/깃이름주소.git
 
 commit, push도 아주 잘 된다
 
-![image](https://user-images.githubusercontent.com/53431568/152754175-056f6e4f-05c3-4d94-a161-77ea593c1c01.png)
+![화면 캡처 2022-02-07 174524](https://user-images.githubusercontent.com/53431568/152754425-a58594ac-c23b-4713-aede-3629c861cb89.png)
 
 <br>
 
