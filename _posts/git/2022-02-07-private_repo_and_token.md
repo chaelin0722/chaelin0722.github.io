@@ -1,5 +1,5 @@
 ---
-title:  '[GIT] Private Repo 생성과 ssh 토큰등록 + git branch 사용하기'
+title:  '[GIT] Private Repo 생성과 ssh 토큰등록'
 excerpt: "private repo, ssh, branch"
 
 categories:
