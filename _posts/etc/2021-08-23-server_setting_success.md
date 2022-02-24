@@ -292,7 +292,7 @@ sudo apt install libcudnn7
 
 cudnn 도 마찬가지로 버전 확인 잘 해서 깔아준 후에 `link!` 해주는 것 잊지 말기
 
-참고하기 좋은 (블로그 => 그냥 cp만 따라하면 됩니다.)[https://nirsa.tistory.com/332]
+참고하기 좋은 [블로그 => 그냥 cp만 따라하면 됩니다.](https://nirsa.tistory.com/332)
 
 <br>
 
