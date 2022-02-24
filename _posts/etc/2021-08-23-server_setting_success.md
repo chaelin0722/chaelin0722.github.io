@@ -249,6 +249,15 @@ sudo bash -c 'echo "deb http://developer.download.nvidia.com/compute/machine-lea
 
 3. CUDA10.1 버전으로 설치하기
 
+
+NVIDIA 설치 정보 확인하는 방법!
+
+~~~
+inxi -Gx
+~~~
+
+설치
+
 ~~~bash
 sudo apt update
 sudo apt install cuda-10-1
@@ -318,6 +327,8 @@ nvcc -V
 > ~~~bash
 > sudo apt install nvidia-cuda-toolkit
 > ~~~
+
+근데 이거하면 최상위 버전이 설치될 가능성이 있으니 주의!
 
 #### libcudnn 확인
 
@@ -430,7 +441,7 @@ sudo snap install pycharm-professional --classic
 이제 개발할 일만 남았습니당~💗💗
 
 
---- 2021년 11월 20일 수정됨
+--- 2022년 02월 24일 수정됨
 
 <br><br>
 
