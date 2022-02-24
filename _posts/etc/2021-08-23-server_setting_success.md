@@ -284,7 +284,15 @@ sudo apt install libcudnn7
 ![image](https://user-images.githubusercontent.com/53431568/155449667-6e8bdff5-b3f8-4a32-bfb1-b736a807a410.png)
 
 
-그래도 안됨.. 해결중!
+그래도 안됨.. 
+
+`그래서 그냥 runfile 로 로컬에 다운받아 설치하였더니 해결! >>>runfile<<<< ! `
+
+뭔가 다운받고 명령어를 실행하는 과정에서 새로운 버전으로 업데이트 되는 것이 아닐까 싶다. 특히 저 apt-get update 가 의심스럽다
+
+cudnn 도 마찬가지로 버전 확인 잘 해서 깔아준 후에 `link!` 해주는 것 잊지 말기
+
+참고하기 좋은 (블로그 => 그냥 cp만 따라하면 됩니다.)[https://nirsa.tistory.com/332]
 
 <br>
 
