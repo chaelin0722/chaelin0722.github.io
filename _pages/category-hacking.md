@@ -1,5 +1,5 @@
 ---
-title: "웹 해킹 👾"
+title: "Web Hacking 👾"
 layout: archive
 permalink: categories/hacking
 author_profile: true
