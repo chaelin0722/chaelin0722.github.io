@@ -1,5 +1,5 @@
 ---
-title: "선형대수학"
+title: "Linear Algebra"
 layout: archive
 permalink: categories/LinearAlgebra
 author_profile: true
