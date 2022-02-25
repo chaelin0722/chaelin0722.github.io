@@ -1,5 +1,5 @@
 ---
-title: "논문 요약정리"
+title: "Paper Review"
 layout: archive
 permalink: categories/paperReview
 author_profile: true
