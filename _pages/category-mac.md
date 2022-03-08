@@ -1,5 +1,5 @@
 ---
-title: "맥북 적응기🍏"
+title: "MAC 🍏"
 layout: archive
 permalink: categories/mac
 author_profile: true
