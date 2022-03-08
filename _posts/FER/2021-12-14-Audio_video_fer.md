@@ -1,5 +1,5 @@
 ---
-title:  "[논문정리📃] Exploring Emotion Features and Fusion Strategies for Audio-Video Emotion Recognition"
+title:  "[Paper Review📃] Exploring Emotion Features and Fusion Strategies for Audio-Video Emotion Recognition"
 excerpt: "-Audio-Video Emotion Recognition-"
 
 categories:
@@ -14,7 +14,7 @@ classes: wide
 ## Exploring Emotion Features and Fusion Strategies for Audio-Video Emotion Recognition
 #### - Audio-Video Emotion Recognition - 
 
-[논문원본](https://arxiv.org/pdf/2012.13912.pdf)😙 2021년 12월 14일 기준, AFEW 데이터로 SOTA 성능 달성
+[Paper](https://arxiv.org/pdf/2012.13912.pdf)😙 2021년 12월 14일 기준, AFEW 데이터로 SOTA 성능 달성
 
 #### 이 논문은 audio 와 video 두 가지 modal 을 fusion(혼합) 하여 SOTA 성능을 달성하였다.
 
