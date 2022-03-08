@@ -1,5 +1,5 @@
 ---
-title:  "[논문정리📃] Noisy Student Training using Body Language Dataset Improves Facial Expression Recognition"
+title:  "[Paper Review📃] Noisy Student Training using Body Language Dataset Improves Facial Expression Recognition"
 excerpt: "-Noisy Student FER-"
 
 categories:
@@ -15,7 +15,7 @@ classes: wide
 ## Noisy Student Training using Body Language Dataset Improves Facial Expression Recognition
 #### -Noisy Student FER-
 
-[논문원본](https://arxiv.org/pdf/2008.02655.pdf)😙 
+[Paper](https://arxiv.org/pdf/2008.02655.pdf)😙 
 
 이번엔, Papers with code 기준, AFEW 데이터로 SOTA성능을 달성한 FER 논문을 리뷰하려고 한다.
 
