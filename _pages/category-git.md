@@ -1,5 +1,5 @@
 ---
-title: "내가 보려고 만든 git 에러정리"
+title: "내가 보려고 만든 git error 정리"
 layout: archive
 permalink: categories/git
 author_profile: true
