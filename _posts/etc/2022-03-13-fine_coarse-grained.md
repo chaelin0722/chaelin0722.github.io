@@ -41,6 +41,8 @@ last_modified_at: 2022-03-13T08:06:00-05:00
 ![92cea4dd-25d0-4478-a4de-e17f4bebb32d](https://user-images.githubusercontent.com/53431568/158095956-643249bd-8cc2-467a-b3df-b46b21a88352.jpg)
 
 
+(생각해보니.. FER도 fine-grained 에 속하는게 아닐까?!🤭)
+
 <br>
 
 #### Reference
