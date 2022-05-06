@@ -12,4 +12,4 @@ last_modified_at: 2022-05-06T08:06:00-05:00
 
 ## Prototypical Networks for Few-shot Learning
 
-오늘 리뷰할 논문!
+오늘 리뷰할 논문! [논문원본🌼](https://arxiv.org/abs/1703.05175)
