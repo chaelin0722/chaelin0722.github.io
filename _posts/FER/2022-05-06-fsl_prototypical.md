@@ -29,7 +29,8 @@ FSL이 가지는 목표는 두 가지로 나누어서 살펴볼 수 있다. 일�
 또한, FSL의 overfitting 문제를 해결하기 위해 meta learning 방법론을 사용하는데, 큰 개념은 test 환경과 train 환경을 유사하게 조성하여서 일반화를 잘 되게 하는 것으로 이해하면 될 것이다. 
 
 ### Purpose of FSL : 
- #### 1) learn a classifier that generalizes well even when trained with a limited number of training instances per class.
+
+#### 1) learn a classifier that generalizes well even when trained with a limited number of training instances per class.
    (Snell, Jake, Kevin Swersky, and Richard Zemel. "Prototypical networks for few-shot learning." Advances in neural information processing systems 30 (2017).)
 
 #### 2) classifier must be adapted to accommodate new classes not seen in training, given only a few examples of each of these classes. 
