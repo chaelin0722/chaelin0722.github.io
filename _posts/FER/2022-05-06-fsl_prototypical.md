@@ -87,6 +87,11 @@ The use of episodes make the training problem more faithful to the test environm
 
 <br>
 
+### Discussion
+- 이 논문의 의의는 다른 meta learning의 접근법 보다 간단한 로직으로 FSL의 overfitting 문제를 효과적으로 줄이면서 SOTA를 달성하였다는 것에 있다. 
+- cosine 유사도 보다 euclid 유사도를 사용하였는데, euclid 계산에 적절한 방법론이 protonet 이 아닐까 하는 생각이 든다. 그렇다면 다른 거리 계산법에 적절한 또 다른 meta learning 기법을 만들 수 있지 않을까..?
+
+<br>
 
 ### references
 
