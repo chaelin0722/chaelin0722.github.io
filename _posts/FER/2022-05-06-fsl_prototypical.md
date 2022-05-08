@@ -12,7 +12,7 @@ last_modified_at: 2022-05-06T08:06:00-05:00
 
 ## Prototypical Networks for Few-shot Learning
 
-오늘 리뷰할 논문! [논문원본🌼](https://arxiv.org/abs/1703.05175)
+오늘 리뷰할 논문은! [논문 원본🌼](https://arxiv.org/abs/1703.05175)
 
 Recently, I've been studying Few shot learning (FSL). Even though I had difficulty in fully understanding what really fsl means, I figured out that this method is interesting. So, I am trying to apply this concept to Facial Expression Recognition problem, which are known as fine-grained classification. I beliebe that fsl will solve the problems of FER has.
 
@@ -44,8 +44,6 @@ In episodic training, it mimics the real test environment containing few-shot su
 
 <br>
 
-<hr>
-
 ### Match learning 
 
 FSL 의 문제를 해결하기 위한 방법론들 중 성능을 잘 내는 방법을 소개합니다. 바로 Match learning 이라는 방법론인데, attention 메커니즘을 사용하여 레이블 되지 않은 클래스(쿼리데이터)를 잘 예측하도록 한다. 각 서포트셋(support set)끼리의 cosine similarity와 query set(==batch set) 과 support set 들 간의 cosine similarity 를 계산하여서 어떤 서포트셋에 해당하는지 학습하게 된다. 
@@ -66,7 +64,29 @@ The use of episodes make the training problem more faithful to the test environm
 
 ![image](https://user-images.githubusercontent.com/53431568/167287222-77a460f4-c5bb-463b-8dcc-d713594f0a66.png)
 
-X 는 이미지 텐서, z 는 임베딩된 텐서 값 
+위 그림과 같이 서포트 셋들의 이미지 텐서값(x)을 encoder 에 넣어서 z 라는 임베딩된 텐서 값을 생성하면, 같은 서포트셋의 임베딩텐서들의 평균을 구한다. 그것이 각각 c1, c2, c3 가 되는 것이다. 그럼 이렇게 생성된 c1, c2, c3 를 새롭게 들어오는 query 값과의 거리 유사도를 구해서 (여기 논문에서는 euclid 을 사용한다.) 각 쿼리가 어떤 레이블에 속하는지 판단한다. 
+
+마치 k-means 클러스터링과 같은 원리이며, 아주 심플한 로직이다. 
+
+*X 는 이미지 텐서, z 는 임베딩된 텐서 값 
+
+
+각 prototype을 어떻게 계산하는지에 대한 수식과, 거리 유사도에 대한 probability 구하는 수식은 다음과 같다.
+
+![image](https://user-images.githubusercontent.com/53431568/167288540-fed07aee-da7a-4f2c-bb0d-bbd4d0c4b973.png)
+
+
+이 계산을 pseudo 코드로 나타낸 식은 아래와 같다. 
+
+![image](https://user-images.githubusercontent.com/53431568/167288665-1c2978a3-f738-4d67-a97c-3d3b8be8e477.png)
+
+마지막에 loss 를 업데이트하는 수식을 정리해 보면.. log 함수를 취하게 되면 % 는 - 가 되므로 아래와 같이 표현이 되는 것을 확인!
+
+![화면 캡처 2022-05-08 174221](https://user-images.githubusercontent.com/53431568/167288732-0c2ba75c-dc15-4dca-8d7e-558701c13cd9.png)
+
+
+<br>
+
 
 ### references
 
