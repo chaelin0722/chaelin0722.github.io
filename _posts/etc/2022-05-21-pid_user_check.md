@@ -32,7 +32,7 @@ ps -f [pid]
 ps -f 4995 
 ~~~
 
-짜란 다음과 같이 user 이름이 나온다
+짜란 다음과 같이 user 이름(UID)이 나온다
 
 ![image](https://user-images.githubusercontent.com/53431568/169650715-5138d0a8-ca16-40d2-b642-d4b1c80211c8.png)
 
