@@ -21,5 +21,8 @@ last_modified_at: 2022-05-18T08:06:00-05:00
 
 ### "모델을 완전 처음부터 돌리는것이다. pre-trained 없이 모든 하이퍼파라미터 값들은 랜덤으로 설정하여서 학습하는 것!"
 
+<br>
+<br>
 
+<script src="https://gist.github.com/chaelin0722/976b7d95f0ce8ce46d0e7657385349a2.js"></script>
 
