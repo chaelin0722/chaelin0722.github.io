@@ -24,5 +24,5 @@ last_modified_at: 2022-05-18T08:06:00-05:00
 <br>
 <br>
 
-<script src="https://gist.github.com/chaelin0722/976b7d95f0ce8ce46d0e7657385349a2.js"></script>
 
+종종 개념정리도 해야겠다 ㅎㅎ 개념정리 폴더를 따로만들까..?!
