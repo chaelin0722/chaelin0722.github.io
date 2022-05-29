@@ -14,11 +14,11 @@ last_modified_at: 2022-05-29T08:06:00-05:00
 I followed the code from [https://github.com/oscarknagg/few-shot](https://github.com/oscarknagg/few-shot)
 
 
-0. My server
+### 0. My server
 MY OS
 Ubuntu 18.04LTS
 
-1. git clone
+### 1. git clone
 
 ~~~
 git clone https://github.com/oscarknagg/few-shot.git
@@ -26,7 +26,7 @@ git clone https://github.com/oscarknagg/few-shot.git
 
 
 
-### Process start from git clone
+### 3. Process start from git clone
 
 1. need to edit requirement.txt
 
@@ -57,7 +57,7 @@ ex) 000102534, 000331374
 
 4. 사물에 얼굴이 가려지는 이슈 
 
-ex) 000231280, 
+ex) 000231280(bottle), 000359934(glasses)
 
 5. 모든 화면이 검정에 가까운 어두움(얼굴인지 잘 모르겠는)
 
