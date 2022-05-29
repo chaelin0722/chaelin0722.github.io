@@ -11,7 +11,7 @@ classes: wide
 
 딥러닝 과 컴퓨터비전 분야에 관심이 많으며 논문리뷰, 딥러닝, 블로그 개발, GAN, 수업 등을 기록하는 공간입니다.
 
-블로그에는 주로 제가 현재 공부하고 있는 내용들을 올리고 있으며 GAN을 이용한 image generation과 FER(Facial Expression Recognition)을 연구하고 있습니다.
+블로그에는 주로 제가 현재 공부하고 있는 내용들을 올리고 있으며 Meta learning에 관심이 있으며, Few-shot learning과 FER(Facial Expression Recognition)을 연구하고 있습니다.
 
 글에 오류가 있거나 궁금하신 점은 언제든지 메일 보내주세요! 👍😁
 
@@ -23,7 +23,7 @@ classes: wide
 
 - Deep Learning
 
-- Image generation
+- Few-shot learning
 
 - Computer Vision
 
