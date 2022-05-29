@@ -38,8 +38,12 @@ if something is not working.. follow below blog's instruction.
 
 https://exerror.com/note-this-error-originates-from-a-subprocess-and-is-likely-not-a-problem-with-pip/
 
+<hr>
 
 -- Before beginning the experiment, let's do the preprocessing!
+
+
+#### [TRAIN]
 
 먼저, 전처리는 afew데이터에 있는 face 그대로 
 
@@ -57,8 +61,15 @@ ex) 000231280,
 
 5. 모든 화면이 검정에 가까운 어두움(얼굴인지 잘 모르겠는)
 
-ex) 000317144
+ex) 000317144(delete), 000341040(saved.. check it again), 000343800(saved.. check it again)
 
 6. alignment strange..
 
 ex) 000340094
+
+
+<br>
+
+#### [VALID]
+
+maybe you don't have to leave it.... it will work as a test so...
