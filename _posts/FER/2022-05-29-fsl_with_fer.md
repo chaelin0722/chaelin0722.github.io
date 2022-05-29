@@ -51,25 +51,50 @@ https://exerror.com/note-this-error-originates-from-a-subprocess-and-is-likely-n
 
 1. 눈 / 코 / 입 이 전부 나오지 않은 경우 학습에 추가여부
 
-ex) 000102534, 000331374
+ex) 000102534, 000331374, 000628840
 
 2. gray vs color
 
 4. 사물에 얼굴이 가려지는 이슈 
 
-ex) 000231280(bottle), 000359934(glasses)
+ex) 000231280(bottle), 000359934(glasses), 000450454(glasses), 000429620(glasses)
 
 5. 모든 화면이 검정에 가까운 어두움(얼굴인지 잘 모르겠는)
 
-ex) 000317144(delete), 000341040(saved.. check it again), 000343800(saved.. check it again)
+ex) 000317144(delete), 000341040(saved.. check it again), 000343800(saved.. check it again), 000456960(delete)
 
 6. alignment strange..
 
 ex) 000340094
 
+7. hard to recognize whether it's face or not (DELETE)
+
+ex) 000422800, 000451774, 000633160, 001143440, 001419640
+
+8. more than one faces
+
+ex) 000455174, 000945960
+
+9. side face
+
+ex) 000509960, 001114600, 001340000
 
 <br>
 
 #### [VALID]
 
 maybe you don't have to leave it.... it will work as a test so...
+
+
+
+
+------------------------------------------
+0529
+TRAIN SET
+001604560
+까지..
+
+0530에 모두 마무리하고 FEW-SHOT 돌리는것 목표!
+
+
+
