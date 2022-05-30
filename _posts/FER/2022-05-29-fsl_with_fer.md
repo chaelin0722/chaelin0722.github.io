@@ -97,4 +97,15 @@ TRAIN SET
 0530에 모두 마무리하고 FEW-SHOT 돌리는것 목표!
 
 
+----- 0530 trial
+
+일단, frame 이 폴더 별로 잘 few-shot의 sampling대로 들어가는지 확인하기 위해 작업중.. 일단 color데이터로 학습하는 중
+
+#### 학습 시 직면한 에러
+~~~
+ValueError: Cannot take a larger sample than population when 'replace=False'
+~~~
+위의 에러는 k shot 할건데, k 보다 내가 가진 class의 수가 적을때 발생한다.. 허허 나는 7개의 감정이 있는데 4개를 background, 3개를 evaluation으로 하였으니 k 개수는 적당해 3개로 해주었다.
+
+
 
