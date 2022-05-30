@@ -117,6 +117,7 @@ RuntimeError: invalid argument 0: Sizes of tensors must match except in dimensio
 ~~~
 이미지 사이즈 문제 이미지 사이즈가 82 여야 한다. 그 이유는 찾는중.
 
-#### 알아야 할것
+#### 알아야 & 해야 할것
 1. 어떤  cnn 모델을 사용하는지, weight는 save 되는지
 2. wandb 이거 깔아서 graph로 볼 수 있게 하기 
+3. model의 Module 을 efficient / resnet18 로 바꾸기이이이~!
