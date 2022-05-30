@@ -57,11 +57,11 @@ ex) 000102534, 000331374, 000628840
 
 4. 사물에 얼굴이 가려지는 이슈 
 
-ex) 000231280(bottle), 000359934(glasses), 000450454(glasses), 000429620(glasses)
+ex) 000231280(bottle), 000359934(glasses), 000450454(glasses), 000429620(glasses), 001637640(sunglasses), 002644680(hand), 003050760
 
 5. 모든 화면이 검정에 가까운 어두움(얼굴인지 잘 모르겠는)
 
-ex) 000317144(delete), 000341040(saved.. check it again), 000343800(saved.. check it again), 000456960(delete)
+ex) 000317144(delete), 000341040(saved.. check it again), 000343800(saved.. check it again), 000456960(delete), 001846440
 
 6. alignment strange..
 
@@ -69,15 +69,21 @@ ex) 000340094
 
 7. hard to recognize whether it's face or not (DELETE)
 
-ex) 000422800, 000451774, 000633160, 001143440, 001419640
+ex) 000422800, 000451774, 000633160, 001143440, 001419640, 002643280, 002852720, 003316894
 
-8. more than one faces
+8. more than one face ==> need to know which face represents the emotion
 
-ex) 000455174, 000945960
+ex) 000455174, 000945960, 001748527, 001846440, 002811160, 002901240, 003118400, 003321880, 003349414
 
 9. side face
 
-ex) 000509960, 001114600, 001340000
+ex) 000509960, 001114600, 001340000 ...
+
+
+## analyze dataset
+
+fewest frame in one folder : 4
+gray scale
 
 <br>
 
@@ -88,18 +94,6 @@ maybe you don't have to leave it.... it will work as a test so...
 
 
 
-------------------------------------------
-0529
-TRAIN SET
-001604560
-까지..
-
-0530에 모두 마무리하고 FEW-SHOT 돌리는것 목표!
-
-
------ 0530 trial
-
-일단, frame 이 폴더 별로 잘 few-shot의 sampling대로 들어가는지 확인하기 위해 작업중.. 일단 color데이터로 학습하는 중
 
 #### 학습 시 직면한 에러
 
@@ -117,7 +111,58 @@ RuntimeError: invalid argument 0: Sizes of tensors must match except in dimensio
 ~~~
 이미지 사이즈 문제 이미지 사이즈가 82 여야 한다. 그 이유는 찾는중.
 
+#### 전체적 query, support, n-way k-shot, query, train/test 설명 
+
+images trained per one episode 
+
+- on train
+n*k + n*q = n(k+q)
+
+ex) if 3 way 1 shot, 5 query ==> 18 images
+
+batch = [support class1, support class2, support class3, query1, query2, query3, query1,query1, query2, query3, query1, query1, query2, query3, query1,query1, query2, query3]
+
+- on test
+n*k + n*q = n(k+q)
+
+ex) if 1 way 1 shot, 1 query ==> 2 images
+
+batch = [support class1, query1]
+
+
+==> if episode per epoch = 10
+
+images trained per one epoch = ( train_images + test_images ) x episode_per_epoch
+
+ex) (18+2) * 10 = 200
+
+여기서 주의사항!
+
+support is not in query..! but, each episodes can be overlapped because it's randomly chosen!
+
+<br>
+
 #### 알아야 & 해야 할것
-1. 어떤  cnn 모델을 사용하는지, weight는 save 되는지
-2. wandb 이거 깔아서 graph로 볼 수 있게 하기 
-3. model의 Module 을 efficient / resnet18 로 바꾸기이이이~!
+
+1. wandb 이거 깔아서 graph로 볼 수 있게 하기 
+2. model의 Module 을 efficient / resnet18 로 바꾸기이이이~!
+
+<br>
+<hr>
+
+## Train trial
+
+### 0529
+TRAIN SET 001604560 까지..
+
+
+
+### 0530 trial
+
+일단, frame 이 폴더 별로 잘 few-shot의 sampling대로 들어가는지 확인하기 위해 작업중.. 일단 color데이터로 학습하는 중
+
+preprocessing TRAIN SET 003349414 까지..
+
+
+
+### 0531 trial
