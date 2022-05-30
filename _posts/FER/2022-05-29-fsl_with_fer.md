@@ -102,6 +102,8 @@ TRAIN SET
 일단, frame 이 폴더 별로 잘 few-shot의 sampling대로 들어가는지 확인하기 위해 작업중.. 일단 color데이터로 학습하는 중
 
 #### 학습 시 직면한 에러
+
+1. 
 ~~~
 ValueError: Cannot take a larger sample than population when 'replace=False'
 ~~~
@@ -109,3 +111,12 @@ ValueError: Cannot take a larger sample than population when 'replace=False'
 
 
 
+~~~
+return torch.stack(batch, 0, out=out)
+RuntimeError: invalid argument 0: Sizes of tensors must match except in dimension 0. Got 52 and 32 in dimension 2 at /pytorch/aten/src/TH/generic/THTensor.cpp:711
+~~~
+이미지 사이즈 문제 이미지 사이즈가 82 여야 한다. 그 이유는 찾는중.
+
+#### 알아야 할것
+1. 어떤  cnn 모델을 사용하는지, weight는 save 되는지
+2. wandb 이거 깔아서 graph로 볼 수 있게 하기 
