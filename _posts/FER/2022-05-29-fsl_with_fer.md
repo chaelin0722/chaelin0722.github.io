@@ -30,9 +30,11 @@ git clone https://github.com/oscarknagg/few-shot.git
 
 1. need to edit requirement.txt
 
+~~~
 MarkupSafe==1.0  -> MarkupSafe==1.1.0
 pkg-resources==0.0.0  -> #pkg-resources==0.0.0
 torch==1.0.0 -> torch
+~~~
 
 if something is not working.. follow below blog's instruction. 
 
@@ -146,8 +148,8 @@ support is not in query..! but, each episodes can be overlapped because it's ran
 
 #### 알아야 & 해야 할것
 
-1. wandb 이거 깔아서 graph로 볼 수 있게 하기 
-2. model의 Module 을 efficient / resnet18 로 바꾸기이이이~!
+1. best acc 일때 바로 적용되어 저장하도록pth! 바꾸기
+2. model의 Module 을 efficient / resnet18 로 바꾸기~!
 
 <br>
 <hr>
