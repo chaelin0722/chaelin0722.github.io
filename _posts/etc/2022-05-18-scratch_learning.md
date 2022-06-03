@@ -1,11 +1,11 @@
 ---
-title:  "[DL]What is scratch learning? "
+title:  "[DL] What is scratch learning? "
 excerpt: "Scratch learning, learn from scratch의 뜻"
 
 categories:
-  - etc
+  - concept
 
-tags: [DL, ML, deeplearning, scratchlearning, scratch]
+tags: [DL, ML, concept, deeplearning, scratchlearning, scratch]
 classes: wide
 
 last_modified_at: 2022-05-18T08:06:00-05:00
