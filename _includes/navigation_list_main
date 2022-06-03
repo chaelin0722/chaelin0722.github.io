@@ -70,13 +70,7 @@
                 {% endfor %}
             </ul>     
         <span class="nav__sub-title" style="font-family:'MaruBuri-Regular'; font-size:1.2em;">ETC</style></span>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "hacking" %}
-                        <li><a href="/categories/hacking" class="" style="font-size:1.5em;">Web hacking </style> <style="">({{category[1].size}})</style></a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>            
+        
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "git" %}
@@ -93,8 +87,22 @@
             </ul>    
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "concept" %}
+                        <li><a href="/categories/concept" class="" style="font-size:1.5em;">Organizing concept </style> <style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>    
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "mac" %}
                         <li><a href="/categories/mac" class="" style="font-size:1.5em;">Mac </style> <style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>    
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "hacking" %}
+                        <li><a href="/categories/hacking" class="" style="font-size:1.5em;">Web hacking </style> <style="">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>    
