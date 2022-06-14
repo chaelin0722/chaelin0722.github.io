@@ -177,3 +177,7 @@ TRAIN 에서 FACES 전처리 완료
 
 다음에 해볼 것은 TEST 이미지로 test 해보는것! & VALIDATION 전처리완료하기 + compound dataset 모으기
 
+
+### 0614 trial
+컬러이미지 frame-> face-> align 전처리중
+
