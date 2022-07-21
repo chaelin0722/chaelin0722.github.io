@@ -87,8 +87,6 @@ gray scale
 
 #### [VALID]
 
-maybe you don't have to leave it.... it will work as a test so...
-
 
 1. hard to recognize whether it's face or not (DELETE)
 
@@ -169,6 +167,7 @@ preprocessing TRAIN SET 003349414 까지..
 
 
 
+
 ### 0531 trial
 
 전처리 하지 않은 TRAIN/Faces 파일로 4(background), 3(eval) 로 학습하여서 0.89% acc 얻음.. 흠.. 3개레이블을 맞추는 것이라 더 높았으면 했는데..
@@ -179,5 +178,8 @@ TRAIN 에서 FACES 전처리 완료
 
 
 ### 0614 trial
-컬러이미지 frame-> face-> align 전처리중
+컬러이미지 frame-> face-> align 전처리
 
+일단, rgb 이미지로 학습시키기 위해 직접 raw 영상 데이터에서 얼굴만 추출하여 전처리를 해준 데이터로 학습시켰다.
+
+전처리 설명과 코드 포스트 ==> [AFEW 전처리](https://chaelin0722.github.io/fer/afew/AFEW_%EC%A0%84%EC%B2%98%EB%A6%AC/)
