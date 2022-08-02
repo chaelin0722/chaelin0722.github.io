@@ -61,8 +61,11 @@ Port : xx
 
 <br>
 
-password 입력없이 바로 사용하고 싶다면 [[mac] vscode에서 ssh password 없이 접속하기](https://chaelin0722.github.io/mac/vscode_ssh_no_password/) 👈 여기에 포스팅을 해두었으니 참고하세요!
+### 그 외..!
 
+[1] password 입력없이 바로 사용하고 싶다면 [[mac] vscode에서 ssh password 없이 접속하기](https://chaelin0722.github.io/mac/vscode_ssh_no_password/) 👈 여기에 포스팅을 해두었으니 참고하세요!
+
+[2] 상대경로의 함수를 불러오고 싶을 경우! [[mac] vscode에서 python 코드 relative 상대경로 import 하기](https://chaelin0722.github.io/mac/vscode_relative_import/) 👈 여기에 포스팅을 해두었으니 참고하세요!
 
 <br>
 
