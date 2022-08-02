@@ -37,9 +37,18 @@ classes: wide
 
 ![무제](https://user-images.githubusercontent.com/53431568/182482828-38eca61c-c69b-462f-a7fc-b8d8fe923576.png)
 
-그럼 여기서 주의할건 `모듈`을 선택하여야 한다는 것!
+클릭하면 다음과 같이 창이 뜨는데, 여기서 주의할건 `모듈`을 선택하여야 한다는 것!
 
 <img width="1078" alt="모듈" src="https://user-images.githubusercontent.com/53431568/182483089-89d1c42a-26b2-4759-9b42-3ea71734e6ce.png">
+
+이름은 실행시킬 파일이름인 main 으로 해주면,
+
+<img width="1268" alt="tt" src="https://user-images.githubusercontent.com/53431568/182484388-1ffa8d27-2b29-467e-aa49-bd7ba2c10b39.png">
+
+짠! 다음과 같이 json 파일이 생성된다
+
+<img width="916" alt="무제" src="https://user-images.githubusercontent.com/53431568/182484505-1f0d58f1-fc36-4df5-b7b0-2d09ae95f25a.png">
+
 
 
 
