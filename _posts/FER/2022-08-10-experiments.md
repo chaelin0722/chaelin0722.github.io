@@ -12,11 +12,13 @@ last_modified_at: 2022-08-10T08:06:00-05:00
 
 
 기존 학습방식과 비교해볼 때, few-shot 은 어떤 메리트가 있는지, 오버피팅의 문제를 과연 잘 해결하는지.. 라는 생각에 도달하면서 여러번의 학습을 시도해보았다.
-다양한 데이터셋으로 여러 학습과 인퍼런스를 진행해 보았는데, 정리하자면 다음과 같다.
+다양한 데이터셋으로 여러 학습과 인퍼런스를 진행해 보았는데, 정리하자면 다음과 같다. 코드를 보고싶다면 [github](https://github.com/chaelin0722/Few-shot-FER/tree/master/few-shot)에 잘 정리해두었다.
 
 먼저,
 
-### RAF-DB 데이터로 진행한 실험!
+### basic emotion train, compound emotion val -> test with AFEW(basic emotion) 
+
+이번 실험은 처음으로 RAF-DB 데이터를 사용해보았다.
 
 RAF-DB 데이터는 기본 감정 6가지(무표정+1) 총 7가지와  복합감정 11가지를 갖고 있다. 아래 이미지에는 복합감정이 12개인데 데이터셋에는 11개의 레이블만이 존재한다.. 왜인지는 모름
 
@@ -24,23 +26,61 @@ RAF-DB 데이터는 기본 감정 6가지(무표정+1) 총 7가지와  복합감
 
 데이터셋 안에는 감사하게도 이미 align 된 이미지도 존재하기 때문에, 그 얼굴로 사용하였다.
 
+이 실험에서는 unseen 데이터에 대해서 과연 잘 분류를 할지 여부를 파악하기 위해 진행하였다. 
 복합 감정이미지와 기본 이미지 모두 train/test 의 여부가 파일 이름으로 존재하는데, 일단 이번 실험에서는 기본감정의 모든 데이터를 (총15339개) train에, 복합감정의 모든 데이터(총 3954개)를 validation 으로 사용하였다. 
+
+#### 조건
+- epoch 500
+- evaluation_episodes = 100  # Number of n-shot classification tasks to evaluate the model with
+- episodes_per_epoch = 100  # epoch 당 들어갈 episode 개수
+- drop_lr_every = 40
+
+
+#### 결과
+<img width="1135" alt="1결과" src="https://user-images.githubusercontent.com/53431568/183821585-37ba911a-63ed-4754-9990-74b3633bc048.png">
 
 |Train|Eval|
 |------|---|
 |3way-5shot 5query|4way-5shot 1query|
 
+|ACC|Loss|
+|------|---|
+|0.87|0.3093|
 
-- epoch 500
-- evaluation_episodes = 100  # Number of n-shot classification tasks to evaluate the model with
-- episodes_per_epoch = 100  # epoch 당 들어갈 episode 개수
+eval 해야하는 데이터가 3954개 밖에 없어서 90%는 넘게 찍을 줄 알았는데 생각보다 작게 나왔다. 
+
+
 
 
 ### 위에서 학습된 모델로 AFEW 데이터를 test 해보았다.
-few-shot 모델로 test 만 하고싶다면 --> [여기 참고!]()
+AFEW 데이터의 validation 데이터셋을 사용하였다.
+모델 인퍼런스 구조가 같아야 하므로 test 또한 4way-5shot 1query 로 진행이 된다. 
+
+|Test accuracy|
+|------|
+|37%|
+
+4개 중에 하나 맞추는건데.. 이리도 못맞추다니.. 실망스럽다.
+
+### 다음은,
+7개의 레이블에 대해서 분류하는 모델들과 비교해야하므로 7way 로 진행하였다.
+
+|Train|Eval|
+|------|---|
+|3way-5shot 5query|7way-1shot 1query|
 
 |Test accuracy|
 |------|
 |??%|
 
 
+
+### AFEW 로 트레인 -> 복합감정 테스트
+
+AFEW 로 트레인 -> AFEW 로 테스트
+drop_lr_every = 40
+
+
+## afew 는 비디오니까..
+frame 처리된 애들 inference 해서 가장 많이 나온 감정으로 정답으로 계산하는건..?
+이제껏 프레임 처리된 애들 개별로 계산했는데..
