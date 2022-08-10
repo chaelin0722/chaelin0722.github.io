@@ -75,7 +75,28 @@ AFEW 데이터의 validation 데이터셋을 사용하였다.
 
 
 
-### AFEW 로 트레인 -> 복합감정 테스트
+### AFEW 로 학습 -> compound emotion 테스트
+
+
+#### 조건
+- 일단 먼저 afew 학습은 모든 데이터로 하였다 (절반만 사용한 버전 아님)
+- epoch 500
+- evaluation_episodes = 100  # Number of n-shot classification tasks to evaluate the model with
+- episodes_per_epoch = 100  # epoch 당 들어갈 episode 개수
+- drop_lr_every = 40
+
+
+
+|Train|Eval|
+|------|---|
+|3way-5shot 5query|4way-5shot 1query|
+
+|ACC|Loss|
+|------|---|
+|?|?|
+
+
+
 
 AFEW 로 트레인 -> AFEW 로 테스트
 drop_lr_every = 40
