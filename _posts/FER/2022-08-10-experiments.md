@@ -63,6 +63,8 @@ AFEW 데이터의 validation 데이터셋을 사용하였다.
 ### 😀 다음 실험은,
 7개의 레이블에 대해서 분류하는 모델들과 비교해야하므로 7way 로 진행하였다.
 
+<img width="775" alt="image" src="https://user-images.githubusercontent.com/53431568/184006650-3a0a7aa6-70a2-4864-8419-db040e858d1e.png">
+
 |Train|Eval|
 |------|---| 
 |3way-5shot 5query|7way-1shot 1query|
@@ -89,6 +91,7 @@ AFEW 데이터의 가능성을 보기위해 다양하게 실험해보고 있다.
 - drop_lr_every = 40
 
 
+<img width="747" alt="image" src="https://user-images.githubusercontent.com/53431568/184006682-acc06b75-08ec-422a-86ee-ffed47c6f983.png">
 
 |Train|Eval|
 |------|---|
