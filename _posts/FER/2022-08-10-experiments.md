@@ -153,6 +153,7 @@ images background 에서 사용된 카테고리별 이미지 파일 갯수
 각 train이미지에서 임의로 50개씩을 evaluation의 support 데이터로 들어가게 하여 query 데이터를 전부 evaluate 할 수 있게 해보았다. 
 
 images background 에서 사용된 카테고리별 이미지 파일 갯수
+
 |Angry |Sad|Happy|Disgust|Neutral|Fear|Surprise|
 |------|---|---|---|---|---|---|
 |957|2549|6055|973|3289|464|1722|
