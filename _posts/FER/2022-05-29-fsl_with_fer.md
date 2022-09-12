@@ -48,6 +48,12 @@ downgrade pip version
 python -m pip install pip==18.1
 ~~~
 
+and if "ModuleNotFoundError: No module named 'six.moves.collections_abc'" this error occurs, do ...
+
+~~~
+pip install --ignore-installed six
+~~~
+
 <hr>
 
 -- Before beginning the experiment, let's do the preprocessing!
