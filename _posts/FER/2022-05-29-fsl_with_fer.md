@@ -40,6 +40,14 @@ if something is not working.. follow below blog's instruction.
 
 https://exerror.com/note-this-error-originates-from-a-subprocess-and-is-likely-not-a-problem-with-pip/
 
+### or, 
+
+downgrade pip version 
+
+~~~
+python -m pip install pip==18.1
+~~~
+
 <hr>
 
 -- Before beginning the experiment, let's do the preprocessing!
