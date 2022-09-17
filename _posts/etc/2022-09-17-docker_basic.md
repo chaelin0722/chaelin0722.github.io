@@ -230,3 +230,22 @@ docker load -i noah_docker_v0.10.tar
 
 수고하셨습니다~
 
+## segmentation fault (core dumped) 에러 해결
+
+또 에러다.. 그냥 가상환경에서는 잘 돌아가는 파이썬 코드가, 도커 빌드해서 실행시키니 코어 덤프 에러가 뜬다.. 찾아보니
+
+아래 명령어로 해결했다는 사람이 있는데.. 
+~~~
+sudo pip install docker-compose
+~~~
+
+난 해결이 안된다 아아악!
+
+ignore warning by 
+
+~~~
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = "2"
+~~~
+
+
+
