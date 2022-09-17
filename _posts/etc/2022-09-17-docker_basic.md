@@ -57,9 +57,11 @@ docker 이미지를 빌드하기 전에, 내 파일이 어떤환경에서 돌아
 
 설치는 아래 명령어를 하나씩 실행하자!
 
-잠깐~ 난 하나씩 하기 귀찮아요 하는 사람은 1)~3) 프로세스를 0) 한번만 해주면 됩니다. ㅎㅎ 나는 무서워서 하나씩 해봄
+잠깐~ 난 하나씩 하기 귀찮아요 하는 사람은 1) ~3) 프로세스를 0) 한번만 해주면 됩니다. ㅎㅎ 나는 무서워서 하나씩 해봄
 
-0) 1~3 명령어를 한번에 돌리는 명령어! 이거 한 다음에 4) 으로 가세요~
+
+0) 1), 2), 3) 명령어를 한번에 돌리는 명령어! 이거 한 다음에 4)로 가세요~
+
 ~~~
 $ distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
    && curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - \
@@ -67,6 +69,7 @@ $ distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
 ~~~
 
 차근차근 하고싶어요~ 하는 사람은 여기서부터 쭉 하면 됩니다!
+
 1)   
 ~~~
 curl -s -L <https://nvidia.github.io/nvidia-docker/gpgkey> | \\
@@ -112,15 +115,17 @@ gpu를 잘 찾은 것을 확인하였다 ㅎㅎ
 
 ## 3. 필요한 쿠다, 우분투 환경 pull 해오기!
 
-다음으로는, 다음 명령어로 필요한 환경을 pull 해왔다.
+다음으로는, 다음 명령어로 필요한 환경을 pull 해왔다. docker 홈페이지에서 이것저것 pull 할 수 있으니까 ==> [[https://hub.docker.com/search?q=docker%20pull%20cuda&source=verified](https://hub.docker.com/search?q=docker%20pull%20cuda&source=verified)](https://hub.docker.com/r/nvidia/cuda) 여기서 본인이 필요한건 pull 해오자!
 
 ~~~
-docker pull nvidia-cuda-10.1-cudnn8-devel-ubuntu18.04
+docker pull nvidia-cuda-10.0-cudnn7-devel-ubuntu18.04
 ~~~
 
 짜잔! pull이 매우 잘 되었다 
 
-![image](https://user-images.githubusercontent.com/53431568/190860869-63fcf6d0-461c-415f-8332-b00f3ce9a458.png)
+![pull](https://user-images.githubusercontent.com/53431568/190862348-62c7840f-86e1-4601-8c94-d1f148d333f4.png)
+
+<br>
 
 ## 4. Dockerfile 를 만들어보자
 
@@ -141,10 +146,10 @@ vim Dockerfile
 파일의 내용은 다음과 같이 작성하였다.
 
 ~~~
-FROM nvidia/cuda:10.1-cudnn8-devel-ubuntu18.04
+FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04
 
-RUN echo 'export PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}' >> ~/.bashrc
-RUN echo 'export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}' >> ~/.bashrc
+RUN echo 'export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}' >> ~/.bashrc
+RUN echo 'export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}' >> ~/.bashrc
 RUN echo 'export PATH=/usr/local/cuda/bin:/$PATH' >> ~/.bashrc
 RUN echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}' >> ~/.bashrc
 
@@ -163,6 +168,54 @@ CMD python3 ./toothbrush_head_final.py
 
 ## 5. image build 시키기
 
-이제 만든 Dockerfile 을 
+이제 만든 Dockerfile 을 build 시키자! 실행시킬 수 있는 실행파일로 만든다고 생각하면 될 것 같다. 
+
+명령어는 다음과 같이 해주면된다. `-t` 는 태그를 설정해준다 뭐 이런뜻으로 알면 된다. 
+~~~
+docker build -t [도커이미지이름]:[태그] [도커파일경로]
+~~~
+
+나의경우, 도커파일이 있는 위치에서 명령어를 수행하였고, 도커이미지이름은 noah, 태그는 간단하게 v0.1, v0.2 이런식으로 해주었다. ㅎㅎ
+
+~~~
+docker build -t noah:v0.1 .
+~~
+
+
+
+도커이미지 잘 빌드 되었는지 확인해보자!
+
+~~~
+docker images
+~~~
+![image](https://user-images.githubusercontent.com/53431568/190861700-d08fb685-f264-4ea1-b71f-1bb75dfdac1d.png)
+
+보이는가 저 수만은 version.. 나의 시행착오들 ㅎㅎ
+
+## 6. docker image 실행시키기
+
+여기까지 온 당신 칭찬해..! 그건 나에게 하는말 히히
+
+이제 실행을 시켜봅시다.
+
+~~~
+docker run noah:v0.1
+~~~
+
+
+## 체크
+
+이제 다른 서버에서도 돌아가는지(배포를 위해 체크!) 확인해보자, 먼저 docker image 를 tar 파일로 save 해준다. 
+
+~~~
+save -o [이름으로 하고싶은것] [저장할 이미지]
+~~~
+~~~
+docker save -o noah_docker_v0.10.tar noah:v0.10
+~~~
+
+ㅎㅎ 이것저것 시도하다보니 10번째 docker image도 생김 ㅋ
+
+
 
 
