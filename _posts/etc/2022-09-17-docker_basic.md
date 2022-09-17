@@ -165,7 +165,6 @@ RUN python3 -m pip install -r requirements.txt
 CMD python3 ./toothbrush_head_final.py
 ~~~
 
-
 ## 5. image build 시키기
 
 이제 만든 Dockerfile 을 build 시키자! 실행시킬 수 있는 실행파일로 만든다고 생각하면 될 것 같다. 
@@ -179,15 +178,14 @@ docker build -t [도커이미지이름]:[태그] [도커파일경로]
 
 ~~~
 docker build -t noah:v0.1 .
-~~
-
-
+~~~
 
 도커이미지 잘 빌드 되었는지 확인해보자!
 
 ~~~
 docker images
 ~~~
+
 ![image](https://user-images.githubusercontent.com/53431568/190861700-d08fb685-f264-4ea1-b71f-1bb75dfdac1d.png)
 
 보이는가 저 수만은 version.. 나의 시행착오들 ㅎㅎ
@@ -202,8 +200,9 @@ docker images
 docker run noah:v0.1
 ~~~
 
+잘돌아간다~ 뚜쉬뚜쉬~
 
-## 체크
+## 7. TEST
 
 이제 다른 서버에서도 돌아가는지(배포를 위해 체크!) 확인해보자, 먼저 docker image 를 tar 파일로 save 해준다. 
 
@@ -216,6 +215,13 @@ docker save -o noah_docker_v0.10.tar noah:v0.10
 
 ㅎㅎ 이것저것 시도하다보니 10번째 docker image도 생김 ㅋ
 
+생성된 tar 파일을 다른 서버로 scp 해준 후, 로드를 해주었다. 
 
+~~~
+docker load -i noah_docker_v0.10.tar
+~~~
 
+이제 실행시켜 본 후 잘 돌아가면 성공!!
+
+수고하셨습니다~
 
