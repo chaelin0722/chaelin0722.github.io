@@ -221,6 +221,11 @@ docker save -o noah_docker_v0.10.tar noah:v0.10
 docker load -i noah_docker_v0.10.tar
 ~~~
 
+아래 이미지와 같이 로드된다.. 로드중~
+
+![image](https://user-images.githubusercontent.com/53431568/190864505-73ab040c-708c-4fcb-b827-bb63de56a8be.png)
+
+
 이제 실행시켜 본 후 잘 돌아가면 성공!!
 
 수고하셨습니다~
