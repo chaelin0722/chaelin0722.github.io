@@ -24,5 +24,12 @@ last_modified_at: 2022-05-18T08:06:00-05:00
 <br>
 <br>
 
+## Training from Scratch를 하는 이유
 
-종종 개념정리도 해야겠다 ㅎㅎ 개념정리 폴더를 따로만들까..?!
+1. 이 학습 결과를 lower boundary (하향선)으로 지정하여서 training from scratch 하였을 때의 성능보다는 좋게 나온다는 것을 보여준다고 함
+
+2. 다른 이유로는 pretrain의 도움 없이 backbone 이후 뒷 단의 layer 만으로 성능이 어느정도 나오는지를 볼 수 있다고도 해석한다고 한다.
+
+<br>
+
+--2022-09-20 에 수정됨
