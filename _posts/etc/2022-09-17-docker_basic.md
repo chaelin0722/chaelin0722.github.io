@@ -290,6 +290,9 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = "2"
 ~~~
 
 
+ 필요한 cuda image를 pull 해오고, 그 pull 해온 image 에 내가 필요한 라이브러리들을 추가로  install 하여 나만의 custum docker image 를 만들어서, 배포가 가능하게 docker hub 에 올리는 것 까지는 [[docker] 도커🐋 차근차근 알아보기 2](https://chaelin0722.github.io/python/docker/etc/docker2/) 여기 참고!
+
+<br>
 
 ### reference
 
