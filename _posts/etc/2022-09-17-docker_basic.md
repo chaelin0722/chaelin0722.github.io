@@ -1,5 +1,5 @@
 ---
-title:  "[docker] 도커 차근차근 알아보기"
+title:  "[docker] 도커🐋 차근차근 알아보기"
 excerpt: ""
 
 categories:
@@ -18,10 +18,35 @@ last_modified_at: 2022-09-17T08:06:00-05:00
 
 ## 0. docker 설치
 
+먼저 가장 최신 상태로 만들어주기 위해 apt를 업데이트 해준다.
 
-https://louky0714.tistory.com/131
+~~~
+## 업데이트와 사전 설치
+sudo apt update
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
 
-설치참고
+## Docker repository key 추가하는 명령어
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+## Docker repository를 Add 한다. 
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+
+## 시스템을 최신으로 하기 위한 다시 업데이트와 업그레이드
+sudo apt update
+sudo apt upgrade
+~~~
+
+이제 도커를 설치해 준다!
+
+~~~
+sudo apt install docker-ce
+~~~
+
+설치된 버전 확인 명령어
+~~~
+apt-cache policy docker-ce
+~~~
+
 
 <br>
 ## 1. docker login
@@ -249,3 +274,6 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = "2"
 
 
 
+### reference
+
+[1] [docker 설치 참고사이트](https://louky0714.tistory.com/131)
