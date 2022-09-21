@@ -47,6 +47,23 @@ sudo apt install docker-ce
 apt-cache policy docker-ce
 ~~~
 
+도커가 잘 설치 되었는지 아래명령어로 확인해보면
+~~~
+sudo systemctl status docker
+~~~
+
+다음과 같은 화면이 뜬다 그럼 성공!
+
+![image](https://user-images.githubusercontent.com/53431568/191416254-630fc1e4-0865-4b78-9498-78d89ec24900.png)
+
+
+Docker가 실행 되고 있을 경우  Docker0라는 네트워크 인터페이스도 생성되니까 ifconfig 로 확인해보자
+docker0 가 생성된 것을 확인!
+
+![image](https://user-images.githubusercontent.com/53431568/191416385-362d2bc7-cc78-4de2-bc75-8dc9df574738.png)
+
+
+이제 도커를 사용하시면 됩니다~ ㅎㅎ
 
 <br>
 ## 1. docker login
