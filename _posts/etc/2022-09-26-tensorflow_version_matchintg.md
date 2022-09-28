@@ -40,6 +40,10 @@ MASK-R-CNN 모델을 tensorflow-gpu 2.0.0 으로 구현하였는데, 2.5.0 버�
 > tensorflow-gpu 2.5.0
 
 
+CUDA 에서 tensorflow 버전 맞는거 찾는건 다 알겠지만! 참고하고자 적는다 ==> [https://www.tensorflow.org/install/source#tested_build_configurations](https://www.tensorflow.org/install/source#tested_build_configurations)
+
+
+
 크게 두가지만 변경해주면 되는데 먼저, `keras`를 불러오는 방식이다.
 
 1. TF 2.X 버전 부터는 keras 를 불러오는 방식이 다른 것 같다. 그냥 keras 를 설치하여 쓰기보다는 tensorflow에 내장된 keras 를 쓴다. 
