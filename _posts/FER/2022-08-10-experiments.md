@@ -3,9 +3,11 @@ title:  "[EXPERIMENT] FEW SHOT 학습과 고민 노트 2"
 excerpt: ""
 
 categories:
-  - FSL
-  - prototype
-tags: [Deeplearning, FSL, study]
+  - fer
+  - few-shot
+  - Attention
+  - Relation Network
+tags: [fer, fewshot, paperReview]
 
 last_modified_at: 2022-08-10T08:06:00-05:00
 ---
