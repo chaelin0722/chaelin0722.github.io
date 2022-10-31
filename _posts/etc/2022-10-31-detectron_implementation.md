@@ -9,7 +9,16 @@ tags: [Deeplearning, CNN, study]
 last_modified_at: 2022-10-31T08:06:00-05:00
 ---
 
+### Detectron2 설치방법
+
+![화면 캡처 2022-10-31 113743](https://user-images.githubusercontent.com/53431568/198919842-512bf4b1-6449-43e0-ab0d-ff7e386d8cb7.png)
+
+
+
 Mask R-CNN 모델로 detection 연구를 진행해왔는데, attention을 붙이려하니 너무 레이어 수정이 어려워서 pytorch로 바꾸기 위해 detectron2를 설치하였다. 
+
+
+
 
 ~~~
 # 가상 환경 생성
