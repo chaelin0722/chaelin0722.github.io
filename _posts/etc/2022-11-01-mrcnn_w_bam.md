@@ -63,6 +63,31 @@ from .BAM import *
  따라서 각 축에 대한 attention을 따로 한 후 합친 값을 최종 attention 값으로 사용해준다. 
  
 <br> 
+
+
+### 4. 성능 향상
+
+큰 기대는 안했지만, attention 이라 그런지 확실한 성능 향상을 보이고 있다. 나는 지금 하고있는 과제인 칫솔의 crack 에 대한 detection 부분인데, 확실히 더 잘잡는 것을 보이고 있다. 
+
+
+#### Mask RCNN 
+| Mask RCNN||
+|------|---|
+|True Positive|38|
+|True Negative|81|
+|Accuracy|91.54 %|
+
+#### Mask RCNN with BAM 
+
+| Mask RCNN w/ BAM||
+|------|---|
+|True Positive|41|
+|True Negative|81|
+|Accuracy|93.85 %|
+
+
+
+다음엔 feature map 을 출력하여 그 차이를 보여주겠다.
  
  
  ### reference
