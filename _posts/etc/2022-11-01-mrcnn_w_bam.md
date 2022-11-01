@@ -87,10 +87,9 @@ from .BAM import *
 
 
 
-다음엔 feature map 을 출력하여 그 차이를 보여주겠다.
+다음엔 feature map 을 출력하여 그 차이를 보이고자 한다.
  
- 
- ### reference
+### reference
  
  [1] [BAM](https://arxiv.org/abs/1807.06514)
  
