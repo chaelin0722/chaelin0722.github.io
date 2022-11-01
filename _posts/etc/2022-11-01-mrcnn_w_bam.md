@@ -71,7 +71,7 @@ from .BAM import *
 
 
 #### Mask RCNN 
-| Mask RCNN||
+|Mask RCNN||
 |------|---|
 |True Positive|38|
 |True Negative|81|
@@ -79,7 +79,7 @@ from .BAM import *
 
 #### Mask RCNN with BAM 
 
-| Mask RCNN w/ BAM||
+|Mask RCNN with BAM||
 |------|---|
 |True Positive|41|
 |True Negative|81|
