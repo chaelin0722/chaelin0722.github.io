@@ -10,6 +10,15 @@ tags: [Deeplearning, CNN, study]
 last_modified_at: 2022-11-09T08:06:00-05:00
 ---
 
+### 보이스프린트 과제
+
+side face to frontal face 로 align 하는 모델 구축
+
+[rotate-and-renderer github 주소](https://github.com/Hangz-nju-cuhk/Rotate-and-Render)
+
+<
+
+
 공용서버 에러 -> /tmp 파일에 권한이 없다는 이유로 코드가 아예 돌아가지 않음
 
 따라서, 개인서버에 구축해둠
