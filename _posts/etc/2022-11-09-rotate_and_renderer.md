@@ -16,7 +16,7 @@ side face to frontal face 로 align 하는 모델 구축
 
 [rotate-and-renderer github 주소](https://github.com/Hangz-nju-cuhk/Rotate-and-Render)
 
-<
+<br>
 
 
 공용서버 에러 -> /tmp 파일에 권한이 없다는 이유로 코드가 아예 돌아가지 않음
