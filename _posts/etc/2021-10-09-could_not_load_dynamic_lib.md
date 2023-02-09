@@ -75,21 +75,46 @@ sudo cp libcudart.so.10.0 libcudart.so.11.0
 python3 -c "import tensorrt; print(tensorrt.__path__)"
 ~~~
 
-해당 경로에 가니 libnvinfer_plugin.so.8 와 libnvinfer.so.8 가 있음을 확인!!🤨
+해당 경로에 가니 libnvinfer_plugin.so.8 와 libnvinfer.so.8 가 있음을 확인!!
 
-![image](https://user-images.githubusercontent.com/53431568/217711110-dd1fb743-26a2-40e3-b8b7-a21f0fc788d6.png)
+![image](https://user-images.githubusercontent.com/53431568/217714744-e8499e80-bf22-48be-9859-f57d22aa28ac.png)
 
-근데,, size 가 어마어마해서 cp 하긴 좀 그렇고.. 같은 파일을 만들어 줘서 link 로 연결해주기로 결정!
+근데,, size 가 어마어마해서 cp 하긴 좀 그렇고.. 심볼릭 link 로 연결해주기로 결정! 아래 명령어로 쉽게 만들 수 있음. 
 
-먼저, 빈 파일을 만들고..
+~~~
+## 기본 명령어
+ln -s 원본 링크지점
 
-![image](https://user-images.githubusercontent.com/53431568/217711898-2dbf8672-af82-454d-83ef-7ad3eaeaf4f6.png)
+## tensorrt 경로에 가서 아래와 같이 심볼릭 링크 생성!
+ln -s libnvinfer_plugin.so.8 /usr/local/cuda-11.2/targets/x86_64-linux/lib/libnvinfer_plugin.so.7
+ln -s libnvinfer.so.8 /usr/local/cuda-11.2/targets/x86_64-linux/lib/libnvinfer.so.7
 
-진짜 파일과 link 
+~~~
 
 
+짜잔~ 생성완료!  (잘못만들어서 7 도 생겼는데 뭐 ㅎㅎ 나중에 쓸일이 있을수도 있으니까 냅둠 ㅎㅎ)
 
-/home/clkim/anaconda3/envs/fsl/lib/python3.9/site-packages/tensorrt/
+![image](https://user-images.githubusercontent.com/53431568/217714295-90fba913-5ac3-4b34-93aa-ab40cad70f20.png)
+
+그런데.. 또 에러발생..!!🤨🤨🤨🤨
+
+링크된 파일을 클릭했을 때, 해당 경로로 가질 못해서 출력해보니.. 빨갛게 뜬다.. 분명 무슨 에러가 있는것이다! 게다가 link 된 경로가 제대로된 경로가 아님을 확인!
+
+![image](https://user-images.githubusercontent.com/53431568/217716574-de13f9c1-f78c-43b0-b0f5-e41bf218bea1.png)
+
+이게 찾아보니, 원본(타겟)경로를 제대로 못 읽어서 그런 것 같다. 확실한 명령어는 다음과 같다. 
+
+~~~
+## tensorrt 경로에 가서 아래와 같이 심볼릭 링크 생성!
+ln -s "$(pwd)"/libnvinfer_plugin.so.8 /usr/local/cuda-11.2/targets/x86_64-linux/lib/libnvinfer_plugin.so.7
+ln -s "$(pwd)"/libnvinfer.so.8 /usr/local/cuda-11.2/targets/x86_64-linux/lib/libnvinfer.so.7
+~~~
+
+확인해보니 제대로 경로 찾아 간다! 😆😆
+
+![image](https://user-images.githubusercontent.com/53431568/217716862-5690d7d3-98eb-4f75-8fbf-7b1d0ce84f26.png)
+
+
 
 
 (2023-02-09 수정됨)
