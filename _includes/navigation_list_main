@@ -77,7 +77,15 @@
                         <li><a href="/categories/git" class="" style="font-size:1.5em;">GIT </style> <style="">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
-            </ul>          
+            </ul>
+            
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "cote" %}
+                        <li><a href="/categories/cote" class="" style="font-size:1.5em;">Algorithm study</style> <style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>    
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "etc" %}
