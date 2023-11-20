@@ -72,10 +72,12 @@ cat ~/.ssh/id_rsa.pub
 
 그러면 아래와 같이 나오는데, title엔 적당한 이름을 주고 key 에는 앞서 복사한 id_rsa public 키를 붙여 넣어줍니다. 
 
+여기서 중요한 것은 `Allow write access`를 꼭! 체크해주어야 한다는 사실!! 중요중요합니다. 안하면 read-only 에러 나면서 PUSH 가 안됩니다. 
+
 그리고 Allow write access를 체크해 준 후 `Add key` 클릭!
 
-![image](https://user-images.githubusercontent.com/53431568/152732682-7474c14f-ea9c-49dd-bc50-c548a1ca6b6b.png)
 
+![git](https://github.com/chaelin0722/chaelin0722.github.io/assets/53431568/d3ba9857-8b92-4a33-aec8-c0423534dcff)
 
 끝!
 
