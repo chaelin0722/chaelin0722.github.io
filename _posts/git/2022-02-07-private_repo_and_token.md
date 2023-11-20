@@ -77,7 +77,9 @@ cat ~/.ssh/id_rsa.pub
 그리고 Allow write access를 체크해 준 후 `Add key` 클릭!
 
 
-![git](https://github.com/chaelin0722/chaelin0722.github.io/assets/53431568/d3ba9857-8b92-4a33-aec8-c0423534dcff)
+![git](https://github.com/chaelin0722/chaelin0722.github.io/assets/53431568/c7bc2e0a-553d-4c5a-aa11-261ecc352ba3)
+
+
 
 끝!
 
