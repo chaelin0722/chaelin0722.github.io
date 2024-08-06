@@ -20,7 +20,7 @@ title                    : "zzennin's DeepLearning"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Chaelin Kim"
-description              : "기술/공부 블로그"
+description              : "연구/기술 블로그"
 url                      : "https://chaelin0722.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "chaelin0722/comment" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -32,7 +32,7 @@ words_per_minute         : 200
 comments:
   provider               : "utterances" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   disqus:
-    shortname            : "zzennin" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : "Chaelin" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -94,11 +94,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "zzennin"
+  name             : "Chaelin"
   avatar           : "/assets/images/han_river.jpg"
   bio              : "hello :)"
-  email            : "cl.kim@ivpl.sookmyung.ac.kr"
-  location         : "Sookmyung Women's University"
+  email            : "ckim13[at]tulane[dot]edu"
+  location         : ""
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
