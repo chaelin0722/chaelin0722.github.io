@@ -38,6 +38,7 @@ I am a hardworking and ambitious individual, I am a self-starter and I am highly
 ### Education
 
 M.S. in IT Engineering (2021.09 - 2023.08)
+
 B.S. in IT Engineering (2016.03 - 2021.08)
 
 &nbsp;&nbsp;&nbsp;&nbsp;  Sookmyung Women's University, Seoul, South Korea
