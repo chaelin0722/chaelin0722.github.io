@@ -7,9 +7,7 @@ classes: wide
 
 ## Self introduction
 
-영상처리연구실에서 공부하고 있는 대학원생입니다.
-
-딥러닝 과 컴퓨터비전 분야에 관심이 많으며 논문리뷰, 딥러닝, 블로그 개발, 수업 등을 기록하는 공간입니다.
+AI와 컴퓨터비전 분야에 관심이 많으며 논문리뷰, 딥러닝, 블로그 개발, 수업 등을 기록하는 공간입니다.
 
 블로그에는 주로 제가 현재 공부하고 있는 내용들을 올리고 있으며 AI-Driven Assistive Technology 연구하고 있습니다.
 
@@ -21,8 +19,6 @@ I have extensive experience in deep learning and AI research with institutions i
 I am a hardworking and ambitious individual, I am a self-starter and I am highly motivated with a great passion in the field of computer vision, machine learning and assistive technology.
 
 
-
-💌 Email: ckim13[at]tulane[dot]edu 
 
 <br>
 
