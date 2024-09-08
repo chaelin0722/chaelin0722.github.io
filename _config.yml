@@ -97,7 +97,7 @@ author:
   name             : "Chaelin"
   avatar           : "/assets/images/han_river.jpg"
   bio              : "hello :)"
-  email            : ""
+  email            : null
   location         : "LA, USA"
   links:
     - label: "Email"
