@@ -20,7 +20,7 @@ title                    : "zzennin's DeepLearning"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Chaelin Kim"
-description              : "연구/기술 블로그"
+description              : "끄적끄적 블로그"
 url                      : "https://chaelin0722.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "chaelin0722/comment" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
