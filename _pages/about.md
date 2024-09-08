@@ -14,8 +14,7 @@ AI와 컴퓨터비전 분야에 관심이 많으며 논문리뷰, 딥러닝, 블
 글에 오류가 있거나 궁금하신 점은 언제든지 메일 보내주세요! 👍😁
 
 
-I have extensive experience in deep learning and AI research with institutions in both Korea and USA, I have presented my research in various conferences.
-
+I have extensive experience in deep learning and AI research with institutions in both Korea and USA.
 I am a hardworking and ambitious individual, I am a self-starter and I am highly motivated with a great passion in the field of computer vision, machine learning and assistive technology.
 
 
