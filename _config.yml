@@ -97,8 +97,8 @@ author:
   name             : "Chaelin"
   avatar           : "/assets/images/han_river.jpg"
   bio              : "hello :)"
-  email            : "ckim13[at]tulane[dot]edu"
-  location         : ""
+  email            : ""
+  location         : "LA, USA"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
