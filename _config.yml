@@ -113,7 +113,7 @@ author:
       icon: "fas fa-graduation-cap"
       url: "https://scholar.google.com/citations?user=8Qy1l74AAAAJ&hl=ko"
       #- label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
+      #icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
       #- label: "Instagram"
       # icon: "fab fa-fw fa-instagram"
