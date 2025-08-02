@@ -20,7 +20,7 @@ resume: true
 resume-external: true
 resume-url: https://google.com/?q=my+resume
 
-url: https://github.com/chaelin0722 
+url: https://chaelin0722.github.io/ 
 
 permalink: /:title/
 
@@ -41,18 +41,11 @@ github: https://github.com/chaelin0722
 email: ckim13@tulane.edu
 
 authors:
-  johndoe:
+  Chaelin:
     name: Chaelin Kim
     bio: A Man who travels the world eating noodles
     external-image: false
     picture: assets/images/profile.png
-    #twitter: johndoe
-  jamesfoster:
-    name: James Foster
-    bio: A Man who develops software with coffee
-    external-image: false
-    picture: assets/images/profile.png
-    #twitter: jamesfoster
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal
