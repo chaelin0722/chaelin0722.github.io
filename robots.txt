@@ -1,3 +1,0 @@
-User-agent: *
- Allow: /
- Sitemap: https://chaelin0722.github.io/sitemap.xml
