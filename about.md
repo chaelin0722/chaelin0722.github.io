@@ -10,7 +10,7 @@ I am currently pursuing a Ph.D. in Computer Science at <a href="https://sse.tula
 <p>I received both BS and MS in IT Engineering from Sookmyung Women's University.</p> 
 
 <h2>Recent News</h2>
-  <b>Our poster and demonstration work has been accepted to <b>ASSETS 2025</b>!
+  <b>🎉 Our poster and demonstration work has been accepted to <b>ASSETS 2025</b>! 🎉
 
 	  
 <h2>Conference</h2>
