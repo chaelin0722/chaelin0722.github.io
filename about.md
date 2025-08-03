@@ -4,36 +4,56 @@ layout: page
 ---
 ![Profile Image]({% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %})
 
-<p>Lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p> Hello! My name is Chae-Lin Kim.
+I am currently pursuing a Ph.D. in Computer Science at <a href="https://sse.tulane.edu/">Tulane University</a> advised by <a href="https://saadh.info/">Prof. Saad Hassan</a>, where I focus on AI-based assistive technology. My research interests include deep learning networks, particularly in the field of Human-Computer Interaction (HCI) and computer vision. I am passionate about developing technologies that enhance the quality of life.</p>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>I received both BS and MS in IT Engineering from Sookmyung Women's University.</p> 
 
-<h2>Skills</h2>
+<h2>Recent News</h2>
+  <b>Our poster and demonstration work has been accepted to <b>ASSETS 2025</b>!
 
-<ul class="skill-list">
+	  
+<h2>Conference</h2>
+<ul class="conference">
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+		<tbody>
+  			<tr>
+			<td style="padding:20px;width:25%;vertical-align:middle">
+			  <img src="./assetes/images/w4a.png" width="160" >
+			</td>
+			<td style="padding:20px;width:75%;vertical-align:middle">
+			  <papertitle> <a href="https://arxiv.org/abs/2504.05857"> Towards an AI-Driven Video-Based American Sign Language Dictionary: Exploring Design and Usage Experience with Learners </a></papertitle>
+			  	
+			  <br> Saad Hassan, Matyas Bohacek, Chaelin Kim, Denise Crochet
+			  <br> The 22nd International Web for All Conference (W4A 2025)
+
+			</td>
+			  </tr>    
+  			<tr>
+			<td style="padding:20px;width:25%;vertical-align:middle">
+			  <img src="./assets/images/proposed_model.jpg" width="160" >
+			</td>
+			<td style="padding:20px;width:75%;vertical-align:middle">
+			  <papertitle> <a href="https://ieeexplore.ieee.org/abstract/document/10444505">Channel Selective Relation Network for Efficient Few-shot Facial Expression Recognition </a> </papertitle>
+			  </a>		
+			  <br> <b>Chae-Lin Kim</b>, Ga-Eun Lee, Jiwoo Kang, Byung-Gyu Kim*
+			  <br> IEEE International Conference on Consumer Electronics (ICCE) 2024
+
+			</td>
+			</tr>   
+		</tbody>
+        </table>
+
+
+
+</ul>
+
+<h2>Journal</h2>
+<ul class="journal">
 	<li>HTML - Jade - Haml - Erb</li>
 	<li>Responsive (Mobile First)</li>
 	<li>CSS (Stylus, Sass, Less)</li>
-	<li>Css Frameworks (Bootstrap, Foundation)</li>
-	<li>Javascript (Design Patterns, Tests)</li>
-	<li>AngularJS - ReactJS</li>
-	<li>Grunt - Gulp - Yeoman</li>
-	<li>Git</li>
-	<li>PHP</li>
-	<li>Python</li>
-	<li>MySQL - MongoDB</li>
-	<li>Scrum and Kanban</li>
-	<li>TDD e Continuous Integration</li>
 </ul>
 
 <h2>Projects</h2>
