@@ -20,10 +20,10 @@ I am currently pursuing a Ph.D. in Computer Science at <a href="https://sse.tula
 		<tbody>
   			<tr>
 			<td style="padding:20px;width:25%;vertical-align:middle">
-			  <img src="./assetes/images/w4a.png" width="160" >
+			  <img src="/assets/images/w4a.png" width="160" >
 			</td>
 			<td style="padding:20px;width:75%;vertical-align:middle">
-			  <papertitle> <a href="https://arxiv.org/abs/2504.05857"> Towards an AI-Driven Video-Based American Sign Language Dictionary: Exploring Design and Usage Experience with Learners </a></papertitle>
+			  <papertitle> <a href="https://arxiv.org/abs/2504.05857"> Towards an AI-Driven Video-Based American Sign Language Dictionary: Exploring Design and Usage Experience with Learners</a></papertitle>
 			  	
 			  <br> Saad Hassan, Matyas Bohacek, Chaelin Kim, Denise Crochet
 			  <br> The 22nd International Web for All Conference (W4A 2025)
@@ -32,12 +32,12 @@ I am currently pursuing a Ph.D. in Computer Science at <a href="https://sse.tula
 			  </tr>    
   			<tr>
 			<td style="padding:20px;width:25%;vertical-align:middle">
-			  <img src="./assets/images/proposed_model.jpg" width="160" >
+			  <img src="/assets/images/proposed_model.jpg" width="160" >
 			</td>
 			<td style="padding:20px;width:75%;vertical-align:middle">
-			  <papertitle> <a href="https://ieeexplore.ieee.org/abstract/document/10444505">Channel Selective Relation Network for Efficient Few-shot Facial Expression Recognition </a> </papertitle>
+			  <papertitle> <a href="https://ieeexplore.ieee.org/abstract/document/10444505">Channel Selective Relation Network for Efficient Few-shot Facial Expression Recognition</a></papertitle>
 			  </a>		
-			  <br> <b>Chae-Lin Kim</b>, Ga-Eun Lee, Jiwoo Kang, Byung-Gyu Kim*
+			  <br> Chae-Lin Kim, Ga-Eun Lee, Jiwoo Kang, Byung-Gyu Kim
 			  <br> IEEE International Conference on Consumer Electronics (ICCE) 2024
 
 			</td>
@@ -51,9 +51,26 @@ I am currently pursuing a Ph.D. in Computer Science at <a href="https://sse.tula
 
 <h2>Journal</h2>
 <ul class="journal">
-	<li>HTML - Jade - Haml - Erb</li>
-	<li>Responsive (Mobile First)</li>
-	<li>CSS (Stylus, Sass, Less)</li>
+        <table>
+		<tbody>
+			<tr>
+			  <td style="padding:20px;width:25%;vertical-align:middle">
+				<img src="assets/images/survey_fer.png" width="160" >
+			  </td>
+			  <td style="padding:20px;width:75%;vertical-align:middle">
+				<papertitle><a href="https://link.springer.com/article/10.1007/s11554-023-01310-x">Few-shot Learning on Facial Expression Recognition: A Comprehensive Survey</a></papertitle>
+				</a>
+				<br> Chae Lin Kim, Byung-Gyu Kim
+
+		        <br> Journal of Real-Time Image Processing (Springer Nature), vol. 20:52 (Article number: 52), pp. 1-18, May 06, 2023
+			  </td>
+			</tr>          
+		</tbody>
+ 	</table>
+
+
+
+
 </ul>
 
 
