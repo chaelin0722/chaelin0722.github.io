@@ -68,9 +68,6 @@ I am currently pursuing a Ph.D. in Computer Science at <a href="https://sse.tula
 		</tbody>
  	</table>
 
-
-
-
 </ul>
 
 
