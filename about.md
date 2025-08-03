@@ -56,6 +56,12 @@ I am currently pursuing a Ph.D. in Computer Science at <a href="https://sse.tula
 	<li>CSS (Stylus, Sass, Less)</li>
 </ul>
 
+
+<h2>Skills</h2>
+<ul class="skills">
+	<li>Python</li>
+</ul>
+
 <h2>Projects</h2>
 
 <ul>
