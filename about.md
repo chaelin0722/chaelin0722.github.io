@@ -16,7 +16,7 @@ I am currently pursuing a Ph.D. in Computer Science at <a href="https://sse.tula
 <h2>Conference</h2>
 <ul class="conference">
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <table>
 		<tbody>
   			<tr>
 			<td style="padding:20px;width:25%;vertical-align:middle">
