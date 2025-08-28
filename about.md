@@ -5,12 +5,15 @@ layout: page
 ![Profile Image]({% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %})
 
 <p> 
-Hi, my name is Chaelin, and I am a PhD student in Computer Science at <a href="https://sse.tulane.edu/">Tulane University</a>, advised by <a href="https://saadh.info/">Prof. Saad Hassan</a>.
+Hi, my name is Chaelin, and I am a PhD student in Computer Science at <a href="https://sse.tulane.edu/">Tulane University</a>, advised by <a href="https://saadh.info/">Prof. Saad Hassan</a>. 
+My research interests lie in Human-Computer Interaction (HCI) and Computer Vision, with a particular focus on building AI systems that improve the quality of life for people with disabilities.  
 
-My research interests lie in Human-Computer Interaction (HCI) and Computer Vision, with a particular focus on building AI systems that improve the quality of life for people with disabilities. Currently, I am doing research on developing and evaluating AI-based assistive technology for Deaf and Hard of Hearing community. 
+Currently, I am doing research on developing and evaluating AI-based American Sign Language (ASL) learning system for Deaf and Hard of Hearing community. I am focusing on exploring the impact on automatically segmenting signs from long ASL signing videos and evaluating both the accuracy and user experience of this assistive technology.
 
-My goal as a researcher is to create sustainable technologies and systems that can make a positive impact on every community. 
 
+I am currently seeking a summer internship where I can apply my technical expertise and research experience to real-world challenges.
+
+My ultimate goal as a researcher is to create sustainable assistive technologies and systems that can make a positive impact across communities. 
 
 
 <p>I received both BS and MS in IT Engineering from Sookmyung Women's University.</p> 
