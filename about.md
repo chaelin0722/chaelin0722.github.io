@@ -4,8 +4,14 @@ layout: page
 ---
 ![Profile Image]({% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %})
 
-<p> Hello! My name is Chae-Lin Kim.
-I am currently pursuing a Ph.D. in Computer Science at <a href="https://sse.tulane.edu/">Tulane University</a> advised by <a href="https://saadh.info/">Prof. Saad Hassan</a>, where I focus on AI-based assistive technology. My research interests include deep learning networks, particularly in the field of Human-Computer Interaction (HCI) and computer vision. I am passionate about developing technologies that enhance the quality of life.</p>
+<p> 
+Hi, my name is Chaelin, and I am a PhD student in Computer Science at <a href="https://sse.tulane.edu/">Tulane University</a>, advised by <a href="https://saadh.info/">Prof. Saad Hassan</a>.
+
+My research interests lie in Human-Computer Interaction (HCI) and Computer Vision, with a particular focus on building AI systems that improve the quality of life for people with disabilities. Currently, I am doing research on developing and evaluating AI-based assistive technology for Deaf and Hard of Hearing community. 
+
+My goal as a researcher is to create sustainable technologies and systems that can make a positive impact on every community. 
+
+
 
 <p>I received both BS and MS in IT Engineering from Sookmyung Women's University.</p> 
 
