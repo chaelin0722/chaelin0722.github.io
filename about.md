@@ -22,7 +22,7 @@ My ultimate goal as a researcher is to create sustainable assistive technologies
   <b>🎉 Our poster and demonstration work has been accepted to <b>ASSETS 2025</b>! 🎉
 
 	  
-<h2>Conference</h2>
+<h2>Publications</h2>
 <ul class="conference">
 
         <table>
@@ -50,18 +50,8 @@ My ultimate goal as a researcher is to create sustainable assistive technologies
 			  <br> IEEE International Conference on Consumer Electronics (ICCE) 2024
 
 			</td>
-			</tr>   
-		</tbody>
-        </table>
-
-
-
-</ul>
-
-<h2>Journal</h2>
-<ul class="journal">
-        <table>
-		<tbody>
+			</tr>  
+			
 			<tr>
 			  <td style="padding:20px;width:25%;vertical-align:middle">
 				<img src="/assets/images/survey_fer.png" style="width:100%; height:auto;" >
@@ -73,9 +63,14 @@ My ultimate goal as a researcher is to create sustainable assistive technologies
 
 		        <br> Journal of Real-Time Image Processing (Springer Nature), vol. 20:52 (Article number: 52), pp. 1-18, May 06, 2023
 			  </td>
-			</tr>          
+			</tr>   
+
+
+			
 		</tbody>
- 	</table>
+        </table>
+
+
 
 </ul>
 
