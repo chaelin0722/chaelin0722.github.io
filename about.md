@@ -27,6 +27,20 @@ My ultimate goal as a researcher is to create sustainable assistive technologies
 
         <table>
 		<tbody>
+
+  			<tr>
+			<td style="padding:20px;width:25%;vertical-align:middle">
+			  <img src="/assets/images/w4a.png" style="width:100%; height:auto;" >
+			</td>
+			<td style="padding:20px;width:75%;vertical-align:middle">
+			  <papertitle> <a href="https://dl.acm.org/doi/full/10.1145/3663547.3759746">Signing for Care: A Demo and Initial Evaluation of an American Sign Language Learning Tool for Emergency Medical Service Providers</a></papertitle>
+			  	
+			  <br> Chaelin Kim, Cameron McLaren, Madhangi Krishnan, Nikhil Modayur, Saad Hassan
+			  <br> Proceedings of the 27th International ACM SIGACCESS Conference on Computers and Accessibility (ASSETS 2025)
+
+			</td>
+			  </tr>    
+		
   			<tr>
 			<td style="padding:20px;width:25%;vertical-align:middle">
 			  <img src="/assets/images/w4a.png" style="width:100%; height:auto;" >
