@@ -30,7 +30,7 @@ My ultimate goal as a researcher is to create sustainable assistive technologies
 
   			<tr>
 			<td style="padding:20px;width:25%;vertical-align:middle">
-			  <img src="/assets/images/w4a.png" style="width:100%; height:auto;" >
+			  <img src="/assets/images/emergency.png" style="width:100%; height:auto;" >
 			</td>
 			<td style="padding:20px;width:75%;vertical-align:middle">
 			  <papertitle> <a href="https://dl.acm.org/doi/full/10.1145/3663547.3759746">Signing for Care: A Demo and Initial Evaluation of an American Sign Language Learning Tool for Emergency Medical Service Providers</a></papertitle>
