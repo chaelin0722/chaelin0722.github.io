@@ -8,7 +8,7 @@ description: A blog about technology and stuff related
 # if it's an external image, update below for true
 # better with square images
 external-image: false
-picture: assets/images/profile.png
+picture: assets/images/profile.jpeg
 
 # your site color theme, true for dark theme, 
 # false to light theme, auto to switch with system.
@@ -45,7 +45,7 @@ authors:
     name: Chaelin Kim
     bio: I love traveling!
     external-image: false
-    picture: assets/images/profile.png
+    picture: assets/images/profile.jpeg
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal
