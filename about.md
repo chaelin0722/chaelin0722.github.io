@@ -27,20 +27,19 @@ My ultimate goal as a researcher is to create sustainable assistive technologies
 
         <table>
 		<tbody>
-
   			<tr>
 			<td style="padding:20px;width:25%;vertical-align:middle">
-			  <img src="/assets/images/emergency.png" style="width:100%; height:auto;" >
+			  <img src="/assets/images/lookup.png" style="width:100%; height:auto;" >
 			</td>
 			<td style="padding:20px;width:75%;vertical-align:middle">
-			  <papertitle> <a href="https://dl.acm.org/doi/full/10.1145/3663547.3759746">Signing for Care: A Demo and Initial Evaluation of an American Sign Language Learning Tool for Emergency Medical Service Providers</a></papertitle>
+			  <papertitle> <a href="https://dl.acm.org/doi/full/10.1145/3797867.3828986">Design and Evaluation of an AI-Based American Sign Language Video Comprehension Tool: Exploring the Benefits and Use of Automatic Segmentation and Sign Lookup</a></papertitle>
 			  	
-			  <br> Chaelin Kim, Cameron McLaren, Madhangi Krishnan, Nikhil Modayur, Saad Hassan
-			  <br> Proceedings of the 27th International ACM SIGACCESS Conference on Computers and Accessibility (ASSETS 2025)
+			  <br> Chaelin Kim, Denise Crochet, Maty Bohacek, and Saad Hassan
+			  <br> Proceedings of the 28th International ACM SIGACCESS Conference on Computers and Accessibility (ASSETS 2026)
 
 			</td>
 			  </tr>    
-		
+
   			<tr>
 			<td style="padding:20px;width:25%;vertical-align:middle">
 			  <img src="/assets/images/w4a.png" style="width:100%; height:auto;" >
@@ -88,6 +87,36 @@ My ultimate goal as a researcher is to create sustainable assistive technologies
 
 </ul>
 
+
+
+<h2>Poster/Demo</h2>
+<ul class="conference">
+
+
+        <table>
+		<tbody>
+
+			  
+  			<tr>
+			<td style="padding:20px;width:25%;vertical-align:middle">
+			  <img src="/assets/images/emergency.png" style="width:100%; height:auto;" >
+			</td>
+			<td style="padding:20px;width:75%;vertical-align:middle">
+			  <papertitle> <a href="https://dl.acm.org/doi/full/10.1145/3663547.3759746">Signing for Care: A Demo and Initial Evaluation of an American Sign Language Learning Tool for Emergency Medical Service Providers</a></papertitle>
+			  	
+			  <br> Chaelin Kim, Cameron McLaren, Madhangi Krishnan, Nikhil Modayur, Saad Hassan
+			  <br> Proceedings of the 27th International ACM SIGACCESS Conference on Computers and Accessibility (ASSETS 2025)
+
+			</td>
+			  </tr>    
+		
+		</tbody>
+        </table>
+
+
+
+
+</ul>
 
 <h2>Skills</h2>
 <ul class="skills">
