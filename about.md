@@ -36,7 +36,7 @@ My ultimate goal as a researcher is to create sustainable assistive technologies
 			<td style="padding:20px;width:75%;vertical-align:middle">
 			  <papertitle> <a href="https://dl.acm.org/doi/full/10.1145/3797867.3828986">Design and Evaluation of an AI-Based American Sign Language Video Comprehension Tool: Exploring the Benefits and Use of Automatic Segmentation and Sign Lookup</a></papertitle>
 			  	
-			  <br> Chaelin Kim, Denise Crochet, Maty Bohacek, and Saad Hassan
+			  <br> <b>Chaelin Kim<b>, Denise Crochet, Maty Bohacek, and Saad Hassan
 			  <br> Proceedings of the 28th International ACM SIGACCESS Conference on Computers and Accessibility (ASSETS 2026)
 
 			</td>
@@ -49,7 +49,7 @@ My ultimate goal as a researcher is to create sustainable assistive technologies
 			<td style="padding:20px;width:75%;vertical-align:middle">
 			  <papertitle> <a href="https://arxiv.org/abs/2504.05857"> Towards an AI-Driven Video-Based American Sign Language Dictionary: Exploring Design and Usage Experience with Learners</a></papertitle>
 			  	
-			  <br> Saad Hassan, Matyas Bohacek, Chaelin Kim, Denise Crochet
+			  <br> Saad Hassan, Matyas Bohacek, <b>Chaelin Kim<b>, Denise Crochet
 			  <br> The 22nd International Web for All Conference (W4A 2025)
 
 			</td>
@@ -61,7 +61,7 @@ My ultimate goal as a researcher is to create sustainable assistive technologies
 			<td style="padding:20px;width:75%;vertical-align:middle">
 			  <papertitle> <a href="https://ieeexplore.ieee.org/abstract/document/10444505">Channel Selective Relation Network for Efficient Few-shot Facial Expression Recognition</a></papertitle>
 			 	
-			  <br> Chae-Lin Kim, Ga-Eun Lee, Jiwoo Kang, Byung-Gyu Kim
+			  <br> <b>Chae-Lin Kim<b>, Ga-Eun Lee, Jiwoo Kang, Byung-Gyu Kim
 			  <br> IEEE International Conference on Consumer Electronics (ICCE) 2024
 
 			</td>
@@ -74,7 +74,7 @@ My ultimate goal as a researcher is to create sustainable assistive technologies
 			  <td style="padding:20px;width:75%;vertical-align:middle">
 				<papertitle><a href="https://link.springer.com/article/10.1007/s11554-023-01310-x">Few-shot Learning on Facial Expression Recognition: A Comprehensive Survey</a></papertitle>
 				
-				<br> Chae Lin Kim, Byung-Gyu Kim
+				<br> <b>Chae Lin Kim<b>, Byung-Gyu Kim
 
 		        <br> Journal of Real-Time Image Processing (Springer Nature), vol. 20:52 (Article number: 52), pp. 1-18, May 06, 2023
 			  </td>
@@ -104,7 +104,7 @@ My ultimate goal as a researcher is to create sustainable assistive technologies
 			<td style="padding:20px;width:75%;vertical-align:middle">
 			  <papertitle> <a href="https://dl.acm.org/doi/full/10.1145/3663547.3759746">Supporting Sign Language Video Comprehension through In-Situ Automatic Segmentation and Sign Lookup Tool</a></papertitle>
 			  	
-			  <br> Chaelin Kim, and Saad Hassan
+			  <br> <b>Chaelin Kim<b>, and Saad Hassan
 			  <br> Proceedings of the 28th International ACM SIGACCESS Conference on Computers and Accessibility (ASSETS 2026)
 
 			</td>
@@ -118,7 +118,7 @@ My ultimate goal as a researcher is to create sustainable assistive technologies
 			<td style="padding:20px;width:75%;vertical-align:middle">
 			  <papertitle> <a href="https://dl.acm.org/doi/full/10.1145/3663547.3759746">Signing for Care: A Demo and Initial Evaluation of an American Sign Language Learning Tool for Emergency Medical Service Providers</a></papertitle>
 			  	
-			  <br> Chaelin Kim, Cameron McLaren, Madhangi Krishnan, Nikhil Modayur, Saad Hassan
+			  <br> <b>Chaelin Kim<b>, Cameron McLaren, Madhangi Krishnan, Nikhil Modayur, Saad Hassan
 			  <br> Proceedings of the 27th International ACM SIGACCESS Conference on Computers and Accessibility (ASSETS 2025)
 
 			</td>
