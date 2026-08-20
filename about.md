@@ -22,7 +22,7 @@ My ultimate goal as a researcher is to create sustainable assistive technologies
 <p>I received both BS and MS in IT Engineering from Sookmyung Women's University.</p> 
 
 <h2>Recent News</h2>
-  <b>🎉 Our paper has been accepted to <b>ASSETS 2026</b>! 🎉
+<b>🎉 One full paper and one poster/demo paper were accepted to ASSETS 2026! 🎉</b>
 
 	  
 <h2>Publications</h2>
