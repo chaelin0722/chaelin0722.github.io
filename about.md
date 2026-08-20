@@ -4,7 +4,7 @@ layout: page
 ---
 <img src="{{ site.url }}/assets/images/profile_second.png" 
      alt="Profile Image" 
-     width="150">
+     width="50">
 
 <p> 
 Hi, my name is Chaelin, and I am a PhD student in Computer Science at <a href="https://sse.tulane.edu/">Tulane University</a>, advised by <a href="https://saadh.info/">Prof. Saad Hassan</a>. 
