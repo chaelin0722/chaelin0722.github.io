@@ -61,7 +61,7 @@ My ultimate goal as a researcher is to create sustainable assistive technologies
 			<td style="padding:20px;width:75%;vertical-align:middle">
 			  <papertitle> <a href="https://ieeexplore.ieee.org/abstract/document/10444505">Channel Selective Relation Network for Efficient Few-shot Facial Expression Recognition</a></papertitle>
 			 	
-			  <br> <b>Chae-Lin Kim<b>, Ga-Eun Lee, Jiwoo Kang, Byung-Gyu Kim
+			  <br> <b>Chae-Lin Kim</b>, Ga-Eun Lee, Jiwoo Kang, Byung-Gyu Kim
 			  <br> IEEE International Conference on Consumer Electronics (ICCE) 2024
 
 			</td>
@@ -74,7 +74,7 @@ My ultimate goal as a researcher is to create sustainable assistive technologies
 			  <td style="padding:20px;width:75%;vertical-align:middle">
 				<papertitle><a href="https://link.springer.com/article/10.1007/s11554-023-01310-x">Few-shot Learning on Facial Expression Recognition: A Comprehensive Survey</a></papertitle>
 				
-				<br> <b>Chae Lin Kim<b>, Byung-Gyu Kim
+				<br> <b>Chae Lin Kim</b>, Byung-Gyu Kim
 
 		        <br> Journal of Real-Time Image Processing (Springer Nature), vol. 20:52 (Article number: 52), pp. 1-18, May 06, 2023
 			  </td>
