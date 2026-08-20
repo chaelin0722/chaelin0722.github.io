@@ -2,8 +2,11 @@
 title: About
 layout: page
 ---
-![Profile Image]({% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %})
-
+<img src="{% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" 
+     alt="Profile Image" 
+     width="150" 
+     height="150"
+     style="border-radius: 50%; object-fit: cover;">
 <p> 
 Hi, my name is Chaelin, and I am a PhD student in Computer Science at <a href="https://sse.tulane.edu/">Tulane University</a>, advised by <a href="https://saadh.info/">Prof. Saad Hassan</a>. 
 My research interests lie in Human-Computer Interaction (HCI) and Computer Vision, with a particular focus on building AI systems that improve the quality of life for people with disabilities.  </p>
