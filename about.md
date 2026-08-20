@@ -3,8 +3,9 @@ title: About
 layout: page
 ---
 <img src="{{ site.url }}/assets/images/profile_second.png" 
-     alt="Profile Image" 
-     width="50">
+     alt="Profile Image"    
+	  style="float: left; width: 150px !important; height: 150px !important; object-fit: cover; margin: 0 25px 15px 0;">
+
 
 <p> 
 Hi, my name is Chaelin, and I am a PhD student in Computer Science at <a href="https://sse.tulane.edu/">Tulane University</a>, advised by <a href="https://saadh.info/">Prof. Saad Hassan</a>. 
